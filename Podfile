@@ -2,7 +2,9 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'Dilemma' do
-    pod 'Alamofire'
+    pod 'Starscream'
+    pod 'RealmSwift'
+    pod 'ModelMapper'
 end
 
 target 'DilemmaTests' do
