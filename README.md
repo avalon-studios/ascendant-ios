@@ -1,3 +1,2 @@
-# Dilemma
-## A game of morals
-### Travis Build Status: ![](https://travis-ci.org/kylebshr/dilemma-ios.svg?branch=master)
+# Dilemma ![](https://travis-ci.org/kylebshr/dilemma-ios.svg?branch=master) 
+A game of morals
