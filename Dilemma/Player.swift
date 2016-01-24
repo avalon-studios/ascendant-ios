@@ -9,13 +9,13 @@
 import Foundation
 import Mapper
 
-struct Card: Mappable {
+struct Player: Mappable {
     
     let id: Int
-    let text: String
+    let displayName: String
     
     init(map: Mapper) throws {
         try id = map.from("id")
-        try text = map.from("text")
+        try displayName = map.from("display_name")
     }
 }
