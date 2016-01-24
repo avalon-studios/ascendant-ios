@@ -2,7 +2,6 @@ language: objective-c
 
 notifications:
   email: false
-  hipchat: 64c0b2c3b0c35eec7f1aec358b557f@Develop
 
 xcode_workspace: Dilemma.xcworkspace
 xcode_scheme: Dilemma
