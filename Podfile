@@ -3,7 +3,6 @@ use_frameworks!
 
 target 'Dilemma' do
     pod 'Starscream'
-    pod 'RealmSwift'
     pod 'ModelMapper'
 end
 
