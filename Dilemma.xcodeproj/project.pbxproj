@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2757715D1C52E9020045C12D /* SocketDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757715C1C52E9020045C12D /* SocketDelegate.swift */; };
+		2757715D1C52E9020045C12D /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757715C1C52E9020045C12D /* SocketManager.swift */; };
 		2757715F1C52EA940045C12D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757715E1C52EA940045C12D /* Constants.swift */; };
-		275771611C52ED9B0045C12D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275771601C52ED9B0045C12D /* User.swift */; };
+		275771611C52ED9B0045C12D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275771601C52ED9B0045C12D /* Player.swift */; };
+		27C41B6A1C54A44500E8E177 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C41B691C54A44500E8E177 /* GameDelegate.swift */; };
+		27C41B6C1C54A45A00E8E177 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C41B6B1C54A45A00E8E177 /* Question.swift */; };
+		27C41B6E1C54A4F300E8E177 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C41B6D1C54A4F300E8E177 /* GamePlayViewController.swift */; };
+		27C41B701C54A86800E8E177 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C41B6F1C54A86800E8E177 /* Answer.swift */; };
+		27C41B721C54A92C00E8E177 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C41B711C54A92C00E8E177 /* Parser.swift */; };
+		27C41B741C54AA6700E8E177 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C41B731C54AA6700E8E177 /* GameManager.swift */; };
+		27C41B761C54AB8D00E8E177 /* GameInterfaceUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C41B751C54AB8D00E8E177 /* GameInterfaceUpdatable.swift */; };
 		27F0961A1C52835B00FB8E8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F096191C52835B00FB8E8E /* AppDelegate.swift */; };
 		27F0961C1C52835B00FB8E8E /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0961B1C52835B00FB8E8E /* CreateGameViewController.swift */; };
 		27F0961F1C52835C00FB8E8E /* CreateGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F0961D1C52835C00FB8E8E /* CreateGame.storyboard */; };
@@ -17,7 +24,7 @@
 		27F096241C52835C00FB8E8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F096221C52835C00FB8E8E /* LaunchScreen.storyboard */; };
 		27F0962F1C52835C00FB8E8E /* DilemmaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0962E1C52835C00FB8E8E /* DilemmaTests.swift */; };
 		27F0963A1C52835C00FB8E8E /* DilemmaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F096391C52835C00FB8E8E /* DilemmaUITests.swift */; };
-		27FDC1011C52C70D0003A97C /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27FDC1001C52C70D0003A97C /* Game.storyboard */; };
+		27FDC1011C52C70D0003A97C /* GamePlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27FDC1001C52C70D0003A97C /* GamePlay.storyboard */; };
 		27FDC1031C52CB480003A97C /* EnterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FDC1021C52CB480003A97C /* EnterInfoViewController.swift */; };
 		913F13922F2159BC98D07143 /* Pods_Dilemma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29887F232B78BCB903B5AB7 /* Pods_Dilemma.framework */; };
 /* End PBXBuildFile section */
@@ -40,9 +47,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2757715C1C52E9020045C12D /* SocketDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketDelegate.swift; sourceTree = "<group>"; };
+		2757715C1C52E9020045C12D /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		2757715E1C52EA940045C12D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		275771601C52ED9B0045C12D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		275771601C52ED9B0045C12D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		27C41B691C54A44500E8E177 /* GameDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
+		27C41B6B1C54A45A00E8E177 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		27C41B6D1C54A4F300E8E177 /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
+		27C41B6F1C54A86800E8E177 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		27C41B711C54A92C00E8E177 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		27C41B731C54AA6700E8E177 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		27C41B751C54AB8D00E8E177 /* GameInterfaceUpdatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameInterfaceUpdatable.swift; sourceTree = "<group>"; };
 		27F096161C52835B00FB8E8E /* Dilemma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dilemma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F096191C52835B00FB8E8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27F0961B1C52835B00FB8E8E /* CreateGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +70,7 @@
 		27F096351C52835C00FB8E8E /* DilemmaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DilemmaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F096391C52835C00FB8E8E /* DilemmaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DilemmaUITests.swift; sourceTree = "<group>"; };
 		27F0963B1C52835C00FB8E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27FDC1001C52C70D0003A97C /* Game.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
+		27FDC1001C52C70D0003A97C /* GamePlay.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GamePlay.storyboard; sourceTree = "<group>"; };
 		27FDC1021C52CB480003A97C /* EnterInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterInfoViewController.swift; sourceTree = "<group>"; };
 		C29887F232B78BCB903B5AB7 /* Pods_Dilemma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dilemma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6FF7076BAF69F747D500D3 /* Pods-Dilemma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dilemma.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dilemma/Pods-Dilemma.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,12 +112,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		27A4130A1C52C66E007D9613 /* Delegates/Managers */ = {
+		27A4130A1C52C66E007D9613 /* Utility Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2757715C1C52E9020045C12D /* SocketDelegate.swift */,
+				2757715C1C52E9020045C12D /* SocketManager.swift */,
+				27C41B731C54AA6700E8E177 /* GameManager.swift */,
+				27C41B711C54A92C00E8E177 /* Parser.swift */,
 			);
-			name = Delegates/Managers;
+			name = "Utility Classes";
+			sourceTree = "<group>";
+		};
+		27C41B681C54A41200E8E177 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				27C41B691C54A44500E8E177 /* GameDelegate.swift */,
+				27C41B751C54AB8D00E8E177 /* GameInterfaceUpdatable.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		27F0960D1C52835B00FB8E8E = {
@@ -134,7 +159,8 @@
 				27F096191C52835B00FB8E8E /* AppDelegate.swift */,
 				27F096481C52858800FB8E8E /* Storyboards */,
 				27F096471C52858100FB8E8E /* View Controllers */,
-				27A4130A1C52C66E007D9613 /* Delegates/Managers */,
+				27C41B681C54A41200E8E177 /* Protocols */,
+				27A4130A1C52C66E007D9613 /* Utility Classes */,
 				27F096491C52858E00FB8E8E /* Models */,
 				27F0964A1C5285AA00FB8E8E /* Assets */,
 			);
@@ -164,6 +190,7 @@
 			children = (
 				27F0961B1C52835B00FB8E8E /* CreateGameViewController.swift */,
 				27FDC1021C52CB480003A97C /* EnterInfoViewController.swift */,
+				27C41B6D1C54A4F300E8E177 /* GamePlayViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -172,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				27F0961D1C52835C00FB8E8E /* CreateGame.storyboard */,
-				27FDC1001C52C70D0003A97C /* Game.storyboard */,
+				27FDC1001C52C70D0003A97C /* GamePlay.storyboard */,
 				27F096221C52835C00FB8E8E /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
@@ -181,7 +208,9 @@
 		27F096491C52858E00FB8E8E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				275771601C52ED9B0045C12D /* User.swift */,
+				275771601C52ED9B0045C12D /* Player.swift */,
+				27C41B6F1C54A86800E8E177 /* Answer.swift */,
+				27C41B6B1C54A45A00E8E177 /* Question.swift */,
 				2757715E1C52EA940045C12D /* Constants.swift */,
 			);
 			name = Models;
@@ -311,7 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27FDC1011C52C70D0003A97C /* Game.storyboard in Resources */,
+				27FDC1011C52C70D0003A97C /* GamePlay.storyboard in Resources */,
 				27F096241C52835C00FB8E8E /* LaunchScreen.storyboard in Resources */,
 				27F096211C52835C00FB8E8E /* Assets.xcassets in Resources */,
 				27F0961F1C52835C00FB8E8E /* CreateGame.storyboard in Resources */,
@@ -388,11 +417,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				2757715F1C52EA940045C12D /* Constants.swift in Sources */,
+				27C41B741C54AA6700E8E177 /* GameManager.swift in Sources */,
+				27C41B721C54A92C00E8E177 /* Parser.swift in Sources */,
 				27F0961C1C52835B00FB8E8E /* CreateGameViewController.swift in Sources */,
-				275771611C52ED9B0045C12D /* User.swift in Sources */,
+				275771611C52ED9B0045C12D /* Player.swift in Sources */,
 				27FDC1031C52CB480003A97C /* EnterInfoViewController.swift in Sources */,
+				27C41B761C54AB8D00E8E177 /* GameInterfaceUpdatable.swift in Sources */,
 				27F0961A1C52835B00FB8E8E /* AppDelegate.swift in Sources */,
-				2757715D1C52E9020045C12D /* SocketDelegate.swift in Sources */,
+				27C41B6A1C54A44500E8E177 /* GameDelegate.swift in Sources */,
+				2757715D1C52E9020045C12D /* SocketManager.swift in Sources */,
+				27C41B701C54A86800E8E177 /* Answer.swift in Sources */,
+				27C41B6E1C54A4F300E8E177 /* GamePlayViewController.swift in Sources */,
+				27C41B6C1C54A45A00E8E177 /* Question.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
