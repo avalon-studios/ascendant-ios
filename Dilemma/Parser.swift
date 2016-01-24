@@ -14,7 +14,7 @@ struct Parser {
         return [Question]()
     }
     
-    func parseUser(json: NSDictionary) -> User? {
-        return User.from(json)
+    func parsePlayer(json: NSDictionary) -> Player? {
+        return Player.from(json)
     }
 }

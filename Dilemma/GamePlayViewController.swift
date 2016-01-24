@@ -10,11 +10,11 @@ import UIKit
 
 class GamePlayViewController: UIViewController, GameInterfaceUpdatable {
     
-    func gameManagerUpdateCards(gameManager: GameManager) {
+    func updateQuestions(gameManager: GameManager) {
         
     }
     
-    func gameManagerUpdateCurrentPlayersTurn(gameManager: GameManager) {
+    func updateCurrentPlayersTurn(gameManager: GameManager) {
         
     }
 }
