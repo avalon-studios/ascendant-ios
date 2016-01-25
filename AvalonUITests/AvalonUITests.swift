@@ -2,13 +2,13 @@
 //  AvalonUITests.swift
 //  AvalonUITests
 //
-//  Created by Kyle Bashour on 1/22/16.
+//  Created by Kyle Bashour on 1/25/16.
 //  Copyright © 2016 Kyle Bashour. All rights reserved.
 //
 
 import XCTest
 
-class AvalonTestsUITests: XCTestCase {
+class AvalonUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
@@ -27,4 +27,10 @@ class AvalonTestsUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
+    
+    func testExample() {
+        // Use recording to get started writing UI tests.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
 }

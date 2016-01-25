@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2723EFAB1C5699C300B55A8A /* AvalonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273758291C569896009EEAAF /* AvalonTests.swift */; };
-		2723EFAC1C5699C800B55A8A /* AvalonTestsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2737582D1C56989D009EEAAF /* AvalonTestsUITests.swift */; };
+		2723EFC21C56A5E500B55A8A /* AvalonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723EFC11C56A5E500B55A8A /* AvalonUITests.swift */; };
+		2723EFC91C56A69200B55A8A /* AvalonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273758291C569896009EEAAF /* AvalonTests.swift */; };
 		273758041C569826009EEAAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273758031C569826009EEAAF /* AppDelegate.swift */; };
 		273758061C569830009EEAAF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273758051C569830009EEAAF /* Constants.swift */; };
 		273758081C56983C009EEAAF /* GamePlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 273758071C56983C009EEAAF /* GamePlay.storyboard */; };
@@ -32,23 +32,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		27F0962B1C52835C00FB8E8E /* PBXContainerItemProxy */ = {
+		2723EFB61C56A5DD00B55A8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 27F0960E1C52835B00FB8E8E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 27F096151C52835B00FB8E8E;
-			remoteInfo = Dilemma;
+			remoteInfo = Avalon;
 		};
-		27F096361C52835C00FB8E8E /* PBXContainerItemProxy */ = {
+		2723EFC41C56A5E500B55A8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 27F0960E1C52835B00FB8E8E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 27F096151C52835B00FB8E8E;
-			remoteInfo = Dilemma;
+			remoteInfo = Avalon;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2723EFB11C56A5DD00B55A8A /* AvalonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvalonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2723EFBF1C56A5E500B55A8A /* AvalonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvalonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2723EFC11C56A5E500B55A8A /* AvalonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvalonUITests.swift; sourceTree = "<group>"; };
+		2723EFC31C56A5E500B55A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		273758031C569826009EEAAF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Avalon/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		273758051C569830009EEAAF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Avalon/Constants.swift; sourceTree = SOURCE_ROOT; };
 		273758071C56983C009EEAAF /* GamePlay.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GamePlay.storyboard; path = Avalon/GamePlay.storyboard; sourceTree = SOURCE_ROOT; };
@@ -69,38 +73,34 @@
 		273758271C56988F009EEAAF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Avalon/Info.plist; sourceTree = SOURCE_ROOT; };
 		273758291C569896009EEAAF /* AvalonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvalonTests.swift; path = AvalonTests/AvalonTests.swift; sourceTree = SOURCE_ROOT; };
 		2737582A1C569896009EEAAF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AvalonTests/Info.plist; sourceTree = SOURCE_ROOT; };
-		2737582D1C56989D009EEAAF /* AvalonTestsUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvalonTestsUITests.swift; path = AvalonUITests/AvalonTestsUITests.swift; sourceTree = SOURCE_ROOT; };
-		2737582E1C56989D009EEAAF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AvalonUITests/Info.plist; sourceTree = SOURCE_ROOT; };
 		273758321C569904009EEAAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Avalon/Base.lproj/CreateGame.storyboard; sourceTree = SOURCE_ROOT; };
 		273758341C569904009EEAAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Avalon/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		27F096161C52835B00FB8E8E /* Avalon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Avalon.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		27F0962A1C52835C00FB8E8E /* Avalon.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Avalon.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		27F096351C52835C00FB8E8E /* Avalon.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Avalon.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3582541588F2662F4A46CFA2 /* Pods_Avalon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Avalon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873AE13FC0C9411865AEC8FA /* Pods-Avalon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avalon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Avalon/Pods-Avalon.debug.xcconfig"; sourceTree = "<group>"; };
 		9C200D25733899614385FCA5 /* Pods-Avalon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avalon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Avalon/Pods-Avalon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2723EFAE1C56A5DD00B55A8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2723EFBC1C56A5E500B55A8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27F096131C52835B00FB8E8E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B98E39BD2D511E0BAB07AE8E /* Pods_Avalon.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27F096271C52835C00FB8E8E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27F096321C52835C00FB8E8E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +114,16 @@
 				9C200D25733899614385FCA5 /* Pods-Avalon.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		2723EFC01C56A5E500B55A8A /* UI Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2723EFC11C56A5E500B55A8A /* AvalonUITests.swift */,
+				2723EFC31C56A5E500B55A8A /* Info.plist */,
+			);
+			name = "UI Tests";
+			path = AvalonUITests;
 			sourceTree = "<group>";
 		};
 		27A4130A1C52C66E007D9613 /* Utility Classes */ = {
@@ -149,7 +159,7 @@
 			children = (
 				27F096181C52835B00FB8E8E /* Dilemma */,
 				27F0962D1C52835C00FB8E8E /* Unit Tests */,
-				27F096381C52835C00FB8E8E /* UI Tests */,
+				2723EFC01C56A5E500B55A8A /* UI Tests */,
 				27F096171C52835B00FB8E8E /* Products */,
 				1010EDD9AD688EF527F69827 /* Pods */,
 				7ECE1597312A72C1A4B7AA5B /* Frameworks */,
@@ -160,8 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				27F096161C52835B00FB8E8E /* Avalon.app */,
-				27F0962A1C52835C00FB8E8E /* Avalon.xctest */,
-				27F096351C52835C00FB8E8E /* Avalon.xctest */,
+				2723EFB11C56A5DD00B55A8A /* AvalonTests.xctest */,
+				2723EFBF1C56A5E500B55A8A /* AvalonUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,16 +200,6 @@
 			);
 			name = "Unit Tests";
 			path = DilemmaTests;
-			sourceTree = "<group>";
-		};
-		27F096381C52835C00FB8E8E /* UI Tests */ = {
-			isa = PBXGroup;
-			children = (
-				2737582D1C56989D009EEAAF /* AvalonTestsUITests.swift */,
-				2737582E1C56989D009EEAAF /* Info.plist */,
-			);
-			name = "UI Tests";
-			path = DilemmaUITests;
 			sourceTree = "<group>";
 		};
 		27F096471C52858100FB8E8E /* View Controllers */ = {
@@ -252,6 +252,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2723EFB01C56A5DD00B55A8A /* AvalonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2723EFB81C56A5DD00B55A8A /* Build configuration list for PBXNativeTarget "AvalonTests" */;
+			buildPhases = (
+				2723EFAD1C56A5DD00B55A8A /* Sources */,
+				2723EFAE1C56A5DD00B55A8A /* Frameworks */,
+				2723EFAF1C56A5DD00B55A8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2723EFB71C56A5DD00B55A8A /* PBXTargetDependency */,
+			);
+			name = AvalonTests;
+			productName = AvalonTests;
+			productReference = 2723EFB11C56A5DD00B55A8A /* AvalonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2723EFBE1C56A5E500B55A8A /* AvalonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2723EFC61C56A5E500B55A8A /* Build configuration list for PBXNativeTarget "AvalonUITests" */;
+			buildPhases = (
+				2723EFBB1C56A5E500B55A8A /* Sources */,
+				2723EFBC1C56A5E500B55A8A /* Frameworks */,
+				2723EFBD1C56A5E500B55A8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2723EFC51C56A5E500B55A8A /* PBXTargetDependency */,
+			);
+			name = AvalonUITests;
+			productName = AvalonUITests;
+			productReference = 2723EFBF1C56A5E500B55A8A /* AvalonUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		27F096151C52835B00FB8E8E /* Avalon */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27F0963E1C52835C00FB8E8E /* Build configuration list for PBXNativeTarget "Avalon" */;
@@ -272,42 +308,6 @@
 			productReference = 27F096161C52835B00FB8E8E /* Avalon.app */;
 			productType = "com.apple.product-type.application";
 		};
-		27F096291C52835C00FB8E8E /* AvalonTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 27F096411C52835C00FB8E8E /* Build configuration list for PBXNativeTarget "AvalonTests" */;
-			buildPhases = (
-				27F096261C52835C00FB8E8E /* Sources */,
-				27F096271C52835C00FB8E8E /* Frameworks */,
-				27F096281C52835C00FB8E8E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				27F0962C1C52835C00FB8E8E /* PBXTargetDependency */,
-			);
-			name = AvalonTests;
-			productName = DilemmaTests;
-			productReference = 27F0962A1C52835C00FB8E8E /* Avalon.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		27F096341C52835C00FB8E8E /* AvalonUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 27F096441C52835C00FB8E8E /* Build configuration list for PBXNativeTarget "AvalonUITests" */;
-			buildPhases = (
-				27F096311C52835C00FB8E8E /* Sources */,
-				27F096321C52835C00FB8E8E /* Frameworks */,
-				27F096331C52835C00FB8E8E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				27F096371C52835C00FB8E8E /* PBXTargetDependency */,
-			);
-			name = AvalonUITests;
-			productName = DilemmaUITests;
-			productReference = 27F096351C52835C00FB8E8E /* Avalon.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -318,16 +318,16 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Kyle Bashour";
 				TargetAttributes = {
+					2723EFB01C56A5DD00B55A8A = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 27F096151C52835B00FB8E8E;
+					};
+					2723EFBE1C56A5E500B55A8A = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 27F096151C52835B00FB8E8E;
+					};
 					27F096151C52835B00FB8E8E = {
 						CreatedOnToolsVersion = 7.2;
-					};
-					27F096291C52835C00FB8E8E = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 27F096151C52835B00FB8E8E;
-					};
-					27F096341C52835C00FB8E8E = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 27F096151C52835B00FB8E8E;
 					};
 				};
 			};
@@ -345,13 +345,27 @@
 			projectRoot = "";
 			targets = (
 				27F096151C52835B00FB8E8E /* Avalon */,
-				27F096291C52835C00FB8E8E /* AvalonTests */,
-				27F096341C52835C00FB8E8E /* AvalonUITests */,
+				2723EFB01C56A5DD00B55A8A /* AvalonTests */,
+				2723EFBE1C56A5E500B55A8A /* AvalonUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2723EFAF1C56A5DD00B55A8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2723EFBD1C56A5E500B55A8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27F096141C52835B00FB8E8E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,20 +374,6 @@
 				273758261C569889009EEAAF /* Assets.xcassets in Resources */,
 				273758361C569904009EEAAF /* LaunchScreen.storyboard in Resources */,
 				273758351C569904009EEAAF /* CreateGame.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27F096281C52835C00FB8E8E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27F096331C52835C00FB8E8E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +428,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2723EFAD1C56A5DD00B55A8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2723EFC91C56A69200B55A8A /* AvalonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2723EFBB1C56A5E500B55A8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2723EFC21C56A5E500B55A8A /* AvalonUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27F096121C52835B00FB8E8E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -450,34 +466,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		27F096261C52835C00FB8E8E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2723EFAB1C5699C300B55A8A /* AvalonTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27F096311C52835C00FB8E8E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2723EFAC1C5699C800B55A8A /* AvalonTestsUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		27F0962C1C52835C00FB8E8E /* PBXTargetDependency */ = {
+		2723EFB71C56A5DD00B55A8A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 27F096151C52835B00FB8E8E /* Avalon */;
-			targetProxy = 27F0962B1C52835C00FB8E8E /* PBXContainerItemProxy */;
+			targetProxy = 2723EFB61C56A5DD00B55A8A /* PBXContainerItemProxy */;
 		};
-		27F096371C52835C00FB8E8E /* PBXTargetDependency */ = {
+		2723EFC51C56A5E500B55A8A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 27F096151C52835B00FB8E8E /* Avalon */;
-			targetProxy = 27F096361C52835C00FB8E8E /* PBXContainerItemProxy */;
+			targetProxy = 2723EFC41C56A5E500B55A8A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -501,6 +501,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2723EFB91C56A5DD00B55A8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = AvalonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kylebashour.AvalonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Avalon.app/Avalon";
+			};
+			name = Debug;
+		};
+		2723EFBA1C56A5DD00B55A8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = AvalonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kylebashour.AvalonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Avalon.app/Avalon";
+			};
+			name = Release;
+		};
+		2723EFC71C56A5E500B55A8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AvalonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kylebashour.AvalonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Avalon;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		2723EFC81C56A5E500B55A8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AvalonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kylebashour.AvalonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Avalon;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 		27F0963C1C52835C00FB8E8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -608,57 +656,25 @@
 			};
 			name = Release;
 		};
-		27F096421C52835C00FB8E8E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = AvalonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kylebashour.AvalonTests;
-				PRODUCT_NAME = Avalon;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Avalon.app/Avalon";
-			};
-			name = Debug;
-		};
-		27F096431C52835C00FB8E8E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = AvalonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kylebashour.AvalonTests;
-				PRODUCT_NAME = Avalon;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Avalon.app/Avalon";
-			};
-			name = Release;
-		};
-		27F096451C52835C00FB8E8E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = AvalonUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kylebashour.AvalonUITests;
-				PRODUCT_NAME = Avalon;
-				TEST_TARGET_NAME = Dilemma;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		27F096461C52835C00FB8E8E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = AvalonUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kylebashour.AvalonUITests;
-				PRODUCT_NAME = Avalon;
-				TEST_TARGET_NAME = Dilemma;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2723EFB81C56A5DD00B55A8A /* Build configuration list for PBXNativeTarget "AvalonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2723EFB91C56A5DD00B55A8A /* Debug */,
+				2723EFBA1C56A5DD00B55A8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2723EFC61C56A5E500B55A8A /* Build configuration list for PBXNativeTarget "AvalonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2723EFC71C56A5E500B55A8A /* Debug */,
+				2723EFC81C56A5E500B55A8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		27F096111C52835B00FB8E8E /* Build configuration list for PBXProject "Avalon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -673,24 +689,6 @@
 			buildConfigurations = (
 				27F0963F1C52835C00FB8E8E /* Debug */,
 				27F096401C52835C00FB8E8E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		27F096411C52835C00FB8E8E /* Build configuration list for PBXNativeTarget "AvalonTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				27F096421C52835C00FB8E8E /* Debug */,
-				27F096431C52835C00FB8E8E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		27F096441C52835C00FB8E8E /* Build configuration list for PBXNativeTarget "AvalonUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				27F096451C52835C00FB8E8E /* Debug */,
-				27F096461C52835C00FB8E8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

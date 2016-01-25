@@ -32,8 +32,8 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "27F096291C52835C00FB8E8E"
-               BuildableName = "Avalon.xctest"
+               BlueprintIdentifier = "2723EFB01C56A5DD00B55A8A"
+               BuildableName = "AvalonTests.xctest"
                BlueprintName = "AvalonTests"
                ReferencedContainer = "container:Avalon.xcodeproj">
             </BuildableReference>
@@ -42,8 +42,8 @@
             skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "27F096341C52835C00FB8E8E"
-               BuildableName = "Avalon.xctest"
+               BlueprintIdentifier = "2723EFBE1C56A5E500B55A8A"
+               BuildableName = "AvalonUITests.xctest"
                BlueprintName = "AvalonUITests"
                ReferencedContainer = "container:Avalon.xcodeproj">
             </BuildableReference>
