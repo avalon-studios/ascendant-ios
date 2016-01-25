@@ -8,9 +8,13 @@
 
 import Foundation
 
-class GameManager: GameDelegate {
+struct GameManager {
 
-    let id: String
+    let currentGameID: String
+    let myPlayer: Player
+    
+    var allPlayers = [Player]()
+    
     
     weak var gameInterface: GameInterfaceUpdatable?
     
