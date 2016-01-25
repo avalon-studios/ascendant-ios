@@ -1,2 +1,2 @@
-# Dilemma ![](https://travis-ci.org/kylebshr/dilemma-ios.svg?branch=master) 
+# Avalon ![](https://travis-ci.org/avalon-studios/avalon-ios.svg?branch=master) 
 A game of morals
