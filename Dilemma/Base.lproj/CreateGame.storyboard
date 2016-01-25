@@ -9,7 +9,7 @@
         <!--Create Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CreateGameViewController" customModule="Dilemma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateGameViewController" id="BYZ-38-t0r" customClass="CreateGameViewController" customModule="Dilemma" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -75,7 +75,7 @@
         <!--Enter Info View Controller-->
         <scene sceneID="Grr-jr-0H9">
             <objects>
-                <viewController id="26V-k1-xfS" customClass="EnterInfoViewController" customModule="Dilemma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EnterInfoViewController" id="26V-k1-xfS" customClass="EnterInfoViewController" customModule="Dilemma" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="89V-l2-7UK"/>
                         <viewControllerLayoutGuide type="bottom" id="0U7-x1-ARc"/>
@@ -93,7 +93,11 @@
                                                 <action selector="cancelButtonPressed:" destination="26V-k1-xfS" id="LPO-Mi-lO8"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Let's Go!" id="hqI-sG-u1K"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Let's Go!" id="hqI-sG-u1K">
+                                            <connections>
+                                                <segue destination="m9m-n9-Eh9" kind="presentation" identifier="ShowGamePlay" id="UnS-xf-Rit"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -165,12 +169,21 @@
                     <connections>
                         <outlet property="bottomConstraint" destination="IfE-sc-ESa" id="Sfv-JS-QwB"/>
                         <outlet property="navigationBar" destination="wAV-ho-Odn" id="be9-wC-C7d"/>
+                        <outlet property="roomCodeTextField" destination="Fh9-kb-MwR" id="9mF-Ws-Bq0"/>
                         <outlet property="userNameTextField" destination="X26-hE-fN1" id="LE5-em-lph"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZJV-Pm-eNV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1957" y="387"/>
+        </scene>
+        <!--GamePlay-->
+        <scene sceneID="E6J-Zc-zcm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GamePlay" id="m9m-n9-Eh9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="99a-ug-FgJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2484.5" y="387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="547-kj-7Zi">

@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import Starscream
 
 class EnterInfoViewController: UIViewController {
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var roomCodeTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,13 @@ class EnterInfoViewController: UIViewController {
         setUpUI()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == Constants.Segues.showGamePlay {
+            
+        }
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -49,4 +56,6 @@ class EnterInfoViewController: UIViewController {
     @IBAction func cancelButtonPressed(sender: UIBarButtonItem) {
         navigationController?.popViewControllerAnimated(true)
     }
+    
+    
 }

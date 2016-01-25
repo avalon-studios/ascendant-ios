@@ -9,18 +9,21 @@
 import Foundation
 
 class GameManager: GameDelegate {
+
+    let id: String
     
     weak var gameInterface: GameInterfaceUpdatable?
     
     var socketManager = SocketManager()
-    
+
     var players = [Player]()
     var myQuestions = [Question]()
     var currentPlayer: Player?
     var me: Player
 
-    init(player: Player) {
-        me = player
+    init(id: String, player: Player) {
+        self.me = player
+        self.id = id
     }
     
     func askQuestion(question: Question, againstPlayer player: Player) {

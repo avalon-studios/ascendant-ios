@@ -8,7 +8,7 @@
         <!--Game Play View Controller-->
         <scene sceneID="E1n-Hz-L1N">
             <objects>
-                <viewController id="OTv-Ye-UNQ" customClass="GamePlayViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GamePlayViewController" id="OTv-Ye-UNQ" customClass="GamePlayViewController" customModule="Dilemma" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cY6-Zd-1iJ"/>
                         <viewControllerLayoutGuide type="bottom" id="s1W-QS-apy"/>

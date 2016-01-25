@@ -14,4 +14,8 @@ struct Constants {
         static let inboxEndpoint = "ws://dilemma-api.herokuapp.com" + "/receive"
         static let outboxEndpoint = "ws://dilemma-api.herokuapp.com" + "/submit"
     }
+    
+    struct Segues {
+        static let showGamePlay = "ShowGamePlay"
+    }
 }
