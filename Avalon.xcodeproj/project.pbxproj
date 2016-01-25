@@ -612,9 +612,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = DilemmaTests/Info.plist;
+				INFOPLIST_FILE = AvalonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kylebashour.DilemmaTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kylebashour.AvalonTests;
 				PRODUCT_NAME = Avalon;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Avalon.app/Avalon";
 			};
@@ -624,9 +624,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = DilemmaTests/Info.plist;
+				INFOPLIST_FILE = AvalonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kylebashour.DilemmaTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kylebashour.AvalonTests;
 				PRODUCT_NAME = Avalon;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Avalon.app/Avalon";
 			};
@@ -635,9 +635,9 @@
 		27F096451C52835C00FB8E8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = DilemmaUITests/Info.plist;
+				INFOPLIST_FILE = AvalonUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kylebashour.DilemmaUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kylebashour.AvalonUITests;
 				PRODUCT_NAME = Avalon;
 				TEST_TARGET_NAME = Dilemma;
 				USES_XCTRUNNER = YES;
@@ -647,9 +647,9 @@
 		27F096461C52835C00FB8E8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = DilemmaUITests/Info.plist;
+				INFOPLIST_FILE = AvalonUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kylebashour.DilemmaUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kylebashour.AvalonUITests;
 				PRODUCT_NAME = Avalon;
 				TEST_TARGET_NAME = Dilemma;
 				USES_XCTRUNNER = YES;
