@@ -7,9 +7,9 @@
 //
 
 import XCTest
-@testable import Dilemma
+@testable import AvalonTests
 
-class DilemmaTests: XCTestCase {
+class AvalonTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

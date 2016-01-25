@@ -9,7 +9,7 @@
         <!--Create Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="CreateGameViewController" id="BYZ-38-t0r" customClass="CreateGameViewController" customModule="Dilemma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateGameViewController" id="BYZ-38-t0r" customClass="CreateGameViewController" customModule="Avalon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,7 +21,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9nT-YX-0Cj">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dilemma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="MJD-Sf-JAA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="MJD-Sf-JAA">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="70"/>
                                         <color key="textColor" red="0.93725490199999995" green="0.070588235289999995" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -75,7 +75,7 @@
         <!--Enter Info View Controller-->
         <scene sceneID="Grr-jr-0H9">
             <objects>
-                <viewController storyboardIdentifier="EnterInfoViewController" id="26V-k1-xfS" customClass="EnterInfoViewController" customModule="Dilemma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EnterInfoViewController" id="26V-k1-xfS" customClass="EnterInfoViewController" customModule="Avalon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="89V-l2-7UK"/>
                         <viewControllerLayoutGuide type="bottom" id="0U7-x1-ARc"/>

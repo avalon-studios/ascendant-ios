@@ -1,16 +1,16 @@
 platform :ios, '9.0'
 use_frameworks!
 
-target 'Dilemma' do
+target 'Avalon' do
     pod 'Starscream'
     pod 'ModelMapper'
 end
 
-target 'DilemmaTests' do
+target 'AvalonTests' do
 
 end
 
-target 'DilemmaUITests' do
+target 'AvalonUITests' do
 
 end
 

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "27F096151C52835B00FB8E8E"
-               BuildableName = "Dilemma.app"
-               BlueprintName = "Dilemma"
-               ReferencedContainer = "container:Dilemma.xcodeproj">
+               BuildableName = "Avalon.app"
+               BlueprintName = "Avalon"
+               ReferencedContainer = "container:Avalon.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "27F096291C52835C00FB8E8E"
-               BuildableName = "DilemmaTests.xctest"
-               BlueprintName = "DilemmaTests"
-               ReferencedContainer = "container:Dilemma.xcodeproj">
+               BuildableName = "Avalon.xctest"
+               BlueprintName = "AvalonTests"
+               ReferencedContainer = "container:Avalon.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "27F096341C52835C00FB8E8E"
-               BuildableName = "DilemmaUITests.xctest"
-               BlueprintName = "DilemmaUITests"
-               ReferencedContainer = "container:Dilemma.xcodeproj">
+               BuildableName = "Avalon.xctest"
+               BlueprintName = "AvalonUITests"
+               ReferencedContainer = "container:Avalon.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "27F096151C52835B00FB8E8E"
-            BuildableName = "Dilemma.app"
-            BlueprintName = "Dilemma"
-            ReferencedContainer = "container:Dilemma.xcodeproj">
+            BuildableName = "Avalon.app"
+            BlueprintName = "Avalon"
+            ReferencedContainer = "container:Avalon.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "27F096151C52835B00FB8E8E"
-            BuildableName = "Dilemma.app"
-            BlueprintName = "Dilemma"
-            ReferencedContainer = "container:Dilemma.xcodeproj">
+            BuildableName = "Avalon.app"
+            BlueprintName = "Avalon"
+            ReferencedContainer = "container:Avalon.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "27F096151C52835B00FB8E8E"
-            BuildableName = "Dilemma.app"
-            BlueprintName = "Dilemma"
-            ReferencedContainer = "container:Dilemma.xcodeproj">
+            BuildableName = "Avalon.app"
+            BlueprintName = "Avalon"
+            ReferencedContainer = "container:Avalon.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
