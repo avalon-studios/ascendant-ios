@@ -157,7 +157,7 @@
 		27F0960D1C52835B00FB8E8E = {
 			isa = PBXGroup;
 			children = (
-				27F096181C52835B00FB8E8E /* Dilemma */,
+				27F096181C52835B00FB8E8E /* Avalon */,
 				27F0962D1C52835C00FB8E8E /* Unit Tests */,
 				2723EFC01C56A5E500B55A8A /* UI Tests */,
 				27F096171C52835B00FB8E8E /* Products */,
@@ -176,7 +176,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		27F096181C52835B00FB8E8E /* Dilemma */ = {
+		27F096181C52835B00FB8E8E /* Avalon */ = {
 			isa = PBXGroup;
 			children = (
 				273758031C569826009EEAAF /* AppDelegate.swift */,
@@ -189,6 +189,7 @@
 				27F096491C52858E00FB8E8E /* Models */,
 				27F0964A1C5285AA00FB8E8E /* Assets */,
 			);
+			name = Avalon;
 			path = Dilemma;
 			sourceTree = "<group>";
 		};
@@ -666,6 +667,7 @@
 				2723EFBA1C56A5DD00B55A8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2723EFC61C56A5E500B55A8A /* Build configuration list for PBXNativeTarget "AvalonUITests" */ = {
 			isa = XCConfigurationList;
@@ -674,6 +676,7 @@
 				2723EFC81C56A5E500B55A8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27F096111C52835B00FB8E8E /* Build configuration list for PBXProject "Avalon" */ = {
 			isa = XCConfigurationList;
