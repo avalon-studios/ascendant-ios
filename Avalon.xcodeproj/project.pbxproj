@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2723EFC21C56A5E500B55A8A /* AvalonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723EFC11C56A5E500B55A8A /* AvalonUITests.swift */; };
 		2723EFC91C56A69200B55A8A /* AvalonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273758291C569896009EEAAF /* AvalonTests.swift */; };
+		27302E7F1C57F4B1008F7B04 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27302E7E1C57F4B1008F7B04 /* LoadingViewController.swift */; };
 		273758041C569826009EEAAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273758031C569826009EEAAF /* AppDelegate.swift */; };
 		273758061C569830009EEAAF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273758051C569830009EEAAF /* Constants.swift */; };
 		273758081C56983C009EEAAF /* GamePlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 273758071C56983C009EEAAF /* GamePlay.storyboard */; };
@@ -27,6 +28,10 @@
 		273758351C569904009EEAAF /* Join.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 273758311C569904009EEAAF /* Join.storyboard */; };
 		273758361C569904009EEAAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 273758331C569904009EEAAF /* LaunchScreen.storyboard */; };
 		277929101C570AA20086C4C1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779290F1C570AA20086C4C1 /* R.generated.swift */; };
+		277AB8FB1C580A3000BBF741 /* MissionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277AB8FA1C580A3000BBF741 /* MissionStatusView.swift */; };
+		277AB8FF1C580CDE00BBF741 /* MissionStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 277AB8FE1C580CDE00BBF741 /* MissionStatusView.xib */; };
+		277AB9011C581EE500BBF741 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 277AB9001C581EE500BBF741 /* Podfile */; };
+		277AB9031C58207900BBF741 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277AB9021C58207900BBF741 /* ThemeManager.swift */; };
 		27C6A9291C570109003926AE /* NetworkCommunicatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C6A9281C570109003926AE /* NetworkCommunicatorProtocol.swift */; };
 		B98E39BD2D511E0BAB07AE8E /* Pods_Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3582541588F2662F4A46CFA2 /* Pods_Avalon.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +58,7 @@
 		2723EFBF1C56A5E500B55A8A /* AvalonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvalonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2723EFC11C56A5E500B55A8A /* AvalonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvalonUITests.swift; sourceTree = "<group>"; };
 		2723EFC31C56A5E500B55A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27302E7E1C57F4B1008F7B04 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = SOURCE_ROOT; };
 		273758031C569826009EEAAF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Avalon/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		273758051C569830009EEAAF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Avalon/Constants.swift; sourceTree = SOURCE_ROOT; };
 		273758071C56983C009EEAAF /* GamePlay.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GamePlay.storyboard; path = Avalon/GamePlay.storyboard; sourceTree = SOURCE_ROOT; };
@@ -74,6 +80,10 @@
 		273758321C569904009EEAAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Avalon/Base.lproj/Join.storyboard; sourceTree = SOURCE_ROOT; };
 		273758341C569904009EEAAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Avalon/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		2779290F1C570AA20086C4C1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		277AB8FA1C580A3000BBF741 /* MissionStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionStatusView.swift; sourceTree = SOURCE_ROOT; };
+		277AB8FE1C580CDE00BBF741 /* MissionStatusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MissionStatusView.xib; sourceTree = SOURCE_ROOT; };
+		277AB9001C581EE500BBF741 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		277AB9021C58207900BBF741 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeManager.swift; path = Avalon/ThemeManager.swift; sourceTree = SOURCE_ROOT; };
 		27C6A9281C570109003926AE /* NetworkCommunicatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkCommunicatorProtocol.swift; path = Avalon/NetworkCommunicatorProtocol.swift; sourceTree = SOURCE_ROOT; };
 		27F096161C52835B00FB8E8E /* Avalon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Avalon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3582541588F2662F4A46CFA2 /* Pods_Avalon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Avalon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,11 +136,21 @@
 			path = AvalonUITests;
 			sourceTree = "<group>";
 		};
+		277AB8F91C580A1800BBF741 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				277AB8FE1C580CDE00BBF741 /* MissionStatusView.xib */,
+				277AB8FA1C580A3000BBF741 /* MissionStatusView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		27A4130A1C52C66E007D9613 /* Utility Classes */ = {
 			isa = PBXGroup;
 			children = (
 				273758151C56986A009EEAAF /* GameManager.swift */,
 				273758171C56986A009EEAAF /* SocketManager.swift */,
+				277AB9021C58207900BBF741 /* ThemeManager.swift */,
 			);
 			name = "Utility Classes";
 			sourceTree = "<group>";
@@ -184,6 +204,7 @@
 				273758051C569830009EEAAF /* Constants.swift */,
 				27F096481C52858800FB8E8E /* Storyboards */,
 				27F096471C52858100FB8E8E /* View Controllers */,
+				277AB8F91C580A1800BBF741 /* Views */,
 				27C41B681C54A41200E8E177 /* Protocols */,
 				27A4130A1C52C66E007D9613 /* Utility Classes */,
 				27B82EA71C55FD3E00975BD2 /* Exensions */,
@@ -210,6 +231,7 @@
 				273758091C56984B009EEAAF /* JoinGameViewController.swift */,
 				2737580A1C56984B009EEAAF /* EnterGameInfoViewController.swift */,
 				2737580B1C56984B009EEAAF /* GamePlayViewController.swift */,
+				27302E7E1C57F4B1008F7B04 /* LoadingViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -237,6 +259,7 @@
 			children = (
 				273758251C569889009EEAAF /* Assets.xcassets */,
 				2779290F1C570AA20086C4C1 /* R.generated.swift */,
+				277AB9001C581EE500BBF741 /* Podfile */,
 				273758271C56988F009EEAAF /* Info.plist */,
 			);
 			name = Assets;
@@ -372,8 +395,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				277AB9011C581EE500BBF741 /* Podfile in Resources */,
 				273758081C56983C009EEAAF /* GamePlay.storyboard in Resources */,
 				273758261C569889009EEAAF /* Assets.xcassets in Resources */,
+				277AB8FF1C580CDE00BBF741 /* MissionStatusView.xib in Resources */,
 				273758361C569904009EEAAF /* LaunchScreen.storyboard in Resources */,
 				273758351C569904009EEAAF /* Join.storyboard in Resources */,
 			);
@@ -466,6 +491,9 @@
 				273758181C56986A009EEAAF /* GameManager.swift in Sources */,
 				273758131C56985D009EEAAF /* GameInterfaceUpdatable.swift in Sources */,
 				277929101C570AA20086C4C1 /* R.generated.swift in Sources */,
+				277AB8FB1C580A3000BBF741 /* MissionStatusView.swift in Sources */,
+				27302E7F1C57F4B1008F7B04 /* LoadingViewController.swift in Sources */,
+				277AB9031C58207900BBF741 /* ThemeManager.swift in Sources */,
 				2737580C1C56984B009EEAAF /* JoinGameViewController.swift in Sources */,
 				273758061C569830009EEAAF /* Constants.swift in Sources */,
 				27C6A9291C570109003926AE /* NetworkCommunicatorProtocol.swift in Sources */,
