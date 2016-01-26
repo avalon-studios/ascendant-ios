@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateGameViewController: UIViewController {
+class JoinGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

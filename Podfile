@@ -3,6 +3,7 @@ use_frameworks!
 
 target 'Avalon' do
     pod 'Starscream'
+    pod 'R.swift'
     pod 'ModelMapper'
 end
 

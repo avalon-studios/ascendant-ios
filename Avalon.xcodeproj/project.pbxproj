@@ -24,8 +24,9 @@
 		2737581E1C569875009EEAAF /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2737581C1C569875009EEAAF /* UIViewController+Extensions.swift */; };
 		273758231C569880009EEAAF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273758201C569880009EEAAF /* Player.swift */; };
 		273758261C569889009EEAAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 273758251C569889009EEAAF /* Assets.xcassets */; };
-		273758351C569904009EEAAF /* CreateGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 273758311C569904009EEAAF /* CreateGame.storyboard */; };
+		273758351C569904009EEAAF /* Join.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 273758311C569904009EEAAF /* Join.storyboard */; };
 		273758361C569904009EEAAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 273758331C569904009EEAAF /* LaunchScreen.storyboard */; };
+		277929101C570AA20086C4C1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779290F1C570AA20086C4C1 /* R.generated.swift */; };
 		27C6A9291C570109003926AE /* NetworkCommunicatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C6A9281C570109003926AE /* NetworkCommunicatorProtocol.swift */; };
 		B98E39BD2D511E0BAB07AE8E /* Pods_Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3582541588F2662F4A46CFA2 /* Pods_Avalon.framework */; };
 /* End PBXBuildFile section */
@@ -70,8 +71,9 @@
 		273758271C56988F009EEAAF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Avalon/Info.plist; sourceTree = SOURCE_ROOT; };
 		273758291C569896009EEAAF /* AvalonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvalonTests.swift; path = AvalonTests/AvalonTests.swift; sourceTree = SOURCE_ROOT; };
 		2737582A1C569896009EEAAF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AvalonTests/Info.plist; sourceTree = SOURCE_ROOT; };
-		273758321C569904009EEAAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Avalon/Base.lproj/CreateGame.storyboard; sourceTree = SOURCE_ROOT; };
+		273758321C569904009EEAAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Avalon/Base.lproj/Join.storyboard; sourceTree = SOURCE_ROOT; };
 		273758341C569904009EEAAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Avalon/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		2779290F1C570AA20086C4C1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		27C6A9281C570109003926AE /* NetworkCommunicatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkCommunicatorProtocol.swift; path = Avalon/NetworkCommunicatorProtocol.swift; sourceTree = SOURCE_ROOT; };
 		27F096161C52835B00FB8E8E /* Avalon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Avalon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3582541588F2662F4A46CFA2 /* Pods_Avalon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Avalon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,7 +217,7 @@
 		27F096481C52858800FB8E8E /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				273758311C569904009EEAAF /* CreateGame.storyboard */,
+				273758311C569904009EEAAF /* Join.storyboard */,
 				273758071C56983C009EEAAF /* GamePlay.storyboard */,
 				273758331C569904009EEAAF /* LaunchScreen.storyboard */,
 			);
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				273758251C569889009EEAAF /* Assets.xcassets */,
+				2779290F1C570AA20086C4C1 /* R.generated.swift */,
 				273758271C56988F009EEAAF /* Info.plist */,
 			);
 			name = Assets;
@@ -291,6 +294,7 @@
 			buildConfigurationList = 27F0963E1C52835C00FB8E8E /* Build configuration list for PBXNativeTarget "Avalon" */;
 			buildPhases = (
 				2AFD040A8D622ADD9D8C537D /* Check Pods Manifest.lock */,
+				2779290E1C570A740086C4C1 /* ShellScript */,
 				27F096121C52835B00FB8E8E /* Sources */,
 				27F096131C52835B00FB8E8E /* Frameworks */,
 				27F096141C52835B00FB8E8E /* Resources */,
@@ -371,13 +375,26 @@
 				273758081C56983C009EEAAF /* GamePlay.storyboard in Resources */,
 				273758261C569889009EEAAF /* Assets.xcassets in Resources */,
 				273758361C569904009EEAAF /* LaunchScreen.storyboard in Resources */,
-				273758351C569904009EEAAF /* CreateGame.storyboard in Resources */,
+				273758351C569904009EEAAF /* Join.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2779290E1C570A740086C4C1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
+		};
 		2AFD040A8D622ADD9D8C537D /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -448,6 +465,7 @@
 			files = (
 				273758181C56986A009EEAAF /* GameManager.swift in Sources */,
 				273758131C56985D009EEAAF /* GameInterfaceUpdatable.swift in Sources */,
+				277929101C570AA20086C4C1 /* R.generated.swift in Sources */,
 				2737580C1C56984B009EEAAF /* CreateGameViewController.swift in Sources */,
 				273758061C569830009EEAAF /* Constants.swift in Sources */,
 				27C6A9291C570109003926AE /* NetworkCommunicatorProtocol.swift in Sources */,
@@ -479,12 +497,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		273758311C569904009EEAAF /* CreateGame.storyboard */ = {
+		273758311C569904009EEAAF /* Join.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				273758321C569904009EEAAF /* Base */,
 			);
-			name = CreateGame.storyboard;
+			name = Join.storyboard;
 			sourceTree = "<group>";
 		};
 		273758331C569904009EEAAF /* LaunchScreen.storyboard */ = {
