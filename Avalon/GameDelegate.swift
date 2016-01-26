@@ -8,7 +8,6 @@
 
 import Foundation
 
-protocol GameDelegate: class {
-    func updateQuestions(questions: [Question])
-    func setPlayersTurn(player: Player)
+protocol GameDelegate {
+    
 }

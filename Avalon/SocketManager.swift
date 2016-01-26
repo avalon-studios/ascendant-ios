@@ -9,7 +9,7 @@
 import Foundation
 import Starscream
 
-class SocketManager: WebSocketDelegate {
+class SocketManager: WebSocketDelegate, NetworkCommunicatorProtocol {
     
     private var socket = WebSocket(url: NSURL(string: Constants.Web.outboxEndpoint)!)
     
@@ -17,7 +17,7 @@ class SocketManager: WebSocketDelegate {
         return socket.isConnected
     }
     
-    weak var gameDelegate: GameDelegate?
+    var gameDelegate: GameDelegate?
     
     init() {
         socket.connect()
@@ -45,6 +45,12 @@ class SocketManager: WebSocketDelegate {
     
     func websocketDidReceiveMessage(socket: WebSocket, text: String) {
         
+    }
+    
+    func proposeMission(players: [Player]) {
+        let idString = players.map { $0.playerID }.joinWithSeparator("\", \"")
+        let jsonString = "{\"mission_proposal_players\":[\"\(idString)\"]}"
+        print(jsonString)
     }
 
 }

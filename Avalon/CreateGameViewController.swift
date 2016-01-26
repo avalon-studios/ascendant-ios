@@ -13,7 +13,17 @@ class CreateGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        play()
         setUpUI()
+    }
+    
+    func play() {
+        
+        var game = GameManager(currentGameID: "1234", myPlayer: Player(), allPlayers: [Player(), Player(), Player()], currentLeader: Player(), numberOfRequiredPlayersForCurrentMission: 2, currentMission: 0, completedMissions: [Bool](), networkManager: nil)
+        let networkManager = SocketManager()
+        
+        game.networkManager = networkManager
+        game.networkManager?.proposeMission(game.allPlayers)
     }
     
     func setUpUI() {

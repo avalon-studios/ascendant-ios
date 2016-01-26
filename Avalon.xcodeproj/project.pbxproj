@@ -26,6 +26,7 @@
 		273758261C569889009EEAAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 273758251C569889009EEAAF /* Assets.xcassets */; };
 		273758351C569904009EEAAF /* CreateGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 273758311C569904009EEAAF /* CreateGame.storyboard */; };
 		273758361C569904009EEAAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 273758331C569904009EEAAF /* LaunchScreen.storyboard */; };
+		27F002281C56E02100F89920 /* NetworkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F002271C56E02100F89920 /* NetworkDelegate.swift */; };
 		B98E39BD2D511E0BAB07AE8E /* Pods_Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3582541588F2662F4A46CFA2 /* Pods_Avalon.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		2737582A1C569896009EEAAF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AvalonTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		273758321C569904009EEAAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Avalon/Base.lproj/CreateGame.storyboard; sourceTree = SOURCE_ROOT; };
 		273758341C569904009EEAAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Avalon/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		27F002271C56E02100F89920 /* NetworkDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDelegate.swift; sourceTree = SOURCE_ROOT; };
 		27F096161C52835B00FB8E8E /* Avalon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Avalon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3582541588F2662F4A46CFA2 /* Pods_Avalon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Avalon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873AE13FC0C9411865AEC8FA /* Pods-Avalon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avalon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Avalon/Pods-Avalon.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				2737580F1C56985D009EEAAF /* GameDelegate.swift */,
+				27F002271C56E02100F89920 /* NetworkDelegate.swift */,
 				273758101C56985D009EEAAF /* GameInterfaceUpdatable.swift */,
 				273758111C56985D009EEAAF /* StoryboardIdentifiable.swift */,
 			);
@@ -448,6 +451,7 @@
 				2737580C1C56984B009EEAAF /* CreateGameViewController.swift in Sources */,
 				273758061C569830009EEAAF /* Constants.swift in Sources */,
 				2737581E1C569875009EEAAF /* UIViewController+Extensions.swift in Sources */,
+				27F002281C56E02100F89920 /* NetworkDelegate.swift in Sources */,
 				2737581A1C56986A009EEAAF /* SocketManager.swift in Sources */,
 				2737580E1C56984B009EEAAF /* GamePlayViewController.swift in Sources */,
 				2737580D1C56984B009EEAAF /* EnterInfoViewController.swift in Sources */,
