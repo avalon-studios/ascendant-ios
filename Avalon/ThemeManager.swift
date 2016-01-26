@@ -23,10 +23,17 @@ class ThemeManager {
         }
     }
     
+    static var statusBarViewColor: UIColor {
+        switch theme {
+        case .Dark: return UIColor.flatBlackColorDark().darkenByPercentage(0.3)
+        case .Plum: return UIColor.flatPlumColorDark().darkenByPercentage(0.3)
+        default: return .whiteColor()
+        }
+    }
+    
     static var currentMissionColor: UIColor {
         switch theme {
-        case .Dark: return .flatBlackColor()
-        case .Plum: return .flatPlumColor()
+        case .Dark, .Plum: return UIColor.whiteColor().colorWithAlphaComponent(0.2)
         default: return .lightGrayColor()
         }
     }

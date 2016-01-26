@@ -9,10 +9,3 @@
 import UIKit
 
 extension UIViewController: StoryboardIdentifiable { }
-
-extension UIViewController {
-    
-    func setTheme() {
-        view.backgroundColor = ThemeManager.mainBackgroundColor
-    }
-}

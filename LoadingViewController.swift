@@ -12,6 +12,7 @@ import PureLayout
 class LoadingViewController: UIViewController {
     
     @IBOutlet weak var missionStatusStackView: UIStackView!
+    @IBOutlet weak var statusBarView: UIView!
     
     var missionStatusViews = [MissionStatusView]()
     
@@ -20,6 +21,11 @@ class LoadingViewController: UIViewController {
         
         setTheme()
         setUpMissionViews(5)
+    }
+    
+    func setTheme() {
+        view.backgroundColor = ThemeManager.mainBackgroundColor
+        statusBarView.backgroundColor = ThemeManager.statusBarViewColor
     }
     
     func setUpMissionViews(numberOfMissions: Int) {

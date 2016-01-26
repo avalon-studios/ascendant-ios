@@ -47,19 +47,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="JrS-UU-rva">
-                                <rect key="frame" x="20" y="28" width="560" height="44"/>
+                                <rect key="frame" x="20" y="56.5" width="560" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="uEN-1c-FYl"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M I S S I O N S" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSe-Eo-QCB">
+                                <rect key="frame" x="249.5" y="28" width="102.5" height="20.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gps-Fv-4qO">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                                <color key="backgroundColor" red="0.23539169132709503" green="0.11543873697519302" blue="0.25115793943405151" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Nb8-rw-EXO"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.23539169132709503" green="0.11543873697519302" blue="0.25115793943405151" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.2872858942" green="0.14020672440000001" blue="0.30659055709999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="gps-Fv-4qO" firstAttribute="top" secondItem="gUM-VH-qRK" secondAttribute="topMargin" id="36S-Dw-P35"/>
+                            <constraint firstItem="JrS-UU-rva" firstAttribute="top" secondItem="JSe-Eo-QCB" secondAttribute="bottom" constant="8" id="E3z-ER-UA8"/>
+                            <constraint firstItem="JSe-Eo-QCB" firstAttribute="top" secondItem="EM5-0t-RUi" secondAttribute="bottom" constant="8" id="Jh9-sQ-mDF"/>
                             <constraint firstItem="Y9I-GM-1w1" firstAttribute="centerX" secondItem="gUM-VH-qRK" secondAttribute="centerX" id="La9-1j-GKh"/>
                             <constraint firstItem="Y9I-GM-1w1" firstAttribute="top" secondItem="IAj-uL-NxJ" secondAttribute="bottom" constant="20" id="O2T-eh-v19"/>
                             <constraint firstItem="IAj-uL-NxJ" firstAttribute="leading" secondItem="gUM-VH-qRK" secondAttribute="leadingMargin" id="SCl-rE-XVe"/>
-                            <constraint firstItem="JrS-UU-rva" firstAttribute="top" secondItem="EM5-0t-RUi" secondAttribute="bottom" constant="8" id="VRd-Ge-LBn"/>
+                            <constraint firstItem="JSe-Eo-QCB" firstAttribute="centerX" secondItem="gUM-VH-qRK" secondAttribute="centerX" id="VXC-13-tls"/>
                             <constraint firstItem="JrS-UU-rva" firstAttribute="trailing" secondItem="gUM-VH-qRK" secondAttribute="trailingMargin" id="Z60-S4-iRa"/>
+                            <constraint firstAttribute="trailing" secondItem="gps-Fv-4qO" secondAttribute="trailing" id="aQx-gM-oEO"/>
+                            <constraint firstItem="gps-Fv-4qO" firstAttribute="leading" secondItem="gUM-VH-qRK" secondAttribute="leading" id="byY-la-fdK"/>
                             <constraint firstItem="IAj-uL-NxJ" firstAttribute="trailing" secondItem="gUM-VH-qRK" secondAttribute="trailingMargin" id="p8b-1h-25a"/>
                             <constraint firstItem="Y9I-GM-1w1" firstAttribute="centerY" secondItem="gUM-VH-qRK" secondAttribute="centerY" id="sPz-be-TPc"/>
                             <constraint firstItem="JrS-UU-rva" firstAttribute="leading" secondItem="gUM-VH-qRK" secondAttribute="leadingMargin" id="u7h-Wv-v5M"/>
@@ -68,6 +86,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="missionStatusStackView" destination="JrS-UU-rva" id="JNw-V1-jAb"/>
+                        <outlet property="statusBarView" destination="gps-Fv-4qO" id="lde-oE-Ysl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0E-ul-zFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
