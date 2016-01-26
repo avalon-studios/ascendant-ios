@@ -18,4 +18,10 @@ struct Constants {
     struct Segues {
         static let showGamePlay = "ShowGamePlay"
     }
+    
+    struct Defaults {
+        static let theme = "theme-key"
+    }
 }
+
+
