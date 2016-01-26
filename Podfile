@@ -1,10 +1,14 @@
 platform :ios, '9.0'
 use_frameworks!
+inhibit_all_warnings!
 
 target 'Avalon' do
     pod 'Starscream'
     pod 'R.swift'
     pod 'ModelMapper'
+    pod 'EXTView'
+    pod 'PureLayout'
+    pod 'ChameleonFramework/Swift'
 end
 
 target 'AvalonTests' do
