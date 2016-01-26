@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EnterInfoViewController: UIViewController {
+class EnterGameInfoViewController: UIViewController {
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var navigationBar: UINavigationBar!
@@ -51,11 +51,4 @@ class EnterInfoViewController: UIViewController {
         navigationBar.shadowImage = UIImage()
         navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
     }
-    
-    
-    @IBAction func cancelButtonPressed(sender: UIBarButtonItem) {
-        navigationController?.popViewControllerAnimated(true)
-    }
-    
-    
 }

@@ -8,13 +8,6 @@
 
 import UIKit
 
-class GamePlayViewController: UIViewController, GameInterfaceUpdatable {
+class GamePlayViewController: UIViewController {
     
-    func updateQuestions(gameManager: GameManager) {
-        
-    }
-    
-    func updateCurrentPlayersTurn(gameManager: GameManager) {
-        
-    }
 }

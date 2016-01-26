@@ -13,7 +13,6 @@ class JoinGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        play()
         setUpUI()
     }
     
@@ -29,5 +28,10 @@ class JoinGameViewController: UIViewController {
     func setUpUI() {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+    }
+    
+    
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+        
     }
 }
