@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E33e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OTv-Ye-UNQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E33e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="caV-S1-dBE">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Game Play View Controller-->
@@ -22,6 +23,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a33-jf-ar2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="342" y="426"/>
+        </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="lAj-lE-LyR">
+            <objects>
+                <viewController storyboardIdentifier="LoadingViewController" id="caV-S1-dBE" customClass="LoadingViewController" customModule="Avalon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EM5-0t-RUi"/>
+                        <viewControllerLayoutGuide type="bottom" id="bcZ-rw-ZhH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gUM-VH-qRK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Y9I-GM-1w1">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                                <color key="color" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for game to begin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAj-uL-NxJ">
+                                <rect key="frame" x="20" y="232" width="560" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="JrS-UU-rva">
+                                <rect key="frame" x="20" y="28" width="560" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="uEN-1c-FYl"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.23539169132709503" green="0.11543873697519302" blue="0.25115793943405151" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Y9I-GM-1w1" firstAttribute="centerX" secondItem="gUM-VH-qRK" secondAttribute="centerX" id="La9-1j-GKh"/>
+                            <constraint firstItem="Y9I-GM-1w1" firstAttribute="top" secondItem="IAj-uL-NxJ" secondAttribute="bottom" constant="20" id="O2T-eh-v19"/>
+                            <constraint firstItem="IAj-uL-NxJ" firstAttribute="leading" secondItem="gUM-VH-qRK" secondAttribute="leadingMargin" id="SCl-rE-XVe"/>
+                            <constraint firstItem="JrS-UU-rva" firstAttribute="top" secondItem="EM5-0t-RUi" secondAttribute="bottom" constant="8" id="VRd-Ge-LBn"/>
+                            <constraint firstItem="JrS-UU-rva" firstAttribute="trailing" secondItem="gUM-VH-qRK" secondAttribute="trailingMargin" id="Z60-S4-iRa"/>
+                            <constraint firstItem="IAj-uL-NxJ" firstAttribute="trailing" secondItem="gUM-VH-qRK" secondAttribute="trailingMargin" id="p8b-1h-25a"/>
+                            <constraint firstItem="Y9I-GM-1w1" firstAttribute="centerY" secondItem="gUM-VH-qRK" secondAttribute="centerY" id="sPz-be-TPc"/>
+                            <constraint firstItem="JrS-UU-rva" firstAttribute="leading" secondItem="gUM-VH-qRK" secondAttribute="leadingMargin" id="u7h-Wv-v5M"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="missionStatusStackView" destination="JrS-UU-rva" id="JNw-V1-jAb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y0E-ul-zFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1075" y="426"/>
         </scene>
     </scenes>
 </document>
