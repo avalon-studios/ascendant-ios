@@ -27,10 +27,15 @@ class MissionStatusView: UIView {
     func setStatus(status: MissionStatus) {
         UIView.animateWithDuration(0.3) {
             switch status {
-            case .Current:  self.backgroundColor = ThemeManager.currentMissionColor
-            case .Success:  self.backgroundColor = ThemeManager.successfulMissionColor
-            case .Fail:     self.backgroundColor = ThemeManager.failedMissionColor
+            case .Current:  self.backgroundColor = ThemeManager.MissionStatus.currentMissionColor
+            case .Success:  self.backgroundColor = ThemeManager.MissionStatus.successfulMissionColor
+            case .Fail:     self.backgroundColor = ThemeManager.MissionStatus.failedMissionColor
             default:        self.backgroundColor = ThemeManager.mainBackgroundColor
+            }
+            
+            switch status {
+            case .None: self.numberLabel.textColor = ThemeManager.MissionStatus.plainNumberColor
+            default:    self.numberLabel.textColor = ThemeManager.MissionStatus.highLightedNumberColor
             }
         }
     }

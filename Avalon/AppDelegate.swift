@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        NSUserDefaults.standardUserDefaults().setObject("Dark", forKey: Constants.Defaults.theme)
+        NSUserDefaults.standardUserDefaults().setObject("Light", forKey: Constants.Defaults.theme)
         
         return true
     }
