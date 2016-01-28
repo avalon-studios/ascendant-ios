@@ -6,7 +6,6 @@ target 'Avalon' do
     pod 'Starscream'
     pod 'R.swift'
     pod 'ModelMapper'
-    pod 'EXTView'
     pod 'PureLayout'
     pod 'ChameleonFramework/Swift'
 end
