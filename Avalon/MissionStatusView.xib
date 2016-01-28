@@ -11,21 +11,27 @@
             <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Pq-V0-CMS">
+                    <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYh-7A-MeC">
-                    <rect key="frame" x="26.5" y="17.5" width="11" height="29"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="25.5" y="22.5" width="12.5" height="20"/>
+                    <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="20"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.28728589415550232" green="0.1402067244052887" blue="0.30659055709838867" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="8Pq-V0-CMS" firstAttribute="leading" secondItem="69w-cc-NSA" secondAttribute="leading" id="KF5-sc-68p"/>
                 <constraint firstItem="SYh-7A-MeC" firstAttribute="centerY" secondItem="69w-cc-NSA" secondAttribute="centerY" id="Oka-hQ-pkR"/>
+                <constraint firstAttribute="trailing" secondItem="8Pq-V0-CMS" secondAttribute="trailing" id="VzK-qe-TjG"/>
                 <constraint firstItem="SYh-7A-MeC" firstAttribute="centerX" secondItem="69w-cc-NSA" secondAttribute="centerX" id="Wld-vt-zPl"/>
+                <constraint firstAttribute="bottom" secondItem="8Pq-V0-CMS" secondAttribute="bottom" id="wBw-lf-gNb"/>
+                <constraint firstItem="8Pq-V0-CMS" firstAttribute="top" secondItem="69w-cc-NSA" secondAttribute="top" id="wO9-fY-ra6"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="highlightImageView" destination="8Pq-V0-CMS" id="9B7-dP-wbz"/>
                 <outlet property="numberLabel" destination="SYh-7A-MeC" id="vR5-0s-15J"/>
             </connections>
         </view>

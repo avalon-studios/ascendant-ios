@@ -17,7 +17,7 @@ struct ThemeManager {
     
     static var mainBackgroundColor: UIColor {
         switch theme {
-        case .Dark:     return .flatBlackColorDark()
+        case .Dark:     return .blackColor()
         case .Plum:     return .flatPlumColorDark()
         case .Light:    return .whiteColor()
         }

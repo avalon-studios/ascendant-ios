@@ -12,6 +12,7 @@ import ChameleonFramework
 class MissionStatusView: UIView {
     
     @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var highlightImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,16 +22,19 @@ class MissionStatusView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        layer.cornerRadius = 10
     }
     
     func setStatus(status: MissionStatus) {
         UIView.animateWithDuration(0.3) {
             switch status {
-            case .Current:  self.backgroundColor = ThemeManager.MissionStatus.currentMissionColor
-            case .Success:  self.backgroundColor = ThemeManager.MissionStatus.successfulMissionColor
-            case .Fail:     self.backgroundColor = ThemeManager.MissionStatus.failedMissionColor
-            default:        self.backgroundColor = ThemeManager.mainBackgroundColor
+            case .Current:  self.highlightImageView.image = AvalonStyleKit.imageOfCurrentMissionHighlight
+                // self.backgroundColor = ThemeManager.MissionStatus.currentMissionColor
+            case .Success:  self.highlightImageView.image = AvalonStyleKit.imageOfSuccessfulMissionHighlight
+                // self.backgroundColor = ThemeManager.MissionStatus.successfulMissionColor
+            case .Fail:     self.highlightImageView.image = AvalonStyleKit.imageOfFailedMissionHighlight
+                //self.backgroundColor = ThemeManager.MissionStatus.failedMissionColor
+            default:        self.highlightImageView.image = AvalonStyleKit.imageOfDefaultMissionHighlight
+                // self.backgroundColor = ThemeManager.mainBackgroundColor
             }
             
             switch status {

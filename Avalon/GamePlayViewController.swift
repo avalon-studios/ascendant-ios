@@ -11,9 +11,8 @@ import PureLayout
 
 class GamePlayViewController: UIViewController, UITableViewDataSource {
     
+    @IBOutlet weak var statusHighlightView: UIView!
     @IBOutlet weak var missionStatusStackView: UIStackView!
-    @IBOutlet weak var statusBarView: UIView!
-    @IBOutlet weak var buttonContainerView: UIView!
     @IBOutlet weak var passButton: UIButton!
     @IBOutlet weak var failButton: UIButton!
     @IBOutlet weak var proposalDescriptionLabel: UILabel!
@@ -30,15 +29,16 @@ class GamePlayViewController: UIViewController, UITableViewDataSource {
     
     func setThemeAndUI() {
         view.backgroundColor = ThemeManager.mainBackgroundColor
-        statusBarView.backgroundColor = ThemeManager.statusBarViewColor
-        buttonContainerView.backgroundColor = ThemeManager.mainBackgroundColor
+        statusHighlightView.layer.cornerRadius = 5
+        statusHighlightView.layer.borderWidth = 1
+        statusHighlightView.layer.borderColor = UIColor.whiteColor().colorWithAlphaComponent(0.7).CGColor
         
         // CHANGE TO THEME COLORS:
 //        buttonContainerView.layer.borderColor = UIColor.darkGrayColor().CGColor
 //        buttonContainerView.layer.borderWidth = 1
 //        buttonContainerView.layer.cornerRadius = 5
-        passButton.layer.cornerRadius = 5
-        failButton.layer.cornerRadius = 5
+        passButton.setBackgroundImage(AvalonStyleKit.imageOfSuccessfulMissionHighlight, forState: .Normal)
+        failButton.setBackgroundImage(AvalonStyleKit.imageOfFailedMissionHighlight, forState: .Normal)
         
         playerTableView.backgroundColor = ThemeManager.mainBackgroundColor
         playerTableView.estimatedRowHeight = 40
@@ -69,12 +69,12 @@ class GamePlayViewController: UIViewController, UITableViewDataSource {
             fatalError("Could not dequeue cell")
         }
         
-        cell.setPlayer(Player(), secondPlayer: Player())
+        cell.setPlayer(Player())
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

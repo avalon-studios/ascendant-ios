@@ -12,8 +12,6 @@ class PlayerCell: UITableViewCell {
     
     @IBOutlet weak var firstPlayerImage: UIImageView!
     @IBOutlet weak var firstPlayerLabel: UILabel!
-    @IBOutlet weak var secondPlayerImage: UIImageView!
-    @IBOutlet weak var secondPlayerLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,19 +22,11 @@ class PlayerCell: UITableViewCell {
     func setTheme() {
         contentView.backgroundColor = ThemeManager.mainBackgroundColor
         firstPlayerLabel.textColor = ThemeManager.mainTextColor
-        secondPlayerLabel.textColor = ThemeManager.mainTextColor
     }
     
-    func setPlayer(firstPlayer: Player, secondPlayer: Player? = nil) {
+    func setPlayer(player: Player) {
         
-        firstPlayerImage.image = firstPlayer.type != .Knight ? R.image.shield() : AvalonStyleKit.imageOfMutineersIcon
-        firstPlayerLabel.text = firstPlayer.displayName.uppercaseString
-        
-        guard let secondPlayer = secondPlayer else {
-            return
-        }
-        
-        secondPlayerImage.image = secondPlayer.type == .Knight ? R.image.shield() : AvalonStyleKit.imageOfMutineersIcon
-        secondPlayerLabel.text = secondPlayer.displayName.uppercaseString
+        firstPlayerImage.image = player.type != .Knight ? R.image.shield() : AvalonStyleKit.imageOfMutineersIcon
+        firstPlayerLabel.text = player.displayName.uppercaseString
     }
 }
