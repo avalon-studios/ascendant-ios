@@ -23,6 +23,13 @@ struct ThemeManager {
         }
     }
     
+    static var mainTextColor: UIColor {
+        switch theme {
+        case .Dark, .Plum:     return .whiteColor()
+        case .Light:    return .darkGrayColor()
+        }
+    }
+    
     static var statusBarViewColor: UIColor {
         switch theme {
         case .Dark:     return UIColor.flatBlackColorDark().darkenByPercentage(0.3)

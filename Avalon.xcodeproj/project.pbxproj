@@ -29,6 +29,8 @@
 		277929101C570AA20086C4C1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779290F1C570AA20086C4C1 /* R.generated.swift */; };
 		277AB9011C581EE500BBF741 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 277AB9001C581EE500BBF741 /* Podfile */; };
 		277AB9031C58207900BBF741 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277AB9021C58207900BBF741 /* ThemeManager.swift */; };
+		278488011C5997F500847456 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278488001C5997F500847456 /* PlayerCell.swift */; };
+		278488031C59A29100847456 /* AvalonStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278488021C59A29100847456 /* AvalonStyleKit.swift */; };
 		27C6A9291C570109003926AE /* NetworkCommunicatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C6A9281C570109003926AE /* NetworkCommunicatorProtocol.swift */; };
 		27C9DF1F1C59023E00643045 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C9DF1E1C59023E00643045 /* GamePlayViewController.swift */; };
 		27C9DF221C59024600643045 /* MissionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C9DF201C59024600643045 /* MissionStatusView.swift */; };
@@ -81,6 +83,8 @@
 		2779290F1C570AA20086C4C1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		277AB9001C581EE500BBF741 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		277AB9021C58207900BBF741 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeManager.swift; path = Avalon/ThemeManager.swift; sourceTree = SOURCE_ROOT; };
+		278488001C5997F500847456 /* PlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerCell.swift; path = Avalon/PlayerCell.swift; sourceTree = SOURCE_ROOT; };
+		278488021C59A29100847456 /* AvalonStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvalonStyleKit.swift; path = Avalon/AvalonStyleKit.swift; sourceTree = SOURCE_ROOT; };
 		27C6A9281C570109003926AE /* NetworkCommunicatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkCommunicatorProtocol.swift; path = Avalon/NetworkCommunicatorProtocol.swift; sourceTree = SOURCE_ROOT; };
 		27C9DF1E1C59023E00643045 /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GamePlayViewController.swift; path = Avalon/GamePlayViewController.swift; sourceTree = SOURCE_ROOT; };
 		27C9DF201C59024600643045 /* MissionStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MissionStatusView.swift; path = Avalon/MissionStatusView.swift; sourceTree = SOURCE_ROOT; };
@@ -136,13 +140,14 @@
 			path = AvalonUITests;
 			sourceTree = "<group>";
 		};
-		277AB8F91C580A1800BBF741 /* Views */ = {
+		277AB8F91C580A1800BBF741 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
 				27C9DF201C59024600643045 /* MissionStatusView.swift */,
 				27C9DF211C59024600643045 /* MissionStatusView.xib */,
+				278488001C5997F500847456 /* PlayerCell.swift */,
 			);
-			name = Views;
+			name = "Custom Views";
 			sourceTree = "<group>";
 		};
 		27A4130A1C52C66E007D9613 /* Utility Classes */ = {
@@ -204,7 +209,7 @@
 				273758051C569830009EEAAF /* Constants.swift */,
 				27F096481C52858800FB8E8E /* Storyboards */,
 				27F096471C52858100FB8E8E /* View Controllers */,
-				277AB8F91C580A1800BBF741 /* Views */,
+				277AB8F91C580A1800BBF741 /* Custom Views */,
 				27C41B681C54A41200E8E177 /* Protocols */,
 				27A4130A1C52C66E007D9613 /* Utility Classes */,
 				27B82EA71C55FD3E00975BD2 /* Exensions */,
@@ -258,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				273758251C569889009EEAAF /* Assets.xcassets */,
+				278488021C59A29100847456 /* AvalonStyleKit.swift */,
 				2779290F1C570AA20086C4C1 /* R.generated.swift */,
 				277AB9001C581EE500BBF741 /* Podfile */,
 				273758271C56988F009EEAAF /* Info.plist */,
@@ -489,6 +495,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				273758181C56986A009EEAAF /* GameManager.swift in Sources */,
+				278488031C59A29100847456 /* AvalonStyleKit.swift in Sources */,
+				278488011C5997F500847456 /* PlayerCell.swift in Sources */,
 				273758131C56985D009EEAAF /* GameInterfaceUpdatable.swift in Sources */,
 				277929101C570AA20086C4C1 /* R.generated.swift in Sources */,
 				277AB9031C58207900BBF741 /* ThemeManager.swift in Sources */,

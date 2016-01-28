@@ -25,7 +25,7 @@ struct Player: Mappable {
     
     init() {
         self.playerID = "1234"
-        self.displayName = "John Smith"
+        self.displayName = "Elliot"
         self.type = .Knight
         self.specialType = nil
     }
@@ -37,9 +37,9 @@ enum PlayerType: String {
 }
 
 enum SpecialType: String {
-    case Percival
-    case Merlin
-    case Mordred
-    case Oberon
-    case Morgana
+    case Percival   // Intern
+    case Merlin     // Technician
+    case Mordred    // Mutineer Leader
+    case Oberon     // Discontent Cadet?
+    case Morgana    // Intern 2?
 }

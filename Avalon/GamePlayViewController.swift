@@ -17,19 +17,21 @@ class GamePlayViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var passButton: UIButton!
     @IBOutlet weak var failButton: UIButton!
     @IBOutlet weak var proposalDescriptionLabel: UILabel!
+    @IBOutlet weak var playerTableView: UITableView!
     
     var missionStatusViews = [MissionStatusView]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setTheme()
+        setThemeAndUI()
         setUpMissionViews(5)
     }
     
-    func setTheme() {
+    func setThemeAndUI() {
         view.backgroundColor = ThemeManager.mainBackgroundColor
         statusBarView.backgroundColor = ThemeManager.statusBarViewColor
+        buttonContainerView.backgroundColor = ThemeManager.mainBackgroundColor
         
         // CHANGE TO THEME COLORS:
 //        buttonContainerView.layer.borderColor = UIColor.darkGrayColor().CGColor
@@ -37,6 +39,10 @@ class GamePlayViewController: UIViewController, UITableViewDataSource {
 //        buttonContainerView.layer.cornerRadius = 5
         passButton.layer.cornerRadius = 5
         failButton.layer.cornerRadius = 5
+        
+        playerTableView.backgroundColor = ThemeManager.mainBackgroundColor
+        playerTableView.estimatedRowHeight = 40
+        playerTableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func setUpMissionViews(numberOfMissions: Int) {
@@ -60,15 +66,15 @@ class GamePlayViewController: UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCellWithIdentifier(R.reuseIdentifier.playerCell) else {
-            fatalError("Could not deque cell")
+            fatalError("Could not dequeue cell")
         }
         
-        cell.textLabel?.text = "Kyle"
+        cell.setPlayer(Player(), secondPlayer: Player())
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 2
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
