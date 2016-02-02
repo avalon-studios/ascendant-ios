@@ -23,5 +23,3 @@ struct Constants {
         static let theme = "theme-key"
     }
 }
-
-
