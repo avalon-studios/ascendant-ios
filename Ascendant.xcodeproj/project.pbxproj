@@ -115,11 +115,11 @@
 			isa = PBXGroup;
 			children = (
 				276118081C7BAEEC00652444 /* AppDelegate.swift */,
-				2761180A1C7BAEEC00652444 /* ViewController.swift */,
-				2761180C1C7BAEEC00652444 /* Main.storyboard */,
-				2761180F1C7BAEEC00652444 /* Assets.xcassets */,
-				276118111C7BAEEC00652444 /* LaunchScreen.storyboard */,
-				276118141C7BAEEC00652444 /* Info.plist */,
+				276118371C7BB0E300652444 /* Storyboards */,
+				276118361C7BB0DB00652444 /* View Controllers */,
+				276118391C7BB0F500652444 /* Models */,
+				2761183A1C7BB0FD00652444 /* Managers */,
+				276118381C7BB0F000652444 /* Assets */,
 			);
 			path = Ascendant;
 			sourceTree = "<group>";
@@ -140,6 +140,46 @@
 				2761182A1C7BAEEC00652444 /* Info.plist */,
 			);
 			path = AscendantUITests;
+			sourceTree = "<group>";
+		};
+		276118361C7BB0DB00652444 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2761180A1C7BAEEC00652444 /* ViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		276118371C7BB0E300652444 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				276118111C7BAEEC00652444 /* LaunchScreen.storyboard */,
+				2761180C1C7BAEEC00652444 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		276118381C7BB0F000652444 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2761180F1C7BAEEC00652444 /* Assets.xcassets */,
+				276118141C7BAEEC00652444 /* Info.plist */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		276118391C7BB0F500652444 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		2761183A1C7BB0FD00652444 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 		7E315FB7765BCD04E4AFF584 /* Pods */ = {
