@@ -9,22 +9,15 @@
 import Foundation
 import Mapper
 
-struct Player: Mappable {
+struct Player {
     
     let playerID: String
     let displayName: String
     let type: PlayerType
     let specialType: SpecialType?
     
-    init(map: Mapper) throws {
-        try playerID = map.from("id")
-        try displayName = map.from("display_name")
-        try type = map.from("player_type")
-        try specialType = map.from("special_type")
-    }
-    
     init() {
-        self.playerID = "1234"
+        self.playerID = "1234abc"
         self.displayName = "Elliot"
         self.type = .Knight
         self.specialType = nil

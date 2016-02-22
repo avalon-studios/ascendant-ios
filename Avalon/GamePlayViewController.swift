@@ -13,8 +13,8 @@ class GamePlayViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var statusHighlightView: UIView!
     @IBOutlet weak var missionStatusStackView: UIStackView!
-    @IBOutlet weak var passButton: UIButton!
-    @IBOutlet weak var failButton: UIButton!
+    @IBOutlet weak var passButton: VoteButton!
+    @IBOutlet weak var failButton: VoteButton!
     @IBOutlet weak var proposalDescriptionLabel: UILabel!
     @IBOutlet weak var playerTableView: UITableView!
     
@@ -28,6 +28,7 @@ class GamePlayViewController: UIViewController, UITableViewDataSource {
     }
     
     func setThemeAndUI() {
+        
         view.backgroundColor = ThemeManager.mainBackgroundColor
         statusHighlightView.layer.cornerRadius = 5
         statusHighlightView.layer.borderWidth = 1
@@ -43,6 +44,9 @@ class GamePlayViewController: UIViewController, UITableViewDataSource {
         playerTableView.backgroundColor = ThemeManager.mainBackgroundColor
         playerTableView.estimatedRowHeight = 40
         playerTableView.rowHeight = UITableViewAutomaticDimension
+        
+        passButton.voteTitleLabel.text = "YES"
+        passButton.voteDescriptionLabel.text = "approve the team"
     }
     
     func setUpMissionViews(numberOfMissions: Int) {

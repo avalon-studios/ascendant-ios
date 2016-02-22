@@ -11,8 +11,7 @@ import Foundation
 struct Constants {
     
     struct Web {
-        static let inboxEndpoint = "ws://avalon-api.herokuapp.com" + "/receive"
-        static let outboxEndpoint = "ws://avalon-api.herokuapp.com" + "/submit"
+        static let endpoint = "ws://avalon-api.herokuapp.com/submit"
     }
     
     struct Segues {

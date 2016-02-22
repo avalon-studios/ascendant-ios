@@ -18,6 +18,4 @@ struct GameManager: GameDelegate {
     var numberOfRequiredPlayersForCurrentMission: Int
     var currentMission = 0
     var completedMissions = [Bool]()
-
-    weak var networkManager: NetworkCommunicatorProtocol?
 }

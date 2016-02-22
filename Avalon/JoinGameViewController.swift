@@ -10,6 +10,7 @@ import UIKit
 
 class JoinGameViewController: UIViewController {
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,12 +18,7 @@ class JoinGameViewController: UIViewController {
     }
     
     func play() {
-        
-        var game = GameManager(currentGameID: "1234", myPlayer: Player(), allPlayers: [Player(), Player(), Player()], currentLeader: Player(), numberOfRequiredPlayersForCurrentMission: 2, currentMission: 0, completedMissions: [Bool](), networkManager: nil)
-        let networkManager = SocketManager()
-        
-        game.networkManager = networkManager
-        game.networkManager?.proposeMission(game.allPlayers)
+
     }
     
     func setUpUI() {
@@ -33,5 +29,9 @@ class JoinGameViewController: UIViewController {
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
         
+    }
+    
+    @IBAction func testEndpointPressed(sender: UIButton) {
+    
     }
 }

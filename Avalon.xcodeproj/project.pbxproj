@@ -19,7 +19,7 @@
 		273758131C56985D009EEAAF /* GameInterfaceUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273758101C56985D009EEAAF /* GameInterfaceUpdatable.swift */; };
 		273758141C56985D009EEAAF /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273758111C56985D009EEAAF /* StoryboardIdentifiable.swift */; };
 		273758181C56986A009EEAAF /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273758151C56986A009EEAAF /* GameManager.swift */; };
-		2737581A1C56986A009EEAAF /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273758171C56986A009EEAAF /* SocketManager.swift */; };
+		2737581A1C56986A009EEAAF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273758171C56986A009EEAAF /* NetworkManager.swift */; };
 		2737581D1C569875009EEAAF /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2737581B1C569875009EEAAF /* UIStoryboard+Extensions.swift */; };
 		2737581E1C569875009EEAAF /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2737581C1C569875009EEAAF /* UIViewController+Extensions.swift */; };
 		273758231C569880009EEAAF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273758201C569880009EEAAF /* Player.swift */; };
@@ -29,12 +29,15 @@
 		277929101C570AA20086C4C1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779290F1C570AA20086C4C1 /* R.generated.swift */; };
 		277AB9011C581EE500BBF741 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 277AB9001C581EE500BBF741 /* Podfile */; };
 		277AB9031C58207900BBF741 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277AB9021C58207900BBF741 /* ThemeManager.swift */; };
+		278482E71C74B7220049845D /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278482E61C74B7220049845D /* Dictionary+Extensions.swift */; };
+		278482E91C74B72C0049845D /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278482E81C74B72C0049845D /* Array+Extensions.swift */; };
+		278482ED1C74B9D70049845D /* CollectionType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278482EC1C74B9D70049845D /* CollectionType+Extensions.swift */; };
 		278488011C5997F500847456 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278488001C5997F500847456 /* PlayerCell.swift */; };
 		278488031C59A29100847456 /* AvalonStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278488021C59A29100847456 /* AvalonStyleKit.swift */; };
-		27C6A9291C570109003926AE /* NetworkCommunicatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C6A9281C570109003926AE /* NetworkCommunicatorProtocol.swift */; };
 		27C9DF1F1C59023E00643045 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C9DF1E1C59023E00643045 /* GamePlayViewController.swift */; };
 		27C9DF221C59024600643045 /* MissionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C9DF201C59024600643045 /* MissionStatusView.swift */; };
 		27C9DF231C59024600643045 /* MissionStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27C9DF211C59024600643045 /* MissionStatusView.xib */; };
+		27E96A511C6D081800411080 /* VoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E96A501C6D081800411080 /* VoteButton.swift */; };
 		B98E39BD2D511E0BAB07AE8E /* Pods_Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3582541588F2662F4A46CFA2 /* Pods_Avalon.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +73,7 @@
 		273758101C56985D009EEAAF /* GameInterfaceUpdatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameInterfaceUpdatable.swift; path = Avalon/GameInterfaceUpdatable.swift; sourceTree = SOURCE_ROOT; };
 		273758111C56985D009EEAAF /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardIdentifiable.swift; path = Avalon/StoryboardIdentifiable.swift; sourceTree = SOURCE_ROOT; };
 		273758151C56986A009EEAAF /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameManager.swift; path = Avalon/GameManager.swift; sourceTree = SOURCE_ROOT; };
-		273758171C56986A009EEAAF /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocketManager.swift; path = Avalon/SocketManager.swift; sourceTree = SOURCE_ROOT; };
+		273758171C56986A009EEAAF /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = Avalon/NetworkManager.swift; sourceTree = SOURCE_ROOT; };
 		2737581B1C569875009EEAAF /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIStoryboard+Extensions.swift"; path = "Avalon/UIStoryboard+Extensions.swift"; sourceTree = SOURCE_ROOT; };
 		2737581C1C569875009EEAAF /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extensions.swift"; path = "Avalon/UIViewController+Extensions.swift"; sourceTree = SOURCE_ROOT; };
 		273758201C569880009EEAAF /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Avalon/Player.swift; sourceTree = SOURCE_ROOT; };
@@ -83,12 +86,15 @@
 		2779290F1C570AA20086C4C1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		277AB9001C581EE500BBF741 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		277AB9021C58207900BBF741 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeManager.swift; path = Avalon/ThemeManager.swift; sourceTree = SOURCE_ROOT; };
+		278482E61C74B7220049845D /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = SOURCE_ROOT; };
+		278482E81C74B72C0049845D /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = SOURCE_ROOT; };
+		278482EC1C74B9D70049845D /* CollectionType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+Extensions.swift"; sourceTree = SOURCE_ROOT; };
 		278488001C5997F500847456 /* PlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerCell.swift; path = Avalon/PlayerCell.swift; sourceTree = SOURCE_ROOT; };
 		278488021C59A29100847456 /* AvalonStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvalonStyleKit.swift; path = Avalon/AvalonStyleKit.swift; sourceTree = SOURCE_ROOT; };
-		27C6A9281C570109003926AE /* NetworkCommunicatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkCommunicatorProtocol.swift; path = Avalon/NetworkCommunicatorProtocol.swift; sourceTree = SOURCE_ROOT; };
 		27C9DF1E1C59023E00643045 /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GamePlayViewController.swift; path = Avalon/GamePlayViewController.swift; sourceTree = SOURCE_ROOT; };
 		27C9DF201C59024600643045 /* MissionStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MissionStatusView.swift; path = Avalon/MissionStatusView.swift; sourceTree = SOURCE_ROOT; };
 		27C9DF211C59024600643045 /* MissionStatusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MissionStatusView.xib; path = Avalon/MissionStatusView.xib; sourceTree = SOURCE_ROOT; };
+		27E96A501C6D081800411080 /* VoteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteButton.swift; sourceTree = SOURCE_ROOT; };
 		27F096161C52835B00FB8E8E /* Avalon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Avalon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3582541588F2662F4A46CFA2 /* Pods_Avalon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Avalon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873AE13FC0C9411865AEC8FA /* Pods-Avalon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avalon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Avalon/Pods-Avalon.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 			children = (
 				27C9DF201C59024600643045 /* MissionStatusView.swift */,
 				27C9DF211C59024600643045 /* MissionStatusView.xib */,
+				27E96A501C6D081800411080 /* VoteButton.swift */,
 				278488001C5997F500847456 /* PlayerCell.swift */,
 			);
 			name = "Custom Views";
@@ -154,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				273758151C56986A009EEAAF /* GameManager.swift */,
-				273758171C56986A009EEAAF /* SocketManager.swift */,
+				273758171C56986A009EEAAF /* NetworkManager.swift */,
 				277AB9021C58207900BBF741 /* ThemeManager.swift */,
 			);
 			name = "Utility Classes";
@@ -165,6 +172,9 @@
 			children = (
 				2737581B1C569875009EEAAF /* UIStoryboard+Extensions.swift */,
 				2737581C1C569875009EEAAF /* UIViewController+Extensions.swift */,
+				278482E61C74B7220049845D /* Dictionary+Extensions.swift */,
+				278482E81C74B72C0049845D /* Array+Extensions.swift */,
+				278482EC1C74B9D70049845D /* CollectionType+Extensions.swift */,
 			);
 			name = Exensions;
 			sourceTree = "<group>";
@@ -172,7 +182,6 @@
 		27C41B681C54A41200E8E177 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				27C6A9281C570109003926AE /* NetworkCommunicatorProtocol.swift */,
 				2737580F1C56985D009EEAAF /* GameDelegate.swift */,
 				273758101C56985D009EEAAF /* GameInterfaceUpdatable.swift */,
 				273758111C56985D009EEAAF /* StoryboardIdentifiable.swift */,
@@ -495,24 +504,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278482ED1C74B9D70049845D /* CollectionType+Extensions.swift in Sources */,
 				273758181C56986A009EEAAF /* GameManager.swift in Sources */,
 				278488031C59A29100847456 /* AvalonStyleKit.swift in Sources */,
 				278488011C5997F500847456 /* PlayerCell.swift in Sources */,
+				278482E91C74B72C0049845D /* Array+Extensions.swift in Sources */,
 				273758131C56985D009EEAAF /* GameInterfaceUpdatable.swift in Sources */,
 				277929101C570AA20086C4C1 /* R.generated.swift in Sources */,
 				277AB9031C58207900BBF741 /* ThemeManager.swift in Sources */,
 				2737580C1C56984B009EEAAF /* JoinGameViewController.swift in Sources */,
 				273758061C569830009EEAAF /* Constants.swift in Sources */,
-				27C6A9291C570109003926AE /* NetworkCommunicatorProtocol.swift in Sources */,
 				27C9DF221C59024600643045 /* MissionStatusView.swift in Sources */,
 				2737581E1C569875009EEAAF /* UIViewController+Extensions.swift in Sources */,
-				2737581A1C56986A009EEAAF /* SocketManager.swift in Sources */,
+				2737581A1C56986A009EEAAF /* NetworkManager.swift in Sources */,
 				27C9DF1F1C59023E00643045 /* GamePlayViewController.swift in Sources */,
 				2737580E1C56984B009EEAAF /* LoadingViewController.swift in Sources */,
 				2737580D1C56984B009EEAAF /* EnterGameInfoViewController.swift in Sources */,
 				273758121C56985D009EEAAF /* GameDelegate.swift in Sources */,
 				273758141C56985D009EEAAF /* StoryboardIdentifiable.swift in Sources */,
 				2737581D1C569875009EEAAF /* UIStoryboard+Extensions.swift in Sources */,
+				278482E71C74B7220049845D /* Dictionary+Extensions.swift in Sources */,
+				27E96A511C6D081800411080 /* VoteButton.swift in Sources */,
 				273758231C569880009EEAAF /* Player.swift in Sources */,
 				273758041C569826009EEAAF /* AppDelegate.swift in Sources */,
 			);

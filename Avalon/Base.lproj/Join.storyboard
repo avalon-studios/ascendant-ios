@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E33e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7BE-JB-aEM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10109" systemVersion="15E39d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7BE-JB-aEM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -22,13 +22,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="580"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="MJD-Sf-JAA">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="480"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="430"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="92"/>
                                         <color key="textColor" red="0.98624199628829956" green="0.7796865701675415" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Du8-R1-jXT">
-                                        <rect key="frame" x="0.0" y="480" width="600" height="50"/>
+                                        <rect key="frame" x="0.0" y="430" width="600" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="u4F-v7-0MP"/>
                                         </constraints>
@@ -39,7 +39,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfO-Cm-qfL">
-                                        <rect key="frame" x="0.0" y="530" width="600" height="50"/>
+                                        <rect key="frame" x="0.0" y="480" width="600" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="soA-kH-Qwo"/>
                                         </constraints>
@@ -49,7 +49,17 @@
                                             <segue destination="Dq2-RK-1cc" kind="show" identifier="StartGame" id="VwM-Y9-5Ca"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9X-Ry-qM0">
+                                        <rect key="frame" x="0.0" y="530" width="600" height="50"/>
+                                        <state key="normal" title="Test Endpoint"/>
+                                        <connections>
+                                            <action selector="testEndpointPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Clg-zy-GaX"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="K9X-Ry-qM0" firstAttribute="height" secondItem="UfO-Cm-qfL" secondAttribute="height" id="6hG-Cc-hQG"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
