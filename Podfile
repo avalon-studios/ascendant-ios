@@ -1,20 +1,21 @@
-platform :ios, '9.0'
+platform :ios, '8.0'
 use_frameworks!
 inhibit_all_warnings!
 
-target 'Avalon' do
-    pod 'Starscream'
+target 'Ascendant' do
+    pod 'Socket.IO-Client-Swift'
     pod 'R.swift'
-    pod 'ModelMapper'
+    pod 'Gloss'
     pod 'PureLayout'
     pod 'ChameleonFramework/Swift'
+    pod 'ElegantPresentations'
 end
 
-target 'AvalonTests' do
+target 'AscendantTests' do
 
 end
 
-target 'AvalonUITests' do
+target 'AscendantUITests' do
 
 end
 
