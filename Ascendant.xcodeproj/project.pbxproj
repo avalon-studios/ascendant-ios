@@ -15,6 +15,7 @@
 		276118131C7BAEEC00652444 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276118111C7BAEEC00652444 /* LaunchScreen.storyboard */; };
 		2761181E1C7BAEEC00652444 /* AscendantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2761181D1C7BAEEC00652444 /* AscendantTests.swift */; };
 		276118291C7BAEEC00652444 /* AscendantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276118281C7BAEEC00652444 /* AscendantUITests.swift */; };
+		2799AB981C7BB7E4003C532E /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799AB971C7BB7E4003C532E /* Style.swift */; };
 		407F177A5BDFAE81F304D8B7 /* Pods_AscendantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4005872E123CBC0FC63B9B0D /* Pods_AscendantTests.framework */; };
 		4923228C8CF7D12D4E2AB25B /* Pods_AscendantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF58050D4EEBB078C773C25A /* Pods_AscendantUITests.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		276118241C7BAEEC00652444 /* AscendantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AscendantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		276118281C7BAEEC00652444 /* AscendantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AscendantUITests.swift; sourceTree = "<group>"; };
 		2761182A1C7BAEEC00652444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2799AB971C7BB7E4003C532E /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		4005872E123CBC0FC63B9B0D /* Pods_AscendantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AscendantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D9400BA697B92714DE1A39 /* Pods_Ascendant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ascendant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF58050D4EEBB078C773C25A /* Pods_AscendantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AscendantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,8 +155,8 @@
 		276118371C7BB0E300652444 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				276118111C7BAEEC00652444 /* LaunchScreen.storyboard */,
 				2761180C1C7BAEEC00652444 /* Main.storyboard */,
+				276118111C7BAEEC00652444 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				2761180F1C7BAEEC00652444 /* Assets.xcassets */,
+				2799AB971C7BB7E4003C532E /* Style.swift */,
 				276118141C7BAEEC00652444 /* Info.plist */,
 			);
 			name = Assets;
@@ -468,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2761180B1C7BAEEC00652444 /* ViewController.swift in Sources */,
+				2799AB981C7BB7E4003C532E /* Style.swift in Sources */,
 				276118091C7BAEEC00652444 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
