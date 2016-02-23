@@ -17,8 +17,8 @@ public class Style : NSObject {
     //// Cache
 
     private struct Cache {
-        static let baseGrey: UIColor = UIColor(red: 0.235, green: 0.247, blue: 0.308, alpha: 1.000)
-        static let darkBaseGrey: UIColor = UIColor(red: 0.169, green: 0.179, blue: 0.228, alpha: 1.000)
+        static let baseGrey: UIColor = UIColor(red: 0.222, green: 0.246, blue: 0.367, alpha: 1.000)
+        static let darkBaseGrey: UIColor = UIColor(red: 0.155, green: 0.176, blue: 0.277, alpha: 1.000)
         static let red: UIColor = UIColor(red: 0.742, green: 0.230, blue: 0.230, alpha: 1.000)
         static let green: UIColor = UIColor(red: 0.250, green: 0.757, blue: 0.380, alpha: 1.000)
         static let blue: UIColor = UIColor(red: 0.247, green: 0.437, blue: 0.860, alpha: 1.000)

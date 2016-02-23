@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10112" systemVersion="15E39d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0ua-2g-hlB">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Game Play View Controller-->
+        <scene sceneID="4dc-1H-cbs">
+            <objects>
+                <viewController id="0ua-2g-hlB" customClass="GamePlayViewController" customModule="Ascendant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CsE-fe-wo7"/>
+                        <viewControllerLayoutGuide type="bottom" id="XbJ-Al-ft4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JwG-PX-6Jd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gcD-Rv-sad">
+                                <rect key="frame" x="20" y="58" width="560" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CcQ-qS-8TU" customClass="MissionView" customModule="Ascendant" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="CcQ-qS-8TU" secondAttribute="height" multiplier="1:1" id="QtE-GG-7p9"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="rJN-6c-XKM"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="rJN-6c-XKM"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idU-ll-v8o" customClass="MissionView" customModule="Ascendant" customModuleProvider="target">
+                                        <rect key="frame" x="127" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOe-QI-Ugu" customClass="MissionView" customModule="Ascendant" customModuleProvider="target">
+                                        <rect key="frame" x="255" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzp-D7-cKa" customClass="MissionView" customModule="Ascendant" customModuleProvider="target">
+                                        <rect key="frame" x="382" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9Z-BZ-8Vj" customClass="MissionView" customModule="Ascendant" customModuleProvider="target">
+                                        <rect key="frame" x="510" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Wzp-D7-cKa" firstAttribute="height" secondItem="CcQ-qS-8TU" secondAttribute="height" id="1b7-Lc-TQZ"/>
+                                    <constraint firstItem="idU-ll-v8o" firstAttribute="width" secondItem="CcQ-qS-8TU" secondAttribute="width" id="1l5-pd-zFD"/>
+                                    <constraint firstItem="b9Z-BZ-8Vj" firstAttribute="width" secondItem="CcQ-qS-8TU" secondAttribute="width" id="8wi-qo-9Lf"/>
+                                    <constraint firstItem="b9Z-BZ-8Vj" firstAttribute="height" secondItem="CcQ-qS-8TU" secondAttribute="height" id="KZt-I2-KMe"/>
+                                    <constraint firstItem="Wzp-D7-cKa" firstAttribute="width" secondItem="CcQ-qS-8TU" secondAttribute="width" id="RZG-db-ZCZ"/>
+                                    <constraint firstAttribute="height" constant="50" id="U0A-3N-18F"/>
+                                    <constraint firstItem="idU-ll-v8o" firstAttribute="height" secondItem="CcQ-qS-8TU" secondAttribute="height" id="UXC-kL-kdD"/>
+                                    <constraint firstItem="CcQ-qS-8TU" firstAttribute="height" secondItem="gcD-Rv-sad" secondAttribute="height" priority="950" id="WPi-hJ-dv8"/>
+                                    <constraint firstItem="rOe-QI-Ugu" firstAttribute="height" secondItem="CcQ-qS-8TU" secondAttribute="height" id="jGd-IP-Xld"/>
+                                    <constraint firstItem="rOe-QI-Ugu" firstAttribute="width" secondItem="CcQ-qS-8TU" secondAttribute="width" id="ms1-dN-G65"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Missions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJD-tq-Q5y">
+                                <rect key="frame" x="266" y="29" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16862745100000001" green="0.18039215689999999" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="PJD-tq-Q5y" firstAttribute="top" secondItem="CsE-fe-wo7" secondAttribute="bottom" constant="9" id="KWt-K4-bi7"/>
+                            <constraint firstItem="PJD-tq-Q5y" firstAttribute="centerX" secondItem="JwG-PX-6Jd" secondAttribute="centerX" id="LCV-7y-gjI"/>
+                            <constraint firstItem="gcD-Rv-sad" firstAttribute="top" secondItem="PJD-tq-Q5y" secondAttribute="bottom" constant="8" id="Zy1-Eh-x11"/>
+                            <constraint firstAttribute="trailing" secondItem="gcD-Rv-sad" secondAttribute="trailing" constant="20" id="hS2-To-gwX"/>
+                            <constraint firstItem="gcD-Rv-sad" firstAttribute="leading" secondItem="JwG-PX-6Jd" secondAttribute="leading" constant="20" id="qGx-t4-Yfa"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="missionStack" destination="gcD-Rv-sad" id="2OF-aW-r3r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5kc-37-PZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="443" y="300"/>
+        </scene>
+    </scenes>
+</document>

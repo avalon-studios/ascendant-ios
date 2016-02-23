@@ -9,6 +9,8 @@ target 'Ascendant' do
     pod 'PureLayout'
     pod 'ChameleonFramework/Swift'
     pod 'ElegantPresentations'
+    pod 'VCTransitionsLibrary'
+    pod 'AsyncSwift'
 end
 
 target 'AscendantTests' do
