@@ -50,6 +50,10 @@ class GamePlayViewController: UIViewController {
         Game.manager.delegate = self
         
         setUpUI()
+        
+        Async.main(after: 0) { 
+            self.gameProposeMission()
+        }
     }
     
     override func viewDidAppear(animated: Bool) {

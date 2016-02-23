@@ -19,9 +19,9 @@ class ActionViewController: UITableViewController {
     
     var actionMessage: String {
         switch action {
-        case .proposeMission: return "Select \(numberOfPlayersForProposal) players to propose a mission"
-        case .proposalVote: return "Would you like to approve the following players for a mission?"
-        case .missionVote: return "Vote on whether or not this mission succeeds. The following players are also voting"
+        case .proposeMission: return "Select \(numberOfPlayersForProposal) Players for a Mission"
+        case .proposalVote: return "Approve Players for a Mission"
+        case .missionVote: return "Pass the Mission?"
         }
     }
     
@@ -32,6 +32,8 @@ class ActionViewController: UITableViewController {
     }
     
     func setUpUI() {
+        
+        navigationItem.title = actionMessage
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 60
@@ -50,17 +52,13 @@ class ActionViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return players.count + 1
+        return players.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0, let cell = tableView.dequeueReusableCellWithIdentifier(R.reuseIdentifier.actionMessageCell) {
-            cell.messageLabel.text = actionMessage
-            return cell
-        }
-        else if indexPath.row > 0, let cell = tableView.dequeueReusableCellWithIdentifier(R.reuseIdentifier.playerCell) {
-            cell.setPlayer(players[indexPath.row - 1])
+       if let cell = tableView.dequeueReusableCellWithIdentifier(R.reuseIdentifier.playerCell) {
+            cell.setPlayer(players[indexPath.row])
             return cell
         }
         
@@ -81,11 +79,6 @@ class ActionViewController: UITableViewController {
             return nil
         }
         
-        // Can't select the header cell!
-        guard indexPath.row > 0 else {
-            return nil
-        }
-     
         // Okay, we can select this!
         return indexPath
     }
