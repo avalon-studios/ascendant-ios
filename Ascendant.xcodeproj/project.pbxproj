@@ -18,6 +18,7 @@
 		276118131C7BAEEC00652444 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276118111C7BAEEC00652444 /* LaunchScreen.storyboard */; };
 		2761181E1C7BAEEC00652444 /* AscendantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2761181D1C7BAEEC00652444 /* AscendantTests.swift */; };
 		276118291C7BAEEC00652444 /* AscendantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276118281C7BAEEC00652444 /* AscendantUITests.swift */; };
+		2782AD591C7C1A7600D983AC /* ProposalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2782AD581C7C1A7600D983AC /* ProposalView.swift */; };
 		2799AB981C7BB7E4003C532E /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799AB971C7BB7E4003C532E /* Style.swift */; };
 		2799AB9B1C7BC407003C532E /* SmallNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799AB9A1C7BC407003C532E /* SmallNavigationController.swift */; };
 		2799AB9D1C7BC9D6003C532E /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799AB9C1C7BC9D6003C532E /* SocketManager.swift */; };
@@ -68,6 +69,7 @@
 		276118241C7BAEEC00652444 /* AscendantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AscendantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		276118281C7BAEEC00652444 /* AscendantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AscendantUITests.swift; sourceTree = "<group>"; };
 		2761182A1C7BAEEC00652444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2782AD581C7C1A7600D983AC /* ProposalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProposalView.swift; sourceTree = "<group>"; };
 		2799AB971C7BB7E4003C532E /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		2799AB9A1C7BC407003C532E /* SmallNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallNavigationController.swift; sourceTree = "<group>"; };
 		2799AB9C1C7BC9D6003C532E /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				27119BCE1C7BEE3100B5E73C /* MissionView.swift */,
+				2782AD581C7C1A7600D983AC /* ProposalView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				2799ABA31C7BCBF8003C532E /* StartViewController.swift in Sources */,
 				2799ABA61C7BCD25003C532E /* R.generated.swift in Sources */,
 				2799AB981C7BB7E4003C532E /* Style.swift in Sources */,
+				2782AD591C7C1A7600D983AC /* ProposalView.swift in Sources */,
 				2799AB9F1C7BCB27003C532E /* CreateViewController.swift in Sources */,
 				276118091C7BAEEC00652444 /* AppDelegate.swift in Sources */,
 				27119BD11C7BF17100B5E73C /* GamePlayViewController.swift in Sources */,

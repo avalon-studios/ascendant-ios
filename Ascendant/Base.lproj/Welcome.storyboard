@@ -311,7 +311,6 @@
         <!--Joining Game...-->
         <scene sceneID="LdH-75-r0h">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rCw-9V-ngG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Lw1-nb-EeR" customClass="CreateViewController" customModule="Ascendant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ljQ-Kc-czr"/>
@@ -336,6 +335,7 @@
                         <segue destination="Gdm-JA-AlC" kind="show" identifier="WaitForGameToStart" id="5bC-gx-aWF"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rCw-9V-ngG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2528" y="384"/>
         </scene>

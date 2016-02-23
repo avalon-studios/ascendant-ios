@@ -11,6 +11,9 @@ import PureLayout
 
 class MissionView: UIView {
     
+    let noneColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
+    let opacityAnimationKey = "OpacityAnimationKey"
+    
     let titleLabel: UILabel = {
         
         let label = UILabel(forAutoLayout: ())
@@ -22,24 +25,14 @@ class MissionView: UIView {
         return label
     }()
     
-    private var didSetConstraints = false
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         addSubview(titleLabel)
         
-        backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.2)
-    }
-    
-    override func updateConstraints() {
-        
-        if !didSetConstraints {
-            titleLabel.autoPinEdgesToSuperviewEdges()
-            didSetConstraints = true
-        }
-        
-        super.updateConstraints()
+        titleLabel.autoPinEdgesToSuperviewEdges()
+
+        backgroundColor = noneColor
     }
     
     override func layoutSubviews() {
@@ -48,4 +41,38 @@ class MissionView: UIView {
         
         super.layoutSubviews()
     }
+    
+    func setStatus(status: MissionStatus) {
+        
+        layer.removeAllAnimations()
+        
+        switch status {
+        case .none:
+            backgroundColor = noneColor
+        case .success:
+            backgroundColor = Style.green
+        case .fail:
+            backgroundColor = Style.red
+        case .current:
+            backgroundColor = Style.blue
+            beginCurrentAnimation()
+        }
+    }
+    
+    private func beginCurrentAnimation() {
+        
+        UIView.animateWithDuration(1.5, delay: 0, options: [.Autoreverse, .Repeat],
+            animations: {
+                self.backgroundColor = Style.blue.colorWithAlphaComponent(0.5)
+            },
+            completion: nil
+        )
+    }
+}
+
+enum MissionStatus {
+    case none
+    case success
+    case fail
+    case current
 }

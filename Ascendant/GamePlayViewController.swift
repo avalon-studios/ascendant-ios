@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Async
 
 class GamePlayViewController: UIViewController {
     
     @IBOutlet weak var missionStack: UIStackView!
+    @IBOutlet weak var proposalStack: UIStackView!
     
     private var didUpdateConstraints = false
     
@@ -23,16 +25,35 @@ class GamePlayViewController: UIViewController {
         return []
     }
     
+    var proposalViews: [UIView] {
+        return proposalStack.arrangedSubviews
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpMissionViews()
+        setUpUI()
     }
     
-    func setUpMissionViews() {
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        missionViews[0].setStatus(.success)
+        missionViews[1].setStatus(.fail)
+        
+        proposalViews[0].alpha = 1
+        proposalViews[1].alpha = 1
+        proposalViews[2].alpha = 1
+    }
+
+    func setUpUI() {
 
         for (index, view) in missionViews.enumerate() {
             view.titleLabel.text = "\(index + 1)"
+        }
+        
+        for view in proposalViews {
+            view.alpha = 0
         }
     }
 }

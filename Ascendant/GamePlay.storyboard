@@ -35,7 +35,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idU-ll-v8o" customClass="MissionView" customModule="Ascendant" customModuleProvider="target">
-                                        <rect key="frame" x="127" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="127.5" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOe-QI-Ugu" customClass="MissionView" customModule="Ascendant" customModuleProvider="target">
@@ -43,7 +43,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzp-D7-cKa" customClass="MissionView" customModule="Ascendant" customModuleProvider="target">
-                                        <rect key="frame" x="382" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="382.5" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9Z-BZ-8Vj" customClass="MissionView" customModule="Ascendant" customModuleProvider="target">
@@ -70,19 +70,79 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Failed Proposals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKw-J0-NIA">
+                                <rect key="frame" x="237" y="124" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EmJ-7R-CcN">
+                                <rect key="frame" x="20" y="153" width="560" height="4"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7YW-F4-tcg" customClass="ProposalView" customModule="Ascendant" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="4"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="dMU-eq-b8o"/>
+                                            <constraint firstAttribute="width" secondItem="7YW-F4-tcg" secondAttribute="height" multiplier="1:1" id="mdm-XC-ajJ"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="mdm-XC-ajJ"/>
+                                                <exclude reference="dMU-eq-b8o"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0w1-uK-hVr" customClass="ProposalView" customModule="Ascendant" customModuleProvider="target">
+                                        <rect key="frame" x="127.5" y="0.0" width="50" height="4"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IWZ-mf-SgW" customClass="ProposalView" customModule="Ascendant" customModuleProvider="target">
+                                        <rect key="frame" x="255" y="0.0" width="50" height="4"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xY-5e-DSs" customClass="ProposalView" customModule="Ascendant" customModuleProvider="target">
+                                        <rect key="frame" x="382.5" y="0.0" width="50" height="4"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wd2-E6-VWB" customClass="ProposalView" customModule="Ascendant" customModuleProvider="target">
+                                        <rect key="frame" x="510" y="0.0" width="50" height="4"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Wd2-E6-VWB" firstAttribute="width" secondItem="7YW-F4-tcg" secondAttribute="width" id="8ok-Wn-QCK"/>
+                                    <constraint firstItem="7YW-F4-tcg" firstAttribute="height" secondItem="EmJ-7R-CcN" secondAttribute="height" priority="950" id="9o9-vh-gcd"/>
+                                    <constraint firstAttribute="height" constant="4" id="Dz3-4w-Laq"/>
+                                    <constraint firstItem="0w1-uK-hVr" firstAttribute="width" secondItem="7YW-F4-tcg" secondAttribute="width" id="ODb-L5-K6D"/>
+                                    <constraint firstItem="5xY-5e-DSs" firstAttribute="width" secondItem="7YW-F4-tcg" secondAttribute="width" id="PFe-Tz-2bh"/>
+                                    <constraint firstItem="IWZ-mf-SgW" firstAttribute="width" secondItem="7YW-F4-tcg" secondAttribute="width" id="PRm-Lb-xKT"/>
+                                    <constraint firstItem="0w1-uK-hVr" firstAttribute="height" secondItem="7YW-F4-tcg" secondAttribute="height" id="R72-QL-dpp"/>
+                                    <constraint firstItem="5xY-5e-DSs" firstAttribute="height" secondItem="7YW-F4-tcg" secondAttribute="height" id="fqo-og-a0Y"/>
+                                    <constraint firstItem="Wd2-E6-VWB" firstAttribute="height" secondItem="7YW-F4-tcg" secondAttribute="height" id="pRB-d1-y0a"/>
+                                    <constraint firstItem="IWZ-mf-SgW" firstAttribute="height" secondItem="7YW-F4-tcg" secondAttribute="height" id="vVz-Rj-FxH"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.18039215689999999" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="EmJ-7R-CcN" firstAttribute="top" secondItem="rKw-J0-NIA" secondAttribute="bottom" constant="8" id="5ZR-2t-9IM"/>
                             <constraint firstItem="PJD-tq-Q5y" firstAttribute="top" secondItem="CsE-fe-wo7" secondAttribute="bottom" constant="9" id="KWt-K4-bi7"/>
+                            <constraint firstAttribute="trailing" secondItem="EmJ-7R-CcN" secondAttribute="trailing" constant="20" id="Kal-aF-hSw"/>
                             <constraint firstItem="PJD-tq-Q5y" firstAttribute="centerX" secondItem="JwG-PX-6Jd" secondAttribute="centerX" id="LCV-7y-gjI"/>
+                            <constraint firstItem="7YW-F4-tcg" firstAttribute="width" secondItem="CcQ-qS-8TU" secondAttribute="width" id="Pjv-JH-zDd"/>
                             <constraint firstItem="gcD-Rv-sad" firstAttribute="top" secondItem="PJD-tq-Q5y" secondAttribute="bottom" constant="8" id="Zy1-Eh-x11"/>
                             <constraint firstAttribute="trailing" secondItem="gcD-Rv-sad" secondAttribute="trailing" constant="20" id="hS2-To-gwX"/>
+                            <constraint firstItem="rKw-J0-NIA" firstAttribute="centerX" secondItem="JwG-PX-6Jd" secondAttribute="centerX" id="lhQ-vC-gRq"/>
                             <constraint firstItem="gcD-Rv-sad" firstAttribute="leading" secondItem="JwG-PX-6Jd" secondAttribute="leading" constant="20" id="qGx-t4-Yfa"/>
+                            <constraint firstItem="rKw-J0-NIA" firstAttribute="top" secondItem="gcD-Rv-sad" secondAttribute="bottom" constant="16" id="rnr-am-iZ3"/>
+                            <constraint firstItem="EmJ-7R-CcN" firstAttribute="leading" secondItem="JwG-PX-6Jd" secondAttribute="leading" constant="20" id="wwg-tK-Hrt"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="missionStack" destination="gcD-Rv-sad" id="2OF-aW-r3r"/>
+                        <outlet property="proposalStack" destination="EmJ-7R-CcN" id="KUd-Xj-dbB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kc-37-PZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
