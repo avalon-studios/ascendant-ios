@@ -39,7 +39,18 @@ class GamePlayViewController: UIViewController {
         players.append(Player(name: "Joseph", id: "3", team: .good))
         players.append(Player(name: "Tyler", id: "4", team: .good))
         players.append(Player(name: "Jared", id: "5", team: .bad))
-        players.append(Player(name: "Kaleigh", id: "6", team: .good))
+        
+        return players
+    }
+    
+    var mockMissionPlayers: [Player] {
+        
+        var players = [Player]()
+        
+        players.append(Player(name: "Kyle", id: "1", team: .good))
+        players.append(Player(name: "Elliot", id: "2", team: .bad))
+        players.append(Player(name: "Joseph", id: "3", team: .good))
+        players.append(Player(name: "Tyler", id: "4", team: .good))
         
         return players
     }
@@ -100,11 +111,11 @@ class GamePlayViewController: UIViewController {
     }
     
     @IBAction func mockupProposeVote(sender: AnyObject) {
-        gameVoteOnProposal(Array(mockPlayers[0..<4]))
+        gameVoteOnProposal(mockMissionPlayers)
     }
     
     @IBAction func mockupMissionVote(sender: AnyObject) {
-        gameVoteOnMission(Array(mockPlayers[0..<4]))
+        gameVoteOnMission(mockMissionPlayers)
     }
 }
 
@@ -118,7 +129,7 @@ extension GamePlayViewController: GameDelegate {
         
         actionViewController.players = mockPlayers
         actionViewController.action = .proposeMission
-        actionViewController.numberOfPlayersForProposal = 4
+        actionViewController.numberOfPlayersForProposal = 2
         
         presentViewController(actionNavigationController, animated: true, completion: nil)
     }
@@ -141,7 +152,7 @@ extension GamePlayViewController: GameDelegate {
             return
         }
         
-        actionViewController.players = mockPlayers
+        actionViewController.players = players
         actionViewController.action = .missionVote
         
         presentViewController(actionNavigationController, animated: true, completion: nil)
@@ -153,7 +164,7 @@ extension GamePlayViewController: GameDelegate {
             return
         }
         
-        actionViewController.players = mockPlayers
+        actionViewController.players = players
         actionViewController.action = .proposalVote
         
         presentViewController(actionNavigationController, animated: true, completion: nil)
@@ -172,6 +183,6 @@ extension GamePlayViewController: GameDelegate {
 extension GamePlayViewController: UIViewControllerTransitioningDelegate {
     
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [.PresentedPercentHeight(0.7)])
+        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [.PresentedPercentHeight(0.7), .CustomPresentingScale(0.9)])
     }
 }

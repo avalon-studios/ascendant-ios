@@ -286,7 +286,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
                                         <color key="backgroundColor" red="0.25098040699958801" green="0.75686275959014893" blue="0.3803921639919281" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="20J-pj-EHM"/>
+                                            <constraint firstAttribute="height" priority="750" constant="44" id="20J-pj-EHM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Pass"/>
@@ -303,7 +303,7 @@
                                         <rect key="frame" x="0.0" y="60" width="568" height="44"/>
                                         <color key="backgroundColor" red="0.74117648601531982" green="0.22745098173618317" blue="0.23137255012989044" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="Zs5-Sq-rff"/>
+                                            <constraint firstAttribute="height" priority="750" constant="44" id="Zs5-Sq-rff"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Fail"/>

@@ -47,6 +47,7 @@ class ActionViewController: UIViewController {
             failButton.hidden = true
             passButton.setTitle("Propose", forState: .Normal)
             passButton.backgroundColor = Style.blue
+            passButton.enabled = false
         case .proposalVote:
             passButton.setTitle("Approve", forState: .Normal)
             failButton.setTitle("Deny", forState: .Normal)
@@ -89,10 +90,16 @@ class ActionViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        passButton.enabled = tableView.indexPathsForSelectedRows?.count == numberOfPlayersForProposal
+        
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        passButton.enabled = tableView.indexPathsForSelectedRows?.count == numberOfPlayersForProposal
+
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .None
     }
     
