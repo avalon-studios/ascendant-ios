@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import EXTView
 
-class ActionViewController: UITableViewController {
+class ActionViewController: UIViewController {
     
-    @IBOutlet var passButton: UIBarButtonItem!
-    @IBOutlet var failButton: UIBarButtonItem!
+    
+    @IBOutlet weak var passButton: EXTButton!
+    @IBOutlet weak var failButton: EXTButton!
+    @IBOutlet weak var buttonStack: UIStackView!
+    @IBOutlet weak var tableView: UITableView!
     
     var action = Action.missionVote
     var players: [Player]!
@@ -40,22 +44,23 @@ class ActionViewController: UITableViewController {
         
         switch action {
         case .proposeMission:
-            navigationItem.leftBarButtonItem = nil
-            passButton.title = "Propose"
+            failButton.hidden = true
+            passButton.setTitle("Propose", forState: .Normal)
+            passButton.backgroundColor = Style.blue
         case .proposalVote:
-            passButton.title = "Approve"
-            failButton.title = "Deny"
+            passButton.setTitle("Approve", forState: .Normal)
+            failButton.setTitle("Deny", forState: .Normal)
         case .missionVote:
-            passButton.title = "Pass"
-            failButton.title = "Fail"
+            passButton.setTitle("Pass", forState: .Normal)
+            failButton.setTitle("Fail", forState: .Normal)
         }
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return players.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
        if let cell = tableView.dequeueReusableCellWithIdentifier(R.reuseIdentifier.playerCell) {
             cell.setPlayer(players[indexPath.row])
@@ -67,7 +72,7 @@ class ActionViewController: UITableViewController {
         return UITableViewCell()
     }
     
-    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         
         // We can only select cells if we're proposing a mission
         guard action == .proposeMission else {
@@ -83,12 +88,16 @@ class ActionViewController: UITableViewController {
         return indexPath
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .None
+    }
+    
+    @IBAction func votePressed(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

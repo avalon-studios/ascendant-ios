@@ -50,10 +50,6 @@ class GamePlayViewController: UIViewController {
         Game.manager.delegate = self
         
         setUpUI()
-        
-        Async.main(after: 0) { 
-            self.gameProposeMission()
-        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -95,6 +91,20 @@ class GamePlayViewController: UIViewController {
         actionNavigationController.modalPresentationStyle = .Custom
         
         return (actionNavigationController, actionViewController)
+    }
+    
+    // just for mockup!
+    
+    @IBAction func mockupPropose(sender: AnyObject) {
+        gameProposeMission()
+    }
+    
+    @IBAction func mockupProposeVote(sender: AnyObject) {
+        gameVoteOnProposal(Array(mockPlayers[0..<4]))
+    }
+    
+    @IBAction func mockupMissionVote(sender: AnyObject) {
+        gameVoteOnMission(Array(mockPlayers[0..<4]))
     }
 }
 
@@ -162,6 +172,6 @@ extension GamePlayViewController: GameDelegate {
 extension GamePlayViewController: UIViewControllerTransitioningDelegate {
     
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [.PresentedPercentHeight(0.6)])
+        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [.PresentedPercentHeight(0.7)])
     }
 }
