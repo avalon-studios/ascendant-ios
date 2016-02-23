@@ -38,12 +38,16 @@ class GamePlayViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        
+        // Just for testing
         missionViews[0].setStatus(.success)
         missionViews[1].setStatus(.fail)
-        
+        missionViews[1].setStatus(.current)
+
         proposalViews[0].alpha = 1
         proposalViews[1].alpha = 1
         proposalViews[2].alpha = 1
+        proposalViews[3].alpha = 1
     }
 
     func setUpUI() {
