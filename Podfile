@@ -11,6 +11,7 @@ target 'Ascendant' do
     pod 'ElegantPresentations'
     pod 'VCTransitionsLibrary'
     pod 'AsyncSwift'
+    pod 'EXTView'
 end
 
 target 'AscendantTests' do

@@ -11,21 +11,14 @@ import Async
 
 typealias NetworkCompletion = NetworkResult -> Void
 
-class SocketManager {
+class Socket {
     
-    private static let manager = SocketManager()
+    static let manager = Socket()
     
-    private func createGame(completion: NetworkCompletion) {
+    func createGame(completion: NetworkCompletion) {
         Async.main(after: 0.5) {
             completion(.success)
         }
-    }
-}
-
-extension SocketManager {
-    
-    class func createGame(completion: NetworkCompletion) {
-        manager.createGame(completion)
     }
 }
 

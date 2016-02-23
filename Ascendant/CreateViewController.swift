@@ -13,7 +13,7 @@ class CreateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SocketManager.createGame { result in
+        Socket.manager.createGame { result in
             switch result {
             case .success: self.performSegueWithIdentifier(R.segue.createViewController.startViewController, sender: self)
             case .error(let message): print(message)
