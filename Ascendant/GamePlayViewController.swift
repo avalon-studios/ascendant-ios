@@ -183,6 +183,6 @@ extension GamePlayViewController: GameDelegate {
 extension GamePlayViewController: UIViewControllerTransitioningDelegate {
     
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [.PresentedPercentHeight(0.7), .CustomPresentingScale(0.9)])
+        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [.CustomPresentingScale(0.92), .PresentedHeight(view.frame.height - 180)])
     }
 }
