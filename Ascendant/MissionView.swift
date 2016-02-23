@@ -61,9 +61,9 @@ class MissionView: UIView {
     
     private func beginCurrentAnimation() {
         
-        UIView.animateWithDuration(1.5, delay: 0, options: [.Autoreverse, .Repeat],
+        UIView.animateWithDuration(2, delay: 0, options: [.Autoreverse, .Repeat],
             animations: {
-                self.backgroundColor = Style.blue.colorWithAlphaComponent(0.5)
+                self.backgroundColor = Style.blue.colorWithAlphaComponent(0.2)
             },
             completion: nil
         )

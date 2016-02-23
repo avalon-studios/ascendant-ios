@@ -14,5 +14,5 @@ class Game {
     
     weak var delegate: GameDelegate?
     
-    
+    var currentPlayer = Player(name: "Kyle", id: "1", team: .bad)
 }
