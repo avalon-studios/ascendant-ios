@@ -19,7 +19,7 @@ class GamePlayViewController: UIViewController {
     
     var game: Game!
     
-    var players = [Player]()
+    var players: [Player]!
     
     var missionViews: [MissionView] {
         // If we can't cast all these as MissionViews, then we should crash

@@ -11,7 +11,11 @@ import Gloss
 
 final class Game: Decodable {
     
-    weak var delegate: GameDelegate?
+    weak var delegate: GameDelegate? {
+        didSet {
+            delegate?.game(updatePlayers: players)
+        }
+    }
     
     let player: Player
     let id: String
@@ -24,7 +28,10 @@ final class Game: Decodable {
     
     init?(json: JSON) {
         
-        guard let id: String = "id" <~~ json, player: Player = "player" <~~ json else {
+        guard let
+            id: String = "id" <~~ json,
+            player: Player = "player" <~~ json
+        else {
             return nil
         }
         
