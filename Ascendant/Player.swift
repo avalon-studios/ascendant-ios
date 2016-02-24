@@ -15,7 +15,7 @@ struct Player: PlayerDisplayable {
     let team: Team
     
     var teamColor: UIColor {
-        return team == .bad ? Style.red : Style.green
+        return team == .bad ? UIColor.asc_redColor() : UIColor.asc_greenColor()
     }
 }
 

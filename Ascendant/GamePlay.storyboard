@@ -231,6 +231,9 @@
                     <connections>
                         <outlet property="missionStack" destination="gcD-Rv-sad" id="2OF-aW-r3r"/>
                         <outlet property="proposalStack" destination="EmJ-7R-CcN" id="KUd-Xj-dbB"/>
+                        <outletCollection property="separators" destination="9cu-9k-wSn" collectionClass="NSMutableArray" id="Y6M-I5-43d"/>
+                        <outletCollection property="separators" destination="muS-En-Skc" collectionClass="NSMutableArray" id="PEn-Y7-9fH"/>
+                        <outletCollection property="separators" destination="yvP-CM-Pzx" collectionClass="NSMutableArray" id="Vil-8S-ijU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kc-37-PZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -381,7 +384,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="twX-56-X5W">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.10718728353943051" green="0.11103162809558918" blue="0.15061628069633093" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.12941176470588234" green="0.13725490196078433" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

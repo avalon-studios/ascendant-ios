@@ -17,9 +17,11 @@ class ActionViewController: UIViewController {
     @IBOutlet weak var buttonStack: UIStackView!
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
     var game: Game!
     var action = Action.missionVote
-    var players: [PlayerDisplayable]!
+    var players: [Player]!
     var numberOfPlayersForProposal = 0
     
     var actionMessage: String {
@@ -47,7 +49,7 @@ class ActionViewController: UIViewController {
         case .proposeMission:
             failButton.hidden = true
             passButton.setTitle("Propose", forState: .Normal)
-            passButton.backgroundColor = Style.blue
+            passButton.backgroundColor = UIColor.asc_blueColor()
             passButton.enabled = false
         case .proposalVote:
             passButton.setTitle("Approve", forState: .Normal)
@@ -56,6 +58,12 @@ class ActionViewController: UIViewController {
             passButton.setTitle("Pass", forState: .Normal)
             failButton.setTitle("Fail", forState: .Normal)
         }
+        
+        
+        // THEME
+        
+        view.backgroundColor = UIColor.asc_baseColor()
+        tableView.separatorColor = UIColor.asc_separatorColor()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,8 +86,7 @@ class ActionViewController: UIViewController {
         let player = players[indexPath.row]
         
         cell.nameLabel.text = player.name
-        cell.teamView.backgroundColor = player.teamColor
-        cell.teamView.hidden = game.player.team == .good
+        cell.teamView.backgroundColor = UIColor.asc_transparentWhiteColor()
         
         return cell
     }
@@ -91,27 +98,40 @@ class ActionViewController: UIViewController {
             return nil
         }
         
-        // Only allow them to select the maximum needed
-        guard tableView.indexPathsForSelectedRows?.count < numberOfPlayersForProposal else {
-            return nil
-        }
-        
+        // Only allow them to select the maximum needed (rethinking this, hence the comment out)
+//        guard tableView.indexPathsForSelectedRows?.count < numberOfPlayersForProposal else {
+//            return nil
+//        }
+//        
         // Okay, we can select this!
         return indexPath
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        passButton.enabled = tableView.indexPathsForSelectedRows?.count == numberOfPlayersForProposal
+        guard let cell = tableView.cellForRowAtIndexPath(indexPath) as? PlayerCell else {
+            return
+        }
         
-        tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
+        let player = players[indexPath.row]
+
+        passButton.enabled = tableView.indexPathsForSelectedRows?.count == numberOfPlayersForProposal
+        cell.accessoryType = .Checkmark
+
+        if game.player.team == .bad {
+            cell.teamView.backgroundColor = player.teamColor
+        }
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         
+        guard let cell = tableView.cellForRowAtIndexPath(indexPath) as? PlayerCell else {
+            return
+        }
+        
         passButton.enabled = tableView.indexPathsForSelectedRows?.count == numberOfPlayersForProposal
-
-        tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .None
+        cell.accessoryType = .None
+        cell.teamView.backgroundColor = UIColor.asc_transparentWhiteColor()
     }
     
     @IBAction func votePressed(sender: UIButton) {

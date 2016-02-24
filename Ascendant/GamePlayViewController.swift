@@ -15,8 +15,9 @@ class GamePlayViewController: UIViewController {
     @IBOutlet weak var missionStack: UIStackView!
     @IBOutlet weak var proposalStack: UIStackView!
     
-    var game: Game!
+    @IBOutlet var separators: [UIView]!
     
+    var game: Game!
     
     var missionViews: [MissionView] {
         // If we can't cast all these as MissionViews, then we should crash
@@ -56,7 +57,7 @@ class GamePlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        game = Game(id: "123", player: Player(name: "Kyle", id: "1", team: .good))
+        game = Game(id: "123", player: Player(name: "Kyle", id: "1", team: .bad))
         
         game.delegate = self
         
@@ -74,6 +75,9 @@ class GamePlayViewController: UIViewController {
         for (index, view) in missionViews.enumerate() {
             view.titleLabel.text = "\(index + 1)"
         }
+        
+        view.backgroundColor = UIColor.asc_baseColor()
+        separators.forEach { $0.backgroundColor = UIColor.asc_separatorColor() }
     }
     
     func createActionViewController() -> (UINavigationController, ActionViewController)? {

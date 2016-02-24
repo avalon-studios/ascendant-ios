@@ -24,7 +24,6 @@
 		2761181E1C7BAEEC00652444 /* AscendantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2761181D1C7BAEEC00652444 /* AscendantTests.swift */; };
 		276118291C7BAEEC00652444 /* AscendantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276118281C7BAEEC00652444 /* AscendantUITests.swift */; };
 		2782AD591C7C1A7600D983AC /* ProposalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2782AD581C7C1A7600D983AC /* ProposalView.swift */; };
-		2799AB981C7BB7E4003C532E /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799AB971C7BB7E4003C532E /* Style.swift */; };
 		2799AB9B1C7BC407003C532E /* SmallNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799AB9A1C7BC407003C532E /* SmallNavigationController.swift */; };
 		2799AB9D1C7BC9D6003C532E /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799AB9C1C7BC9D6003C532E /* Socket.swift */; };
 		2799AB9F1C7BCB27003C532E /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799AB9E1C7BCB27003C532E /* CreateViewController.swift */; };
@@ -32,6 +31,7 @@
 		2799ABA31C7BCBF8003C532E /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799ABA21C7BCBF8003C532E /* StartViewController.swift */; };
 		2799ABA61C7BCD25003C532E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799ABA51C7BCD25003C532E /* R.generated.swift */; };
 		27A9AC231C7DEB5C0065ECC0 /* PlayerDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A9AC221C7DEB5C0065ECC0 /* PlayerDisplayable.swift */; };
+		27A9AC251C7DED0D0065ECC0 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A9AC241C7DED0D0065ECC0 /* UIColor+Extensions.swift */; };
 		27E44ADC1C7CF50200794792 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E44ADB1C7CF50200794792 /* ActionViewController.swift */; };
 		407F177A5BDFAE81F304D8B7 /* Pods_AscendantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4005872E123CBC0FC63B9B0D /* Pods_AscendantTests.framework */; };
 		4923228C8CF7D12D4E2AB25B /* Pods_AscendantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF58050D4EEBB078C773C25A /* Pods_AscendantUITests.framework */; };
@@ -82,7 +82,6 @@
 		276118281C7BAEEC00652444 /* AscendantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AscendantUITests.swift; sourceTree = "<group>"; };
 		2761182A1C7BAEEC00652444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2782AD581C7C1A7600D983AC /* ProposalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProposalView.swift; sourceTree = "<group>"; };
-		2799AB971C7BB7E4003C532E /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		2799AB9A1C7BC407003C532E /* SmallNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallNavigationController.swift; sourceTree = "<group>"; };
 		2799AB9C1C7BC9D6003C532E /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
 		2799AB9E1C7BCB27003C532E /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +89,7 @@
 		2799ABA21C7BCBF8003C532E /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		2799ABA51C7BCD25003C532E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		27A9AC221C7DEB5C0065ECC0 /* PlayerDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDisplayable.swift; sourceTree = "<group>"; };
+		27A9AC241C7DED0D0065ECC0 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		27E44ADB1C7CF50200794792 /* ActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		4005872E123CBC0FC63B9B0D /* Pods_AscendantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AscendantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D9400BA697B92714DE1A39 /* Pods_Ascendant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ascendant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,7 +234,6 @@
 			children = (
 				2761180F1C7BAEEC00652444 /* Assets.xcassets */,
 				2799ABA51C7BCD25003C532E /* R.generated.swift */,
-				2799AB971C7BB7E4003C532E /* Style.swift */,
 				276118141C7BAEEC00652444 /* Info.plist */,
 			);
 			name = Assets;
@@ -272,6 +271,7 @@
 		27A9AC211C7DEB3D0065ECC0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				27A9AC241C7DED0D0065ECC0 /* UIColor+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -581,7 +581,6 @@
 				2761180B1C7BAEEC00652444 /* WelcomeViewController.swift in Sources */,
 				2799ABA31C7BCBF8003C532E /* StartViewController.swift in Sources */,
 				2799ABA61C7BCD25003C532E /* R.generated.swift in Sources */,
-				2799AB981C7BB7E4003C532E /* Style.swift in Sources */,
 				27A9AC231C7DEB5C0065ECC0 /* PlayerDisplayable.swift in Sources */,
 				273CA64C1C7CF07000990DBE /* Game.swift in Sources */,
 				273CA64E1C7CF28500990DBE /* ActionMessageCell.swift in Sources */,
@@ -589,6 +588,7 @@
 				2782AD591C7C1A7600D983AC /* ProposalView.swift in Sources */,
 				2799AB9F1C7BCB27003C532E /* CreateViewController.swift in Sources */,
 				276118091C7BAEEC00652444 /* AppDelegate.swift in Sources */,
+				27A9AC251C7DED0D0065ECC0 /* UIColor+Extensions.swift in Sources */,
 				27119BD11C7BF17100B5E73C /* GamePlayViewController.swift in Sources */,
 				2799AB9B1C7BC407003C532E /* SmallNavigationController.swift in Sources */,
 				2799AB9D1C7BC9D6003C532E /* Socket.swift in Sources */,
@@ -742,7 +742,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -760,7 +760,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

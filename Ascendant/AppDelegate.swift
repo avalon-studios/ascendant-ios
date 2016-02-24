@@ -24,11 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setUpAppearance() {
         
         let navBar = UINavigationBar.appearance()
+        
         navBar.translucent = false
-        navBar.tintColor = UIColor.whiteColor()
-//        navBar.barTintColor = Style.darkBaseGrey
-        navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navBar.tintColor = UIColor.asc_textColor()
+        navBar.barTintColor = UIColor.asc_darkAccentColor()
+        navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.asc_textColor()]
         navBar.barStyle = .Black
-        navBar.shadowImage = nil
     }
 }
