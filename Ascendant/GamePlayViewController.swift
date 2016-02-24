@@ -55,7 +55,7 @@ class GamePlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        game = Game(id: "123", player: Player(name: "Kyle", id: "1", team: .Bad))
+        game = Game(id: "123", player: Player(name: "Kyle", id: "1", team: .Good))
         
         game.delegate = self
         

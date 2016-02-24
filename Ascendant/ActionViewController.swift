@@ -18,7 +18,6 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     
     
-    
     var game: Game!
     var action = Action.MissionVote
     var players: [Player]!
@@ -89,6 +88,9 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if game.player.team == .Bad {
             cell.teamView.backgroundColor = player.teamColor
+        }
+        else if game.player.id == player.id {
+            cell.teamView.backgroundColor = UIColor.asc_greenColor()
         }
         else {
             cell.teamView.backgroundColor = UIColor.asc_transparentWhiteColor()
