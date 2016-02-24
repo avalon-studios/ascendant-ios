@@ -49,11 +49,11 @@ class ActionViewController: UIViewController {
             passButton.backgroundColor = Style.blue
             passButton.enabled = false
         case .proposalVote:
-            passButton.setTitle("Approve the Mission", forState: .Normal)
-            failButton.setTitle("Don't Allow the Mission", forState: .Normal)
+            passButton.setTitle("Approve", forState: .Normal)
+            failButton.setTitle("Deny", forState: .Normal)
         case .missionVote:
-            passButton.setTitle("Pass the Mission", forState: .Normal)
-            failButton.setTitle("Fail the Mission", forState: .Normal)
+            passButton.setTitle("Pass", forState: .Normal)
+            failButton.setTitle("Fail", forState: .Normal)
         }
     }
     

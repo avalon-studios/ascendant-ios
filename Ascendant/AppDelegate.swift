@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navBar = UINavigationBar.appearance()
         navBar.translucent = false
         navBar.tintColor = UIColor.whiteColor()
-        navBar.barTintColor = Style.darkBaseGrey
+//        navBar.barTintColor = Style.darkBaseGrey
         navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navBar.barStyle = .Black
         navBar.shadowImage = nil
