@@ -187,7 +187,7 @@
                                 <rect key="frame" x="20" y="247" width="560" height="124"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.20608906660000001" green="0.2147475398" blue="0.28639352950000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.17436142265796661" green="0.18061500787734985" blue="0.24500730633735657" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="7YW-F4-tcg" firstAttribute="width" secondItem="CcQ-qS-8TU" secondAttribute="width" id="0dc-3I-cEM"/>
                             <constraint firstItem="muS-En-Skc" firstAttribute="leading" secondItem="JwG-PX-6Jd" secondAttribute="leading" constant="20" id="0mR-aX-SDy"/>
@@ -298,7 +298,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="HQC-k1-9Bz" secondAttribute="trailing" id="wMR-Nm-NNS"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.20608906660000001" green="0.2147475398" blue="0.28639352950000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="nameLabel" destination="UdQ-0H-FcR" id="s6C-MG-XpD"/>
                                             <outlet property="teamView" destination="gde-DI-KaZ" id="3jf-cQ-rTw"/>
@@ -350,7 +350,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.20608906660000001" green="0.2147475398" blue="0.28639352950000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.17436142265796661" green="0.18061500787734985" blue="0.24500730633735657" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="aM3-2a-zTo" firstAttribute="top" secondItem="mKQ-bj-AuH" secondAttribute="bottom" constant="16" id="5Uu-LV-sa2"/>
                             <constraint firstAttribute="trailing" secondItem="OpK-Mt-J8J" secondAttribute="trailing" id="I3c-wc-Umr"/>
@@ -381,7 +381,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="twX-56-X5W">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.17436141729999999" green="0.1806150077" blue="0.2450073116" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.10718728353943051" green="0.11103162809558918" blue="0.15061628069633093" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

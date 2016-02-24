@@ -11,7 +11,6 @@ import PureLayout
 
 class MissionView: UIView {
     
-    let noneColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
     let opacityAnimationKey = "OpacityAnimationKey"
     
     let titleLabel: UILabel = {
@@ -32,7 +31,7 @@ class MissionView: UIView {
         
         titleLabel.autoPinEdgesToSuperviewEdges()
 
-        backgroundColor = noneColor
+        backgroundColor = Style.transparentWhite
     }
     
     override func layoutSubviews() {
@@ -44,26 +43,35 @@ class MissionView: UIView {
     
     func setStatus(status: MissionStatus) {
         
-        layer.removeAllAnimations()
-        
-        switch status {
-        case .none:
-            backgroundColor = noneColor
-        case .success:
-            backgroundColor = Style.green
-        case .fail:
-            backgroundColor = Style.red
-        case .current:
-            backgroundColor = Style.blue
-            beginCurrentAnimation()
-        }
+        UIView.animateWithDuration(1, delay: 0, options: [.BeginFromCurrentState],
+            animations: {
+                switch status {
+                case .none:
+                    self.backgroundColor = Style.transparentWhite
+                case .success:
+                    self.backgroundColor = Style.green
+                case .fail:
+                    self.backgroundColor = Style.red
+                case .current:
+                    self.backgroundColor = Style.blue
+                }
+            },
+            completion: { _ in
+                
+                self.layer.removeAllAnimations()
+
+                if status == .current {
+                    self.beginCurrentAnimation()
+                }
+            }
+        )
     }
     
     private func beginCurrentAnimation() {
         
         UIView.animateWithDuration(2, delay: 0, options: [.Autoreverse, .Repeat],
             animations: {
-                self.backgroundColor = Style.blue.colorWithAlphaComponent(0.2)
+                self.backgroundColor = Style.transparentWhite
             },
             completion: nil
         )

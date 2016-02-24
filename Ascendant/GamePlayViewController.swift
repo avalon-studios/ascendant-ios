@@ -23,8 +23,9 @@ class GamePlayViewController: UIViewController {
         return missionStack.arrangedSubviews as! [MissionView]
     }
     
-    var proposalViews: [UIView] {
-        return proposalStack.arrangedSubviews
+    var proposalViews: [ProposalView] {
+        // If we can't cast all these as ProposalViews, then we should crash
+        return proposalStack.arrangedSubviews as! [ProposalView]
     }
     
     var mockPlayers: [Player] {
@@ -62,29 +63,16 @@ class GamePlayViewController: UIViewController {
         setUpUI()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
-        gameSetFailedProposals(2)
-        gameSetMissionStatus(.success, missionNumber: 0)
-        gameSetMissionStatus(.fail, missionNumber: 1)
-        gameSetMissionStatus(.current, missionNumber: 2)
+        showMissionAndFailedChanges()
     }
     
     func setUpUI() {
 
         for (index, view) in missionViews.enumerate() {
             view.titleLabel.text = "\(index + 1)"
-        }
-        
-        for view in proposalViews {
-            view.alpha = 0
-        }
-    }
-    
-    func resetProposals() {
-        for view in proposalViews {
-            view.alpha = 0
         }
     }
     
@@ -105,18 +93,57 @@ class GamePlayViewController: UIViewController {
         return (actionNavigationController, actionViewController)
     }
     
-    // just for mockup!
+    
+    // JUST FOR MOCKUP!
     
     @IBAction func mockupPropose(sender: AnyObject) {
         gameProposeMission()
     }
     
-    @IBAction func mockupProposeVote(sender: AnyObject) {
-        gameVoteOnProposal(mockMissionPlayers)
-    }
-    
     @IBAction func mockupMissionVote(sender: AnyObject) {
         gameVoteOnMission(mockMissionPlayers)
+    }
+    
+    func showMissionAndFailedChanges() {
+        
+        Async.main(after: 2) {
+            self.gameSetMissionStatus(.current, missionNumber: 0)
+            self.gameSetFailedProposals(1)
+        }
+        .main(after: 1) {
+            self.gameSetFailedProposals(2)
+        }
+        .main(after: 1) {
+            self.gameSetFailedProposals(3)
+        }
+        .main(after: 1) {
+            self.gameSetFailedProposals(4)
+        }
+        .main(after: 1) {
+            self.gameSetFailedProposals(5)
+        }
+        .main(after: 1) {
+            self.gameSetFailedProposals(0)
+        }
+        .main {
+            self.gameSetMissionStatus(.success, missionNumber: 0)
+            self.gameSetMissionStatus(.current, missionNumber: 1)
+        }
+        .main(after: 3) {
+            self.gameSetMissionStatus(.fail, missionNumber: 1)
+            self.gameSetMissionStatus(.current, missionNumber: 2)
+        }
+        .main(after: 2.5) {
+            self.gameSetMissionStatus(.fail, missionNumber: 2)
+            self.gameSetMissionStatus(.current, missionNumber: 3)
+        }
+        .main(after: 4) {
+            self.gameSetMissionStatus(.success, missionNumber: 3)
+            self.gameSetMissionStatus(.current, missionNumber: 4)
+        }
+        .main(after: 2) {
+            self.gameSetMissionStatus(.success, missionNumber: 4)
+        }
     }
 }
 
@@ -138,11 +165,8 @@ extension GamePlayViewController: GameDelegate {
     func gameSetFailedProposals(failed: Int) {
         
         UIView.animateWithDuration(0.3) { 
-            
-            self.resetProposals()
-            
-            for index in 0..<failed where index < self.proposalViews.count {
-                self.proposalViews[index].alpha = 1
+            for (index, view) in self.proposalViews.enumerate() {
+                view.setFailed(index < failed)
             }
         }
     }

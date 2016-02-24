@@ -13,7 +13,7 @@ class ProposalView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        backgroundColor = Style.red
+        backgroundColor = Style.transparentWhite
     }
     
     override func layoutSubviews() {
@@ -21,5 +21,9 @@ class ProposalView: UIView {
         layer.cornerRadius = frame.height / 2
         
         super.layoutSubviews()
+    }
+    
+    func setFailed(failed: Bool) {
+        backgroundColor = failed ? Style.red : Style.transparentWhite
     }
 }
