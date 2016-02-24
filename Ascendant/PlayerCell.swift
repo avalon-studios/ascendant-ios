@@ -13,9 +13,5 @@ class PlayerCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var teamView: EXTView!
-    
-    func setPlayer(player: Player) {
-        nameLabel.text = player.name
-        teamView.backgroundColor = player.team == .bad ? Style.red : Style.green
-    }
+
 }

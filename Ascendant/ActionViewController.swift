@@ -19,7 +19,7 @@ class ActionViewController: UIViewController {
     
     var game: Game!
     var action = Action.missionVote
-    var players: [Player]!
+    var players: [PlayerDisplayable]!
     var numberOfPlayersForProposal = 0
     
     var actionMessage: String {
@@ -65,14 +65,23 @@ class ActionViewController: UIViewController {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
        if let cell = tableView.dequeueReusableCellWithIdentifier(R.reuseIdentifier.playerCell) {
-            cell.setPlayer(players[indexPath.row])
-            cell.teamView.hidden = game.player.team == .good
-            return cell
+           return configurePlayerCell(cell, forIndexPath: indexPath)
         }
         
-        assertionFailure("Unable to dequeue proper cell")
+        assertionFailure("Unable to dequeue a player cell")
         
         return UITableViewCell()
+    }
+    
+    func configurePlayerCell(cell: PlayerCell, forIndexPath indexPath: NSIndexPath) -> PlayerCell {
+        
+        let player = players[indexPath.row]
+        
+        cell.nameLabel.text = player.name
+        cell.teamView.backgroundColor = player.teamColor
+        cell.teamView.hidden = game.player.team == .good
+        
+        return cell
     }
     
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {

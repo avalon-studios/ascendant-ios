@@ -6,12 +6,17 @@
 //  Copyright © 2016 Kyle Bashour. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct Player {
+struct Player: PlayerDisplayable {
+    
     let name: String
     let id: String
     let team: Team
+    
+    var teamColor: UIColor {
+        return team == .bad ? Style.red : Style.green
+    }
 }
 
 enum Team {

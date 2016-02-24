@@ -31,6 +31,7 @@
 		2799ABA11C7BCB4F003C532E /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799ABA01C7BCB4F003C532E /* JoinViewController.swift */; };
 		2799ABA31C7BCBF8003C532E /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799ABA21C7BCBF8003C532E /* StartViewController.swift */; };
 		2799ABA61C7BCD25003C532E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799ABA51C7BCD25003C532E /* R.generated.swift */; };
+		27A9AC231C7DEB5C0065ECC0 /* PlayerDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A9AC221C7DEB5C0065ECC0 /* PlayerDisplayable.swift */; };
 		27E44ADC1C7CF50200794792 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E44ADB1C7CF50200794792 /* ActionViewController.swift */; };
 		407F177A5BDFAE81F304D8B7 /* Pods_AscendantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4005872E123CBC0FC63B9B0D /* Pods_AscendantTests.framework */; };
 		4923228C8CF7D12D4E2AB25B /* Pods_AscendantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF58050D4EEBB078C773C25A /* Pods_AscendantUITests.framework */; };
@@ -88,6 +89,7 @@
 		2799ABA01C7BCB4F003C532E /* JoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		2799ABA21C7BCBF8003C532E /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		2799ABA51C7BCD25003C532E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		27A9AC221C7DEB5C0065ECC0 /* PlayerDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDisplayable.swift; sourceTree = "<group>"; };
 		27E44ADB1C7CF50200794792 /* ActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		4005872E123CBC0FC63B9B0D /* Pods_AscendantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AscendantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D9400BA697B92714DE1A39 /* Pods_Ascendant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ascendant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				273CA6461C7CEE0A00990DBE /* GameDelegate.swift */,
+				27A9AC221C7DEB5C0065ECC0 /* PlayerDisplayable.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				27119BCD1C7BEE2400B5E73C /* Views */,
 				276118391C7BB0F500652444 /* Models */,
 				273CA6451C7CEDF700990DBE /* Protocols */,
+				27A9AC211C7DEB3D0065ECC0 /* Extensions */,
 				2761183A1C7BB0FD00652444 /* Managers */,
 				276118381C7BB0F000652444 /* Assets */,
 			);
@@ -263,6 +267,13 @@
 				2799ABA01C7BCB4F003C532E /* JoinViewController.swift */,
 			);
 			name = "Welcome and Create/Join";
+			sourceTree = "<group>";
+		};
+		27A9AC211C7DEB3D0065ECC0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		7E315FB7765BCD04E4AFF584 /* Pods */ = {
@@ -571,6 +582,7 @@
 				2799ABA31C7BCBF8003C532E /* StartViewController.swift in Sources */,
 				2799ABA61C7BCD25003C532E /* R.generated.swift in Sources */,
 				2799AB981C7BB7E4003C532E /* Style.swift in Sources */,
+				27A9AC231C7DEB5C0065ECC0 /* PlayerDisplayable.swift in Sources */,
 				273CA64C1C7CF07000990DBE /* Game.swift in Sources */,
 				273CA64E1C7CF28500990DBE /* ActionMessageCell.swift in Sources */,
 				273CA64A1C7CEE4900990DBE /* Player.swift in Sources */,
@@ -730,7 +742,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -748,7 +760,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
