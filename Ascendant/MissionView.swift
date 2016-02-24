@@ -46,13 +46,13 @@ class MissionView: UIView {
         UIView.animateWithDuration(1, delay: 0, options: [.BeginFromCurrentState],
             animations: {
                 switch status {
-                case .none:
+                case .None:
                     self.backgroundColor = UIColor.asc_transparentWhiteColor()
-                case .success:
+                case .Success:
                     self.backgroundColor = UIColor.asc_greenColor()
-                case .fail:
+                case .Fail:
                     self.backgroundColor = UIColor.asc_redColor()
-                case .current:
+                case .Current:
                     self.backgroundColor = UIColor.asc_blueColor()
                 }
             },
@@ -60,7 +60,7 @@ class MissionView: UIView {
                 
                 self.layer.removeAllAnimations()
 
-                if status == .current {
+                if status == .Current {
                     self.beginCurrentAnimation()
                 }
             }
@@ -79,8 +79,8 @@ class MissionView: UIView {
 }
 
 enum MissionStatus {
-    case none
-    case success
-    case fail
-    case current
+    case None
+    case Success
+    case Fail
+    case Current
 }

@@ -28,9 +28,6 @@
                                         <state key="normal" title="Start a New Game">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="ra6-cn-nVc" kind="presentation" id="Zwm-Ru-s9f"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyD-kE-MMs">
                                         <rect key="frame" x="0.0" y="34" width="560" height="34"/>
@@ -139,7 +136,7 @@
         <!--Navigation Controller-->
         <scene sceneID="1Ad-jg-D0s">
             <objects>
-                <navigationController id="25K-mm-6sv" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AboutNavigationController" id="25K-mm-6sv" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="B82-Zo-mDd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -181,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TLZ-B0-BwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1731" y="-296"/>
+            <point key="canvasLocation" x="1731" y="-372"/>
         </scene>
         <!--Join Game-->
         <scene sceneID="pmB-Ao-d20">
@@ -262,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sgp-Aw-LgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2528" y="-296"/>
+            <point key="canvasLocation" x="2528" y="-372"/>
         </scene>
         <!--GamePlay-->
         <scene sceneID="Mv6-tX-75e">
@@ -275,7 +272,7 @@
         <!--Fade Navigation Controller-->
         <scene sceneID="NVz-Qs-KO8">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ra6-cn-nVc" customClass="FadeNavigationController" customModule="Ascendant" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CreateNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ra6-cn-nVc" customClass="FadeNavigationController" customModule="Ascendant" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tMW-VG-S07">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -288,12 +285,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="478-hG-bGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919" y="-296"/>
+            <point key="canvasLocation" x="919" y="-372"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Fade Navigation Controller-->
         <scene sceneID="0XO-2G-D0T">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lP7-xq-Xi9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="JoinNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="lP7-xq-Xi9" customClass="FadeNavigationController" customModule="Ascendant" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DyH-5n-fD3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

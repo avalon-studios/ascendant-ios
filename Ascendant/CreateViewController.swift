@@ -15,8 +15,8 @@ class CreateViewController: UIViewController {
         
         Socket.manager.createGame { result in
             switch result {
-            case .success: self.performSegueWithIdentifier(R.segue.createViewController.startViewController, sender: self)
-            case .error(let message): print(message)
+            case .Success: self.performSegueWithIdentifier(R.segue.createViewController.startViewController, sender: self)
+            case .Error(let message): print(message)
             }
         }
     }

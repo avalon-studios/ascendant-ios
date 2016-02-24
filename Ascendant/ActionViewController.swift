@@ -20,15 +20,15 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     var game: Game!
-    var action = Action.missionVote
+    var action = Action.MissionVote
     var players: [Player]!
     var numberOfPlayersForProposal = 0
     
     var actionMessage: String {
         switch action {
-        case .proposeMission: return "Select \(numberOfPlayersForProposal) Players for a Mission"
-        case .proposalVote: return "Approve Players for a Mission"
-        case .missionVote: return "Pass the Mission?"
+        case .ProposeMission: return "Select \(numberOfPlayersForProposal) Players for a Mission"
+        case .ProposalVote: return "Approve Players for a Mission"
+        case .MissionVote: return "Pass the Mission?"
         }
     }
     
@@ -46,15 +46,15 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.estimatedRowHeight = 60
         
         switch action {
-        case .proposeMission:
+        case .ProposeMission:
             failButton.hidden = true
             passButton.setTitle("Propose", forState: .Normal)
             passButton.backgroundColor = UIColor.asc_blueColor()
             passButton.enabled = false
-        case .proposalVote:
+        case .ProposalVote:
             passButton.setTitle("Approve", forState: .Normal)
             failButton.setTitle("Deny", forState: .Normal)
-        case .missionVote:
+        case .MissionVote:
             passButton.setTitle("Pass", forState: .Normal)
             failButton.setTitle("Fail", forState: .Normal)
         }
@@ -86,22 +86,26 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let player = players[indexPath.row]
         
         cell.nameLabel.text = player.name
-        cell.teamView.backgroundColor = UIColor.asc_transparentWhiteColor()
         
-        if game.player.team == .bad { cell.teamColor = player.teamColor }
+        if game.player.team == .Bad {
+            cell.teamView.backgroundColor = player.teamColor
+        }
+        else {
+            cell.teamView.backgroundColor = UIColor.asc_transparentWhiteColor()
+        }
         
         return cell
     }
     
     func setCell(cell: UITableViewCell?, selected: Bool) {
-        cell?.accessoryType = .Checkmark
+        cell?.accessoryType = selected ? .Checkmark : .None
         passButton.enabled = tableView.indexPathsForSelectedRows?.count == numberOfPlayersForProposal
     }
     
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
        
         // Only allow selection if we're proposing
-        guard action == .proposeMission else {
+        guard action == .ProposeMission else {
             return nil
         }
         
@@ -122,7 +126,7 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
 }
 
 enum Action {
-    case proposeMission
-    case proposalVote
-    case missionVote
+    case ProposeMission
+    case ProposalVote
+    case MissionVote
 }

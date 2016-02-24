@@ -33,11 +33,11 @@ class GamePlayViewController: UIViewController {
         
         var players = [Player]()
         
-        players.append(Player(name: "Kyle", id: "1", team: .good))
-        players.append(Player(name: "Elliot", id: "2", team: .bad))
-        players.append(Player(name: "Joseph", id: "3", team: .good))
-        players.append(Player(name: "Tyler", id: "4", team: .good))
-        players.append(Player(name: "Jared", id: "5", team: .bad))
+        players.append(Player(name: "Kyle", id: "1", team: .Good))
+        players.append(Player(name: "Elliot", id: "2", team: .Bad))
+        players.append(Player(name: "Joseph", id: "3", team: .Good))
+        players.append(Player(name: "Tyler", id: "4", team: .Good))
+        players.append(Player(name: "Jared", id: "5", team: .Bad))
         
         return players
     }
@@ -46,10 +46,8 @@ class GamePlayViewController: UIViewController {
         
         var players = [Player]()
         
-        players.append(Player(name: "Kyle", id: "1", team: .good))
-        players.append(Player(name: "Elliot", id: "2", team: .bad))
-        players.append(Player(name: "Joseph", id: "3", team: .good))
-        players.append(Player(name: "Tyler", id: "4", team: .good))
+        players.append(Player(name: "Kyle", id: "1", team: .Good))
+        players.append(Player(name: "Elliot", id: "2", team: .Bad))
         
         return players
     }
@@ -57,7 +55,7 @@ class GamePlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        game = Game(id: "123", player: Player(name: "Kyle", id: "1", team: .bad))
+        game = Game(id: "123", player: Player(name: "Kyle", id: "1", team: .Bad))
         
         game.delegate = self
         
@@ -111,7 +109,7 @@ class GamePlayViewController: UIViewController {
     func showMissionAndFailedChanges() {
         
         Async.main(after: 2) {
-            self.gameSetMissionStatus(.current, missionNumber: 0)
+            self.gameSetMissionStatus(.Current, missionNumber: 0)
             self.gameSetFailedProposals(1)
         }
         .main(after: 1) {
@@ -130,23 +128,23 @@ class GamePlayViewController: UIViewController {
             self.gameSetFailedProposals(0)
         }
         .main {
-            self.gameSetMissionStatus(.success, missionNumber: 0)
-            self.gameSetMissionStatus(.current, missionNumber: 1)
+            self.gameSetMissionStatus(.Success, missionNumber: 0)
+            self.gameSetMissionStatus(.Current, missionNumber: 1)
         }
         .main(after: 3) {
-            self.gameSetMissionStatus(.fail, missionNumber: 1)
-            self.gameSetMissionStatus(.current, missionNumber: 2)
+            self.gameSetMissionStatus(.Fail, missionNumber: 1)
+            self.gameSetMissionStatus(.Current, missionNumber: 2)
         }
         .main(after: 2.5) {
-            self.gameSetMissionStatus(.fail, missionNumber: 2)
-            self.gameSetMissionStatus(.current, missionNumber: 3)
+            self.gameSetMissionStatus(.Fail, missionNumber: 2)
+            self.gameSetMissionStatus(.Current, missionNumber: 3)
         }
         .main(after: 4) {
-            self.gameSetMissionStatus(.success, missionNumber: 3)
-            self.gameSetMissionStatus(.current, missionNumber: 4)
+            self.gameSetMissionStatus(.Success, missionNumber: 3)
+            self.gameSetMissionStatus(.Current, missionNumber: 4)
         }
         .main(after: 2) {
-            self.gameSetMissionStatus(.success, missionNumber: 4)
+            self.gameSetMissionStatus(.Success, missionNumber: 4)
         }
     }
 }
@@ -160,7 +158,7 @@ extension GamePlayViewController: GameDelegate {
         }
         
         actionViewController.players = mockPlayers
-        actionViewController.action = .proposeMission
+        actionViewController.action = .ProposeMission
         actionViewController.numberOfPlayersForProposal = 2
         
         presentViewController(actionNavigationController, animated: true, completion: nil)
@@ -182,7 +180,7 @@ extension GamePlayViewController: GameDelegate {
         }
         
         actionViewController.players = players
-        actionViewController.action = .missionVote
+        actionViewController.action = .MissionVote
         
         presentViewController(actionNavigationController, animated: true, completion: nil)
     }
@@ -194,7 +192,7 @@ extension GamePlayViewController: GameDelegate {
         }
         
         actionViewController.players = players
-        actionViewController.action = .proposalVote
+        actionViewController.action = .ProposalVote
         
         presentViewController(actionNavigationController, animated: true, completion: nil)
     }

@@ -15,11 +15,11 @@ struct Player: PlayerDisplayable {
     let team: Team
     
     var teamColor: UIColor {
-        return team == .bad ? UIColor.asc_redColor() : UIColor.asc_greenColor()
+        return team == .Bad ? UIColor.asc_redColor() : UIColor.asc_greenColor()
     }
 }
 
 enum Team {
-    case good
-    case bad
+    case Good
+    case Bad
 }

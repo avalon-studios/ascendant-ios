@@ -17,12 +17,12 @@ class Socket {
     
     func createGame(completion: NetworkCompletion) {
         Async.main(after: 0.5) {
-            completion(.success)
+            completion(.Success)
         }
     }
 }
 
 enum NetworkResult {
-    case success
-    case error(message: String)
+    case Success
+    case Error(message: String)
 }
