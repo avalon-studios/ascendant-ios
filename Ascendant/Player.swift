@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Gloss
 
-struct Player: PlayerDisplayable {
+struct Player: PlayerDisplayable, Glossy {
     
     let name: String
     let id: String
@@ -17,9 +18,38 @@ struct Player: PlayerDisplayable {
     var teamColor: UIColor {
         return team == .Bad ? UIColor.asc_redColor() : UIColor.asc_greenColor()
     }
+    
+    init(name: String, id: String, team: Team) {
+        self.name = name
+        self.id = id
+        self.team = team
+    }
+    
+    init?(json: JSON) {
+        
+        guard let
+            name: String = "name" <~~ json,
+            id: String = "id" <~~ json,
+            team: Team = "team" <~~ json
+        else {
+            return nil
+        }
+        
+        self.name = name
+        self.id = id
+        self.team = team
+    }
+    
+    func toJSON() -> JSON? {
+        return jsonify([
+            "name" ~~> self.name,
+            "id" ~~> self.id,
+            "team" ~~> self.team
+        ])
+    }
 }
 
-enum Team {
+enum Team: Int {
     case Good
     case Bad
 }

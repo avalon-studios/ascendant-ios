@@ -8,16 +8,34 @@
 
 import UIKit
 
-class CreateViewController: UIViewController {
+class CreateViewController: WelcomeBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Socket.manager.createGame { result in
-            switch result {
-            case .Success: self.performSegueWithIdentifier(R.segue.createViewController.startViewController, sender: self)
-            case .Error(let message): print(message)
+        setUpUI()
+    
+        Game.createGame { (game, errorMessage) in
+            if let game = game {
+                self.beginGame(game)
+            }
+            else {
+                self.showAlert("Error", message: errorMessage)
             }
         }
+    }
+    
+    func setUpUI() {
+        view.backgroundColor = UIColor.asc_baseColor()
+    }
+    
+    func beginGame(game: Game) {
+        
+        let gameViewController = R.storyboard.gamePlay.initialViewController()!
+        
+        Socket.manager.game = game
+        gameViewController.game = game
+        
+        presentViewController(gameViewController, animated: true, completion: nil)
     }
 }

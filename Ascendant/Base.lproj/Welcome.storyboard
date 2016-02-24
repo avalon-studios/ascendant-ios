@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10112" systemVersion="15E49a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10112" systemVersion="15E49a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="10k-ww-Mrq">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
@@ -7,6 +7,14 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Welcome Page View Controller-->
+        <scene sceneID="qNV-1W-CwX">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="10k-ww-Mrq" customClass="WelcomePageViewController" customModule="Ascendant" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HSf-6k-VcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-630" y="384"/>
+        </scene>
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -28,6 +36,9 @@
                                         <state key="normal" title="Start a New Game">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="startGamePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4SG-4e-zkh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyD-kE-MMs">
                                         <rect key="frame" x="0.0" y="34" width="560" height="34"/>
@@ -35,6 +46,9 @@
                                         <state key="normal" title="Join a Game">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="joinGamePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b4j-sR-MGX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnu-ew-xyh">
                                         <rect key="frame" x="0.0" y="68" width="560" height="34"/>
@@ -82,77 +96,10 @@
             </objects>
             <point key="canvasLocation" x="201" y="384"/>
         </scene>
-        <!--About Us-->
-        <scene sceneID="b9w-0O-nxN">
-            <objects>
-                <tableViewController id="YzV-hx-bMP" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="YTU-gv-yQG">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="b94-jZ-2GA">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WR5-2S-TJQ">
-                                        <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WR5-2S-TJQ" id="Ebs-in-FgX">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ohY-ha-wiU">
-                                        <rect key="frame" x="0.0" y="108" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ohY-ha-wiU" id="YIX-CX-3nc">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="d9X-bG-rVc">
-                                        <rect key="frame" x="0.0" y="152" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d9X-bG-rVc" id="9cc-T1-Fun">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="YzV-hx-bMP" id="OuR-KV-YaR"/>
-                            <outlet property="delegate" destination="YzV-hx-bMP" id="Ca7-dm-06F"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="About Us" id="w1D-nO-GNJ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="5Vp-pA-n0k"/>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HkB-Wk-N0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1731" y="1133"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="1Ad-jg-D0s">
-            <objects>
-                <navigationController storyboardIdentifier="AboutNavigationController" id="25K-mm-6sv" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="B82-Zo-mDd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="YzV-hx-bMP" kind="relationship" relationship="rootViewController" id="6NZ-8V-usM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c5b-Tq-heS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="919" y="1133"/>
-        </scene>
         <!--Creating Game...-->
         <scene sceneID="IyU-hv-Izz">
             <objects>
-                <viewController id="6r8-YK-F8y" customClass="CreateViewController" customModule="Ascendant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateViewController" id="6r8-YK-F8y" customClass="CreateViewController" customModule="Ascendant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eDO-3h-si8"/>
                         <viewControllerLayoutGuide type="bottom" id="hCu-S5-fKI"/>
@@ -178,12 +125,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TLZ-B0-BwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1731" y="-372"/>
+            <point key="canvasLocation" x="1091" y="-369"/>
         </scene>
         <!--Join Game-->
         <scene sceneID="pmB-Ao-d20">
             <objects>
-                <viewController id="4Mj-D1-fUv" customClass="JoinViewController" customModule="Ascendant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinViewController" id="4Mj-D1-fUv" customClass="JoinViewController" customModule="Ascendant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6f5-gT-3oY"/>
                         <viewControllerLayoutGuide type="bottom" id="fCW-lj-CU8"/>
@@ -218,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOk-bc-0cb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1731" y="384"/>
+            <point key="canvasLocation" x="1091" y="387"/>
         </scene>
         <!--Room Code: DLGT-->
         <scene sceneID="lq2-2U-0MC">
@@ -238,9 +185,6 @@
                                 <state key="normal" title="Start the Game">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="hAC-Wo-TGG" kind="presentation" id="du9-Re-dPH"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.23529411759999999" green="0.2470588235" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -249,66 +193,17 @@
                             <constraint firstItem="6Hn-nn-6Q9" firstAttribute="centerX" secondItem="FKR-My-w7S" secondAttribute="centerX" id="3fO-Qr-er7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Room Code: DLGT" id="f3B-9L-zp0">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="pVU-bk-2Nv">
-                            <connections>
-                                <action selector="cancelButtonPressed:" destination="Gdm-JA-AlC" id="y8L-Rc-paI"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Room Code: DLGT" id="f3B-9L-zp0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sgp-Aw-LgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2528" y="-372"/>
-        </scene>
-        <!--GamePlay-->
-        <scene sceneID="Mv6-tX-75e">
-            <objects>
-                <viewControllerPlaceholder storyboardName="GamePlay" id="hAC-Wo-TGG" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z32-Kc-5qB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3032.5" y="-296"/>
-        </scene>
-        <!--Fade Navigation Controller-->
-        <scene sceneID="NVz-Qs-KO8">
-            <objects>
-                <navigationController storyboardIdentifier="CreateNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ra6-cn-nVc" customClass="FadeNavigationController" customModule="Ascendant" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tMW-VG-S07">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="6r8-YK-F8y" kind="relationship" relationship="rootViewController" id="N5c-vo-8pU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="478-hG-bGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="919" y="-372"/>
-        </scene>
-        <!--Fade Navigation Controller-->
-        <scene sceneID="0XO-2G-D0T">
-            <objects>
-                <navigationController storyboardIdentifier="JoinNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="lP7-xq-Xi9" customClass="FadeNavigationController" customModule="Ascendant" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DyH-5n-fD3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="4Mj-D1-fUv" kind="relationship" relationship="rootViewController" id="UeW-Af-FQt"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="98d-Jl-xVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="919" y="384"/>
+            <point key="canvasLocation" x="1888" y="-369"/>
         </scene>
         <!--Joining Game...-->
         <scene sceneID="LdH-75-r0h">
             <objects>
-                <viewController id="Lw1-nb-EeR" customClass="CreateViewController" customModule="Ascendant" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rCw-9V-ngG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Lw1-nb-EeR" customClass="WelcomeBaseViewController" customModule="Ascendant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ljQ-Kc-czr"/>
                         <viewControllerLayoutGuide type="bottom" id="LYh-l5-S8u"/>
@@ -328,17 +223,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Joining Game..." id="xK7-ZN-Bu0"/>
-                    <connections>
-                        <segue destination="Gdm-JA-AlC" kind="show" identifier="WaitForGameToStart" id="5bC-gx-aWF"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rCw-9V-ngG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2528" y="384"/>
+            <point key="canvasLocation" x="1888" y="387"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="5bC-gx-aWF"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
 </document>

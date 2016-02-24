@@ -9,7 +9,7 @@
 import UIKit
 import VCTransitionsLibrary
 
-class FadeNavigationController: UINavigationController, UINavigationControllerDelegate {
+class WelcomeNavigationController: UINavigationController, UINavigationControllerDelegate {
 
     lazy var animator: CECrossfadeAnimationController = {
         let animator = CECrossfadeAnimationController()
@@ -19,11 +19,10 @@ class FadeNavigationController: UINavigationController, UINavigationControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         delegate = self
     }
     
-
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return animator
     }

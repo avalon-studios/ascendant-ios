@@ -9,20 +9,18 @@
 import Foundation
 import Async
 
-typealias NetworkCompletion = NetworkResult -> Void
+typealias NetworkCompletion = (json: [String: AnyObject]?, errorMessage: String)  -> Void
 
 class Socket {
     
     static let manager = Socket()
     
+    weak var game: Game?
+    
     func createGame(completion: NetworkCompletion) {
-        Async.main(after: 0.5) {
-            completion(.Success)
+                
+        Async.main(after: 1) {
+            completion(json: ["id": "1234", "player": ["id": "123", "name": "Kyle", "team": 0]], errorMessage: "")
         }
     }
-}
-
-enum NetworkResult {
-    case Success
-    case Error(message: String)
 }

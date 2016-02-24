@@ -8,10 +8,25 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: WelcomeBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+     
+        setUpUI()
     }
+    
+    func setUpUI() {
+        view.backgroundColor = UIColor.asc_baseColor()
+    }
+    
+    @IBAction func startGamePressed(sender: AnyObject) {
+        pageController.showCreateGame()
+    }
+    
+    @IBAction func joinGamePressed(sender: AnyObject) {
+        pageController.showJoinGame()
+    }
+    
+    
 }

@@ -8,9 +8,20 @@
 
 import UIKit
 
-class StartViewController: UIViewController {
+class StartViewController: WelcomeBaseViewController {
     
-    @IBAction func cancelButtonPressed(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setUpUI()
     }
+    
+    func setUpUI() {
+        view.backgroundColor = UIColor.asc_baseColor()
+    }
+    
+    @IBAction func cancelButtonPressed(sender: AnyObject) {
+        pageController.showWelcome(true)
+    }
+    
 }

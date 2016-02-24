@@ -8,7 +8,15 @@
 
 import UIKit
 
-class JoinViewController: UIViewController {
+class JoinViewController: WelcomeBaseViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setUpUI()
+    }
     
+    func setUpUI() {
+        view.backgroundColor = UIColor.asc_baseColor()
+    }
 }

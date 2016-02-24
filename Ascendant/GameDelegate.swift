@@ -9,9 +9,10 @@
 import Foundation
 
 protocol GameDelegate: class {
-    func gameVoteOnProposal(players: [Player])
-    func gameVoteOnMission(players: [Player])
-    func gameProposeMission()
-    func gameSetFailedProposals(failed: Int)
-    func gameSetMissionStatus(status: MissionStatus, missionNumber: Int)
+    func game(voteOnProposalWithPlayers players: [Player])
+    func game(voteOnMissionWithPlayers players: [Player])
+    func game(havePlayerProposeMission player: Player)
+    func game(setNumberOfFailedProposals failed: Int)
+    func game(setMissionStatus status: MissionStatus, forMission missionNumber: Int)
+    func game(updatePlayers players: [Player])
 }
