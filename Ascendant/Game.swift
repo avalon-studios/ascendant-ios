@@ -10,9 +10,13 @@ import Foundation
 
 class Game {
     
-    static let manager = Game()
-    
     weak var delegate: GameDelegate?
     
-    var currentPlayer = Player(name: "Kyle", id: "1", team: .bad)
+    let player: Player
+    let id: String
+    
+    init(id: String, player: Player) {
+        self.id = id
+        self.player = player
+    }
 }

@@ -15,15 +15,12 @@ class GamePlayViewController: UIViewController {
     @IBOutlet weak var missionStack: UIStackView!
     @IBOutlet weak var proposalStack: UIStackView!
     
-    private var didUpdateConstraints = false
+    var game: Game!
+    
     
     var missionViews: [MissionView] {
-     
-        if let missionViews = missionStack.arrangedSubviews as? [MissionView] {
-            return missionViews
-        }
-        
-        return []
+        // If we can't cast all these as MissionViews, then we should crash
+        return missionStack.arrangedSubviews as! [MissionView]
     }
     
     var proposalViews: [UIView] {
@@ -58,7 +55,9 @@ class GamePlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Game.manager.delegate = self
+        game = Game(id: "123", player: Player(name: "Kyle", id: "1", team: .good))
+        
+        game.delegate = self
         
         setUpUI()
     }
@@ -97,6 +96,8 @@ class GamePlayViewController: UIViewController {
                 assertionFailure("Unable to create an action view controller")
                 return nil
         }
+        
+        actionViewController.game = game
         
         actionNavigationController.transitioningDelegate = self
         actionNavigationController.modalPresentationStyle = .Custom

@@ -17,6 +17,7 @@ class ActionViewController: UIViewController {
     @IBOutlet weak var buttonStack: UIStackView!
     @IBOutlet weak var tableView: UITableView!
     
+    var game: Game!
     var action = Action.missionVote
     var players: [Player]!
     var numberOfPlayersForProposal = 0
@@ -65,6 +66,7 @@ class ActionViewController: UIViewController {
         
        if let cell = tableView.dequeueReusableCellWithIdentifier(R.reuseIdentifier.playerCell) {
             cell.setPlayer(players[indexPath.row])
+            cell.teamView.hidden = game.player.team == .good
             return cell
         }
         
