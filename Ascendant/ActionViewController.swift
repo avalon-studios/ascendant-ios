@@ -9,7 +9,7 @@
 import UIKit
 import EXTView
 
-class ActionViewController: UIViewController {
+class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     @IBOutlet weak var passButton: EXTButton!
@@ -88,50 +88,32 @@ class ActionViewController: UIViewController {
         cell.nameLabel.text = player.name
         cell.teamView.backgroundColor = UIColor.asc_transparentWhiteColor()
         
+        if game.player.team == .bad { cell.teamColor = player.teamColor }
+        
         return cell
     }
     
+    func setCell(cell: UITableViewCell?, selected: Bool) {
+        cell?.accessoryType = .Checkmark
+        passButton.enabled = tableView.indexPathsForSelectedRows?.count == numberOfPlayersForProposal
+    }
+    
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        
-        // We can only select cells if we're proposing a mission
+       
+        // Only allow selection if we're proposing
         guard action == .proposeMission else {
             return nil
         }
         
-        // Only allow them to select the maximum needed (rethinking this, hence the comment out)
-//        guard tableView.indexPathsForSelectedRows?.count < numberOfPlayersForProposal else {
-//            return nil
-//        }
-//        
-        // Okay, we can select this!
         return indexPath
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        guard let cell = tableView.cellForRowAtIndexPath(indexPath) as? PlayerCell else {
-            return
-        }
-        
-        let player = players[indexPath.row]
-
-        passButton.enabled = tableView.indexPathsForSelectedRows?.count == numberOfPlayersForProposal
-        cell.accessoryType = .Checkmark
-
-        if game.player.team == .bad {
-            cell.teamView.backgroundColor = player.teamColor
-        }
+        setCell(tableView.cellForRowAtIndexPath(indexPath), selected: true)
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        guard let cell = tableView.cellForRowAtIndexPath(indexPath) as? PlayerCell else {
-            return
-        }
-        
-        passButton.enabled = tableView.indexPathsForSelectedRows?.count == numberOfPlayersForProposal
-        cell.accessoryType = .None
-        cell.teamView.backgroundColor = UIColor.asc_transparentWhiteColor()
+        setCell(tableView.cellForRowAtIndexPath(indexPath), selected: false)
     }
     
     @IBAction func votePressed(sender: UIButton) {
