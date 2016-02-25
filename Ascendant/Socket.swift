@@ -18,7 +18,7 @@ class Socket {
     static let manager = Socket()
     
     let baseURL = NSURL(string: "https://ascendant-api.herokuapp.com/")!
-    let options: Set<SocketIOClientOption> = [.ForceWebsockets(true), .Secure(true), .ReconnectWait(1)]
+    let options: Set<SocketIOClientOption> = [.ForceWebsockets(true), .Secure(true), .ReconnectWait(1), .Log(true)]
 
     private lazy var socket: SocketIOClient = SocketIOClient(socketURL: self.baseURL, options: self.options)
     
@@ -67,7 +67,7 @@ class Socket {
         }
         
         socket.on(Event.create) { [weak self] data, ack in
-            if let json: JSON = self?.parseSocketData(data), game = Game(json: json) {
+            if let json = data.first as? JSON, game = Game(json: json) {
                 self?.game = game
                 self?.createGameCompletion?(game)
             }
@@ -80,7 +80,7 @@ class Socket {
         
         socket.on(Event.join) { [weak self] data, ack in
             if let
-                json: JSON = self?.parseSocketData(data),
+                json = data.first as? JSON,
                 game = Game(json: json),
                 playersJSON = json["players"] as? [JSON]
             {
@@ -97,13 +97,13 @@ class Socket {
         }
         
         socket.on(Event.updatePlayers) { [weak self] data, ack in
-            guard let json: [JSON] = self?.parseSocketData(data) else { return }
+            guard let json = data.first as? [JSON] else { return }
             self?.game?.players = [Player].fromJSONArray(json)
         }
         
         socket.on(Event.assignRoles) { [weak self] data, ack in
             guard let
-                json: JSON = self?.parseSocketData(data),
+                json = data.first as? JSON,
                 playerJSON = json["player"] as? JSON,
                 player = Player(json: playerJSON),
                 playersJSON = json["players"] as? [JSON]
@@ -114,18 +114,6 @@ class Socket {
             self?.game?.player = player
             self?.game?.players = [Player].fromJSONArray(playersJSON)
         }
-    }
-    
-    func parseSocketData<T>(data: [AnyObject]) -> T? {
-        
-        guard let
-            socketData = data.first,
-            string = socketData as? String,
-            data = string.dataUsingEncoding(NSUTF8StringEncoding),
-            json = try? NSJSONSerialization.JSONObjectWithData(data, options: [])
-        else { return nil }
-        
-        return json as? T
     }
 }
 
