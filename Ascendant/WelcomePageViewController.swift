@@ -38,13 +38,22 @@ class WelcomePageViewController: UIPageViewController {
         return navigationController
     }
     
+    func setJoinUpViewController(viewController: JoinViewController) -> UINavigationController {
+        
+        let navigationController = WelcomeNavigationController(rootViewController: viewController)
+        
+        viewController.pageController = self
+        
+        return navigationController
+    }
+    
     func showCreateGame() {
         let navigationController = setUpViewController(R.storyboard.welcome.createViewController()!)
         setViewControllers([navigationController], direction: .Forward, animated: true, completion: nil)
     }
     
     func showJoinGame() {
-        let navigationController = setUpViewController(R.storyboard.welcome.joinViewController()!)
+        let navigationController = setJoinUpViewController(R.storyboard.welcome.joinViewController()!)
         setViewControllers([navigationController], direction: .Forward, animated: true, completion: nil)
     }
     

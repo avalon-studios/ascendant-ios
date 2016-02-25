@@ -36,6 +36,8 @@
 		27C4FFCF1C7E023A0089FD12 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C4FFCE1C7E023A0089FD12 /* WelcomePageViewController.swift */; };
 		27C4FFD11C7E16480089FD12 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C4FFD01C7E16480089FD12 /* UIViewController+Extensions.swift */; };
 		27E44ADC1C7CF50200794792 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E44ADB1C7CF50200794792 /* ActionViewController.swift */; };
+		27FCF8891C7EA38800C0B515 /* AscendantButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FCF8881C7EA38800C0B515 /* AscendantButton.swift */; };
+		27FCF88B1C7EA7DB00C0B515 /* WelcomePlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FCF88A1C7EA7DB00C0B515 /* WelcomePlayerCell.swift */; };
 		407F177A5BDFAE81F304D8B7 /* Pods_AscendantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4005872E123CBC0FC63B9B0D /* Pods_AscendantTests.framework */; };
 		4923228C8CF7D12D4E2AB25B /* Pods_AscendantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF58050D4EEBB078C773C25A /* Pods_AscendantUITests.framework */; };
 /* End PBXBuildFile section */
@@ -97,6 +99,8 @@
 		27C4FFCE1C7E023A0089FD12 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
 		27C4FFD01C7E16480089FD12 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		27E44ADB1C7CF50200794792 /* ActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		27FCF8881C7EA38800C0B515 /* AscendantButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AscendantButton.swift; sourceTree = "<group>"; };
+		27FCF88A1C7EA7DB00C0B515 /* WelcomePlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePlayerCell.swift; sourceTree = "<group>"; };
 		4005872E123CBC0FC63B9B0D /* Pods_AscendantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AscendantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D9400BA697B92714DE1A39 /* Pods_Ascendant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ascendant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF58050D4EEBB078C773C25A /* Pods_AscendantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AscendantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,7 +150,9 @@
 				27119BCE1C7BEE3100B5E73C /* MissionView.swift */,
 				2782AD581C7C1A7600D983AC /* ProposalView.swift */,
 				273CA64D1C7CF28500990DBE /* ActionMessageCell.swift */,
+				27FCF88A1C7EA7DB00C0B515 /* WelcomePlayerCell.swift */,
 				273CA64F1C7CF29300990DBE /* PlayerCell.swift */,
+				27FCF8881C7EA38800C0B515 /* AscendantButton.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -597,6 +603,8 @@
 				273CA64E1C7CF28500990DBE /* ActionMessageCell.swift in Sources */,
 				273CA64A1C7CEE4900990DBE /* Player.swift in Sources */,
 				2782AD591C7C1A7600D983AC /* ProposalView.swift in Sources */,
+				27FCF8891C7EA38800C0B515 /* AscendantButton.swift in Sources */,
+				27FCF88B1C7EA7DB00C0B515 /* WelcomePlayerCell.swift in Sources */,
 				2799AB9F1C7BCB27003C532E /* CreateViewController.swift in Sources */,
 				276118091C7BAEEC00652444 /* AppDelegate.swift in Sources */,
 				27A9AC251C7DED0D0065ECC0 /* UIColor+Extensions.swift in Sources */,
@@ -754,7 +762,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -772,7 +780,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

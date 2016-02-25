@@ -71,13 +71,11 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-       if let cell = tableView.dequeueReusableCellWithIdentifier(R.reuseIdentifier.playerCell) {
-           return configurePlayerCell(cell, forIndexPath: indexPath)
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(R.reuseIdentifier.playerCell) else {
+            fatalError("Unable to dequeue a player cell")
         }
         
-        assertionFailure("Unable to dequeue a player cell")
-        
-        return UITableViewCell()
+        return configurePlayerCell(cell, forIndexPath: indexPath)
     }
     
     func configurePlayerCell(cell: PlayerCell, forIndexPath indexPath: NSIndexPath) -> PlayerCell {

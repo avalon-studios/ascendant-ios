@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Async
 
 class CreateViewController: WelcomeBaseViewController {
     
     var playerName = "Kyle"
+    var game: Game!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +21,15 @@ class CreateViewController: WelcomeBaseViewController {
     
         Socket.manager.createGame(playerName) { game in
             if let game = game {
-                self.beginGame(game)
+                
+                self.game = game
+                
+                Async.main(after: 0.5) {
+                    self.performSegueWithIdentifier(R.segue.createViewController.startViewController, sender: self)
+                }
             }
             else {
+                self.pageController.showWelcome(true)
                 self.showAlert("Error", message: "We couldn't start a game right now - try again soon!")
             }
         }
@@ -31,13 +39,11 @@ class CreateViewController: WelcomeBaseViewController {
         view.backgroundColor = UIColor.asc_baseColor()
     }
     
-    func beginGame(game: Game) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
         
-        let gameViewController = R.storyboard.gamePlay.initialViewController()!
-        
-        Socket.manager.game = game
-        gameViewController.game = game
-        
-        presentViewController(gameViewController, animated: true, completion: nil)
+        if let destination = segue.destinationViewController as? StartViewController {
+            destination.game = game
+        }
     }
 }

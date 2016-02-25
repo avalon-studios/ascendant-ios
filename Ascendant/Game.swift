@@ -11,6 +11,8 @@ import Gloss
 
 final class Game: Decodable {
     
+    static let updatePlayers = "UpdatePlayers"
+    
     weak var delegate: GameDelegate? {
         didSet {
             delegate?.game(updatePlayers: players)
@@ -19,6 +21,7 @@ final class Game: Decodable {
     
     var players = [Player]() {
         didSet {
+            NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: Game.updatePlayers, object: nil))
             delegate?.game(updatePlayers: players)
         }
     }

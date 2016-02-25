@@ -18,7 +18,7 @@ class Socket {
     static let manager = Socket()
     
     let baseURL = NSURL(string: "https://ascendant-api.herokuapp.com/")!
-    let options: Set<SocketIOClientOption> = [.ForceWebsockets(true), .Log(true), .Secure(true)]
+    let options: Set<SocketIOClientOption> = [.ForceWebsockets(true), .Secure(true)]
 
     private lazy var socket: SocketIOClient = SocketIOClient(socketURL: self.baseURL, options: self.options)
     
@@ -42,6 +42,22 @@ class Socket {
     func joinGame(playerName: String, gameID: String, completion: Game? -> Void) {
         createGameCompletion = completion
         socket.emit(EmitEvent.join, [["name": playerName, "game_id": gameID]])
+    }
+    
+    func startGame() {
+        socket.emit(EmitEvent.start)
+    }
+    
+    func proposeMission(players: [Player]) {
+        socket.emit(EmitEvent.proposeMission, [["players": players.toJSONArray() ?? []]])
+    }
+    
+    func proposalVote(vote: Bool) {
+        socket.emit(EmitEvent.proposalVote, [["vote": vote]])
+    }
+    
+    func missionVote(vote: Bool) {
+        socket.emit(EmitEvent.missionVote, [["vote": vote]])
     }
     
     func addSocketHandlers() {
@@ -128,4 +144,8 @@ struct Event {
 struct EmitEvent {
     static let create = "create"
     static let join = "join"
+    static let start = "start"
+    static let proposeMission = "propose_mission"
+    static let proposalVote = "proposal_vote"
+    static let missionVote = "mission_vote"
 }

@@ -83,8 +83,7 @@ class GamePlayViewController: UIViewController {
         guard let actionNavigationController = R.storyboard.gamePlay.actionViewController(),
             actionViewController = actionNavigationController.viewControllers.first as? ActionViewController
             else {
-                assertionFailure("Unable to create an action view controller")
-                return nil
+                fatalError("Unable to create an action view controller")
         }
         
         actionViewController.game = game
