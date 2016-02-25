@@ -11,6 +11,7 @@ import UIKit
 class StartViewController: WelcomeBaseViewController, UITableViewDataSource, PlayerUpdatable {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var buttonContainerView: UIView!
     
     var game: Game!
     var players = [Player]()
@@ -41,6 +42,14 @@ class StartViewController: WelcomeBaseViewController, UITableViewDataSource, Pla
     
     @IBAction func joinGamePressed(sender: UIButton) {
         beginGame()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        
+        if segue.identifier == R.segue.joinViewController.waitViewController.identifier {
+            buttonContainerView.removeFromSuperview()
+        }
     }
     
     func beginGame() {

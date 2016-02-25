@@ -129,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="201" y="384"/>
+            <point key="canvasLocation" x="213" y="-9"/>
         </scene>
         <!--Creating Game...-->
         <scene sceneID="IyU-hv-Izz">
@@ -210,6 +210,7 @@
                     </tableView>
                     <connections>
                         <outlet property="roomCodeTextField" destination="x9T-PO-MTh" id="Gcd-ds-1se"/>
+                        <segue destination="Gdm-JA-AlC" kind="show" identifier="WaitViewController" id="PgD-Rw-7Un"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3N4-KE-3a1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -308,6 +309,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Room Code: DLGT" id="f3B-9L-zp0"/>
                     <connections>
+                        <outlet property="buttonContainerView" destination="oUV-8Y-oGD" id="ART-cH-m0K"/>
                         <outlet property="tableView" destination="BwL-1m-HNd" id="h9K-Ws-p67"/>
                     </connections>
                 </viewController>
@@ -316,5 +318,8 @@
             <point key="canvasLocation" x="1984" y="-9"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="PgD-Rw-7Un"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
 </document>

@@ -1,28 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10112" systemVersion="15E49a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10112" systemVersion="15E49a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="4aO-JQ-ENf">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="u5A-IW-HvZ">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="4aO-JQ-ENf" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                        <viewControllerLayoutGuide type="top" id="BKi-k6-2dA"/>
+                        <viewControllerLayoutGuide type="bottom" id="ja4-rb-RhW"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleToFill" id="XeW-vs-uxI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.20608906447887421" green="0.21474753320217133" blue="0.28639352321624756" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Ascendant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SxL-kt-Xur">
+                                <rect key="frame" x="167" y="128" width="266" height="72"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="60"/>
+                                <color key="textColor" red="0.25098040700000002" green="0.75686275960000005" blue="0.38039216399999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="A Game of Deception" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8N-sT-YEW">
+                                <rect key="frame" x="204" y="209" width="192" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhQ-CN-uem">
+                                <rect key="frame" x="0.0" y="233" width="600" height="367"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZI3-Bs-yH0">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71T-bN-eBc">
+                                <rect key="frame" x="187" y="200" width="226" height="1"/>
+                                <color key="backgroundColor" red="0.2941176593" green="0.3058823645" blue="0.40392157439999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="l5H-fg-8bj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.17254901960784313" green="0.1803921568627451" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="71T-bN-eBc" firstAttribute="centerX" secondItem="XeW-vs-uxI" secondAttribute="centerX" id="8Z1-7c-Qp8"/>
+                            <constraint firstItem="ja4-rb-RhW" firstAttribute="top" secondItem="WhQ-CN-uem" secondAttribute="bottom" id="951-j3-a1D"/>
+                            <constraint firstItem="71T-bN-eBc" firstAttribute="top" secondItem="SxL-kt-Xur" secondAttribute="bottom" id="ACM-im-D0Z"/>
+                            <constraint firstItem="71T-bN-eBc" firstAttribute="width" secondItem="SxL-kt-Xur" secondAttribute="width" constant="-40" id="ExZ-Cs-QVb"/>
+                            <constraint firstItem="t8N-sT-YEW" firstAttribute="centerX" secondItem="XeW-vs-uxI" secondAttribute="centerX" id="JJ2-mT-R0g"/>
+                            <constraint firstItem="WhQ-CN-uem" firstAttribute="leading" secondItem="XeW-vs-uxI" secondAttribute="leading" id="ZeO-a6-VP3"/>
+                            <constraint firstAttribute="trailing" secondItem="WhQ-CN-uem" secondAttribute="trailing" id="hUI-kq-DIR"/>
+                            <constraint firstItem="SxL-kt-Xur" firstAttribute="top" secondItem="ZI3-Bs-yH0" secondAttribute="bottom" id="hi6-yr-t20"/>
+                            <constraint firstItem="t8N-sT-YEW" firstAttribute="top" secondItem="71T-bN-eBc" secondAttribute="bottom" constant="8" id="iYV-9E-tBx"/>
+                            <constraint firstAttribute="trailing" secondItem="ZI3-Bs-yH0" secondAttribute="trailing" id="jt0-bc-8D0"/>
+                            <constraint firstItem="ZI3-Bs-yH0" firstAttribute="top" secondItem="XeW-vs-uxI" secondAttribute="topMargin" id="kRU-U4-1QA"/>
+                            <constraint firstItem="ZI3-Bs-yH0" firstAttribute="leading" secondItem="XeW-vs-uxI" secondAttribute="leading" id="pZv-uQ-1Zn"/>
+                            <constraint firstItem="ZI3-Bs-yH0" firstAttribute="height" secondItem="WhQ-CN-uem" secondAttribute="height" constant="-240" id="q1t-Lq-GsT"/>
+                            <constraint firstItem="SxL-kt-Xur" firstAttribute="centerX" secondItem="XeW-vs-uxI" secondAttribute="centerX" id="rmq-SX-Kd7"/>
+                            <constraint firstItem="WhQ-CN-uem" firstAttribute="top" secondItem="t8N-sT-YEW" secondAttribute="bottom" id="wud-Sq-9Sj"/>
+                        </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vaa-ZF-u17" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="213" y="-9"/>
         </scene>
     </scenes>
 </document>
