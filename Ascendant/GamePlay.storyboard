@@ -40,7 +40,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Failed Proposals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKw-J0-NIA">
-                                <rect key="frame" x="20" y="173" width="560" height="20.5"/>
+                                <rect key="frame" x="20" y="173" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -139,7 +139,7 @@
                                 <rect key="frame" x="16" y="540" width="568" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSa-7f-vKf" customClass="EXTButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="44"/>
                                         <color key="backgroundColor" red="0.74117648601531982" green="0.22745098173618317" blue="0.23137255012989044" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="1u4-xu-PkX"/>
@@ -157,7 +157,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sn-8q-A46" customClass="EXTButton">
-                                        <rect key="frame" x="122" y="0.0" width="228" height="44"/>
+                                        <rect key="frame" x="121" y="0.0" width="228" height="44"/>
                                         <color key="backgroundColor" red="0.24705882370000001" green="0.43921568989999998" blue="0.85882353779999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="5i7-Me-s1u"/>
@@ -174,7 +174,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSO-bH-4K9" customClass="EXTButton">
-                                        <rect key="frame" x="366" y="0.0" width="203" height="44"/>
+                                        <rect key="frame" x="365" y="0.0" width="203" height="44"/>
                                         <color key="backgroundColor" red="0.24705882370000001" green="0.43921568989999998" blue="0.85882353779999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="9OS-NP-Xjl"/>
@@ -192,11 +192,11 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B6a-Q9-DJL">
-                                <rect key="frame" x="20" y="400.5" width="560" height="123.5"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B6a-Q9-DJL">
+                                <rect key="frame" x="20" y="401" width="560" height="123"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for game to start..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m50-oI-5jx">
-                                <rect key="frame" x="20" y="371.5" width="560" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Waiting for game to start..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m50-oI-5jx">
+                                <rect key="frame" x="20" y="372" width="560" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -284,11 +284,11 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mv7-N3-A4M" id="zOI-dX-YMH">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="51.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HQC-k1-9Bz">
-                                                    <rect key="frame" x="16" y="12" width="576" height="27.5"/>
+                                                    <rect key="frame" x="16" y="12" width="576" height="27"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gde-DI-KaZ" customClass="EXTView">
                                                             <rect key="frame" x="0.0" y="10" width="8" height="8"/>
@@ -304,7 +304,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdQ-0H-FcR">
-                                                            <rect key="frame" x="16" y="3" width="560" height="21.5"/>
+                                                            <rect key="frame" x="16" y="3" width="560" height="22"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>

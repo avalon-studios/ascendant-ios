@@ -11,6 +11,7 @@
 		27119BCC1C7BE7F200B5E73C /* GamePlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27119BCB1C7BE7F200B5E73C /* GamePlay.storyboard */; };
 		27119BCF1C7BEE3100B5E73C /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27119BCE1C7BEE3100B5E73C /* MissionView.swift */; };
 		27119BD11C7BF17100B5E73C /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27119BD01C7BF17100B5E73C /* GamePlayViewController.swift */; };
+		27278C8A1C7F64E90098A5AA /* GameUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27278C891C7F64E90098A5AA /* GameUpdatable.swift */; };
 		273CA6471C7CEE0A00990DBE /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273CA6461C7CEE0A00990DBE /* GameDelegate.swift */; };
 		273CA64A1C7CEE4900990DBE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273CA6491C7CEE4900990DBE /* Player.swift */; };
 		273CA64C1C7CF07000990DBE /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273CA64B1C7CF07000990DBE /* Game.swift */; };
@@ -68,6 +69,7 @@
 		27119BCB1C7BE7F200B5E73C /* GamePlay.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GamePlay.storyboard; sourceTree = "<group>"; };
 		27119BCE1C7BEE3100B5E73C /* MissionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		27119BD01C7BF17100B5E73C /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
+		27278C891C7F64E90098A5AA /* GameUpdatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameUpdatable.swift; sourceTree = "<group>"; };
 		273CA6461C7CEE0A00990DBE /* GameDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
 		273CA6491C7CEE4900990DBE /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		273CA64B1C7CF07000990DBE /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				273CA6461C7CEE0A00990DBE /* GameDelegate.swift */,
+				27278C891C7F64E90098A5AA /* GameUpdatable.swift */,
 				27A9AC221C7DEB5C0065ECC0 /* PlayerDisplayable.swift */,
 			);
 			name = Protocols;
@@ -595,6 +598,7 @@
 			files = (
 				2761180B1C7BAEEC00652444 /* WelcomeViewController.swift in Sources */,
 				27C4FFCF1C7E023A0089FD12 /* WelcomePageViewController.swift in Sources */,
+				27278C8A1C7F64E90098A5AA /* GameUpdatable.swift in Sources */,
 				2799ABA31C7BCBF8003C532E /* StartViewController.swift in Sources */,
 				2799ABA61C7BCD25003C532E /* R.generated.swift in Sources */,
 				27A9AC231C7DEB5C0065ECC0 /* PlayerDisplayable.swift in Sources */,
@@ -762,7 +766,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -780,7 +784,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

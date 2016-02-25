@@ -8,34 +8,22 @@
 
 import UIKit
 
-class StartViewController: WelcomeBaseViewController, UITableViewDataSource {
+class StartViewController: WelcomeBaseViewController, UITableViewDataSource, PlayerUpdatable {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var waitingMessageLabel: UILabel!
-    @IBOutlet weak var buttonContainer: UIView!
     
     var game: Game!
+    var players = [Player]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        players = game.players
+        game.playerUpdatable = self
         tableView.reloadData()
-        
-        navigationItem.title = "Room Code: \(game.id)"
+        navigationItem.title = "Room Code: \(game.id.uppercaseString)"
         
         setUpUI()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reloadTableView), name: Game.updatePlayers, object: nil)
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     func setUpUI() {
@@ -62,13 +50,12 @@ class StartViewController: WelcomeBaseViewController, UITableViewDataSource {
         Socket.manager.game = game
         gameViewController.game = game
         
-        presentViewController(gameViewController, animated: true, completion: nil)
+        presentViewController(gameViewController, animated: true) {
+            self.pageController.showWelcome(false)
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        waitingMessageLabel.hidden = game.players.count != 0
-        
         return game.players.count
     }
     
@@ -81,6 +68,11 @@ class StartViewController: WelcomeBaseViewController, UITableViewDataSource {
         cell.nameLabel.text = game.players[indexPath.row].name
         
         return cell
+    }
+    
+    func updatePlayers(players: [Player]) {
+        self.players = players
+        tableView.reloadData()
     }
 }
  

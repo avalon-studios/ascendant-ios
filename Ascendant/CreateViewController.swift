@@ -18,7 +18,20 @@ class CreateViewController: WelcomeBaseViewController {
         super.viewDidLoad()
         
         setUpUI()
+    }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        createGame()
+    }
+    
+    func setUpUI() {
+        view.backgroundColor = UIColor.asc_baseColor()
+    }
+    
+    func createGame() {
+        
         Socket.manager.createGame(playerName) { game in
             if let game = game {
                 
@@ -33,10 +46,6 @@ class CreateViewController: WelcomeBaseViewController {
                 self.showAlert("Error", message: "We couldn't start a game right now - try again soon!")
             }
         }
-    }
-    
-    func setUpUI() {
-        view.backgroundColor = UIColor.asc_baseColor()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

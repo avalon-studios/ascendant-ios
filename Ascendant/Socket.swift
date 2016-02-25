@@ -18,7 +18,7 @@ class Socket {
     static let manager = Socket()
     
     let baseURL = NSURL(string: "https://ascendant-api.herokuapp.com/")!
-    let options: Set<SocketIOClientOption> = [.ForceWebsockets(true), .Secure(true)]
+    let options: Set<SocketIOClientOption> = [.ForceWebsockets(true), .Secure(true), .ReconnectWait(1)]
 
     private lazy var socket: SocketIOClient = SocketIOClient(socketURL: self.baseURL, options: self.options)
     
