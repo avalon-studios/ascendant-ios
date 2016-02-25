@@ -17,19 +17,19 @@ final class Game: Decodable {
         }
     }
     
-    let player: Player
-    let id: String
-    
     var players = [Player]() {
         didSet {
             delegate?.game(updatePlayers: players)
         }
     }
     
+    var player: Player
+    var id: String
+    
     init?(json: JSON) {
         
         guard let
-            id: String = "id" <~~ json,
+            id: String = "game_id" <~~ json,
             player: Player = "player" <~~ json
         else {
             return nil
@@ -39,16 +39,7 @@ final class Game: Decodable {
         self.player = player
     }
     
-    static func createGame(completion: (game: Game?, errorMessage: String) -> Void) {
-        Socket.manager.createGame { (json, errorMessage) in
-            if let json = json, game = Game(json: json) {
-                completion(game: game, errorMessage: errorMessage)
-            }
-            else {
-                completion(game: nil, errorMessage: errorMessage)
-            }
-        }
+    func start() {
+        
     }
-    
-    
 }

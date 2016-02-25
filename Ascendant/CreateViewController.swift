@@ -10,17 +10,19 @@ import UIKit
 
 class CreateViewController: WelcomeBaseViewController {
     
+    var playerName = "Kyle"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpUI()
     
-        Game.createGame { (game, errorMessage) in
+        Socket.manager.createGame(playerName) { game in
             if let game = game {
                 self.beginGame(game)
             }
             else {
-                self.showAlert("Error", message: errorMessage)
+                self.showAlert("Error", message: "We couldn't start a game right now - try again soon!")
             }
         }
     }

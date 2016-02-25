@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         setUpAppearance()
         
+        Socket.manager.connect()
+        
         return true
     }
 
