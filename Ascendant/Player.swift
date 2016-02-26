@@ -9,11 +9,15 @@
 import UIKit
 import Gloss
 
-struct Player: PlayerDisplayable, Glossy {
+struct Player: PlayerDisplayable, Glossy, Hashable {
     
     let name: String
     let id: String
     let team: Team
+    
+    var hashValue: Int {
+        return id.hashValue
+    }
     
     var teamColor: UIColor {
         return team == .Bad ? UIColor.asc_redColor() : UIColor.asc_greenColor()
@@ -47,6 +51,10 @@ struct Player: PlayerDisplayable, Glossy {
             "team" ~~> self.team
         ])
     }
+}
+
+func ==(lhs: Player, rhs: Player) -> Bool {
+    return lhs.id == rhs.id
 }
 
 enum Team: Int {

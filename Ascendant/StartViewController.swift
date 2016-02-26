@@ -44,14 +44,6 @@ class StartViewController: WelcomeBaseViewController, UITableViewDataSource, Pla
         beginGame()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        super.prepareForSegue(segue, sender: sender)
-        
-        if segue.identifier == R.segue.joinViewController.waitViewController.identifier {
-            buttonContainerView.removeFromSuperview()
-        }
-    }
-    
     func beginGame() {
         
         let gameViewController = R.storyboard.gamePlay.initialViewController()!

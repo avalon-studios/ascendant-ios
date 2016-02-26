@@ -16,7 +16,10 @@ final class Game: Decodable {
     
     var players = [Player]() {
         didSet {
+            // Make sure no duplicates
+            players = Array(Set(players))
             delegate?.game(updatePlayers: players)
+            playerUpdatable?.updatePlayers(players) // change this please
         }
     }
     
@@ -34,6 +37,7 @@ final class Game: Decodable {
         
         self.id = id
         self.player = player
+        self.players.append(player)
     }
     
     func start() {

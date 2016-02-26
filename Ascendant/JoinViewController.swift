@@ -15,6 +15,8 @@ class JoinViewController: UITableViewController, UITextFieldDelegate {
     
     weak var pageController: WelcomePageViewController!
 
+    var game: Game!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,8 +45,14 @@ class JoinViewController: UITableViewController, UITextFieldDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if let dest = segue.destinationViewController as? WelcomeBaseViewController {
             dest.pageController = pageController
+        }
+        
+        if let destination = segue.destinationViewController as? StartViewController {
+            destination.game = game
+            destination.buttonContainerView.removeFromSuperview()
         }
     }
     
@@ -53,8 +61,22 @@ class JoinViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
-        textField.enabled = false
+                
+        let gameID = textField.text!
+        Socket.manager.joinGame("Joseph", gameID: gameID) { game in
+            if let game = game {
+                
+                self.game = game
+                
+                Async.main(after: 0.5) {
+                    self.performSegueWithIdentifier(R.segue.joinViewController.waitViewController, sender: self)
+                }
+            }
+            else {
+                self.pageController.showWelcome(true)
+                self.showAlert("Error", message: "We couldn't join that game right now - try again soon!")
+            }
+        }
         
         return false
     }

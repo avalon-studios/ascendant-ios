@@ -18,7 +18,7 @@ class Socket {
     static let manager = Socket()
     
     let baseURL = NSURL(string: "https://ascendant-api.herokuapp.com/")!
-    let options: Set<SocketIOClientOption> = [.ForceWebsockets(true), .Secure(true), .ReconnectWait(1), .Log(true)]
+    let options: Set<SocketIOClientOption> = [.Secure(true), .ReconnectWait(10), .Log(true), .ForceWebsockets(true)]
 
     private lazy var socket: SocketIOClient = SocketIOClient(socketURL: self.baseURL, options: self.options)
     
@@ -36,12 +36,12 @@ class Socket {
     
     func createGame(playerName: String, completion: Game? -> Void) {
         createGameCompletion = completion
-        socket.emit(EmitEvent.create, [["name": playerName]])
+        socket.emit(EmitEvent.create, ["name": playerName])
     }
     
     func joinGame(playerName: String, gameID: String, completion: Game? -> Void) {
         createGameCompletion = completion
-        socket.emit(EmitEvent.join, [["name": playerName, "game_id": gameID]])
+        socket.emit(EmitEvent.join, ["name": playerName, "game_id": gameID])
     }
     
     func startGame() {
@@ -67,33 +67,11 @@ class Socket {
         }
         
         socket.on(Event.create) { [weak self] data, ack in
-            if let json = data.first as? JSON, game = Game(json: json) {
-                self?.game = game
-                self?.createGameCompletion?(game)
-            }
-            else {
-                self?.createGameCompletion?(nil)
-            }
-            
-            self?.createGameCompletion = nil
+            self?.createOrJoinGameFromData(data)
         }
         
         socket.on(Event.join) { [weak self] data, ack in
-            if let
-                json = data.first as? JSON,
-                game = Game(json: json),
-                playersJSON = json["players"] as? [JSON]
-            {
-                self?.game = game
-                self?.createGameCompletion?(game)
-                
-                game.players = [Player].fromJSONArray(playersJSON)
-            }
-            else {
-                self?.createGameCompletion?(nil)
-            }
-            
-            self?.createGameCompletion = nil
+            self?.createOrJoinGameFromData(data)
         }
         
         socket.on(Event.updatePlayers) { [weak self] data, ack in
@@ -114,6 +92,18 @@ class Socket {
             self?.game?.player = player
             self?.game?.players = [Player].fromJSONArray(playersJSON)
         }
+    }
+    
+    func createOrJoinGameFromData(data: [AnyObject]) {
+        if let json = data.first as? JSON, game = Game(json: json) {
+            self.game = game
+            createGameCompletion?(game)
+        }
+        else {
+            createGameCompletion?(nil)
+        }
+        
+        createGameCompletion = nil
     }
 }
 
