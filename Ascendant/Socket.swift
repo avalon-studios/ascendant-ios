@@ -36,12 +36,18 @@ class Socket {
     
     func createGame(playerName: String, completion: Game? -> Void) {
         createGameCompletion = completion
-        socket.emit(EmitEvent.create, ["name": playerName])
+        socket.emitWithAck(EmitEvent.create, ["name": playerName])(timeoutAfter: 5)
+        { [weak self] data in
+            self?.createOrJoinGameFromData(data)
+        }
     }
     
     func joinGame(gameID: String, playerName: String, completion: Game? -> Void) {
         createGameCompletion = completion
-        socket.emit(EmitEvent.join, ["name": playerName, "game_id": gameID])
+        socket.emitWithAck(EmitEvent.join, ["name": playerName, "game_id": gameID])(timeoutAfter: 5)
+        { [weak self] data in
+            self?.createOrJoinGameFromData(data)
+        }
     }
     
     func startGame() {
@@ -65,15 +71,7 @@ class Socket {
         socket.on("connect") { _ in
             print("Connected!")
         }
-        
-        socket.on(Event.create) { [weak self] data, ack in
-            self?.createOrJoinGameFromData(data)
-        }
-        
-        socket.on(Event.join) { [weak self] data, ack in
-            self?.createOrJoinGameFromData(data)
-        }
-        
+
         socket.on(Event.updatePlayers) { [weak self] data, ack in
             guard let json = data.first as? [JSON] else { return }
             self?.game?.players = [Player].fromJSONArray(json)
