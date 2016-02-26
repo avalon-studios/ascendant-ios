@@ -270,28 +270,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OpK-Mt-J8J">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OpK-Mt-J8J">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="464"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.29411764705882354" green="0.30588235294117649" blue="0.40392156862745099" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="hEh-xF-FEq">
-                                    <rect key="frame" x="0.0" y="144" width="600" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="138" width="600" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.16862745579999999" green="0.180392161" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PlayerCell" rowHeight="52" id="Mv7-N3-A4M" customClass="PlayerCell" customModule="Ascendant" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="52"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PlayerCell" rowHeight="46" id="Mv7-N3-A4M" customClass="PlayerCell" customModule="Ascendant" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mv7-N3-A4M" id="zOI-dX-YMH">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="51"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="45.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HQC-k1-9Bz">
-                                                    <rect key="frame" x="16" y="12" width="576" height="27"/>
+                                                    <rect key="frame" x="16" y="12" width="576" height="22"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gde-DI-KaZ" customClass="EXTView">
-                                                            <rect key="frame" x="0.0" y="10" width="8" height="8"/>
+                                                            <rect key="frame" x="0.0" y="7" width="8" height="8"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="8" id="PdA-rM-cxd"/>
@@ -304,7 +304,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdQ-0H-FcR">
-                                                            <rect key="frame" x="16" y="3" width="560" height="22"/>
+                                                            <rect key="frame" x="16" y="0.0" width="560" height="22"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>

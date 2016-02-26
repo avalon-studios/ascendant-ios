@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import ElegantPresentations
 
-class WelcomeViewController: WelcomeBaseViewController {
+class WelcomeViewController: UIViewController, UIViewControllerTransitioningDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +21,14 @@ class WelcomeViewController: WelcomeBaseViewController {
         view.backgroundColor = UIColor.asc_baseColor()
     }
     
-    @IBAction func startGamePressed(sender: AnyObject) {
-        pageController.showCreateGame()
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        segue.destinationViewController.modalPresentationStyle = .Custom
+        segue.destinationViewController.transitioningDelegate = self
     }
     
-    @IBAction func joinGamePressed(sender: AnyObject) {
-        pageController.showJoinGame()
+    @IBAction func unwindToWelcome(segue: UIStoryboardSegue) { }
+    
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
+        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [])
     }
-    
-    
 }

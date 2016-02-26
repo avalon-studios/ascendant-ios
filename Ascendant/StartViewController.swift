@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartViewController: WelcomeBaseViewController, UITableViewDataSource, PlayerUpdatable {
+class StartViewController: UIViewController, UITableViewDataSource, PlayerUpdatable {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buttonContainerView: UIView!
@@ -51,8 +51,8 @@ class StartViewController: WelcomeBaseViewController, UITableViewDataSource, Pla
         Socket.manager.game = game
         gameViewController.game = game
         
-        presentViewController(gameViewController, animated: true) {
-            self.pageController.showWelcome(false)
+        dismissViewControllerAnimated(true) {
+            self.presentingViewController?.presentViewController(gameViewController, animated: true, completion: nil)
         }
     }
     

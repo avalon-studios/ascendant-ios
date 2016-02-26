@@ -13,8 +13,6 @@ class JoinViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var roomCodeTextField: UITextField!
     
-    weak var pageController: WelcomePageViewController!
-
     var game: Game!
     
     override func viewDidLoad() {
@@ -33,8 +31,6 @@ class JoinViewController: UITableViewController, UITextFieldDelegate {
     
     func setUpUI() {
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(showWelcome))
-
         roomCodeTextField.attributedPlaceholder = NSAttributedString(string: "Room Code", attributes: [NSForegroundColorAttributeName: UIColor.asc_transparentWhiteColor()])
 
         tableView.backgroundColor = UIColor.asc_baseColor()
@@ -46,18 +42,11 @@ class JoinViewController: UITableViewController, UITextFieldDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if let dest = segue.destinationViewController as? WelcomeBaseViewController {
-            dest.pageController = pageController
-        }
-        
         if let destination = segue.destinationViewController as? StartViewController {
+            let _ = destination.view
             destination.game = game
             destination.buttonContainerView.removeFromSuperview()
         }
-    }
-    
-    @objc func showWelcome() {
-        pageController.showWelcome(true)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -73,7 +62,6 @@ class JoinViewController: UITableViewController, UITextFieldDelegate {
                 }
             }
             else {
-                self.pageController.showWelcome(true)
                 self.showAlert("Error", message: "We couldn't join that game right now - try again soon!")
             }
         }

@@ -9,9 +9,8 @@
 import UIKit
 import Async
 
-class CreateViewController: WelcomeBaseViewController {
+class CreateViewController: UITableViewController {
     
-    var playerName = "Kyle"
     var game: Game!
     
     override func viewDidLoad() {
@@ -23,7 +22,7 @@ class CreateViewController: WelcomeBaseViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        createGame()
+        
     }
     
     func setUpUI() {
@@ -32,7 +31,7 @@ class CreateViewController: WelcomeBaseViewController {
     
     func createGame() {
         
-        Socket.manager.createGame(playerName) { game in
+        Socket.manager.createGame("test") { game in
             if let game = game {
                 
                 self.game = game
@@ -42,7 +41,6 @@ class CreateViewController: WelcomeBaseViewController {
                 }
             }
             else {
-                self.pageController.showWelcome(true)
                 self.showAlert("Error", message: "We couldn't start a game right now - try again soon!")
             }
         }
