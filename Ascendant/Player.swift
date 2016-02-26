@@ -11,6 +11,8 @@ import Gloss
 
 struct Player: PlayerDisplayable, Glossy, Hashable {
     
+    private static let nameKey = "LastUsedName"
+    
     let name: String
     let id: String
     let team: Team
@@ -50,6 +52,16 @@ struct Player: PlayerDisplayable, Glossy, Hashable {
             "id" ~~> self.id,
             "team" ~~> self.team
         ])
+    }
+    
+    static var lastUsedName: String? {
+        get {
+            return NSUserDefaults.standardUserDefaults().stringForKey(Player.nameKey)
+        }
+        set {
+            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: Player.nameKey)
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
     }
 }
 

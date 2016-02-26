@@ -10,8 +10,21 @@ import UIKit
 
 extension UIColor {
     
+    static var theme: Theme {
+        get {
+            return Theme(rawValue: NSUserDefaults.standardUserDefaults().integerForKey("Theme")) ?? .Dark
+        }
+        set {
+            NSUserDefaults.standardUserDefaults().setInteger(newValue.rawValue, forKey: "Theme")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
+    
     static func asc_baseColor() -> UIColor {
-        return UIColor(hex: "#2C2E3D")
+        switch UIColor.theme {
+        case .Dark:     return UIColor(hex: "#2C2E3D")
+        case .Light:    return UIColor.whiteColor()
+        }
     }
     
     static func asc_darkAccentColor() -> UIColor {
@@ -31,7 +44,10 @@ extension UIColor {
     }
     
     static func asc_transparentWhiteColor() -> UIColor {
-        return UIColor.whiteColor().colorWithAlphaComponent(0.2)
+        switch UIColor.theme {
+        case .Dark:     return UIColor.whiteColor().colorWithAlphaComponent(0.2)
+        case .Light:    return UIColor.blackColor().colorWithAlphaComponent(0.2)
+        }
     }
     
     static func asc_separatorColor() -> UIColor {
@@ -39,7 +55,10 @@ extension UIColor {
     }
     
     static func asc_textColor() -> UIColor {
-        return UIColor.whiteColor()
+        switch UIColor.theme {
+        case .Dark:     return UIColor.whiteColor()
+        case .Light:    return UIColor.blackColor()
+        }
     }
 }
 

@@ -18,8 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         setUpAppearance()
         
-        Socket.manager.connect()
+        NSUserDefaults.standardUserDefaults().registerDefaults(["Theme": 0])
         
+        Socket.manager.connect()
+                
         return true
     }
 

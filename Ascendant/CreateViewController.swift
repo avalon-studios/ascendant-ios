@@ -33,6 +33,8 @@ class CreateViewController: UITableViewController, UITextFieldDelegate {
         view.backgroundColor = UIColor.asc_baseColor()
         
         nameTextField.attributedPlaceholder = NSAttributedString(string: nameTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: UIColor.asc_transparentWhiteColor()])
+        
+        nameTextField.text = Player.lastUsedName
     }
     
     func createGame(name: String) {
@@ -48,7 +50,9 @@ class CreateViewController: UITableViewController, UITextFieldDelegate {
                 self?.performSegueWithIdentifier(R.segue.createViewController.startViewController, sender: self)
             }
             else {
-                self?.showAlert("Error", message: "We couldn't start a game right now - try again soon!")
+                self?.showAlert("Error", message: "We couldn't start a game right now - try again soon!") { _ in
+                    self?.nameTextField.becomeFirstResponder()
+                }
             }
         }
     }
@@ -66,6 +70,9 @@ class CreateViewController: UITableViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if let name = textField.validName() {
+            
+            Player.lastUsedName = name
+            
             createGame(name)
         }
         

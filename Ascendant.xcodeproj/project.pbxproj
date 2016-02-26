@@ -35,6 +35,7 @@
 		27A9AC251C7DED0D0065ECC0 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A9AC241C7DED0D0065ECC0 /* UIColor+Extensions.swift */; };
 		27C4FFD11C7E16480089FD12 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C4FFD01C7E16480089FD12 /* UIViewController+Extensions.swift */; };
 		27E44ADC1C7CF50200794792 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E44ADB1C7CF50200794792 /* ActionViewController.swift */; };
+		27EBEDDD1C80D7E300D330A6 /* Themable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EBEDDC1C80D7E300D330A6 /* Themable.swift */; };
 		27FCF8891C7EA38800C0B515 /* AscendantButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FCF8881C7EA38800C0B515 /* AscendantButton.swift */; };
 		27FCF88B1C7EA7DB00C0B515 /* WelcomePlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FCF88A1C7EA7DB00C0B515 /* WelcomePlayerCell.swift */; };
 		407F177A5BDFAE81F304D8B7 /* Pods_AscendantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4005872E123CBC0FC63B9B0D /* Pods_AscendantTests.framework */; };
@@ -97,6 +98,7 @@
 		27A9AC241C7DED0D0065ECC0 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		27C4FFD01C7E16480089FD12 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		27E44ADB1C7CF50200794792 /* ActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		27EBEDDC1C80D7E300D330A6 /* Themable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Themable.swift; sourceTree = "<group>"; };
 		27FCF8881C7EA38800C0B515 /* AscendantButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AscendantButton.swift; sourceTree = "<group>"; };
 		27FCF88A1C7EA7DB00C0B515 /* WelcomePlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePlayerCell.swift; sourceTree = "<group>"; };
 		4005872E123CBC0FC63B9B0D /* Pods_AscendantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AscendantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +163,7 @@
 				273CA6461C7CEE0A00990DBE /* GameDelegate.swift */,
 				27278C891C7F64E90098A5AA /* GameUpdatable.swift */,
 				27A9AC221C7DEB5C0065ECC0 /* PlayerDisplayable.swift */,
+				27EBEDDC1C80D7E300D330A6 /* Themable.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -272,8 +275,8 @@
 			children = (
 				2761180A1C7BAEEC00652444 /* WelcomeViewController.swift */,
 				2799AB9E1C7BCB27003C532E /* CreateViewController.swift */,
-				2799ABA21C7BCBF8003C532E /* StartViewController.swift */,
 				2799ABA01C7BCB4F003C532E /* JoinViewController.swift */,
+				2799ABA21C7BCBF8003C532E /* StartViewController.swift */,
 			);
 			name = "Welcome and Create/Join";
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				27119BD11C7BF17100B5E73C /* GamePlayViewController.swift in Sources */,
 				2799AB9D1C7BC9D6003C532E /* Socket.swift in Sources */,
 				273CA6501C7CF29300990DBE /* PlayerCell.swift in Sources */,
+				27EBEDDD1C80D7E300D330A6 /* Themable.swift in Sources */,
 				27E44ADC1C7CF50200794792 /* ActionViewController.swift in Sources */,
 				2799ABA11C7BCB4F003C532E /* JoinViewController.swift in Sources */,
 				27119BCF1C7BEE3100B5E73C /* MissionView.swift in Sources */,
@@ -758,7 +762,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 28;
+				CURRENT_PROJECT_VERSION = 29;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -776,7 +780,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 28;
+				CURRENT_PROJECT_VERSION = 29;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

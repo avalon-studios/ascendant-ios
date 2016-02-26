@@ -8,10 +8,12 @@
 
 import UIKit
 
-class StartViewController: UIViewController, UITableViewDataSource, PlayerUpdatable {
+class StartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, PlayerUpdatable {
     
+    @IBOutlet var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buttonContainerHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var headerViewLineHeightConstraint: NSLayoutConstraint!
     
     var game: Game!
     var players = [Player]()
@@ -29,6 +31,7 @@ class StartViewController: UIViewController, UITableViewDataSource, PlayerUpdata
     
     func setUpUI() {
         
+        headerViewLineHeightConstraint.constant = 0.5
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 70
         tableView.dataSource = self
