@@ -62,7 +62,11 @@ class JoinViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if let name = nameTextField.validName(), gameID = roomCodeTextField.validGameID() {
+        
+        if textField === nameTextField {
+            roomCodeTextField.becomeFirstResponder()
+        }
+        else if let name = nameTextField.validName(), gameID = roomCodeTextField.validGameID() {
             joinGame(gameID, name: name)
         }
         
