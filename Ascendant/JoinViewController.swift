@@ -74,8 +74,8 @@ class JoinViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func setLoading(loading: Bool) {
-        nameTextField.enabled = loading
-        roomCodeTextField.enabled = loading
+        nameTextField.enabled = !loading
+        roomCodeTextField.enabled = !loading
         loading ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
 }

@@ -54,7 +54,7 @@ class CreateViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func setLoading(loading: Bool) {
-        nameTextField.enabled = loading
+        nameTextField.enabled = !loading
         loading ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
     

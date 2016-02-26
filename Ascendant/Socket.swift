@@ -26,6 +26,10 @@ class Socket {
     
     private var createGameCompletion: (Game? -> Void)?
     
+    var inGame: Bool {
+        return game != nil
+    }
+    
     init() {
         addSocketHandlers()
     }
