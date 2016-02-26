@@ -9,8 +9,11 @@
 import UIKit
 import Async
 
-class CreateViewController: UITableViewController {
+class CreateViewController: UITableViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
     var game: Game!
     
     override func viewDidLoad() {
@@ -22,35 +25,50 @@ class CreateViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        
+        nameTextField.becomeFirstResponder()
     }
     
     func setUpUI() {
+        
         view.backgroundColor = UIColor.asc_baseColor()
+        
+        nameTextField.attributedPlaceholder = NSAttributedString(string: nameTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: UIColor.asc_transparentWhiteColor()])
     }
     
-    func createGame() {
+    func createGame(name: String) {
         
-        Socket.manager.createGame("test") { game in
+        setLoading(true)
+        
+        Socket.manager.createGame(name) { [weak self] game in
+            
+            self?.setLoading(false)
+
             if let game = game {
-                
-                self.game = game
-                
-                Async.main(after: 0.5) {
-                    self.performSegueWithIdentifier(R.segue.createViewController.startViewController, sender: self)
-                }
+                self?.game = game
+                self?.performSegueWithIdentifier(R.segue.createViewController.startViewController, sender: self)
             }
             else {
-                self.showAlert("Error", message: "We couldn't start a game right now - try again soon!")
+                self?.showAlert("Error", message: "We couldn't start a game right now - try again soon!")
             }
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        super.prepareForSegue(segue, sender: sender)
-        
+    func setLoading(loading: Bool) {
+        nameTextField.enabled = loading
+        loading ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {        
         if let destination = segue.destinationViewController as? StartViewController {
             destination.game = game
         }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if let name = textField.validName() {
+            createGame(name)
+        }
+        
+        return false
     }
 }

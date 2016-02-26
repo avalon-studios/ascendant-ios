@@ -26,7 +26,9 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
         segue.destinationViewController.transitioningDelegate = self
     }
     
-    @IBAction func unwindToWelcome(segue: UIStoryboardSegue) { }
+    @IBAction func unwindToWelcome(segue: UIStoryboardSegue) {
+        segue.sourceViewController.view.endEditing(true)
+    }
     
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
         return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [])

@@ -11,7 +11,7 @@ import UIKit
 class StartViewController: UIViewController, UITableViewDataSource, PlayerUpdatable {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var buttonContainerView: UIView!
+    @IBOutlet weak var buttonContainerHeightConstraint: NSLayoutConstraint!
     
     var game: Game!
     var players = [Player]()
@@ -30,7 +30,7 @@ class StartViewController: UIViewController, UITableViewDataSource, PlayerUpdata
     func setUpUI() {
         
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 50
+        tableView.estimatedRowHeight = 70
         tableView.dataSource = self
         
         view.backgroundColor = UIColor.asc_baseColor()

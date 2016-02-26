@@ -11,7 +11,9 @@ import Async
 
 class JoinViewController: UITableViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var roomCodeTextField: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var game: Game!
     
@@ -24,48 +26,52 @@ class JoinViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        Async.main(after: 0.1) {
-            self.roomCodeTextField.becomeFirstResponder()
-        }
+        nameTextField.becomeFirstResponder()
     }
     
     func setUpUI() {
         
-        roomCodeTextField.attributedPlaceholder = NSAttributedString(string: "Room Code", attributes: [NSForegroundColorAttributeName: UIColor.asc_transparentWhiteColor()])
+        nameTextField.attributedPlaceholder = NSAttributedString(string: nameTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: UIColor.asc_transparentWhiteColor()])
+        roomCodeTextField.attributedPlaceholder = NSAttributedString(string: roomCodeTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: UIColor.asc_transparentWhiteColor()])
 
         tableView.backgroundColor = UIColor.asc_baseColor()
     }
     
-    @IBAction func joinButtonPressed(sender: UIButton) {
-        
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destination = segue.destinationViewController as? StartViewController {
+            destination.game = game
+        }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    func joinGame(gameID: String, name: String) {
         
-        if let destination = segue.destinationViewController as? StartViewController {
-            let _ = destination.view
-            destination.game = game
-            destination.buttonContainerView.removeFromSuperview()
+        setLoading(true)
+        
+        Socket.manager.joinGame(gameID, playerName: name) { [weak self] game in
+            
+            self?.setLoading(false)
+
+            if let game = game {
+                self?.game = game
+                self?.performSegueWithIdentifier(R.segue.joinViewController.waitViewController, sender: self)
+            }
+            else {
+                self?.showAlert("Error", message: "We couldn't join that game right now - try again soon!")
+            }
         }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-                
-        let gameID = textField.text!
-        Socket.manager.joinGame("Joseph", gameID: gameID) { game in
-            if let game = game {
-                
-                self.game = game
-                
-                Async.main(after: 0.5) {
-                    self.performSegueWithIdentifier(R.segue.joinViewController.waitViewController, sender: self)
-                }
-            }
-            else {
-                self.showAlert("Error", message: "We couldn't join that game right now - try again soon!")
-            }
+        if let name = nameTextField.validName(), gameID = roomCodeTextField.validGameID() {
+            joinGame(gameID, name: name)
         }
         
         return false
+    }
+    
+    func setLoading(loading: Bool) {
+        nameTextField.enabled = loading
+        roomCodeTextField.enabled = loading
+        loading ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
 }

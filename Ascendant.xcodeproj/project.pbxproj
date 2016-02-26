@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23A4527A3875FE3D86F9B27E /* Pods_Ascendant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9400BA697B92714DE1A39 /* Pods_Ascendant.framework */; };
+		2710DD261C809C83007654E5 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710DD251C809C83007654E5 /* UITextField+Extensions.swift */; };
 		27119BCC1C7BE7F200B5E73C /* GamePlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27119BCB1C7BE7F200B5E73C /* GamePlay.storyboard */; };
 		27119BCF1C7BEE3100B5E73C /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27119BCE1C7BEE3100B5E73C /* MissionView.swift */; };
 		27119BD11C7BF17100B5E73C /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27119BD01C7BF17100B5E73C /* GamePlayViewController.swift */; };
@@ -25,7 +26,6 @@
 		2761181E1C7BAEEC00652444 /* AscendantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2761181D1C7BAEEC00652444 /* AscendantTests.swift */; };
 		276118291C7BAEEC00652444 /* AscendantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276118281C7BAEEC00652444 /* AscendantUITests.swift */; };
 		2782AD591C7C1A7600D983AC /* ProposalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2782AD581C7C1A7600D983AC /* ProposalView.swift */; };
-		2799AB9B1C7BC407003C532E /* WelcomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799AB9A1C7BC407003C532E /* WelcomeNavigationController.swift */; };
 		2799AB9D1C7BC9D6003C532E /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799AB9C1C7BC9D6003C532E /* Socket.swift */; };
 		2799AB9F1C7BCB27003C532E /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799AB9E1C7BCB27003C532E /* CreateViewController.swift */; };
 		2799ABA11C7BCB4F003C532E /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799ABA01C7BCB4F003C532E /* JoinViewController.swift */; };
@@ -64,6 +64,7 @@
 		15F3AAED5F54CE9711D67B5A /* Pods-AscendantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AscendantUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AscendantUITests/Pods-AscendantUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1E489C07FD3A752117B96C2B /* Pods-Ascendant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ascendant.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ascendant/Pods-Ascendant.release.xcconfig"; sourceTree = "<group>"; };
 		21C63D3943BE038EBCD5BA16 /* Pods-Ascendant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ascendant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ascendant/Pods-Ascendant.debug.xcconfig"; sourceTree = "<group>"; };
+		2710DD251C809C83007654E5 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		27119BCB1C7BE7F200B5E73C /* GamePlay.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GamePlay.storyboard; sourceTree = "<group>"; };
 		27119BCE1C7BEE3100B5E73C /* MissionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		27119BD01C7BF17100B5E73C /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +88,6 @@
 		276118281C7BAEEC00652444 /* AscendantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AscendantUITests.swift; sourceTree = "<group>"; };
 		2761182A1C7BAEEC00652444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2782AD581C7C1A7600D983AC /* ProposalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProposalView.swift; sourceTree = "<group>"; };
-		2799AB9A1C7BC407003C532E /* WelcomeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeNavigationController.swift; sourceTree = "<group>"; };
 		2799AB9C1C7BC9D6003C532E /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
 		2799AB9E1C7BCB27003C532E /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		2799ABA01C7BCB4F003C532E /* JoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
@@ -270,7 +270,6 @@
 		2799AB991C7BC3ED003C532E /* Welcome and Create/Join */ = {
 			isa = PBXGroup;
 			children = (
-				2799AB9A1C7BC407003C532E /* WelcomeNavigationController.swift */,
 				2761180A1C7BAEEC00652444 /* WelcomeViewController.swift */,
 				2799AB9E1C7BCB27003C532E /* CreateViewController.swift */,
 				2799ABA21C7BCBF8003C532E /* StartViewController.swift */,
@@ -284,6 +283,7 @@
 			children = (
 				27A9AC241C7DED0D0065ECC0 /* UIColor+Extensions.swift */,
 				27C4FFD01C7E16480089FD12 /* UIViewController+Extensions.swift */,
+				2710DD251C809C83007654E5 /* UITextField+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -599,6 +599,7 @@
 				27C4FFD11C7E16480089FD12 /* UIViewController+Extensions.swift in Sources */,
 				273CA64E1C7CF28500990DBE /* ActionMessageCell.swift in Sources */,
 				273CA64A1C7CEE4900990DBE /* Player.swift in Sources */,
+				2710DD261C809C83007654E5 /* UITextField+Extensions.swift in Sources */,
 				2782AD591C7C1A7600D983AC /* ProposalView.swift in Sources */,
 				27FCF8891C7EA38800C0B515 /* AscendantButton.swift in Sources */,
 				27FCF88B1C7EA7DB00C0B515 /* WelcomePlayerCell.swift in Sources */,
@@ -606,7 +607,6 @@
 				276118091C7BAEEC00652444 /* AppDelegate.swift in Sources */,
 				27A9AC251C7DED0D0065ECC0 /* UIColor+Extensions.swift in Sources */,
 				27119BD11C7BF17100B5E73C /* GamePlayViewController.swift in Sources */,
-				2799AB9B1C7BC407003C532E /* WelcomeNavigationController.swift in Sources */,
 				2799AB9D1C7BC9D6003C532E /* Socket.swift in Sources */,
 				273CA6501C7CF29300990DBE /* PlayerCell.swift in Sources */,
 				27E44ADC1C7CF50200794792 /* ActionViewController.swift in Sources */,
@@ -758,7 +758,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -776,7 +776,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

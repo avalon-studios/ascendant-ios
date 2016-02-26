@@ -39,7 +39,7 @@ class Socket {
         socket.emit(EmitEvent.create, ["name": playerName])
     }
     
-    func joinGame(playerName: String, gameID: String, completion: Game? -> Void) {
+    func joinGame(gameID: String, playerName: String, completion: Game? -> Void) {
         createGameCompletion = completion
         socket.emit(EmitEvent.join, ["name": playerName, "game_id": gameID])
     }
