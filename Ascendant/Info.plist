@@ -19,14 +19,14 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>29</string>
+	<string>30</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
 			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypePlay</string>
+			<string>UIApplicationShortcutIconTypeInvitation</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Join Game</string>
 			<key>UIApplicationShortcutItemType</key>

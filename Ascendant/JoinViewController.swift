@@ -33,8 +33,6 @@ class JoinViewController: UITableViewController, UITextFieldDelegate {
         
         nameTextField.attributedPlaceholder = NSAttributedString(string: nameTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: UIColor.asc_transparentWhiteColor()])
         roomCodeTextField.attributedPlaceholder = NSAttributedString(string: roomCodeTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: UIColor.asc_transparentWhiteColor()])
-
-        nameTextField.text = Player.lastUsedName
         
         tableView.backgroundColor = UIColor.asc_baseColor()
     }
@@ -71,9 +69,6 @@ class JoinViewController: UITableViewController, UITextFieldDelegate {
             roomCodeTextField.becomeFirstResponder()
         }
         else if let name = nameTextField.validName(), gameID = roomCodeTextField.validGameID() {
-            
-            Player.lastUsedName = name
-            
             joinGame(gameID, name: name)
         }
         

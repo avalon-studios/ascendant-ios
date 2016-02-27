@@ -18,11 +18,11 @@ final class Game: Decodable {
         didSet {
             // Make sure no duplicates
             players = Array(Set(players))
-            delegate?.game(updatePlayers: players)
             playerUpdatable?.updatePlayers(players) // change this please
         }
     }
     
+    var creator = false
     var player: Player
     var id: String
     
@@ -37,10 +37,30 @@ final class Game: Decodable {
         
         self.id = id
         self.player = player
-        self.players.append(player)
+        self.players = [player]
+        
+        if let players: [Player] = "players" <~~ json {
+            self.players.appendContentsOf(players)
+        }
     }
     
-    func start() {
-        
+    func proposeMissionWithLeader(leader: Player, missionNumber: Int) {
+        delegate?.game(setMissionStatus: .Current, forMission: missionNumber)
+        delegate?.game(havePlayerProposeMission: leader)
+    }
+    
+    func voteOnProposalWithPlayers(players: [Player]) {
+        delegate?.game(voteOnProposalWithPlayers: players)
+    }
+    
+    func proposalVoteResult(result: ProposalResult) {
+        switch result {
+        case .Passed(let players):  delegate?.game(voteOnMissionWithPlayers: players)
+        case .Failed(let failed):   delegate?.game(setNumberOfFailedProposals: failed)
+        }
+    }
+    
+    func missionVoteResult(result: MissionResult) {
+        delegate?.game(setMissionStatus: result.passed ? .Success : .Fail, forMission: result.missionNumber)
     }
 }

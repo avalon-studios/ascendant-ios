@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
         
         // Check that we're not in a game, and safely get the root vc
-        if !Socket.manager.inGame, let welcomeViewController = window?.rootViewController as? WelcomeViewController {
+        if let welcomeViewController = window?.rootViewController as? WelcomeViewController {
             
             // Dismiss any view controllers on welcome
             welcomeViewController.dismissViewControllerAnimated(false, completion: nil)

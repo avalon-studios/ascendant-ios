@@ -19,8 +19,6 @@ class GamePlayViewController: UIViewController {
     
     var game: Game!
     
-    var players: [Player]!
-    
     var missionViews: [MissionView] {
         // If we can't cast all these as MissionViews, then we should crash
         return missionStack.arrangedSubviews as! [MissionView]
@@ -35,11 +33,11 @@ class GamePlayViewController: UIViewController {
         
         var players = [Player]()
         
-        players.append(Player(name: "Kyle", id: "1", team: .Good))
-        players.append(Player(name: "Elliot", id: "2", team: .Bad))
-        players.append(Player(name: "Joseph", id: "3", team: .Good))
-        players.append(Player(name: "Tyler", id: "4", team: .Good))
-        players.append(Player(name: "Jared", id: "5", team: .Bad))
+        players.append(Player(json: ["name": "Kyle", "id": "1", "team": 0])!)
+        players.append(Player(json: ["name": "Kyle", "id": "1", "team": 0])!)
+        players.append(Player(json: ["name": "Kyle", "id": "1", "team": 0])!)
+        players.append(Player(json: ["name": "Kyle", "id": "1", "team": 0])!)
+        players.append(Player(json: ["name": "Kyle", "id": "1", "team": 0])!)
         
         return players
     }
@@ -48,8 +46,8 @@ class GamePlayViewController: UIViewController {
         
         var players = [Player]()
         
-        players.append(Player(name: "Kyle", id: "1", team: .Good))
-        players.append(Player(name: "Elliot", id: "2", team: .Bad))
+        players.append(Player(json: ["name": "Kyle", "id": "1", "team": 0])!)
+        players.append(Player(json: ["name": "Kyle", "id": "1", "team": 0])!)
         
         return players
     }
@@ -206,10 +204,6 @@ extension GamePlayViewController: GameDelegate {
         }
         
         missionViews[missionNumber].setStatus(status)
-    }
-    
-    func game(updatePlayers players: [Player]) {
-        self.players = players
     }
 }
 

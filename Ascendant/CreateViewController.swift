@@ -33,8 +33,6 @@ class CreateViewController: UITableViewController, UITextFieldDelegate {
         view.backgroundColor = UIColor.asc_baseColor()
         
         nameTextField.attributedPlaceholder = NSAttributedString(string: nameTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: UIColor.asc_transparentWhiteColor()])
-        
-        nameTextField.text = Player.lastUsedName
     }
     
     func createGame(name: String) {
@@ -47,6 +45,7 @@ class CreateViewController: UITableViewController, UITextFieldDelegate {
 
             if let game = game {
                 self?.game = game
+                game.creator = true
                 self?.performSegueWithIdentifier(R.segue.createViewController.startViewController, sender: self)
             }
             else {
@@ -70,9 +69,6 @@ class CreateViewController: UITableViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if let name = textField.validName() {
-            
-            Player.lastUsedName = name
-            
             createGame(name)
         }
         

@@ -37,12 +37,10 @@ class StartViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.dataSource = self
         
         view.backgroundColor = UIColor.asc_baseColor()
+        
+        if !game.creator { buttonContainerHeightConstraint.constant = 0 }
     }
-    
-    @objc func reloadTableView() {
-        tableView.reloadData()
-    }
-    
+
     @IBAction func joinGamePressed(sender: UIButton) {
         beginGame()
     }
@@ -51,7 +49,6 @@ class StartViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let gameViewController = R.storyboard.gamePlay.initialViewController()!
         
-        Socket.manager.game = game
         gameViewController.game = game
         
         dismissViewControllerAnimated(true) {

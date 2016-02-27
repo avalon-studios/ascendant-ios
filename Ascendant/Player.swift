@@ -11,8 +11,6 @@ import Gloss
 
 struct Player: PlayerDisplayable, Glossy, Hashable {
     
-    private static let nameKey = "LastUsedName"
-    
     let name: String
     let id: String
     let team: Team
@@ -23,12 +21,6 @@ struct Player: PlayerDisplayable, Glossy, Hashable {
     
     var teamColor: UIColor {
         return team == .Bad ? UIColor.asc_redColor() : UIColor.asc_greenColor()
-    }
-    
-    init(name: String, id: String, team: Team) {
-        self.name = name
-        self.id = id
-        self.team = team
     }
     
     init?(json: JSON) {
@@ -52,16 +44,6 @@ struct Player: PlayerDisplayable, Glossy, Hashable {
             "id" ~~> self.id,
             "team" ~~> self.team
         ])
-    }
-    
-    static var lastUsedName: String? {
-        get {
-            return NSUserDefaults.standardUserDefaults().stringForKey(Player.nameKey)
-        }
-        set {
-            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: Player.nameKey)
-            NSUserDefaults.standardUserDefaults().synchronize()
-        }
     }
 }
 
