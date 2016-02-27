@@ -42,7 +42,12 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
         NSNotificationCenter.defaultCenter().removeObserver(self, name: Theme.notificationName, object: nil)
     }
     
+    
+    // MARK: - Style
+    
+    // Set all the views colors
     func updateTheme() {
+        
         view.backgroundColor = Theme.asc_baseColor()
         
         [startGameButton, joinGameButton, rulesButton, settingsButton].forEach {
@@ -51,23 +56,29 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        segue.destinationViewController.modalPresentationStyle = .Custom
-        segue.destinationViewController.transitioningDelegate = self
-    }
-    
-    @IBAction func unwindToWelcome(segue: UIStoryboardSegue) {
-        segue.sourceViewController.view.endEditing(true)
-    }
-    
-    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [])
-    }
-    
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         switch Theme.theme {
         case .Dark:     return .LightContent
         case .Light:    return .Default
         }
+    }
+    
+    
+    // MARK: - Navigation
+    
+    // Set these for the custom presentation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        segue.destinationViewController.modalPresentationStyle = .Custom
+        segue.destinationViewController.transitioningDelegate = self
+    }
+    
+    // Unwind segue, also dismiss the keyboard
+    @IBAction func unwindToWelcome(segue: UIStoryboardSegue) {
+        segue.sourceViewController.view.endEditing(true)
+    }
+    
+    // Conform to UIViewControllerTransitioningDelegate
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
+        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [])
     }
 }

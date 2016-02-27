@@ -16,10 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
+        // Set up appearance proxies
         setUpAppearance()
         
+        // Set a default theme
         NSUserDefaults.standardUserDefaults().registerDefaults(["Theme": 0])
         
+        // Connect the socket
         Socket.manager.connect()
                 
         return true
@@ -36,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navBar.barStyle = .Black
     }
     
+    // Handle 3D Touch shortcuts
     func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
         
         // Check that we're not in a game, and safely get the root vc
@@ -60,7 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             else if shortcutItem.type == "space.ascendant.Ascendant.joingame" {
                 presentShortcutViewController(R.storyboard.welcome.joinNavigationController()!)
             }
-            
         }
     }
 }
