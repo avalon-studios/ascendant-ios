@@ -13,7 +13,7 @@ class ProposalView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        backgroundColor = UIColor.asc_transparentWhiteColor()
+        backgroundColor = Theme.asc_transparentWhiteColor()
     }
     
     override func layoutSubviews() {
@@ -24,6 +24,6 @@ class ProposalView: UIView {
     }
     
     func setFailed(failed: Bool) {
-        backgroundColor = failed ? UIColor.asc_redColor() : UIColor.asc_transparentWhiteColor()
+        backgroundColor = failed ? Theme.asc_redColor() : Theme.asc_transparentWhiteColor()
     }
 }

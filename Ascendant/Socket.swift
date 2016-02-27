@@ -171,7 +171,7 @@ class Socket {
             guard let
                 json = data.first as? JSON,
                 result = MissionResult(json: json)
-                else {
+            else {
                     return
             }
             

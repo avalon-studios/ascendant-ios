@@ -12,10 +12,15 @@ import ElegantPresentations
 class WelcomeViewController: UIViewController, Themable, UIViewControllerTransitioningDelegate {
 
     
-    @IBOutlet weak var startGameButton: AscendantButton!
-    @IBOutlet weak var joinGameButton: AscendantButton!
-    @IBOutlet weak var rulesButton: AscendantButton!
-    @IBOutlet weak var settingsButton: AscendantButton!
+    // MARK: - Outlets
+    
+    @IBOutlet var startGameButton: AscendantButton!
+    @IBOutlet var joinGameButton: AscendantButton!
+    @IBOutlet var rulesButton: AscendantButton!
+    @IBOutlet var settingsButton: AscendantButton!
+    
+    
+    // MARK: — Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +28,26 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
         updateTheme()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Register for theme updates
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateTheme), name: Theme.notificationName, object: nil)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        // Deregister for theme updates
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: Theme.notificationName, object: nil)
+    }
+    
     func updateTheme() {
-        view.backgroundColor = UIColor.asc_baseColor()
+        view.backgroundColor = Theme.asc_baseColor()
         
         [startGameButton, joinGameButton, rulesButton, settingsButton].forEach {
-            $0.backgroundColor = UIColor.asc_transparentWhiteColor()
-            $0.setTitleColor(UIColor.asc_textColor(), forState: .Normal)
+            $0.backgroundColor = Theme.asc_transparentWhiteColor()
+            $0.setTitleColor(Theme.asc_textColor(), forState: .Normal)
         }
     }
     
@@ -46,7 +65,7 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        switch UIColor.theme {
+        switch Theme.theme {
         case .Dark:     return .LightContent
         case .Light:    return .Default
         }

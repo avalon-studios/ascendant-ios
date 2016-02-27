@@ -48,7 +48,7 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
         case .ProposeMission:
             failButton.hidden = true
             passButton.setTitle("Propose", forState: .Normal)
-            passButton.backgroundColor = UIColor.asc_blueColor()
+            passButton.backgroundColor = Theme.asc_blueColor()
             passButton.enabled = false
         case .ProposalVote:
             passButton.setTitle("Approve", forState: .Normal)
@@ -61,8 +61,8 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // THEME
         
-        view.backgroundColor = UIColor.asc_baseColor()
-        tableView.separatorColor = UIColor.asc_separatorColor()
+        view.backgroundColor = Theme.asc_baseColor()
+        tableView.separatorColor = Theme.asc_separatorColor()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -88,10 +88,10 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.teamView.backgroundColor = player.teamColor
         }
         else if game.player.id == player.id {
-            cell.teamView.backgroundColor = UIColor.asc_greenColor()
+            cell.teamView.backgroundColor = Theme.asc_greenColor()
         }
         else {
-            cell.teamView.backgroundColor = UIColor.asc_transparentWhiteColor()
+            cell.teamView.backgroundColor = Theme.asc_transparentWhiteColor()
         }
         
         return cell

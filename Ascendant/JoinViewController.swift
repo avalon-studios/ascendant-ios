@@ -31,10 +31,10 @@ class JoinViewController: UITableViewController, UITextFieldDelegate {
     
     func setUpUI() {
         
-        nameTextField.attributedPlaceholder = NSAttributedString(string: nameTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: UIColor.asc_transparentWhiteColor()])
-        roomCodeTextField.attributedPlaceholder = NSAttributedString(string: roomCodeTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: UIColor.asc_transparentWhiteColor()])
+        nameTextField.attributedPlaceholder = NSAttributedString(string: nameTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: Theme.asc_transparentWhiteColor()])
+        roomCodeTextField.attributedPlaceholder = NSAttributedString(string: roomCodeTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: Theme.asc_transparentWhiteColor()])
         
-        tableView.backgroundColor = UIColor.asc_baseColor()
+        tableView.backgroundColor = Theme.asc_baseColor()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

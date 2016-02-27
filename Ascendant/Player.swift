@@ -20,7 +20,7 @@ struct Player: PlayerDisplayable, Glossy, Hashable {
     }
     
     var teamColor: UIColor {
-        return team == .Bad ? UIColor.asc_redColor() : UIColor.asc_greenColor()
+        return team == .Bad ? Theme.asc_redColor() : Theme.asc_greenColor()
     }
     
     init?(json: JSON) {

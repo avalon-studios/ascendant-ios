@@ -30,9 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navBar = UINavigationBar.appearance()
         
         navBar.translucent = false
-        navBar.tintColor = UIColor.asc_textColor()
-        navBar.barTintColor = UIColor.asc_darkAccentColor()
-        navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.asc_textColor()]
+        navBar.tintColor = Theme.asc_textColor()
+        navBar.barTintColor = Theme.asc_darkAccentColor()
+        navBar.titleTextAttributes = [NSForegroundColorAttributeName: Theme.asc_textColor()]
         navBar.barStyle = .Black
     }
     

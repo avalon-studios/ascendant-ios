@@ -72,8 +72,8 @@ class GamePlayViewController: UIViewController {
             view.titleLabel.text = "\(index + 1)"
         }
         
-        view.backgroundColor = UIColor.asc_baseColor()
-        separators.forEach { $0.backgroundColor = UIColor.asc_separatorColor() }
+        view.backgroundColor = Theme.asc_baseColor()
+        separators.forEach { $0.backgroundColor = Theme.asc_separatorColor() }
     }
     
     func createActionViewController() -> (UINavigationController, ActionViewController)? {

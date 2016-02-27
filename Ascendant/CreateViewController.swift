@@ -30,9 +30,9 @@ class CreateViewController: UITableViewController, UITextFieldDelegate {
     
     func setUpUI() {
         
-        view.backgroundColor = UIColor.asc_baseColor()
+        view.backgroundColor = Theme.asc_baseColor()
         
-        nameTextField.attributedPlaceholder = NSAttributedString(string: nameTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: UIColor.asc_transparentWhiteColor()])
+        nameTextField.attributedPlaceholder = NSAttributedString(string: nameTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: Theme.asc_transparentWhiteColor()])
     }
     
     func createGame(name: String) {

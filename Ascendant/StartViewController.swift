@@ -36,7 +36,7 @@ class StartViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.estimatedRowHeight = 70
         tableView.dataSource = self
         
-        view.backgroundColor = UIColor.asc_baseColor()
+        view.backgroundColor = Theme.asc_baseColor()
         
         if !game.creator { buttonContainerHeightConstraint.constant = 0 }
     }
