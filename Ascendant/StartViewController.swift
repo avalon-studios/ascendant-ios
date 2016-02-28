@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, PlayerUpdatable {
+class StartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -22,7 +22,6 @@ class StartViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         
         players = game.players
-        game.playerUpdatable = self
         tableView.reloadData()
         navigationItem.title = "Room Code: \(game.id.uppercaseString)"
         
@@ -33,6 +32,7 @@ class StartViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewWillAppear(animated)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(beginGame), name: Socket.rolesAssignedNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updatePlayersTable), name: Socket.updatedPlayers, object: nil)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -75,6 +75,10 @@ class StartViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
+    @objc func updatePlayersTable() {
+        tableView.reloadData()
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return game.players.count
     }
@@ -88,11 +92,6 @@ class StartViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.nameLabel.text = game.players[indexPath.row].name
         
         return cell
-    }
-    
-    func updatePlayers(players: [Player]) {
-        self.players = players
-        tableView.reloadData()
     }
 }
  

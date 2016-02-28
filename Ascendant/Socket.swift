@@ -18,6 +18,7 @@ class Socket {
     static let manager = Socket()
     
     static let rolesAssignedNotification = "AssignedRoles"
+    static let updatedPlayers = "UpdatedPlayers"
     
     let baseURL = NSURL(string: "https://ascendant-api.herokuapp.com/")!
     let timeout: UInt64 = 3
@@ -118,6 +119,8 @@ class Socket {
             }
             
             game.players = [Player].fromJSONArray(json)
+            
+            NSNotificationCenter.defaultCenter().postNotificationName(Socket.updatedPlayers, object: nil)
         }
         
         socket.on(Event.assignRoles) { data, ack in

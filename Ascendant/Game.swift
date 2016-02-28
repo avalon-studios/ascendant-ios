@@ -12,7 +12,6 @@ import Gloss
 final class Game: Decodable {
     
     weak var delegate: GameDelegate?
-    weak var playerUpdatable: PlayerUpdatable?
     
     static var currentGame: Game?
     
@@ -20,7 +19,6 @@ final class Game: Decodable {
         didSet {
             // Make sure no duplicates
             players = Array(Set(players))
-            playerUpdatable?.updatePlayers(players) // change this please
         }
     }
     
