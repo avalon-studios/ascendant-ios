@@ -55,11 +55,15 @@ class Socket {
         }
     }
     
-    func leaveGame(game: Game) {
+    func leaveGame() {
+        
+        guard let game = Game.currentGame else { return }
         
         let items = ["game_id": game.id, "player_id": game.player.id]
         
-        socket.emit(EmitEvent.leave, items)
+        socket.emitWithAck(EmitEvent.leave, items)(timeoutAfter: timeout) { _ in
+            Game.currentGame = nil
+        }
     }
     
     func startGame(game: Game, completion: SocketAckCallback) {

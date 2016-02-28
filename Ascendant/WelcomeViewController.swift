@@ -75,6 +75,7 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
     // Unwind segue, also dismiss the keyboard
     @IBAction func unwindToWelcome(segue: UIStoryboardSegue) {
         segue.sourceViewController.view.endEditing(true)
+        Socket.manager.leaveGame()
     }
     
     // Conform to UIViewControllerTransitioningDelegate

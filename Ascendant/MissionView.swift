@@ -11,6 +11,8 @@ import PureLayout
 
 class MissionView: UIView {
     
+    var currentStatus = MissionStatus.None
+    
     let opacityAnimationKey = "OpacityAnimationKey"
     
     let titleLabel: UILabel = {
@@ -42,6 +44,8 @@ class MissionView: UIView {
     }
     
     func setStatus(status: MissionStatus) {
+        
+        guard status != currentStatus else { return }
         
         UIView.animateWithDuration(1, delay: 0, options: [.BeginFromCurrentState],
             animations: {

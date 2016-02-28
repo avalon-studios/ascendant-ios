@@ -14,6 +14,8 @@ final class Game: Decodable {
     weak var delegate: GameDelegate?
     weak var playerUpdatable: PlayerUpdatable?
     
+    static var currentGame: Game?
+    
     var players = [Player]() {
         didSet {
             // Make sure no duplicates
@@ -42,6 +44,8 @@ final class Game: Decodable {
         if let players: [Player] = "players" <~~ json {
             self.players.appendContentsOf(players)
         }
+        
+        Game.currentGame = self
     }
     
     func proposeMissionWithLeader(leader: Player, missionNumber: Int) {

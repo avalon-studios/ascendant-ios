@@ -8,7 +8,6 @@ target 'Ascendant' do
     pod 'Gloss'
     pod 'PureLayout'
     pod 'ElegantPresentations'
-    pod 'VCTransitionsLibrary'
     pod 'AsyncSwift'
     pod 'EXTView'
 end
