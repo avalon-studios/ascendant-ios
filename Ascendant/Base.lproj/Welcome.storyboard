@@ -330,7 +330,6 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="76" id="C07-45-Ceh"/>
                                             <constraint firstAttribute="bottom" secondItem="dab-K6-66w" secondAttribute="bottom" constant="16" id="N5t-Sz-gBY"/>
                                             <constraint firstItem="dab-K6-66w" firstAttribute="top" secondItem="9Jw-HJ-5gx" secondAttribute="top" constant="16" id="SHT-8M-xEN"/>
                                             <constraint firstItem="dab-K6-66w" firstAttribute="leading" secondItem="9Jw-HJ-5gx" secondAttribute="leading" constant="16" id="Tq7-un-nfM"/>
@@ -356,7 +355,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="buttonContainerHeightConstraint" destination="C07-45-Ceh" id="sMB-yd-uOT"/>
                         <outlet property="buttonContainerView" destination="9Jw-HJ-5gx" id="haw-0Q-GhT"/>
                         <outlet property="tableView" destination="JZX-4Y-VTr" id="SYQ-Jr-OkW"/>
                     </connections>
