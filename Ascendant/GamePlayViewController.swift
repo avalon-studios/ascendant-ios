@@ -66,6 +66,24 @@ class GamePlayViewController: UIViewController {
         
         return (actionNavigationController, actionViewController)
     }
+    
+    @IBAction func readyButtonPressed(sender: AscendantButton) {
+    
+        sender.startActivity()
+        
+        Socket.manager.sendReady(game) { result in
+            
+            sender.stopActivity()
+            
+            switch result {
+            case .Success:
+                sender.removeFromSuperview()
+                self.messageLabel.text = "Waiting for other players..."
+            case .Error(let message):
+                self.showAlert("Error", message: message)
+            }
+        }
+    }
 }
 
 extension GamePlayViewController: GameDelegate {

@@ -78,6 +78,15 @@ class Socket {
         }
     }
     
+    func sendReady(game: Game, completion: SocketAckCallback) {
+        
+        let items = ["game_id": game.id, "player_id": game.player.id]
+        
+        socket.emitWithAck(EmitEvent.ready, items)(timeoutAfter: timeout) { [weak self] data in
+            self?.parseAckResult(data, completion: completion)
+        }
+    }
+    
     func proposeMission(game: Game, players: [Player], completion: SocketAckCallback) {
         
         let playerIDs = players.map { $0.id }
@@ -226,6 +235,7 @@ struct EmitEvent {
     static let join = "join"
     static let leave = "leave"
     static let start = "start"
+    static let ready = "ready"
     static let proposeMission = "propose_mission"
     static let proposalVote = "proposal_vote"
     static let missionVote = "mission_vote"
