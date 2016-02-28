@@ -14,6 +14,7 @@ class GamePlayViewController: UIViewController {
     
     @IBOutlet weak var missionStack: UIStackView!
     @IBOutlet weak var proposalStack: UIStackView!
+    @IBOutlet weak var messageLabel: UILabel!
     
     @IBOutlet var separators: [UIView]!
     
@@ -29,41 +30,14 @@ class GamePlayViewController: UIViewController {
         return proposalStack.arrangedSubviews as! [ProposalView]
     }
     
-    var mockPlayers: [Player] {
-        
-        var players = [Player]()
-        
-        players.append(Player(json: ["name": "Kyle", "id": "1", "team": 0])!)
-        players.append(Player(json: ["name": "Kyle", "id": "1", "team": 0])!)
-        players.append(Player(json: ["name": "Kyle", "id": "1", "team": 0])!)
-        players.append(Player(json: ["name": "Kyle", "id": "1", "team": 0])!)
-        players.append(Player(json: ["name": "Kyle", "id": "1", "team": 0])!)
-        
-        return players
-    }
-    
-    var mockMissionPlayers: [Player] {
-        
-        var players = [Player]()
-        
-        players.append(Player(json: ["name": "Kyle", "id": "1", "team": 0])!)
-        players.append(Player(json: ["name": "Kyle", "id": "1", "team": 0])!)
-        
-        return players
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         game.delegate = self
         
-        setUpUI()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+        messageLabel.text = "You're on the " + (game.player.team == .Good ? "good" : "bad") + " team"
         
-        showMissionAndFailedChanges()
+        setUpUI()
     }
     
     func setUpUI() {
@@ -91,62 +65,6 @@ class GamePlayViewController: UIViewController {
         
         return (actionNavigationController, actionViewController)
     }
-    
-    
-    // JUST FOR MOCKUP!
-    
-    @IBAction func mockupPropose(sender: AnyObject) {
-        game(havePlayerProposeMission: game.player)
-    }
-    
-    @IBAction func mockupMissionVote(sender: AnyObject) {
-        game(voteOnMissionWithPlayers: mockMissionPlayers)
-    }
-    @IBAction func End(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func showMissionAndFailedChanges() {
-        
-        Async.main(after: 2) {
-            self.game(setMissionStatus: .Current, forMission: 0)
-            self.game(setNumberOfFailedProposals: 1)
-        }
-        .main(after: 1) {
-            self.game(setNumberOfFailedProposals: 2)
-        }
-        .main(after: 1) {
-            self.game(setNumberOfFailedProposals: 3)
-        }
-        .main(after: 1) {
-            self.game(setNumberOfFailedProposals: 4)
-        }
-        .main(after: 1) {
-            self.game(setNumberOfFailedProposals: 5)
-        }
-        .main(after: 1) {
-            self.game(setNumberOfFailedProposals: 0)
-        }
-        .main {
-            self.game(setMissionStatus: .Success, forMission: 0)
-            self.game(setMissionStatus: .Current, forMission: 1)
-        }
-        .main(after: 3) {
-            self.game(setMissionStatus: .Fail, forMission: 1)
-            self.game(setMissionStatus: .Current, forMission: 2)
-        }
-        .main(after: 2.5) {
-            self.game(setMissionStatus: .Fail, forMission: 2)
-            self.game(setMissionStatus: .Current, forMission: 3)
-        }
-        .main(after: 4) {
-            self.game(setMissionStatus: .Success, forMission: 3)
-            self.game(setMissionStatus: .Current, forMission: 4)
-        }
-        .main(after: 2) {
-            self.game(setMissionStatus: .Success, forMission: 4)
-        }
-    }
 }
 
 extension GamePlayViewController: GameDelegate {
@@ -157,7 +75,7 @@ extension GamePlayViewController: GameDelegate {
             return
         }
         
-        actionViewController.players = mockPlayers
+        actionViewController.actionMembers = game.players
         actionViewController.action = .ProposeMission
         actionViewController.numberOfPlayersForProposal = 2
         
@@ -179,7 +97,7 @@ extension GamePlayViewController: GameDelegate {
             return
         }
         
-        actionViewController.players = players
+        actionViewController.actionMembers = players
         actionViewController.action = .MissionVote
         
         presentViewController(actionNavigationController, animated: true, completion: nil)
@@ -191,7 +109,7 @@ extension GamePlayViewController: GameDelegate {
             return
         }
         
-        actionViewController.players = players
+        actionViewController.actionMembers = players
         actionViewController.action = .ProposalVote
         
         presentViewController(actionNavigationController, animated: true, completion: nil)
@@ -210,6 +128,6 @@ extension GamePlayViewController: GameDelegate {
 extension GamePlayViewController: UIViewControllerTransitioningDelegate {
     
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [.CustomPresentingScale(0.9), .PresentedPercentHeight(0.8)])
+        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [.PresentedPercentHeight(0.8)])
     }
 }

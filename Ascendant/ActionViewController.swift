@@ -20,7 +20,7 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var game: Game!
     var action = Action.MissionVote
-    var players: [Player]!
+    var actionMembers: [Player]!
     var numberOfPlayersForProposal = 0
     
     var actionMessage: String {
@@ -66,7 +66,7 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return players.count
+        return actionMembers.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -80,7 +80,7 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func configurePlayerCell(cell: PlayerCell, forIndexPath indexPath: NSIndexPath) -> PlayerCell {
         
-        let player = players[indexPath.row]
+        let player = actionMembers[indexPath.row]
         
         cell.nameLabel.text = player.name
         
