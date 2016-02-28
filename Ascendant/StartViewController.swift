@@ -29,6 +29,18 @@ class StartViewController: UIViewController, UITableViewDataSource, UITableViewD
         setUpUI()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(beginGame), name: Socket.rolesAssignedNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     func setUpUI() {
         
         headerViewLineHeightConstraint.constant = 0.5
@@ -41,11 +53,18 @@ class StartViewController: UIViewController, UITableViewDataSource, UITableViewD
         if !game.creator { buttonContainerHeightConstraint.constant = 0 }
     }
 
-    @IBAction func joinGamePressed(sender: UIButton) {
-        beginGame()
+    @IBAction func startGamePressed(sender: UIButton) {
+        
+        Socket.manager.startGame(game) { [weak self] result in
+            
+            switch result {
+            case .Success:              self?.beginGame()
+            case .Error(let message):   self?.showAlert("Error", message: message)
+            }
+        }
     }
     
-    func beginGame() {
+    @objc func beginGame() {
         
         let gameViewController = R.storyboard.gamePlay.initialViewController()!
         
