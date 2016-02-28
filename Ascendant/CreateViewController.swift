@@ -14,6 +14,7 @@ class CreateViewController: UITableViewController, Themable, UITextFieldDelegate
     
     // MARK: - Outlets
     
+    @IBOutlet weak var activityCell: UITableViewCell!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
@@ -26,6 +27,8 @@ class CreateViewController: UITableViewController, Themable, UITextFieldDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nameTextField.text = NSUserDefaults.lastUsedName
         
         updateTheme()
     }
@@ -51,8 +54,17 @@ class CreateViewController: UITableViewController, Themable, UITextFieldDelegate
     func updateTheme() {
         
         view.backgroundColor = Theme.asc_baseColor()
+
+        activityCell.backgroundColor = Theme.asc_baseColor()
         
-        nameTextField.attributedPlaceholder = NSAttributedString(string: nameTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: Theme.asc_transparentWhiteColor()])
+        activityIndicator.color = Theme.asc_defaultTextColor()
+        
+        nameTextField.backgroundColor = Theme.asc_baseColor()
+        nameTextField.tintColor = Theme.asc_blueColor()
+        nameTextField.textColor = Theme.asc_defaultTextColor()
+        nameTextField.keyboardAppearance = Theme.asc_keyboardAppearance()
+        
+        nameTextField.attributedPlaceholder = NSAttributedString(string: nameTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: Theme.asc_transparentColor()])
     }
 
     
@@ -94,6 +106,9 @@ class CreateViewController: UITableViewController, Themable, UITextFieldDelegate
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if let name = textField.validName() {
+            
+            NSUserDefaults.lastUsedName = name
+            
             createGame(name)
         }
         

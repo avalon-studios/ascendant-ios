@@ -8,8 +8,17 @@
 
 import UIKit
 
-class WelcomePlayerCell: UITableViewCell {
+class WelcomePlayerCell: UITableViewCell, Themable {
     
     @IBOutlet weak var nameLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        updateTheme()
+    }
+    
+    func updateTheme() {
+        nameLabel.textColor = Theme.asc_defaultTextColor()
+    }
 }

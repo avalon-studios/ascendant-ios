@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ActionViewController: UIViewController, Themable, UITableViewDelegate, UITableViewDataSource {
     
     
     @IBOutlet weak var passButton: AscendantButton!
@@ -33,6 +33,8 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateTheme()
+        
         setUpUI()
     }
     
@@ -47,7 +49,6 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
         case .ProposeMission:
             failButton.hidden = true
             passButton.setTitle("Propose", forState: .Normal)
-            passButton.backgroundColor = Theme.asc_blueColor()
             passButton.enabled = false
         case .ProposalVote:
             passButton.setTitle("Approve", forState: .Normal)
@@ -56,9 +57,12 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
             passButton.setTitle("Pass", forState: .Normal)
             failButton.setTitle("Fail", forState: .Normal)
         }
+    }
+    
+    func updateTheme() {
         
-        
-        // THEME
+        passButton.backgroundColor = action == .ProposeMission ? Theme.asc_blueColor() : Theme.asc_greenColor()
+        failButton.backgroundColor = Theme.asc_redColor()
         
         view.backgroundColor = Theme.asc_baseColor()
         tableView.separatorColor = Theme.asc_separatorColor()
@@ -90,7 +94,7 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.teamView.backgroundColor = Theme.asc_greenColor()
         }
         else {
-            cell.teamView.backgroundColor = Theme.asc_transparentWhiteColor()
+            cell.teamView.backgroundColor = Theme.asc_transparentColor()
         }
         
         return cell

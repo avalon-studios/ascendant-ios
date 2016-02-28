@@ -126,8 +126,11 @@
                     <connections>
                         <outlet property="joinGameButton" destination="GyD-kE-MMs" id="wp5-1r-lx6"/>
                         <outlet property="rulesButton" destination="fnu-ew-xyh" id="7d7-pd-90l"/>
+                        <outlet property="separatorView" destination="dDS-D0-09v" id="OcU-bB-XTU"/>
                         <outlet property="settingsButton" destination="0W0-uT-zrM" id="2VG-Ca-wBt"/>
                         <outlet property="startGameButton" destination="heF-ET-KdH" id="emd-AZ-Ovs"/>
+                        <outlet property="subTitleLabel" destination="9Ok-aV-W0H" id="Hnh-Po-aFM"/>
+                        <outlet property="titleLabel" destination="TGZ-mb-45y" id="t9n-IO-ctr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -239,6 +242,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityCell" destination="Fop-Rm-bvE" id="ZzS-Qz-XVQ"/>
                         <outlet property="activityIndicator" destination="fAE-lN-Ibw" id="MHa-bi-f9r"/>
                         <outlet property="nameTextField" destination="yUW-Ky-28n" id="Ha9-1E-rxw"/>
                         <outlet property="roomCodeTextField" destination="x9T-PO-MTh" id="Gcd-ds-1se"/>
@@ -267,7 +271,7 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JZX-4Y-VTr">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="460"/>
-                                        <color key="backgroundColor" red="0.17436142265796661" green="0.18061500787734985" blue="0.24500730633735657" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                         <color key="separatorColor" red="0.29411765933036804" green="0.30588236451148987" blue="0.40392157435417175" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -329,6 +333,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="dab-K6-66w" secondAttribute="bottom" constant="16" id="N5t-Sz-gBY"/>
                                             <constraint firstItem="dab-K6-66w" firstAttribute="top" secondItem="9Jw-HJ-5gx" secondAttribute="top" constant="16" id="SHT-8M-xEN"/>
@@ -356,6 +361,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="buttonContainerView" destination="9Jw-HJ-5gx" id="haw-0Q-GhT"/>
+                        <outlet property="startButton" destination="dab-K6-66w" id="lsP-gR-GWu"/>
                         <outlet property="tableView" destination="JZX-4Y-VTr" id="SYQ-Jr-OkW"/>
                     </connections>
                 </viewController>
@@ -475,6 +481,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityCell" destination="3e4-eM-mAq" id="NaS-bC-si7"/>
                         <outlet property="activityIndicator" destination="1eH-Go-YIX" id="hg1-oN-sZe"/>
                         <outlet property="nameTextField" destination="q6T-p5-ZR1" id="BI3-HM-yVs"/>
                         <segue destination="bbC-EY-Q1j" kind="show" identifier="StartViewController" id="gXi-kg-A0g"/>

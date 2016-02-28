@@ -24,47 +24,97 @@ struct Theme {
     
     static func asc_baseColor() -> UIColor {
         switch Theme.theme {
-        case .Dark:     return UIColor(hex: "#2C2E3D")
-        case .Light:    return UIColor.whiteColor()
+        case .Dark:     return UIColor(hex: "2C2E3D")
+        case .Medium:   return UIColor(hex: "7B8294")
+        case .Light:    return UIColor(hex: "FAFAFA")
         }
     }
     
-    static func asc_darkAccentColor() -> UIColor {
-        return UIColor(hex: "#21232F")
+    static func asc_darkBaseColor() -> UIColor {
+        switch Theme.theme {
+        case .Dark:     return UIColor(hex: "21232F")
+        case .Medium:   return UIColor(hex: "61687C")
+        case .Light:    return UIColor(hex: "6599F2")
+        }
     }
     
     static func asc_blueColor() -> UIColor {
-        return UIColor(red: 0.247, green: 0.437, blue: 0.860, alpha: 1.000)
+        switch Theme.theme {
+        case .Dark:     return UIColor(hex: "3F6FDB")
+        case .Medium:   return UIColor(hex: "56B7F2")
+        case .Light:    return UIColor(hex: "6599F2")
+        }
     }
     
     static func asc_redColor() -> UIColor {
-        return UIColor(red: 0.742, green: 0.230, blue: 0.230, alpha: 1.000)
+        switch Theme.theme {
+        case .Dark:     return UIColor(hex: "C94242")
+        case .Medium:   return UIColor(hex: "FB6653")
+        case .Light:    return UIColor(hex: "F54A4A")
+        }
     }
     
     static func asc_greenColor() -> UIColor {
-        return UIColor(red: 0.250, green: 0.757, blue: 0.380, alpha: 1.000)
+        switch Theme.theme {
+        case .Dark:     return UIColor(hex: "40C760")
+        case .Medium:   return UIColor(hex: "99E04C")
+        case .Light:    return UIColor(hex: "7ACF40")
+        }
     }
     
-    static func asc_transparentWhiteColor() -> UIColor {
+    static func asc_transparentColor() -> UIColor {
         switch Theme.theme {
         case .Dark:     return UIColor.whiteColor().colorWithAlphaComponent(0.2)
-        case .Light:    return UIColor.blackColor().colorWithAlphaComponent(0.2)
+        case .Medium:   return UIColor.whiteColor().colorWithAlphaComponent(0.2)
+        case .Light:    return UIColor.blackColor().colorWithAlphaComponent(0.4)
         }
     }
     
     static func asc_separatorColor() -> UIColor {
-        return UIColor(hex: "#4B4E67")
+        switch Theme.theme {
+        case .Dark:     return UIColor.whiteColor().colorWithAlphaComponent(0.2)
+        case .Medium:   return UIColor.whiteColor().colorWithAlphaComponent(0.4)
+        case .Light:    return UIColor.blackColor().colorWithAlphaComponent(0.2)
+        }
     }
     
-    static func asc_textColor() -> UIColor {
+    static func asc_defaultTextColor() -> UIColor {
         switch Theme.theme {
         case .Dark:     return UIColor.whiteColor()
-        case .Light:    return UIColor.blackColor()
+        case .Medium:   return UIColor.whiteColor()
+        case .Light:    return UIColor.darkGrayColor()
+        }
+    }
+    
+    static func asc_buttonTextColor() -> UIColor {
+        switch Theme.theme {
+        case .Dark, .Medium, .Light: return UIColor.whiteColor()
+        }
+    }
+    
+    static func asc_navigationTintColor() -> UIColor {
+        switch Theme.theme {
+        case .Dark, .Medium, .Light: return UIColor.whiteColor()
+        }
+    }
+    
+    static func asc_keyboardAppearance() -> UIKeyboardAppearance {
+        switch Theme.theme {
+        case .Dark:             return .Dark
+        case .Medium, .Light:   return .Light
+        }
+    }
+    
+    static func asc_statusBarStyle() -> UIStatusBarStyle {
+        switch Theme.theme {
+        case .Dark, .Medium:    return .LightContent
+        case .Light:            return .Default
         }
     }
 }
 
 enum ThemeStyle: Int {
-    case Dark
-    case Light
+    case Dark = 0
+    case Medium = 1
+    case Light = 2
 }

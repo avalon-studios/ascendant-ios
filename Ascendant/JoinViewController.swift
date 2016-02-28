@@ -9,10 +9,11 @@
 import UIKit
 import Async
 
-class JoinViewController: UITableViewController, UITextFieldDelegate {
+class JoinViewController: UITableViewController, Themable, UITextFieldDelegate {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var roomCodeTextField: UITextField!
+    @IBOutlet weak var activityCell: UITableViewCell!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var game: Game!
@@ -20,21 +21,47 @@ class JoinViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nameTextField.text = NSUserDefaults.lastUsedName
+        
+        updateTheme()
+        
         setUpUI()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        nameTextField.becomeFirstResponder()
+        if NSUserDefaults.lastUsedName == nil {
+            nameTextField.becomeFirstResponder()
+        }
+        else {
+            roomCodeTextField.becomeFirstResponder()
+        }
     }
     
     func setUpUI() {
         
-        nameTextField.attributedPlaceholder = NSAttributedString(string: nameTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: Theme.asc_transparentWhiteColor()])
-        roomCodeTextField.attributedPlaceholder = NSAttributedString(string: roomCodeTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: Theme.asc_transparentWhiteColor()])
+        nameTextField.attributedPlaceholder = NSAttributedString(string: nameTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: Theme.asc_transparentColor()])
+        roomCodeTextField.attributedPlaceholder = NSAttributedString(string: roomCodeTextField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: Theme.asc_transparentColor()])
+    }
+    
+    func updateTheme() {
         
         tableView.backgroundColor = Theme.asc_baseColor()
+        
+        nameTextField.textColor = Theme.asc_defaultTextColor()
+        nameTextField.backgroundColor = Theme.asc_baseColor()
+        nameTextField.tintColor = Theme.asc_blueColor()
+        nameTextField.keyboardAppearance = Theme.asc_keyboardAppearance()
+        
+        roomCodeTextField.textColor = Theme.asc_defaultTextColor()
+        roomCodeTextField.backgroundColor = Theme.asc_baseColor()
+        roomCodeTextField.tintColor = Theme.asc_blueColor()
+        roomCodeTextField.keyboardAppearance = Theme.asc_keyboardAppearance()
+
+        activityCell.backgroundColor = Theme.asc_baseColor()
+        
+        activityIndicator.color = Theme.asc_defaultTextColor()        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -69,6 +96,9 @@ class JoinViewController: UITableViewController, UITextFieldDelegate {
             roomCodeTextField.becomeFirstResponder()
         }
         else if let name = nameTextField.validName(), gameID = roomCodeTextField.validGameID() {
+            
+            NSUserDefaults.lastUsedName = name
+
             joinGame(gameID, name: name)
         }
         

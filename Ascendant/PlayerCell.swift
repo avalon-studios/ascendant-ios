@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayerCell: UITableViewCell {
+class PlayerCell: UITableViewCell, Themable {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var teamView: UIView!
@@ -17,5 +17,15 @@ class PlayerCell: UITableViewCell {
         super.layoutSubviews()
         
         teamView.layer.cornerRadius = frame.height / 2
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        updateTheme()
+    }
+    
+    func updateTheme() {
+        
     }
 }

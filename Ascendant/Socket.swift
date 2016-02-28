@@ -90,7 +90,7 @@ class Socket {
     func proposeMission(game: Game, players: [Player], completion: SocketAckCallback) {
         
         let playerIDs = players.map { $0.id }
-        let items = ["game_id": game.id, "player_ids": playerIDs]
+        let items = ["game_id": game.id, "player_ids": playerIDs, "player_id": game.player.id]
         
         socket.emitWithAck(EmitEvent.proposeMission, items)(timeoutAfter: timeout) { [weak self] data in
             self?.parseAckResult(data, completion: completion)
@@ -128,8 +128,6 @@ class Socket {
             }
             
             game.players = [Player].fromJSONArray(json)
-            
-            NSNotificationCenter.defaultCenter().postNotificationName(Socket.updatedPlayers, object: nil)
         }
         
         socket.on(Event.assignRoles) { data, ack in
@@ -153,14 +151,15 @@ class Socket {
             
             guard let
                 json = data.first as? JSON,
-                leaderJSON = json["player"] as? JSON,
+                leaderJSON = json["leader"] as? JSON,
                 leader = Player(json: leaderJSON),
-                missionNumber = json["mission_number"] as? Int
+                missionNumber = json["mission_number"] as? Int,
+                numberPlayers = json["number_players"] as? Int
             else {
                 return
             }
             
-            game.proposeMissionWithLeader(leader, missionNumber: missionNumber)
+            game.proposeMissionWithLeader(leader, missionNumber: missionNumber, numberPlayers: numberPlayers)
         }
         
         socket.on(Event.proposalVote) { data, ack in
@@ -201,6 +200,9 @@ class Socket {
     
     func createOrJoinGameFromData(data: [AnyObject], completion: Game? -> Void) {
         if let json = data.first as? JSON, game = Game(json: json) {
+            
+            addHandlersForGame(game)
+            
             completion(game)
         }
         else {

@@ -8,9 +8,10 @@
 
 import UIKit
 
-class StartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class StartViewController: UIViewController, Themable, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var startButton: AscendantButton!
     @IBOutlet weak var buttonContainerView: UIView!
     
     var game: Game!
@@ -23,6 +24,7 @@ class StartViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.reloadData()
         navigationItem.title = "Room Code: \(game.id.uppercaseString)"
         
+        updateTheme()
         setUpUI()
     }
     
@@ -39,34 +41,34 @@ class StartViewController: UIViewController, UITableViewDataSource, UITableViewD
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    func updateTheme() {
+        
+        view.backgroundColor = Theme.asc_baseColor()
+        tableView.separatorColor = Theme.asc_separatorColor()
+    }
+    
     func setUpUI() {
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 70
         tableView.dataSource = self
         
-        view.backgroundColor = Theme.asc_baseColor()
-        
         if !game.creator { buttonContainerView.removeFromSuperview() }
     }
 
     @IBAction func startGamePressed(sender: AscendantButton) {
         
-        beginGame()
-        
-        return
-        
-//        sender.startActivity()
-//            
-//        Socket.manager.startGame(game) { [weak self] result in
-//            
-//            sender.stopActivity()
-//
-//            switch result {
-//            case .Success:              self?.beginGame()
-//            case .Error(let message):   self?.showAlert("Error", message: message)
-//            }
-//        }
+        sender.startActivity()
+            
+        Socket.manager.startGame(game) { [weak self] result in
+            
+            sender.stopActivity()
+
+            switch result {
+            case .Success:              break
+            case .Error(let message):   self?.showAlert("Error", message: message)
+            }
+        }
     }
     
     @objc func beginGame() {

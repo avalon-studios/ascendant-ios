@@ -52,6 +52,7 @@ func ==(lhs: Player, rhs: Player) -> Bool {
 }
 
 enum Team: Int {
-    case Good
-    case Bad
+    case None = -1
+    case Good = 0
+    case Bad = 1
 }

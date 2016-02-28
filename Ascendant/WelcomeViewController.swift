@@ -14,6 +14,9 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
     
     // MARK: - Outlets
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var separatorView: UIView!
+    @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet var startGameButton: AscendantButton!
     @IBOutlet var joinGameButton: AscendantButton!
     @IBOutlet var rulesButton: AscendantButton!
@@ -49,18 +52,18 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
     func updateTheme() {
         
         view.backgroundColor = Theme.asc_baseColor()
+        titleLabel.textColor = Theme.asc_blueColor()
+        separatorView.backgroundColor = Theme.asc_separatorColor()
+        subTitleLabel.textColor = Theme.asc_defaultTextColor()
         
         [startGameButton, joinGameButton, rulesButton, settingsButton].forEach {
-            $0.backgroundColor = Theme.asc_transparentWhiteColor()
-            $0.setTitleColor(Theme.asc_textColor(), forState: .Normal)
+            $0.backgroundColor = Theme.asc_transparentColor()
+            $0.setTitleColor(Theme.asc_buttonTextColor(), forState: .Normal)
         }
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        switch Theme.theme {
-        case .Dark:     return .LightContent
-        case .Light:    return .Default
-        }
+        return Theme.asc_statusBarStyle()
     }
     
     

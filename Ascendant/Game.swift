@@ -17,8 +17,8 @@ final class Game: Decodable {
     
     var players = [Player]() {
         didSet {
-            // Make sure no duplicates
             players = Array(Set(players))
+            NSNotificationCenter.defaultCenter().postNotificationName(Socket.updatedPlayers, object: nil)
         }
     }
     
@@ -46,9 +46,9 @@ final class Game: Decodable {
         Game.currentGame = self
     }
     
-    func proposeMissionWithLeader(leader: Player, missionNumber: Int) {
+    func proposeMissionWithLeader(leader: Player, missionNumber: Int, numberPlayers: Int) {
         delegate?.game(setMissionStatus: .Current, forMission: missionNumber)
-        delegate?.game(havePlayerProposeMission: leader)
+        delegate?.game(havePlayerProposeMission: leader, withNumberOfRequiredPlayers: numberPlayers)
     }
     
     func voteOnProposalWithPlayers(players: [Player]) {

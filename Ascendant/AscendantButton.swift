@@ -9,7 +9,7 @@
 import UIKit
 import PureLayout
 
-class AscendantButton: UIButton {
+class AscendantButton: UIButton, Themable {
     
     private let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .White)
     private var didSetConstraints = false
@@ -17,7 +17,7 @@ class AscendantButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setTitleColor(Theme.asc_transparentWhiteColor(), forState: .Disabled)
+        setTitleColor(Theme.asc_transparentColor(), forState: .Disabled)
         
         activityIndicator.hidesWhenStopped = true
         activityIndicator.stopAnimating()
@@ -25,6 +25,13 @@ class AscendantButton: UIButton {
         addSubview(activityIndicator)
         
         layer.cornerRadius = 8
+        
+        updateTheme()
+    }
+    
+    func updateTheme() {
+        backgroundColor = Theme.asc_transparentColor()
+        setTitleColor(Theme.asc_buttonTextColor(), forState: .Normal)
     }
     
     override func updateConstraints() {

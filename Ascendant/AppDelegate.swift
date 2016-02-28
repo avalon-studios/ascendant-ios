@@ -15,12 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
-        // Set up appearance proxies
-        setUpAppearance()
         
         // Set a default theme
-        NSUserDefaults.standardUserDefaults().registerDefaults(["Theme": 0])
+        NSUserDefaults.standardUserDefaults().registerDefaults(["Theme": 1])
+        
+        // Set up appearance proxies
+        setUpAppearance()
         
         // Connect the socket
         Socket.manager.connect()
@@ -33,9 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navBar = UINavigationBar.appearance()
         
         navBar.translucent = false
-        navBar.tintColor = Theme.asc_textColor()
-        navBar.barTintColor = Theme.asc_darkAccentColor()
-        navBar.titleTextAttributes = [NSForegroundColorAttributeName: Theme.asc_textColor()]
+        navBar.tintColor = Theme.asc_navigationTintColor()
+        navBar.barTintColor = Theme.asc_darkBaseColor()
+        navBar.titleTextAttributes = [NSForegroundColorAttributeName: Theme.asc_navigationTintColor()]
         navBar.barStyle = .Black
     }
     

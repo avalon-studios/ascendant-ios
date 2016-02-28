@@ -33,7 +33,7 @@ class MissionView: UIView {
         
         titleLabel.autoPinEdgesToSuperviewEdges()
 
-        backgroundColor = Theme.asc_transparentWhiteColor()
+        backgroundColor = Theme.asc_transparentColor()
     }
     
     override func layoutSubviews() {
@@ -51,7 +51,7 @@ class MissionView: UIView {
             animations: {
                 switch status {
                 case .None:
-                    self.backgroundColor = Theme.asc_transparentWhiteColor()
+                    self.backgroundColor = Theme.asc_transparentColor()
                 case .Success:
                     self.backgroundColor = Theme.asc_greenColor()
                 case .Fail:
@@ -75,7 +75,7 @@ class MissionView: UIView {
         
         UIView.animateWithDuration(2, delay: 0, options: [.Autoreverse, .Repeat],
             animations: {
-                self.backgroundColor = Theme.asc_transparentWhiteColor()
+                self.backgroundColor = Theme.asc_transparentColor()
             },
             completion: nil
         )

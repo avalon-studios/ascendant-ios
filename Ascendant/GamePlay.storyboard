@@ -191,7 +191,9 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="failedLabel" destination="rKw-J0-NIA" id="EkZ-ms-hmv"/>
                         <outlet property="messageLabel" destination="m50-oI-5jx" id="NwR-hP-h2p"/>
+                        <outlet property="missionLabel" destination="PJD-tq-Q5y" id="Zd0-Fq-wIj"/>
                         <outlet property="missionStack" destination="gcD-Rv-sad" id="2OF-aW-r3r"/>
                         <outlet property="proposalStack" destination="EmJ-7R-CcN" id="KUd-Xj-dbB"/>
                         <outletCollection property="separators" destination="9cu-9k-wSn" collectionClass="NSMutableArray" id="Y6M-I5-43d"/>
@@ -242,11 +244,6 @@
                                                                 <constraint firstAttribute="height" constant="8" id="PdA-rM-cxd"/>
                                                                 <constraint firstAttribute="width" constant="8" id="aHk-Rf-x00"/>
                                                             </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="4"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdQ-0H-FcR">
                                                             <rect key="frame" x="16" y="0.0" width="560" height="22"/>

@@ -10,8 +10,10 @@ import UIKit
 import Async
 import ElegantPresentations
 
-class GamePlayViewController: UIViewController {
+class GamePlayViewController: UIViewController, Themable {
     
+    @IBOutlet weak var missionLabel: UILabel!
+    @IBOutlet weak var failedLabel: UILabel!
     @IBOutlet weak var missionStack: UIStackView!
     @IBOutlet weak var proposalStack: UIStackView!
     @IBOutlet weak var messageLabel: UILabel!
@@ -37,6 +39,8 @@ class GamePlayViewController: UIViewController {
         
         messageLabel.text = "You're on the " + (game.player.team == .Good ? "good" : "bad") + " team"
         
+        updateTheme()
+        
         setUpUI()
     }
     
@@ -45,13 +49,21 @@ class GamePlayViewController: UIViewController {
         for (index, view) in missionViews.enumerate() {
             view.titleLabel.text = "\(index + 1)"
         }
-        
+    }
+    
+    func updateTheme() {
+
         view.backgroundColor = Theme.asc_baseColor()
+        
+        missionLabel.textColor = Theme.asc_defaultTextColor()
+        failedLabel.textColor = Theme.asc_defaultTextColor()
+        messageLabel.textColor = Theme.asc_defaultTextColor()
+        
         separators.forEach { $0.backgroundColor = Theme.asc_separatorColor() }
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+        return Theme.asc_statusBarStyle()
     }
     
     func createActionViewController() -> (UINavigationController, ActionViewController)? {
@@ -88,15 +100,22 @@ class GamePlayViewController: UIViewController {
 
 extension GamePlayViewController: GameDelegate {
     
-    func game(havePlayerProposeMission player: Player) {
+    func game(havePlayerProposeMission player: Player, withNumberOfRequiredPlayers numberPlayers: Int) {
         
         guard let (actionNavigationController, actionViewController) = createActionViewController() else {
             return
         }
         
+        guard player.id == game.player.id else {
+            
+            messageLabel.text = "Waiting for \(player.name) to propose a team..."
+            
+            return
+        }
+        
         actionViewController.actionMembers = game.players
         actionViewController.action = .ProposeMission
-        actionViewController.numberOfPlayersForProposal = 2
+        actionViewController.numberOfPlayersForProposal = numberPlayers
         
         presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
     }
