@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import EXTView
 
 class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    @IBOutlet weak var passButton: EXTButton!
-    @IBOutlet weak var failButton: EXTButton!
+    @IBOutlet weak var passButton: AscendantButton!
+    @IBOutlet weak var failButton: AscendantButton!
     @IBOutlet weak var buttonStack: UIStackView!
     @IBOutlet weak var tableView: UITableView!
     

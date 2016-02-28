@@ -56,7 +56,7 @@ class JoinViewController: UITableViewController, UITextFieldDelegate {
                 self?.performSegueWithIdentifier(R.segue.joinViewController.waitViewController, sender: self)
             }
             else {
-                self?.showAlert("Error", message: "We couldn't join that game right now - try again soon!") { _ in
+                self?.showAlert("Error", message: "We couldn't join that game right now. Make sure you're entering a valid room code.") { _ in
                     self?.roomCodeTextField.becomeFirstResponder()
                 }
             }

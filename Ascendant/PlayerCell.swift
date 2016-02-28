@@ -7,11 +7,15 @@
 //
 
 import UIKit
-import EXTView
 
 class PlayerCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var teamView: EXTView!
-
+    @IBOutlet weak var teamView: UIView!
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        teamView.layer.cornerRadius = frame.height / 2
+    }
 }
