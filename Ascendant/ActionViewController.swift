@@ -121,6 +121,40 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func votePressed(sender: UIButton) {
+        
+        let vote = Bool(sender.tag)
+        
+        func parseResult(result: AckResult) {
+            switch result {
+            case .Success:              dismissViewControllerAnimated(true, completion: nil)
+            case .Error(let message):   showAlert("Error", message: message)
+            }
+        }
+        
+        switch action {
+        case .ProposalVote:
+            Socket.manager.proposalVote(game, vote: vote){ result in
+                parseResult(result)
+            }
+        case .MissionVote:
+            Socket.manager.missionVote(game, vote: vote){ result in
+                parseResult(result)
+            }
+        case .ProposeMission:
+            
+            guard let selectedRows = tableView.indexPathsForSelectedRows?.map({ $0.row }) else {
+                return
+            }
+            
+            let players = actionMembers.enumerate().flatMap { index, player in
+                return selectedRows.contains(index) ? player : nil
+            }
+            
+            Socket.manager.proposeMission(game, players: players) { result in
+                parseResult(result)
+            }
+        }
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
 }

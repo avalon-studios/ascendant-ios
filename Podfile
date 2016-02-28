@@ -9,7 +9,6 @@ target 'Ascendant' do
     pod 'PureLayout'
     pod 'ElegantPresentations'
     pod 'AsyncSwift'
-    pod 'EXTView'
 end
 
 target 'AscendantTests' do
