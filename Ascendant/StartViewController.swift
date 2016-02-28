@@ -10,10 +10,8 @@ import UIKit
 
 class StartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var buttonContainerHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var headerViewLineHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var buttonContainerView: UIView!
     
     var game: Game!
     var players = [Player]()
@@ -43,29 +41,32 @@ class StartViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func setUpUI() {
         
-        headerViewLineHeightConstraint.constant = 0.5
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 70
         tableView.dataSource = self
         
         view.backgroundColor = Theme.asc_baseColor()
         
-        if !game.creator { buttonContainerHeightConstraint.constant = 0 }
+        if !game.creator { buttonContainerView.removeFromSuperview() }
     }
 
-    @IBAction func startGamePressed(sender: UIButton) {
+    @IBAction func startGamePressed(sender: AscendantButton) {
         
         beginGame()
         
         return
         
-        Socket.manager.startGame(game) { [weak self] result in
-            
-            switch result {
-            case .Success:              self?.beginGame()
-            case .Error(let message):   self?.showAlert("Error", message: message)
-            }
-        }
+//        sender.startActivity()
+//            
+//        Socket.manager.startGame(game) { [weak self] result in
+//            
+//            sender.stopActivity()
+//
+//            switch result {
+//            case .Success:              self?.beginGame()
+//            case .Error(let message):   self?.showAlert("Error", message: message)
+//            }
+//        }
     }
     
     @objc func beginGame() {
