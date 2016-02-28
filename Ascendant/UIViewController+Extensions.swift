@@ -16,4 +16,12 @@ extension UIViewController {
         alert.addAction(button)
         presentViewController(alert, animated: true, completion: nil)
     }
+    
+    func presentViewControllerCustom(viewController: UIViewController, animated: Bool, completion: (Void -> Void)?) {
+        
+        viewController.modalPresentationStyle = .Custom
+        viewController.transitioningDelegate = (self as? UIViewControllerTransitioningDelegate)
+        
+        presentViewController(viewController, animated: animated, completion: completion)
+    }
 }

@@ -119,11 +119,20 @@ class ActionViewController: UIViewController, UITableViewDelegate, UITableViewDa
         setCell(tableView.cellForRowAtIndexPath(indexPath), selected: false)
     }
     
-    @IBAction func votePressed(sender: UIButton) {
+    @IBAction func votePressed(sender: AscendantButton) {
+        
+        sender.startActivity()
+        
+        passButton.enabled = false
+        failButton.enabled = false
         
         let vote = Bool(sender.tag)
         
         func parseResult(result: AckResult) {
+            
+            passButton.stopActivity()
+            failButton.stopActivity()
+            
             switch result {
             case .Success:              dismissViewControllerAnimated(true, completion: nil)
             case .Error(let message):   showAlert("Error", message: message)

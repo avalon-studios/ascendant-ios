@@ -47,22 +47,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // Dismiss any view controllers on welcome
             welcomeViewController.dismissViewControllerAnimated(false, completion: nil)
-            
-            // For presenting whatever we need to present with the custom presentation
-            func presentShortcutViewController(presented: UIViewController) {
-                
-                presented.modalPresentationStyle = .Custom
-                presented.transitioningDelegate = welcomeViewController
-                
-                welcomeViewController.presentViewController(presented, animated: false, completion: nil)
-            }
-            
+ 
             // Check the shortcut and present the appropiate view controller
             if shortcutItem.type == "space.ascendant.Ascendant.creategame" {
-                presentShortcutViewController(R.storyboard.welcome.startNavigationController()!)
+                welcomeViewController.presentViewControllerCustom(R.storyboard.welcome.startNavigationController()!, animated: true, completion: nil)
             }
             else if shortcutItem.type == "space.ascendant.Ascendant.joingame" {
-                presentShortcutViewController(R.storyboard.welcome.joinNavigationController()!)
+                welcomeViewController.presentViewControllerCustom(R.storyboard.welcome.joinNavigationController()!, animated: true, completion: nil)
             }
         }
     }

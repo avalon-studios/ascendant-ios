@@ -55,6 +55,10 @@ class StartViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBAction func startGamePressed(sender: UIButton) {
         
+        beginGame()
+        
+        return
+        
         Socket.manager.startGame(game) { [weak self] result in
             
             switch result {
@@ -67,11 +71,12 @@ class StartViewController: UIViewController, UITableViewDataSource, UITableViewD
     @objc func beginGame() {
         
         let gameViewController = R.storyboard.gamePlay.initialViewController()!
-        
-        gameViewController.game = game
+        let presentingViewController = self.presentingViewController
+
+        gameViewController.game = game        
         
         dismissViewControllerAnimated(true) {
-            self.presentingViewController?.presentViewController(gameViewController, animated: true, completion: nil)
+            presentingViewController?.presentViewControllerCustom(gameViewController, animated: true, completion: nil)
         }
     }
     

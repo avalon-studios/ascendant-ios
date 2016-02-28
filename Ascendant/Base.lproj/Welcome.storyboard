@@ -319,6 +319,7 @@
                                         </state>
                                         <connections>
                                             <action selector="startGamePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ex6-bY-12P"/>
+                                            <action selector="startGamePressed:" destination="bbC-EY-Q1j" eventType="touchUpInside" id="jOn-H4-akp"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -50,6 +50,10 @@ class GamePlayViewController: UIViewController {
         separators.forEach { $0.backgroundColor = Theme.asc_separatorColor() }
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
     func createActionViewController() -> (UINavigationController, ActionViewController)? {
         
         guard let actionNavigationController = R.storyboard.gamePlay.actionViewController(),
@@ -59,9 +63,6 @@ class GamePlayViewController: UIViewController {
         }
         
         actionViewController.game = game
-        
-        actionNavigationController.transitioningDelegate = self
-        actionNavigationController.modalPresentationStyle = .Custom
         
         return (actionNavigationController, actionViewController)
     }
@@ -79,7 +80,7 @@ extension GamePlayViewController: GameDelegate {
         actionViewController.action = .ProposeMission
         actionViewController.numberOfPlayersForProposal = 2
         
-        presentViewController(actionNavigationController, animated: true, completion: nil)
+        presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
     }
     
     func game(setNumberOfFailedProposals failed: Int) {
@@ -100,7 +101,7 @@ extension GamePlayViewController: GameDelegate {
         actionViewController.actionMembers = players
         actionViewController.action = .MissionVote
         
-        presentViewController(actionNavigationController, animated: true, completion: nil)
+        presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
     }
     
     func game(voteOnProposalWithPlayers players: [Player]) {
@@ -112,7 +113,7 @@ extension GamePlayViewController: GameDelegate {
         actionViewController.actionMembers = players
         actionViewController.action = .ProposalVote
         
-        presentViewController(actionNavigationController, animated: true, completion: nil)
+        presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
     }
     
     func game(setMissionStatus status: MissionStatus, forMission missionNumber: Int) {
