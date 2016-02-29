@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // Set a default theme
-        NSUserDefaults.standardUserDefaults().registerDefaults(["Theme": 2])
+        NSUserDefaults.standardUserDefaults().registerDefaults(["Theme": 0])
         
         // Set up appearance proxies
         setUpAppearance()

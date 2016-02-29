@@ -52,8 +52,11 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
     func updateTheme() {
         
         view.backgroundColor = Theme.asc_baseColor()
-        titleLabel.textColor = Theme.asc_blueColor()
+        
+        titleLabel.textColor = Theme.asc_redColor()
+        
         separatorView.backgroundColor = Theme.asc_separatorColor()
+        
         subTitleLabel.textColor = Theme.asc_defaultTextColor()
         
         [startGameButton, joinGameButton, rulesButton, settingsButton].forEach {
