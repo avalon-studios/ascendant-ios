@@ -28,7 +28,7 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
         case .ProposeMission: return "Select \(numberOfPlayersForProposal) Players for a Mission"
         case .ProposalVote: return "Approve Players for a Mission"
         case .MissionVote: return "Pass the Mission?"
-        case .ProposalResult: return proposalResult.pass ? "Mission Going Forward!" : "Mission Did Not Pass"
+        case .ProposalResult: return proposalResult.pass ? "Proposal Passed" : "Proposal Did Not Pass"
         }
     }
     
@@ -66,10 +66,12 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
     
     func updateTheme() {
         
-        passButton.backgroundColor = action == .ProposeMission ? Theme.asc_blueColor() : Theme.asc_greenColor()
+        passButton.backgroundColor = (action == .ProposeMission || action == .ProposalResult) ? Theme.asc_blueColor() : Theme.asc_greenColor()
+        
         failButton.backgroundColor = Theme.asc_redColor()
         
         view.backgroundColor = Theme.asc_baseColor()
+        
         tableView.separatorColor = Theme.asc_separatorColor()
     }
     

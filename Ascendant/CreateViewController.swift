@@ -14,10 +14,10 @@ class CreateViewController: UITableViewController, Themable, UITextFieldDelegate
     
     // MARK: - Outlets
     
-    @IBOutlet weak var activityCell: UITableViewCell!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
+    
     // MARK: - Properties
     
     var game: Game!
@@ -55,11 +55,11 @@ class CreateViewController: UITableViewController, Themable, UITextFieldDelegate
         
         view.backgroundColor = Theme.asc_baseColor()
 
-        activityCell.backgroundColor = Theme.asc_baseColor()
-        
+        tableView.separatorColor = Theme.asc_separatorColor()
+
         activityIndicator.color = Theme.asc_defaultTextColor()
         
-        nameTextField.backgroundColor = Theme.asc_baseColor()
+        nameTextField.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
         nameTextField.tintColor = Theme.asc_blueColor()
         nameTextField.textColor = Theme.asc_defaultTextColor()
         nameTextField.keyboardAppearance = Theme.asc_keyboardAppearance()

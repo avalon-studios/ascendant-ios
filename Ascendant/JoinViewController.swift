@@ -13,7 +13,6 @@ class JoinViewController: UITableViewController, Themable, UITextFieldDelegate {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var roomCodeTextField: UITextField!
-    @IBOutlet weak var activityCell: UITableViewCell!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var game: Game!
@@ -48,18 +47,17 @@ class JoinViewController: UITableViewController, Themable, UITextFieldDelegate {
     func updateTheme() {
         
         tableView.backgroundColor = Theme.asc_baseColor()
+        tableView.separatorColor = Theme.asc_separatorColor()
         
         nameTextField.textColor = Theme.asc_defaultTextColor()
-        nameTextField.backgroundColor = Theme.asc_baseColor()
+        nameTextField.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
         nameTextField.tintColor = Theme.asc_blueColor()
         nameTextField.keyboardAppearance = Theme.asc_keyboardAppearance()
         
         roomCodeTextField.textColor = Theme.asc_defaultTextColor()
-        roomCodeTextField.backgroundColor = Theme.asc_baseColor()
+        roomCodeTextField.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
         roomCodeTextField.tintColor = Theme.asc_blueColor()
         roomCodeTextField.keyboardAppearance = Theme.asc_keyboardAppearance()
-
-        activityCell.backgroundColor = Theme.asc_baseColor()
         
         activityIndicator.color = Theme.asc_defaultTextColor()        
     }
