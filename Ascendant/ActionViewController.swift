@@ -98,14 +98,11 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
         if action == .ProposalResult {
             cell.teamView.backgroundColor == proposalResult.votes[player.id] ? Theme.asc_greenColor() : Theme.asc_redColor()
         }
-        else if game.player.team == .Bad {
-            cell.teamView.backgroundColor = player.teamColor
-        }
-        else if game.player.id == player.id {
+        else if game.player.team == .Good && game.player == player {
             cell.teamView.backgroundColor = Theme.asc_greenColor()
         }
         else {
-            cell.teamView.backgroundColor = Theme.asc_transparentColor()
+            cell.teamView.backgroundColor = player.teamColor
         }
         
         return cell

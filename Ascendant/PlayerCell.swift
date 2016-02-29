@@ -16,7 +16,7 @@ class PlayerCell: UITableViewCell, Themable {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        teamView.layer.cornerRadius = frame.height / 2
+        teamView.layer.cornerRadius = teamView.frame.height / 2
     }
     
     override func awakeFromNib() {
