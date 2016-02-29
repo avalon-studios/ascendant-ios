@@ -173,7 +173,12 @@ extension GamePlayViewController: GameDelegate {
             return
         }
         
+        messageLabel.setTextWithCrossFade("Waiting for players to check out the vote results...")
         
+        actionViewController.proposalResult = result
+        actionViewController.action = .ProposalResult
+        
+        presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
     }
 }
 
