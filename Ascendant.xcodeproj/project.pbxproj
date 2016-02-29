@@ -21,7 +21,7 @@
 		2761180B1C7BAEEC00652444 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2761180A1C7BAEEC00652444 /* WelcomeViewController.swift */; };
 		2761180E1C7BAEEC00652444 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2761180C1C7BAEEC00652444 /* Welcome.storyboard */; };
 		276118101C7BAEEC00652444 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2761180F1C7BAEEC00652444 /* Assets.xcassets */; };
-		276118131C7BAEEC00652444 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276118111C7BAEEC00652444 /* LaunchScreen.storyboard */; };
+		276118131C7BAEEC00652444 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276118111C7BAEEC00652444 /* Launch.storyboard */; };
 		2761181E1C7BAEEC00652444 /* AscendantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2761181D1C7BAEEC00652444 /* AscendantTests.swift */; };
 		276118291C7BAEEC00652444 /* AscendantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276118281C7BAEEC00652444 /* AscendantUITests.swift */; };
 		276904281C84849C00973524 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276904271C84849C00973524 /* Settings.storyboard */; };
@@ -87,7 +87,7 @@
 		2761180A1C7BAEEC00652444 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		2761180D1C7BAEEC00652444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Welcome.storyboard; sourceTree = "<group>"; };
 		2761180F1C7BAEEC00652444 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		276118121C7BAEEC00652444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		276118121C7BAEEC00652444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Launch.storyboard; sourceTree = "<group>"; };
 		276118141C7BAEEC00652444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		276118191C7BAEEC00652444 /* AscendantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AscendantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2761181D1C7BAEEC00652444 /* AscendantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AscendantTests.swift; sourceTree = "<group>"; };
@@ -255,7 +255,7 @@
 				2761180C1C7BAEEC00652444 /* Welcome.storyboard */,
 				276904271C84849C00973524 /* Settings.storyboard */,
 				27119BCB1C7BE7F200B5E73C /* GamePlay.storyboard */,
-				276118111C7BAEEC00652444 /* LaunchScreen.storyboard */,
+				276118111C7BAEEC00652444 /* Launch.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -460,7 +460,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				276118131C7BAEEC00652444 /* LaunchScreen.storyboard in Resources */,
+				276118131C7BAEEC00652444 /* Launch.storyboard in Resources */,
 				276118101C7BAEEC00652444 /* Assets.xcassets in Resources */,
 				27119BCC1C7BE7F200B5E73C /* GamePlay.storyboard in Resources */,
 				2761180E1C7BAEEC00652444 /* Welcome.storyboard in Resources */,
@@ -700,12 +700,12 @@
 			name = Welcome.storyboard;
 			sourceTree = "<group>";
 		};
-		276118111C7BAEEC00652444 /* LaunchScreen.storyboard */ = {
+		276118111C7BAEEC00652444 /* Launch.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				276118121C7BAEEC00652444 /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Launch.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -802,7 +802,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconNoStars;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 64;
+				CURRENT_PROJECT_VERSION = 65;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -820,7 +820,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconNoStars;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 64;
+				CURRENT_PROJECT_VERSION = 65;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

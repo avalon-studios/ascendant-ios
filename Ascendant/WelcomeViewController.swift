@@ -23,11 +23,19 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
     @IBOutlet var settingsButton: AscendantButton!
     @IBOutlet var rocketImageView: UIImageView!
     @IBOutlet weak var moonImageView: UIImageView!
+    @IBOutlet var rocketView: UIView!
     
     var rocketDidAnimate = false
-    
+    var didUpdateConstraints = false
     
     // MARK: — Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        rocketView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(rocketView)
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -48,6 +56,7 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
     func updateTheme() {
         
         view.backgroundColor = Theme.asc_baseColor()
+        rocketView.backgroundColor = UIColor(hex: "#2C2E3D")
         
         titleLabel.textColor = Theme.asc_defaultTextColor().colorWithAlphaComponent(0.9)
         
@@ -67,27 +76,40 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
     
     func animateRocket() {
         
-        guard !rocketDidAnimate else {
-            return
-        }
+        guard !rocketDidAnimate else { return }
         
         rocketDidAnimate = true
         
-        UIView.animateWithDuration(0.7, delay: 1, options: [.CurveEaseIn],
+        UIView.animateWithDuration(0.6, delay: 0.6, options: [.CurveEaseIn],
             animations: {
             
-                let x = self.view.frame.width + self.rocketImageView.frame.width
+                let x = self.rocketView.frame.width + self.rocketImageView.frame.width
                 let y = -self.rocketImageView.frame.height
             
                 self.rocketImageView.layer.position = CGPoint(x: x, y: y)
                 self.rocketImageView.layer.transform = CATransform3DMakeScale(0.5, 0.5, 1)
+                
+                self.moonImageView.layer.transform = CATransform3DMakeScale(0.001, 0.001, 1)
                 self.moonImageView.alpha = 0
+                
+                self.rocketView.backgroundColor = UIColor.clearColor()
             },
             completion: { _ in
-                self.rocketImageView.removeFromSuperview()
-                self.moonImageView.removeFromSuperview()
+                self.rocketView.removeFromSuperview()
             }
         )
+    }
+    
+    override func updateViewConstraints() {
+        
+        if !didUpdateConstraints {
+            
+            rocketView.autoPinEdgesToSuperviewEdges()
+            
+            didUpdateConstraints = true
+        }
+        
+        super.updateViewConstraints()
     }
     
     
