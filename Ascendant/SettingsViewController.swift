@@ -37,6 +37,7 @@ class SettingsViewController: UITableViewController, Themable {
         
         tableView.tintColor = Theme.asc_defaultTextColor()
         tableView.backgroundColor = Theme.asc_baseColor()
+        tableView.separatorColor = Theme.asc_separatorColor()
     }
     
     func setCheckedTheme() {

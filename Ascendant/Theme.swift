@@ -26,7 +26,7 @@ struct Theme {
         switch Theme.theme {
         case .Dark:     return UIColor(hex: "2C2E3D")
         case .Medium:   return UIColor(hex: "7B8294")
-        case .Light:    return UIColor(hex: "FAFAFA")
+        case .Light:    return UIColor(hex: "F5F5F5")
         }
     }
     
@@ -100,8 +100,9 @@ struct Theme {
     
     static func cellBackgroundColor() -> UIColor {
         switch Theme.theme {
-        case .Dark, .Medium:    return UIColor.whiteColor().colorWithAlphaComponent(0.05)
-        case .Light:            return UIColor.whiteColor()
+        case .Dark:     return UIColor.blackColor().colorWithAlphaComponent(0.1)
+        case .Medium:   return UIColor.whiteColor().colorWithAlphaComponent(0.1)
+        case .Light:    return UIColor.whiteColor()
         }
     }
     

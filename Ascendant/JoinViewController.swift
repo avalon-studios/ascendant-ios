@@ -74,13 +74,14 @@ class JoinViewController: UITableViewController, Themable, UITextFieldDelegate {
         
         Socket.manager.joinGame(gameID, playerName: name) { [weak self] game in
             
-            self?.setLoading(false)
-
             if let game = game {
                 self?.game = game
                 self?.performSegueWithIdentifier(R.segue.joinViewController.waitViewController, sender: self)
             }
             else {
+
+                self?.setLoading(false)
+
                 self?.showAlert("Error", message: "We couldn't join that game right now. Make sure you're entering a valid room code.") { _ in
                     self?.roomCodeTextField.becomeFirstResponder()
                 }

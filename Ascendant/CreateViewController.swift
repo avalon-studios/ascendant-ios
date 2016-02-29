@@ -77,9 +77,6 @@ class CreateViewController: UITableViewController, Themable, UITextFieldDelegate
         
         // Attempt to create the game
         Socket.manager.createGame(name) { [weak self] game in
-            
-            // End the spinning and enable the text fields
-            self?.setLoading(false)
 
             // Try to grab the game, and continue if we made one
             if let game = game {
@@ -88,6 +85,9 @@ class CreateViewController: UITableViewController, Themable, UITextFieldDelegate
                 self?.performSegueWithIdentifier(R.segue.createViewController.startViewController, sender: self)
             }
             else {
+                // End the spinning and enable the text fields
+                self?.setLoading(false)
+                
                 // We couldn't make a game, tell the use :(
                 self?.showAlert("Error", message: "We couldn't start a game right now - try again soon!") { _ in
                     self?.nameTextField.becomeFirstResponder()
