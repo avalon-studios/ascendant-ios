@@ -24,47 +24,21 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
     @IBOutlet var rocketImageView: UIImageView!
     @IBOutlet weak var moonImageView: UIImageView!
     
+    var rocketDidAnimate = false
+    
     
     // MARK: — Lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-     
-        updateTheme()
-    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Register for theme updates
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateTheme), name: Theme.notificationName, object: nil)
+        updateTheme()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        UIView.animateWithDuration(0.7, delay: 1, options: [.CurveEaseIn],
-            animations: {
-                
-                let x = self.view.frame.width + self.rocketImageView.frame.width
-                let y = -self.rocketImageView.frame.height
-                
-                self.rocketImageView.layer.position = CGPoint(x: x, y: y)
-                self.rocketImageView.layer.transform = CATransform3DMakeScale(0.5, 0.5, 1)
-                self.moonImageView.alpha = 0
-            },
-            completion: { _ in
-                self.rocketImageView.removeFromSuperview()
-                self.moonImageView.removeFromSuperview()
-            }
-        )
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        // Deregister for theme updates
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: Theme.notificationName, object: nil)
+        animateRocket()
     }
     
     
@@ -75,7 +49,7 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
         
         view.backgroundColor = Theme.asc_baseColor()
         
-        titleLabel.textColor = Theme.asc_redColor()
+        titleLabel.textColor = Theme.asc_defaultTextColor().colorWithAlphaComponent(0.9)
         
         separatorView.backgroundColor = Theme.asc_separatorColor()
         
@@ -91,13 +65,40 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
         return Theme.asc_statusBarStyle()
     }
     
+    func animateRocket() {
+        
+        guard !rocketDidAnimate else {
+            return
+        }
+        
+        rocketDidAnimate = true
+        
+        UIView.animateWithDuration(0.7, delay: 1, options: [.CurveEaseIn],
+            animations: {
+            
+                let x = self.view.frame.width + self.rocketImageView.frame.width
+                let y = -self.rocketImageView.frame.height
+            
+                self.rocketImageView.layer.position = CGPoint(x: x, y: y)
+                self.rocketImageView.layer.transform = CATransform3DMakeScale(0.5, 0.5, 1)
+                self.moonImageView.alpha = 0
+            },
+            completion: { _ in
+                self.rocketImageView.removeFromSuperview()
+                self.moonImageView.removeFromSuperview()
+            }
+        )
+    }
+    
     
     // MARK: - Navigation
     
     // Set these for the custom presentation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        segue.destinationViewController.modalPresentationStyle = .Custom
-        segue.destinationViewController.transitioningDelegate = self
+        if segue.identifier != R.segue.welcomeViewController.settingsSegue.identifier {
+            segue.destinationViewController.modalPresentationStyle = .Custom
+            segue.destinationViewController.transitioningDelegate = self
+        }
     }
     
     // Unwind segue, also dismiss the keyboard

@@ -20,23 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSUserDefaults.standardUserDefaults().registerDefaults(["Theme": 0])
         
         // Set up appearance proxies
-        setUpAppearance()
+        Theme.setAppearances()
         
         // Connect the socket
         Socket.manager.connect()
                 
         return true
-    }
-
-    func setUpAppearance() {
-        
-        let navBar = UINavigationBar.appearance()
-        
-        navBar.translucent = false
-        navBar.tintColor = Theme.asc_navigationTintColor()
-        navBar.barTintColor = Theme.asc_darkBaseColor()
-        navBar.titleTextAttributes = [NSForegroundColorAttributeName: Theme.asc_navigationTintColor()]
-        navBar.barStyle = .Black
     }
     
     // Handle 3D Touch shortcuts

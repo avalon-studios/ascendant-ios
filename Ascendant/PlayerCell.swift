@@ -26,7 +26,11 @@ class PlayerCell: UITableViewCell, Themable {
     }
     
     func updateTheme() {
+        
         tintColor = Theme.asc_defaultTextColor()
+        
         nameLabel.textColor = Theme.asc_defaultTextColor()
+        
+        backgroundColor = Theme.cellBackgroundColor()
     }
 }

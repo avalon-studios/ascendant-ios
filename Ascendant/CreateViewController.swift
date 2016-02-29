@@ -59,7 +59,7 @@ class CreateViewController: UITableViewController, Themable, UITextFieldDelegate
 
         activityIndicator.color = Theme.asc_defaultTextColor()
         
-        nameTextField.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
+        nameTextField.backgroundColor = Theme.cellBackgroundColor()
         nameTextField.tintColor = Theme.asc_blueColor()
         nameTextField.textColor = Theme.asc_defaultTextColor()
         nameTextField.keyboardAppearance = Theme.asc_keyboardAppearance()

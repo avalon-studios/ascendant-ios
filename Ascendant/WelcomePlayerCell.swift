@@ -19,6 +19,9 @@ class WelcomePlayerCell: UITableViewCell, Themable {
     }
     
     func updateTheme() {
+        
         nameLabel.textColor = Theme.asc_defaultTextColor()
+        
+        backgroundColor = Theme.cellBackgroundColor()
     }
 }

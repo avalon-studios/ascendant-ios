@@ -50,12 +50,12 @@ class JoinViewController: UITableViewController, Themable, UITextFieldDelegate {
         tableView.separatorColor = Theme.asc_separatorColor()
         
         nameTextField.textColor = Theme.asc_defaultTextColor()
-        nameTextField.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
+        nameTextField.backgroundColor = Theme.cellBackgroundColor()
         nameTextField.tintColor = Theme.asc_blueColor()
         nameTextField.keyboardAppearance = Theme.asc_keyboardAppearance()
         
         roomCodeTextField.textColor = Theme.asc_defaultTextColor()
-        roomCodeTextField.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
+        roomCodeTextField.backgroundColor = Theme.cellBackgroundColor()
         roomCodeTextField.tintColor = Theme.asc_blueColor()
         roomCodeTextField.keyboardAppearance = Theme.asc_keyboardAppearance()
         

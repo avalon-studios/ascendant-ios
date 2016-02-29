@@ -6,25 +6,26 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Settings-->
         <scene sceneID="tsX-za-8zD">
             <objects>
-                <tableViewController id="RH6-7P-JQq" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SettingsViewController" id="RH6-7P-JQq" customClass="SettingsViewController" customModule="Ascendant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="bxl-KO-d4x">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <inset key="separatorInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <sections>
                             <tableViewSection headerTitle="Theme" id="NMZ-Qo-hqf">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BEg-g6-ROS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="BEg-g6-ROS">
                                         <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BEg-g6-ROS" id="7am-Wf-36j">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ascended (Default)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpG-dc-HOd">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deep Space" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpG-dc-HOd">
                                                     <rect key="frame" x="16" y="11" width="576" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -39,7 +40,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cTa-U6-w5U">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="cTa-U6-w5U">
                                         <rect key="frame" x="0.0" y="157.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cTa-U6-w5U" id="B3u-Um-Mme">
@@ -61,7 +62,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="5LM-1V-hfx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="5LM-1V-hfx">
                                         <rect key="frame" x="0.0" y="201.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5LM-1V-hfx" id="AyF-I8-ook">
@@ -91,9 +92,24 @@
                             <outlet property="delegate" destination="RH6-7P-JQq" id="sFZ-Gw-bUK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="8Mb-7R-KB3"/>
+                    <navigationItem key="navigationItem" title="Settings" id="8Mb-7R-KB3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="xhM-l2-tbU">
+                            <connections>
+                                <segue destination="ZSo-Ml-mEg" kind="unwind" unwindAction="unwindToWelcome:" id="umo-7u-DVD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="darkThemeCell" destination="BEg-g6-ROS" id="vqD-ah-Gp9"/>
+                        <outlet property="lightThemeCell" destination="5LM-1V-hfx" id="IvK-yP-Wya"/>
+                        <outlet property="mediumThemeCell" destination="cTa-U6-w5U" id="kl0-jn-72d"/>
+                        <outletCollection property="labels" destination="vpG-dc-HOd" collectionClass="NSMutableArray" id="t2a-1P-6fl"/>
+                        <outletCollection property="labels" destination="iaJ-9b-6kE" collectionClass="NSMutableArray" id="J56-Mi-niL"/>
+                        <outletCollection property="labels" destination="jph-Sl-ogA" collectionClass="NSMutableArray" id="7MF-td-X1I"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXp-uZ-mYO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ZSo-Ml-mEg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="677" y="341"/>
         </scene>
@@ -114,4 +130,5 @@
             <point key="canvasLocation" x="-143" y="341"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

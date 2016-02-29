@@ -9,16 +9,16 @@
 import UIKit
 
 struct Theme {
-    
-    static let notificationName = "ThemeChanged"
-    
+        
     static var theme: ThemeStyle {
         get {
             return ThemeStyle(rawValue: NSUserDefaults.standardUserDefaults().integerForKey("Theme")) ?? .Dark
         }
         set {
+            
             NSUserDefaults.standardUserDefaults().setInteger(newValue.rawValue, forKey: "Theme")
             NSUserDefaults.standardUserDefaults().synchronize()
+            Theme.setAppearances()
         }
     }
     
@@ -98,6 +98,13 @@ struct Theme {
         }
     }
     
+    static func cellBackgroundColor() -> UIColor {
+        switch Theme.theme {
+        case .Dark, .Medium:    return UIColor.whiteColor().colorWithAlphaComponent(0.05)
+        case .Light:            return UIColor.whiteColor()
+        }
+    }
+    
     static func asc_keyboardAppearance() -> UIKeyboardAppearance {
         switch Theme.theme {
         case .Dark:             return .Dark
@@ -110,6 +117,19 @@ struct Theme {
         case .Dark, .Medium:    return .LightContent
         case .Light:            return .Default
         }
+    }
+    
+    static func setAppearances() {
+        
+        let navBar = UINavigationBar.appearance()
+        
+        navBar.translucent = false
+        navBar.tintColor = Theme.asc_navigationTintColor()
+        navBar.barTintColor = Theme.asc_darkBaseColor()
+        navBar.titleTextAttributes = [NSForegroundColorAttributeName: Theme.asc_navigationTintColor()]
+        navBar.barStyle = .Black
+        
+        UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).textColor = Theme.asc_defaultTextColor()
     }
 }
 
