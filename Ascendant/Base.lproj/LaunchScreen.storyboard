@@ -45,11 +45,9 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="xaT-P8-fGS" firstAttribute="centerY" relation="greaterThanOrEqual" secondItem="mpJ-du-bQE" secondAttribute="centerY" id="4D6-tg-Tef"/>
                                     <constraint firstItem="xaT-P8-fGS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mpJ-du-bQE" secondAttribute="top" constant="60" id="9Zl-U0-1vF"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xaT-P8-fGS" secondAttribute="bottom" constant="4" id="ArS-QD-p0V"/>
+                                    <constraint firstAttribute="bottom" secondItem="xaT-P8-fGS" secondAttribute="bottom" constant="4" id="ArS-QD-p0V"/>
                                     <constraint firstAttribute="centerX" secondItem="xaT-P8-fGS" secondAttribute="centerX" multiplier="0.75" id="NWA-hf-AQH"/>
-                                    <constraint firstItem="xaT-P8-fGS" firstAttribute="centerY" secondItem="mpJ-du-bQE" secondAttribute="centerY" priority="750" id="er1-Lf-9Gn"/>
                                     <constraint firstItem="Ukk-fX-fYl" firstAttribute="leading" secondItem="mpJ-du-bQE" secondAttribute="leading" constant="24" id="ezb-Gm-czp"/>
                                     <constraint firstItem="Ukk-fX-fYl" firstAttribute="top" secondItem="mpJ-du-bQE" secondAttribute="top" constant="24" id="oz2-iG-rN1"/>
                                 </constraints>

@@ -14,13 +14,14 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
     
     // MARK: - Outlets
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var separatorView: UIView!
-    @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var separatorView: UIView!
+    @IBOutlet var subTitleLabel: UILabel!
     @IBOutlet var startGameButton: AscendantButton!
     @IBOutlet var joinGameButton: AscendantButton!
     @IBOutlet var rulesButton: AscendantButton!
     @IBOutlet var settingsButton: AscendantButton!
+    @IBOutlet var rocketImageView: UIImageView!
     
     
     // MARK: — Lifecycle
@@ -36,6 +37,23 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
         
         // Register for theme updates
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateTheme), name: Theme.notificationName, object: nil)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        UIView.animateWithDuration(0.7, delay: 1, options: [.CurveEaseIn],
+            animations: {
+                
+                let x = self.view.frame.width + self.rocketImageView.frame.width
+                let y = -self.rocketImageView.frame.height
+                
+                self.rocketImageView.layer.position = CGPoint(x: x, y: y)
+            },
+            completion: { _ in
+                self.rocketImageView.removeFromSuperview()
+            }
+        )
     }
     
     override func viewDidDisappear(animated: Bool) {

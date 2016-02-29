@@ -101,10 +101,8 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jkF-Aa-GiK" secondAttribute="bottom" constant="4" id="1ir-Nz-0tZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="jkF-Aa-GiK" secondAttribute="bottom" constant="4" id="1ir-Nz-0tZ"/>
                                     <constraint firstItem="BCc-6j-mX1" firstAttribute="leading" secondItem="Fsm-1Y-nRA" secondAttribute="leading" constant="24" id="2y2-a0-Iat"/>
-                                    <constraint firstItem="jkF-Aa-GiK" firstAttribute="centerY" secondItem="Fsm-1Y-nRA" secondAttribute="centerY" priority="750" id="akG-Rf-vAr"/>
-                                    <constraint firstItem="jkF-Aa-GiK" firstAttribute="centerY" relation="greaterThanOrEqual" secondItem="Fsm-1Y-nRA" secondAttribute="centerY" id="bFh-LO-bRj"/>
                                     <constraint firstItem="BCc-6j-mX1" firstAttribute="top" secondItem="Fsm-1Y-nRA" secondAttribute="top" constant="24" id="p52-6r-shl"/>
                                     <constraint firstItem="jkF-Aa-GiK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Fsm-1Y-nRA" secondAttribute="top" constant="60" id="qqh-Uh-UVJ"/>
                                     <constraint firstAttribute="centerX" secondItem="jkF-Aa-GiK" secondAttribute="centerX" multiplier="0.75" id="tWT-17-rRs"/>
@@ -143,6 +141,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="joinGameButton" destination="GyD-kE-MMs" id="wp5-1r-lx6"/>
+                        <outlet property="rocketImageView" destination="jkF-Aa-GiK" id="pcw-lX-6Dx"/>
                         <outlet property="rulesButton" destination="fnu-ew-xyh" id="7d7-pd-90l"/>
                         <outlet property="separatorView" destination="dDS-D0-09v" id="OcU-bB-XTU"/>
                         <outlet property="settingsButton" destination="0W0-uT-zrM" id="2VG-Ca-wBt"/>
@@ -411,7 +410,7 @@
             </objects>
             <point key="canvasLocation" x="1091" y="384"/>
         </scene>
-        <!--Start Game-->
+        <!--New Game-->
         <scene sceneID="3mS-v4-5vt">
             <objects>
                 <tableViewController storyboardIdentifier="CreateViewController" id="FtU-Ii-M4s" customClass="CreateViewController" customModule="Ascendant" customModuleProvider="target" sceneMemberID="viewController">
@@ -460,7 +459,7 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Start Game" id="v46-eb-TUJ">
+                    <navigationItem key="navigationItem" title="New Game" id="v46-eb-TUJ">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yCm-AX-FSh">
                             <connections>
                                 <segue destination="tsA-Tv-dqk" kind="unwind" unwindAction="unwindToWelcome:" id="hhj-kf-pT7"/>
@@ -484,7 +483,7 @@
         <image name="Rocket" width="78" height="94"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4uQ-nL-kne"/>
+        <segue reference="gXi-kg-A0g"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
 </document>
