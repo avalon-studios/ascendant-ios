@@ -83,6 +83,8 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
         UIView.animateWithDuration(0.6, delay: 0.6, options: [.CurveEaseIn],
             animations: {
             
+                self.setNeedsStatusBarAppearanceUpdate()
+                
                 let x = self.rocketView.frame.width + self.rocketImageView.frame.width
                 let y = -self.rocketImageView.frame.height
             
@@ -110,6 +112,10 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
         }
         
         super.updateViewConstraints()
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return !rocketDidAnimate
     }
     
     
