@@ -166,8 +166,6 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
                 parseResult(result)
             }
         }
-        
-        dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

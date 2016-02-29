@@ -37,7 +37,8 @@ class GamePlayViewController: UIViewController, Themable {
         
         game.delegate = self
         
-        messageLabel.text = "You're on the " + (game.player.team == .Good ? "good" : "bad") + " team"
+        messageLabel.text = ""
+        messageLabel.setTextWithCrossFade("You're on the " + (game.player.team == .Good ? "good" : "bad") + " team")
         
         updateTheme()
         
@@ -89,8 +90,8 @@ class GamePlayViewController: UIViewController, Themable {
             
             switch result {
             case .Success:
-                sender.removeFromSuperview()
-                self.messageLabel.text = "Waiting for other players..."
+                sender.hidden = true
+                self.messageLabel.setTextWithCrossFade("Waiting for other players...")
             case .Error(let message):
                 self.showAlert("Error", message: message)
             }
@@ -108,7 +109,7 @@ extension GamePlayViewController: GameDelegate {
         
         guard player.id == game.player.id else {
             
-            messageLabel.text = "Waiting for \(player.name) to propose a team..."
+            messageLabel.setTextWithCrossFade("Waiting for \(player.name) to propose a team...")
             
             return
         }
@@ -135,6 +136,8 @@ extension GamePlayViewController: GameDelegate {
             return
         }
         
+        messageLabel.setTextWithCrossFade("Waiting for players to vote on mission...")
+        
         actionViewController.actionMembers = players
         actionViewController.action = .MissionVote
         
@@ -147,6 +150,8 @@ extension GamePlayViewController: GameDelegate {
             return
         }
         
+        messageLabel.setTextWithCrossFade("Waiting for players to vote on proposal...")
+
         actionViewController.actionMembers = players
         actionViewController.action = .ProposalVote
         
@@ -160,6 +165,10 @@ extension GamePlayViewController: GameDelegate {
         }
         
         missionViews[missionNumber].setStatus(status)
+    }
+    
+    func game(showProposalVotingResult result: ProposalResult) {
+        
     }
 }
 

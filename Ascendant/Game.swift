@@ -56,10 +56,7 @@ final class Game: Decodable {
     }
     
     func proposalVoteResult(result: ProposalResult) {
-        switch result {
-        case .Passed(let players):  delegate?.game(voteOnMissionWithPlayers: players)
-        case .Failed(let failed):   delegate?.game(setNumberOfFailedProposals: failed)
-        }
+        delegate?.game(showProposalVotingResult: result)
     }
     
     func missionVoteResult(result: MissionResult) {

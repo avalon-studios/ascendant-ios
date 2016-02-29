@@ -11,20 +11,36 @@ import Gloss
 
 enum ProposalResult: Decodable {
     
-    case Passed(votingPlayers: [Player])
-    case Failed(failedProposals: Int)
+    case Passed(votes: [(Player, Bool)])
+    case Failed(votes: [(Player, Bool)], numberFailedProposals: Int)
     
     init?(json: JSON) {
         
-        guard let result: Bool = "proposal_vote_result" <~~ json else {
+        guard let
+            pass: Bool = "pass" <~~ json,
+            votesJSON: [String: Bool] = "votes" <~~ json,
+            players = Game.currentGame?.players
+        else {
             return nil
         }
         
-        if result, let players: [Player] = "players" <~~ json {
-            self = .Passed(votingPlayers: players)
+        var votes = [(Player, Bool)]()
+        
+        // Couldn't get flatmap to work for some reason (shrug)
+        for player in players {
+            if let vote = votesJSON[player.id] {
+                votes.append((player, vote))
+            }
+            else {
+                return nil
+            }
         }
-        else if !result, let failed: Int = "number_failed" <~~ json {
-            self = .Failed(failedProposals: failed)
+        
+        if pass {
+            self = .Passed(votes: votes)
+        }
+        else if !pass, let failed: Int = "number_failed" <~~ json {
+            self = .Failed(votes: votes, numberFailedProposals: failed)
         }
         else {
             return nil

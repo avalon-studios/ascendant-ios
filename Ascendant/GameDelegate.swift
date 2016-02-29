@@ -14,4 +14,5 @@ protocol GameDelegate: class {
     func game(havePlayerProposeMission player: Player, withNumberOfRequiredPlayers numberPlayers: Int)
     func game(setNumberOfFailedProposals failed: Int)
     func game(setMissionStatus status: MissionStatus, forMission missionNumber: Int)
+    func game(showProposalVotingResult result: ProposalResult)
 }

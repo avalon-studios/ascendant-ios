@@ -164,11 +164,11 @@ class Socket {
         
         socket.on(Event.proposalVote) { data, ack in
             
-            guard let json = data.first as? JSON, playersJSON = json["players"] as? [JSON] else {
+            guard let json = data.first as? JSON, playerIDs = json["players"] as? [String] else {
                 return
             }
             
-            let players = [Player].fromJSONArray(playersJSON)
+            let players = game.players.filter { playerIDs.contains($0.id) }
             
             game.voteOnProposalWithPlayers(players)
         }
