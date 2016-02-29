@@ -22,6 +22,7 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
     @IBOutlet var rulesButton: AscendantButton!
     @IBOutlet var settingsButton: AscendantButton!
     @IBOutlet var rocketImageView: UIImageView!
+    @IBOutlet weak var moonImageView: UIImageView!
     
     
     // MARK: — Lifecycle
@@ -49,9 +50,12 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
                 let y = -self.rocketImageView.frame.height
                 
                 self.rocketImageView.layer.position = CGPoint(x: x, y: y)
+                self.rocketImageView.layer.transform = CATransform3DMakeScale(0.5, 0.5, 1)
+                self.moonImageView.alpha = 0
             },
             completion: { _ in
                 self.rocketImageView.removeFromSuperview()
+                self.moonImageView.removeFromSuperview()
             }
         )
     }

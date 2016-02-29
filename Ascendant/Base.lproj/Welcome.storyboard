@@ -94,7 +94,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="157.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Moon" translatesAutoresizingMaskIntoConstraints="NO" id="BCc-6j-mX1">
-                                        <rect key="frame" x="24" y="24" width="24" height="26"/>
+                                        <rect key="frame" x="24" y="44" width="24" height="26"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rocket" translatesAutoresizingMaskIntoConstraints="NO" id="jkF-Aa-GiK">
                                         <rect key="frame" x="361" y="60" width="78" height="93.5"/>
@@ -103,7 +103,7 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="jkF-Aa-GiK" secondAttribute="bottom" constant="4" id="1ir-Nz-0tZ"/>
                                     <constraint firstItem="BCc-6j-mX1" firstAttribute="leading" secondItem="Fsm-1Y-nRA" secondAttribute="leading" constant="24" id="2y2-a0-Iat"/>
-                                    <constraint firstItem="BCc-6j-mX1" firstAttribute="top" secondItem="Fsm-1Y-nRA" secondAttribute="top" constant="24" id="p52-6r-shl"/>
+                                    <constraint firstItem="BCc-6j-mX1" firstAttribute="top" secondItem="Fsm-1Y-nRA" secondAttribute="top" constant="44" id="p52-6r-shl"/>
                                     <constraint firstItem="jkF-Aa-GiK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Fsm-1Y-nRA" secondAttribute="top" constant="60" id="qqh-Uh-UVJ"/>
                                     <constraint firstAttribute="centerX" secondItem="jkF-Aa-GiK" secondAttribute="centerX" multiplier="0.75" id="tWT-17-rRs"/>
                                 </constraints>
@@ -141,6 +141,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="joinGameButton" destination="GyD-kE-MMs" id="wp5-1r-lx6"/>
+                        <outlet property="moonImageView" destination="BCc-6j-mX1" id="UZf-w9-cYD"/>
                         <outlet property="rocketImageView" destination="jkF-Aa-GiK" id="pcw-lX-6Dx"/>
                         <outlet property="rulesButton" destination="fnu-ew-xyh" id="7d7-pd-90l"/>
                         <outlet property="separatorView" destination="dDS-D0-09v" id="OcU-bB-XTU"/>
