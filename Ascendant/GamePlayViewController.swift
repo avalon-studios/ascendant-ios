@@ -169,6 +169,11 @@ extension GamePlayViewController: GameDelegate {
     
     func game(showProposalVotingResult result: ProposalResult) {
         
+        guard let (actionNavigationController, actionViewController) = createActionViewController() else {
+            return
+        }
+        
+        
     }
 }
 

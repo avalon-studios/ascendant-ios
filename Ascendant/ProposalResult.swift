@@ -9,41 +9,25 @@
 import Foundation
 import Gloss
 
-enum ProposalResult: Decodable {
+struct ProposalResult: Decodable {
     
-    case Passed(votes: [(Player, Bool)])
-    case Failed(votes: [(Player, Bool)], numberFailedProposals: Int)
+    let pass: Bool
+    let votes: [String: Bool]
+    let missionMembers: [Player]
     
     init?(json: JSON) {
         
-        guard let
-            pass: Bool = "pass" <~~ json,
-            votesJSON: [String: Bool] = "votes" <~~ json,
-            players = Game.currentGame?.players
+        guard let pass: Bool = "pass" <~~ json, votes: [String: Bool] = "votes" <~~ json
+        where votes.keys.count == Game.currentGame?.players.count
         else {
             return nil
         }
         
-        var votes = [(Player, Bool)]()
+        let playersJSON: [JSON] = "players" <~~ json ?? []
         
-        // Couldn't get flatmap to work for some reason (shrug)
-        for player in players {
-            if let vote = votesJSON[player.id] {
-                votes.append((player, vote))
-            }
-            else {
-                return nil
-            }
-        }
+        self.missionMembers = [Player].fromJSONArray(playersJSON)
+        self.pass = pass
+        self.votes = votes
         
-        if pass {
-            self = .Passed(votes: votes)
-        }
-        else if !pass, let failed: Int = "number_failed" <~~ json {
-            self = .Failed(votes: votes, numberFailedProposals: failed)
-        }
-        else {
-            return nil
-        }
     }
 }

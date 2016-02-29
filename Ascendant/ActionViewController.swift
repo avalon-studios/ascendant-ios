@@ -20,6 +20,7 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
     var game: Game!
     var action = Action.MissionVote
     var actionMembers: [Player]!
+    var proposalResult: ProposalResult!
     var numberOfPlayersForProposal = 0
     
     var actionMessage: String {
@@ -27,6 +28,7 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
         case .ProposeMission: return "Select \(numberOfPlayersForProposal) Players for a Mission"
         case .ProposalVote: return "Approve Players for a Mission"
         case .MissionVote: return "Pass the Mission?"
+        case .ProposalResult: return proposalResult.pass ? "Mission Going Forward!" : "Mission Did Not Pass"
         }
     }
     
@@ -50,6 +52,9 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
             failButton.hidden = true
             passButton.setTitle("Propose", forState: .Normal)
             passButton.enabled = false
+        case .ProposalResult:
+            failButton.hidden = true
+            passButton.setTitle("Got It", forState: .Normal)
         case .ProposalVote:
             passButton.setTitle("Approve", forState: .Normal)
             failButton.setTitle("Deny", forState: .Normal)
@@ -69,7 +74,10 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return actionMembers.count
+        switch action {
+        case .ProposalResult:   return proposalResult.missionMembers.count
+        default:                return actionMembers.count
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -84,10 +92,13 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
     func configurePlayerCell(cell: PlayerCell, forIndexPath indexPath: NSIndexPath) -> PlayerCell {
         
         let player = actionMembers[indexPath.row]
-        
+
         cell.nameLabel.text = player.name
         
-        if game.player.team == .Bad {
+        if action == .ProposalResult {
+            cell.teamView.backgroundColor == proposalResult.votes[player.id] ? Theme.asc_greenColor() : Theme.asc_redColor()
+        }
+        else if game.player.team == .Bad {
             cell.teamView.backgroundColor = player.teamColor
         }
         else if game.player.id == player.id {
@@ -165,6 +176,13 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
             Socket.manager.proposeMission(game, players: players) { result in
                 parseResult(result)
             }
+        case .ProposalResult:
+            if proposalResult.pass {
+                
+            }
+            else {
+                
+            }
         }
     }
 }
@@ -172,5 +190,6 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
 enum Action {
     case ProposeMission
     case ProposalVote
+    case ProposalResult
     case MissionVote
 }
