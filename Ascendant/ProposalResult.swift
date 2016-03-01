@@ -20,6 +20,7 @@ struct ProposalResult: Decodable {
         guard let
             pass: Bool = "pass" <~~ json,
             voteValues: [String: Bool] = "votes" <~~ json,
+            missionMemberIDs: [String] = "players" <~~ json,
             players = Game.currentGame?.players
         else {
             return nil
@@ -30,13 +31,15 @@ struct ProposalResult: Decodable {
             return (player, vote)
         }
         
-        if votes.count != players.count {
+        let members = missionMemberIDs.flatMap { id in
+            players.filter({ $0.id == id }).first
+        }
+        
+        if votes.count != players.count || members.count != missionMemberIDs.count {
             return nil
         }
         
-        let playersJSON: [JSON] = "players" <~~ json ?? []
-        
-        self.missionMembers = [Player].fromJSONArray(playersJSON)
+        self.missionMembers = members
         self.pass = pass
         self.votes = votes
     }
