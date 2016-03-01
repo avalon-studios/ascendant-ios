@@ -93,7 +93,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="8Mb-7R-KB3">
-                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="xhM-l2-tbU">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="xhM-l2-tbU">
                             <connections>
                                 <segue destination="ZSo-Ml-mEg" kind="unwind" unwindAction="unwindToWelcome:" id="umo-7u-DVD"/>
                             </connections>

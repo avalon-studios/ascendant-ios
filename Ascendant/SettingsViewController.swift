@@ -63,10 +63,22 @@ class SettingsViewController: UITableViewController, Themable {
         case darkThemeCell:     Theme.theme = .Dark
         case mediumThemeCell:   Theme.theme = .Medium
         case lightThemeCell:    Theme.theme = .Light
-        default: break
+        default:                return
         }
         
         setCheckedTheme()
+        
+        /*
+         So, you can't refresh UIAppearance on existing views - 
+         they have to be removed from view and re-added.
+         
+         What we do is create a brand new settings view controller,
+         present it with a crossfade, update the theme here, and
+         dismiss it with no animation. By presenting and bring back
+         this view controller, it updates the nav bar and tableview
+         header/footer labels, which are set with UIAppearance. We 
+         also get a nice fade animation to the new theme. 
+        */
         
         let refreshVC = R.storyboard.settings.initialViewController()!
         
