@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 struct Theme {
         
@@ -106,6 +107,14 @@ struct Theme {
         }
     }
     
+    static func cellHighlightColor() -> UIColor {
+        switch Theme.theme {
+        case .Dark:     return UIColor.whiteColor().colorWithAlphaComponent(0.1)
+        case .Medium:   return UIColor.blackColor().colorWithAlphaComponent(0.1)
+        case .Light:    return UIColor.blackColor().colorWithAlphaComponent(0.1)
+        }
+    }
+    
     static func asc_keyboardAppearance() -> UIKeyboardAppearance {
         switch Theme.theme {
         case .Dark:             return .Dark
@@ -133,6 +142,17 @@ struct Theme {
         UILabel.appearanceWhenContainedInInstancesOfClasses([SettingsViewController.self]).textColor = Theme.asc_defaultTextColor()
 
         UITableViewCell.appearanceWhenContainedInInstancesOfClasses([SettingsViewController.self]).backgroundColor = Theme.cellBackgroundColor()
+    }
+    
+    static func setAppearanceForMail() {
+        
+        let navBar = UINavigationBar.appearance()
+        
+        navBar.translucent = true
+        navBar.tintColor = UIColor.blueColor()
+        navBar.barTintColor = UIColor.whiteColor()
+        navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
+        navBar.barStyle = .Default
     }
 }
 
