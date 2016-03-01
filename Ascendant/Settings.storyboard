@@ -86,6 +86,54 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="About the game and other such stuff" footerTitle="123" id="dFK-YT-DEU">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="Phb-hj-pCk">
+                                        <rect key="frame" x="0.0" y="295.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Phb-hj-pCk" id="2Ke-I4-2jC">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ascendant Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aaq-tb-c3y">
+                                                    <rect key="frame" x="16" y="11" width="543" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Aaq-tb-c3y" firstAttribute="leading" secondItem="2Ke-I4-2jC" secondAttribute="leading" constant="16" id="1Rb-oe-OuH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Aaq-tb-c3y" secondAttribute="trailing" id="5wN-tq-HjJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="Aaq-tb-c3y" secondAttribute="bottom" constant="11.5" id="6Qe-md-5Bt"/>
+                                                <constraint firstItem="Aaq-tb-c3y" firstAttribute="top" secondItem="2Ke-I4-2jC" secondAttribute="top" constant="11" id="NFY-fs-amM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="PeY-or-1bp">
+                                        <rect key="frame" x="0.0" y="339.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PeY-or-1bp" id="tTQ-Tj-XBR">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jea-2k-gbW">
+                                                    <rect key="frame" x="16" y="11" width="543" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Jea-2k-gbW" firstAttribute="top" secondItem="tTQ-Tj-XBR" secondAttribute="top" constant="11" id="2YK-7e-QCL"/>
+                                                <constraint firstItem="Jea-2k-gbW" firstAttribute="leading" secondItem="tTQ-Tj-XBR" secondAttribute="leading" constant="16" id="Nwo-gL-vZ1"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jea-2k-gbW" secondAttribute="bottom" constant="11.5" id="ZSw-yJ-X5y"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Jea-2k-gbW" secondAttribute="trailing" id="o3g-XB-gaM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="RH6-7P-JQq" id="HPG-hB-P3h"/>

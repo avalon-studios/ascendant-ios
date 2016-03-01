@@ -39,10 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
             // Check the shortcut and present the appropiate view controller
             if shortcutItem.type == "space.ascendant.Ascendant.creategame" {
-                welcomeViewController.presentViewController(R.storyboard.welcome.startNavigationController()!, animated: true, completion: nil)
+                welcomeViewController.presentViewController(R.storyboard.welcome.startNavigationController()!, animated: false, completion: nil)
             }
             else if shortcutItem.type == "space.ascendant.Ascendant.joingame" {
-                welcomeViewController.presentViewController(R.storyboard.welcome.joinNavigationController()!, animated: true, completion: nil)
+                welcomeViewController.presentViewController(R.storyboard.welcome.joinNavigationController()!, animated: false, completion: nil)
             }
         }
     }

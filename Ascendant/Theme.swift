@@ -130,7 +130,9 @@ struct Theme {
         navBar.titleTextAttributes = [NSForegroundColorAttributeName: Theme.asc_navigationTintColor()]
         navBar.barStyle = .Black
         
-        UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).textColor = Theme.asc_defaultTextColor()
+        UILabel.appearanceWhenContainedInInstancesOfClasses([SettingsViewController.self]).textColor = Theme.asc_defaultTextColor()
+
+        UITableViewCell.appearanceWhenContainedInInstancesOfClasses([SettingsViewController.self]).backgroundColor = Theme.cellBackgroundColor()
     }
 }
 
