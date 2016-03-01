@@ -17,8 +17,6 @@ class AscendantButton: UIButton, Themable {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setTitleColor(Theme.asc_buttonTextColor().colorWithAlphaComponent(0.3), forState: .Disabled)
-        
         activityIndicator.hidesWhenStopped = true
         activityIndicator.stopAnimating()
         
@@ -30,8 +28,10 @@ class AscendantButton: UIButton, Themable {
     }
     
     func updateTheme() {
-        backgroundColor = Theme.asc_transparentColor()
+        setTitleColor(Theme.asc_buttonTextColor().colorWithAlphaComponent(0.3), forState: .Disabled)
         setTitleColor(Theme.asc_buttonTextColor(), forState: .Normal)
+
+        backgroundColor = Theme.asc_transparentColor()
     }
     
     override func updateConstraints() {
