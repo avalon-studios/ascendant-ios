@@ -78,7 +78,7 @@ class GamePlayViewController: UIViewController, Themable {
         return Theme.asc_statusBarStyle()
     }
     
-    func createActionViewController() -> (UINavigationController, ActionViewController)? {
+    func createActionViewController() -> (UINavigationController, ActionViewController) {
         
         guard let actionNavigationController = R.storyboard.gamePlay.actionViewController(),
             actionViewController = actionNavigationController.viewControllers.first as? ActionViewController
@@ -124,16 +124,14 @@ extension GamePlayViewController: GameDelegate {
     
     func game(havePlayerProposeMission player: Player, withNumberOfRequiredPlayers numberPlayers: Int) {
         
-        guard let (actionNavigationController, actionViewController) = createActionViewController() else {
-            return
-        }
-        
         guard player.id == game.player.id else {
             
             messageLabel.setTextWithCrossFade("Waiting for \(player.name) to propose a team...")
             
             return
         }
+        
+        let (actionNavigationController, actionViewController) = createActionViewController()
         
         actionViewController.actionMembers = game.players
         actionViewController.action = .ProposeMission
@@ -154,12 +152,14 @@ extension GamePlayViewController: GameDelegate {
     }
     
     func game(voteOnMissionWithPlayers players: [Player]) {
-    
-        guard let (actionNavigationController, actionViewController) = createActionViewController() else {
+        
+        messageLabel.setTextWithCrossFade("Waiting for players to vote on mission...")
+        
+        guard players.contains(game.player) else {
             return
         }
         
-        messageLabel.setTextWithCrossFade("Waiting for players to vote on mission...")
+        let (actionNavigationController, actionViewController) = createActionViewController()
         
         actionViewController.actionMembers = players
         actionViewController.action = .MissionVote
@@ -171,11 +171,9 @@ extension GamePlayViewController: GameDelegate {
     
     func game(voteOnProposalWithPlayers players: [Player]) {
 
-        guard let (actionNavigationController, actionViewController) = createActionViewController() else {
-            return
-        }
-        
         messageLabel.setTextWithCrossFade("Waiting for players to vote on proposal...")
+
+        let (actionNavigationController, actionViewController) = createActionViewController()
 
         actionViewController.actionMembers = players
         actionViewController.action = .ProposalVote
@@ -196,11 +194,9 @@ extension GamePlayViewController: GameDelegate {
     
     func game(showProposalVotingResult result: ProposalResult) {
         
-        guard let (actionNavigationController, actionViewController) = createActionViewController() else {
-            return
-        }
-        
         messageLabel.setTextWithCrossFade("Waiting for players to check out the vote results...")
+
+        let (actionNavigationController, actionViewController) = createActionViewController()
         
         actionViewController.proposalResult = result
         actionViewController.action = .ProposalResult

@@ -26,6 +26,8 @@ final class Game: Decodable {
     var player: Player
     var id: String
     
+    var numberFailedProposals = 0
+    
     init?(json: JSON) {
         
         guard let
@@ -56,10 +58,18 @@ final class Game: Decodable {
     }
     
     func proposalVoteResult(result: ProposalResult) {
+        
+        numberFailedProposals = result.pass ? 0 : numberFailedProposals + 1
+        
+        delegate?.game(setNumberOfFailedProposals: numberFailedProposals)
         delegate?.game(showProposalVotingResult: result)
     }
     
     func missionVoteResult(result: MissionResult) {
         delegate?.game(setMissionStatus: result.passed ? .Success : .Fail, forMission: result.missionNumber)
+    }
+    
+    func voteOnMissionWithPlayers(players: [Player]) {
+        delegate?.game(voteOnMissionWithPlayers: players)
     }
 }

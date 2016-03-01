@@ -190,11 +190,9 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
             }
         case .ProposalResult:
             if proposalResult.pass {
-                
+                game.voteOnMissionWithPlayers(proposalResult.missionMembers)
             }
-            else {
-                
-            }
+            parseResult(.Success)
         }
     }
 }
