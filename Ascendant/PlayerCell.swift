@@ -30,7 +30,5 @@ class PlayerCell: UITableViewCell, Themable {
         tintColor = Theme.asc_defaultTextColor()
         
         nameLabel.textColor = Theme.asc_defaultTextColor()
-        
-        backgroundColor = Theme.cellBackgroundColor()
     }
 }
