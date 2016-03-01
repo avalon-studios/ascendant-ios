@@ -9,7 +9,7 @@
 import UIKit
 import ElegantPresentations
 
-class WelcomeViewController: UIViewController, Themable, UIViewControllerTransitioningDelegate {
+class WelcomeViewController: UIViewController, Themable {
 
     
     // MARK: - Outlets
@@ -58,11 +58,11 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
         view.backgroundColor = Theme.asc_baseColor()
         rocketView.backgroundColor = UIColor(hex: "#2C2E3D")
         
-        titleLabel.textColor = Theme.asc_defaultTextColor().colorWithAlphaComponent(0.9)
+        titleLabel.textColor = Theme.asc_defaultTextColor()
         
         separatorView.backgroundColor = Theme.asc_separatorColor()
         
-        subTitleLabel.textColor = Theme.asc_defaultTextColor()
+        subTitleLabel.textColor = Theme.asc_defaultTextColor().colorWithAlphaComponent(0.9)
         
         [startGameButton, joinGameButton, rulesButton, settingsButton].forEach {
             $0.backgroundColor = Theme.asc_transparentColor()
@@ -121,22 +121,9 @@ class WelcomeViewController: UIViewController, Themable, UIViewControllerTransit
     
     // MARK: - Navigation
     
-    // Set these for the custom presentation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier != R.segue.welcomeViewController.settingsSegue.identifier {
-            segue.destinationViewController.modalPresentationStyle = .Custom
-            segue.destinationViewController.transitioningDelegate = self
-        }
-    }
-    
     // Unwind segue, also dismiss the keyboard
     @IBAction func unwindToWelcome(segue: UIStoryboardSegue) {
         segue.sourceViewController.view.endEditing(true)
         Socket.manager.leaveGame()
-    }
-    
-    // Conform to UIViewControllerTransitioningDelegate
-    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [])
     }
 }
