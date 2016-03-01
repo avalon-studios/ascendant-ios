@@ -107,14 +107,6 @@ struct Theme {
         }
     }
     
-    static func cellHighlightColor() -> UIColor {
-        switch Theme.theme {
-        case .Dark:     return UIColor.whiteColor().colorWithAlphaComponent(0.1)
-        case .Medium:   return UIColor.blackColor().colorWithAlphaComponent(0.1)
-        case .Light:    return UIColor.blackColor().colorWithAlphaComponent(0.1)
-        }
-    }
-    
     static func asc_keyboardAppearance() -> UIKeyboardAppearance {
         switch Theme.theme {
         case .Dark:             return .Dark

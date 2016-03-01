@@ -238,7 +238,6 @@ struct EmitEvent {
     static let leave = "leave"
     static let start = "start"
     static let ready = "ready"
-    static let proposalSeen = "proposal_vote_seen"
     static let proposeMission = "propose_mission"
     static let proposalVote = "proposal_vote"
     static let missionVote = "mission_vote"

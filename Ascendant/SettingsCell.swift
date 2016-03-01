@@ -21,7 +21,7 @@ class SettingsCell: UITableViewCell {
     func setSelectedOrHighlighted(selected: Bool, animated: Bool) {
         
         let changes = {
-            self.backgroundColor = selected ? Theme.cellHighlightColor() : Theme.cellBackgroundColor()
+            self.backgroundColor = selected ? Theme.asc_separatorColor() : Theme.cellBackgroundColor()
         }
         
         if animated {
