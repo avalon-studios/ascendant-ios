@@ -17,7 +17,7 @@ class AscendantButton: UIButton, Themable {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setTitleColor(Theme.asc_transparentColor(), forState: .Disabled)
+        setTitleColor(Theme.asc_buttonTextColor().colorWithAlphaComponent(0.3), forState: .Disabled)
         
         activityIndicator.hidesWhenStopped = true
         activityIndicator.stopAnimating()
