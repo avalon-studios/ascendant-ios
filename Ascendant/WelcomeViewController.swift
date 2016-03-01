@@ -80,7 +80,7 @@ class WelcomeViewController: UIViewController, Themable {
         
         rocketDidAnimate = true
         
-        let duaration = animated ? 0.6 : 0
+        let duaration = animated ? 0.4 : 0
         let delay = animated ? 0.6 : 0
         
         UIView.animateWithDuration(duaration, delay: delay, options: [.CurveEaseIn],
