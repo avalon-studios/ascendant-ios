@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10115" systemVersion="15E56a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0ua-2g-hlB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E56a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0ua-2g-hlB">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Missions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJD-tq-Q5y">
-                                <rect key="frame" x="20" y="41" width="560" height="21"/>
+                                <rect key="frame" x="20" y="41" width="560" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -33,27 +33,27 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muS-En-Skc">
-                                <rect key="frame" x="20" y="218" width="560" height="1"/>
+                                <rect key="frame" x="20" y="216.5" width="560" height="1"/>
                                 <color key="backgroundColor" red="0.2941176593" green="0.3058823645" blue="0.40392157439999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="TJd-dD-3NZ"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Failed Proposals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKw-J0-NIA">
-                                <rect key="frame" x="20" y="161" width="560" height="21"/>
+                                <rect key="frame" x="20" y="160" width="560" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" distribution="equalSpacing" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EmJ-7R-CcN">
-                                <rect key="frame" x="20" y="198" width="560" height="4"/>
+                                <rect key="frame" x="20" y="196.5" width="560" height="4"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7YW-F4-tcg" customClass="ProposalView" customModule="Ascendant" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="4"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0w1-uK-hVr" customClass="ProposalView" customModule="Ascendant" customModuleProvider="target">
-                                        <rect key="frame" x="128" y="0.0" width="50" height="4"/>
+                                        <rect key="frame" x="127" y="0.0" width="50" height="4"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IWZ-mf-SgW" customClass="ProposalView" customModule="Ascendant" customModuleProvider="target">
@@ -61,7 +61,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xY-5e-DSs" customClass="ProposalView" customModule="Ascendant" customModuleProvider="target">
-                                        <rect key="frame" x="383" y="0.0" width="50" height="4"/>
+                                        <rect key="frame" x="382" y="0.0" width="50" height="4"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wd2-E6-VWB" customClass="ProposalView" customModule="Ascendant" customModuleProvider="target">
@@ -83,7 +83,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" distribution="equalSpacing" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gcD-Rv-sad">
-                                <rect key="frame" x="20" y="78" width="560" height="50"/>
+                                <rect key="frame" x="20" y="77" width="560" height="50"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CcQ-qS-8TU" customClass="MissionView" customModule="Ascendant" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -99,7 +99,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idU-ll-v8o" customClass="MissionView" customModule="Ascendant" customModuleProvider="target">
-                                        <rect key="frame" x="128" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="127" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOe-QI-Ugu" customClass="MissionView" customModule="Ascendant" customModuleProvider="target">
@@ -107,7 +107,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzp-D7-cKa" customClass="MissionView" customModule="Ascendant" customModuleProvider="target">
-                                        <rect key="frame" x="383" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="382" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9Z-BZ-8Vj" customClass="MissionView" customModule="Ascendant" customModuleProvider="target">
@@ -129,7 +129,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yvP-CM-Pzx">
-                                <rect key="frame" x="20" y="144" width="560" height="1"/>
+                                <rect key="frame" x="20" y="143" width="560" height="1"/>
                                 <color key="backgroundColor" red="0.2941176593" green="0.3058823645" blue="0.40392157439999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="dOZ-PV-vDP"/>
@@ -148,18 +148,11 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m50-oI-5jx">
-                                <rect key="frame" x="16" y="235" width="568" height="289"/>
+                                <rect key="frame" x="16" y="233.5" width="568" height="290.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVn-cm-9IB">
-                                <rect key="frame" x="20" y="235" width="30" height="30"/>
-                                <state key="normal" title="Quit"/>
-                                <connections>
-                                    <segue destination="ge9-cx-T0B" kind="unwind" unwindAction="unwindToWelcome:" id="gKv-6k-tgv"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.17436142265796661" green="0.18061500787734985" blue="0.24500730633735657" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -173,7 +166,6 @@
                             <constraint firstItem="9cu-9k-wSn" firstAttribute="top" secondItem="JwG-PX-6Jd" secondAttribute="topMargin" constant="24" id="Gtb-lY-WLE"/>
                             <constraint firstAttribute="trailing" secondItem="EmJ-7R-CcN" secondAttribute="trailing" constant="20" id="HIJ-h7-gM4"/>
                             <constraint firstAttribute="trailing" secondItem="muS-En-Skc" secondAttribute="trailing" constant="20" id="McB-WW-dE5"/>
-                            <constraint firstItem="YVn-cm-9IB" firstAttribute="leading" secondItem="JwG-PX-6Jd" secondAttribute="leading" constant="20" id="REP-ao-flx"/>
                             <constraint firstAttribute="trailing" secondItem="9cu-9k-wSn" secondAttribute="trailing" constant="20" id="Rfe-gg-4hJ"/>
                             <constraint firstItem="EmJ-7R-CcN" firstAttribute="top" secondItem="rKw-J0-NIA" secondAttribute="bottom" constant="16" id="S1S-Q8-haD"/>
                             <constraint firstItem="rKw-J0-NIA" firstAttribute="top" secondItem="yvP-CM-Pzx" secondAttribute="bottom" constant="16" id="ToZ-Ce-mIA"/>
@@ -184,7 +176,6 @@
                             <constraint firstItem="XbJ-Al-ft4" firstAttribute="top" secondItem="m50-oI-5jx" secondAttribute="bottom" priority="999" constant="16" id="XyI-Qq-g2C"/>
                             <constraint firstItem="XbJ-Al-ft4" firstAttribute="top" secondItem="8L9-mi-hkp" secondAttribute="bottom" constant="16" id="ZpZ-8Y-xgJ"/>
                             <constraint firstItem="m50-oI-5jx" firstAttribute="leading" secondItem="JwG-PX-6Jd" secondAttribute="leading" constant="16" id="bAa-c4-i39"/>
-                            <constraint firstItem="YVn-cm-9IB" firstAttribute="top" secondItem="muS-En-Skc" secondAttribute="bottom" constant="16" id="dB0-qd-TsD"/>
                             <constraint firstAttribute="trailing" secondItem="m50-oI-5jx" secondAttribute="trailing" constant="16" id="fHl-yv-JuE"/>
                             <constraint firstItem="rKw-J0-NIA" firstAttribute="leading" secondItem="JwG-PX-6Jd" secondAttribute="leading" constant="20" id="gJg-wg-5NU"/>
                             <constraint firstItem="PJD-tq-Q5y" firstAttribute="leading" secondItem="JwG-PX-6Jd" secondAttribute="leading" constant="20" id="lb0-G7-Mbb"/>
@@ -211,7 +202,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kc-37-PZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="ge9-cx-T0B" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="443" y="300"/>
         </scene>
