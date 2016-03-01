@@ -153,7 +153,7 @@ extension GamePlayViewController: GameDelegate {
     
     func game(voteOnMissionWithPlayers players: [Player]) {
         
-        messageLabel.setTextWithCrossFade("Waiting for players to vote on mission...")
+        messageLabel.setTextWithCrossFade("Waiting for mission results...")
         
         guard players.contains(game.player) else {
             return
@@ -194,7 +194,12 @@ extension GamePlayViewController: GameDelegate {
     
     func game(showProposalVotingResult result: ProposalResult) {
         
-        messageLabel.setTextWithCrossFade("Waiting for players to check out the vote results...")
+        if result.pass {
+            messageLabel.setTextWithCrossFade("Waiting for mission results...")
+        }
+        else {
+            messageLabel.setTextWithCrossFade("Waiting for a new leader...")
+        }
 
         let (actionNavigationController, actionViewController) = createActionViewController()
         
@@ -210,6 +215,6 @@ extension GamePlayViewController: GameDelegate {
 extension GamePlayViewController: UIViewControllerTransitioningDelegate {
     
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [.PresentedPercentHeight(0.8), .CustomPresentingScale(0.9)])
+        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [.PresentedPercentHeight(0.7), .CustomPresentingScale(0.92)])
     }
 }

@@ -25,10 +25,10 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
     
     var actionMessage: String {
         switch action {
-        case .ProposeMission: return "Select \(numberOfPlayersForProposal) Players for a Mission"
-        case .ProposalVote: return "Approve Players for a Mission"
-        case .MissionVote: return "Pass the Mission?"
-        case .ProposalResult: return proposalResult.pass ? "Proposal Passed" : "Proposal Did Not Pass"
+        case .ProposeMission:   return "Select \(numberOfPlayersForProposal) Players for a Mission"
+        case .ProposalVote:     return "Approve Players for a Mission"
+        case .MissionVote:      return "Pass the Mission?"
+        case .ProposalResult:   return proposalResult.pass ? "Proposal Passed" : "Proposal Did Not Pass"
         }
     }
     
