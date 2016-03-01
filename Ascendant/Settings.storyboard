@@ -86,7 +86,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="About the game and other such stuff" footerTitle="123" id="dFK-YT-DEU">
+                            <tableViewSection headerTitle="About the game and other such stuff" footerTitle="1.0" id="dFK-YT-DEU">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="Phb-hj-pCk">
                                         <rect key="frame" x="0.0" y="295.5" width="600" height="44"/>
