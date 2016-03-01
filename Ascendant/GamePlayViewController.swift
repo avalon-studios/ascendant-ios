@@ -22,6 +22,17 @@ class GamePlayViewController: UIViewController, Themable {
     
     var game: Game!
     
+    var showingAction = false {
+        didSet {
+            if !showingAction {
+                nextAction?()
+                nextAction = nil
+            }
+        }
+    }
+    
+    var nextAction: (Void -> Void)?
+    
     var missionViews: [MissionView] {
         // If we can't cast all these as MissionViews, then we should crash
         return missionStack.arrangedSubviews as! [MissionView]
@@ -97,6 +108,16 @@ class GamePlayViewController: UIViewController, Themable {
             }
         }
     }
+    
+    func runOrSaveAction(action: (Void -> Void)) {
+        if showingAction {
+            self.nextAction = action
+        }
+        else {
+            showingAction = true
+            action()
+        }
+    }
 }
 
 extension GamePlayViewController: GameDelegate {
@@ -117,8 +138,10 @@ extension GamePlayViewController: GameDelegate {
         actionViewController.actionMembers = game.players
         actionViewController.action = .ProposeMission
         actionViewController.numberOfPlayersForProposal = numberPlayers
-        
-        presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
+
+        runOrSaveAction { [weak self] in
+            self?.presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
+        }
     }
     
     func game(setNumberOfFailedProposals failed: Int) {
@@ -141,7 +164,9 @@ extension GamePlayViewController: GameDelegate {
         actionViewController.actionMembers = players
         actionViewController.action = .MissionVote
         
-        presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
+        runOrSaveAction { [weak self] in
+            self?.presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
+        }
     }
     
     func game(voteOnProposalWithPlayers players: [Player]) {
@@ -154,8 +179,10 @@ extension GamePlayViewController: GameDelegate {
 
         actionViewController.actionMembers = players
         actionViewController.action = .ProposalVote
-        
-        presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
+
+        runOrSaveAction { [weak self] in
+            self?.presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
+        }
     }
     
     func game(setMissionStatus status: MissionStatus, forMission missionNumber: Int) {
@@ -177,14 +204,16 @@ extension GamePlayViewController: GameDelegate {
         
         actionViewController.proposalResult = result
         actionViewController.action = .ProposalResult
-        
-        presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
+
+        runOrSaveAction { [weak self] in
+            self?.presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
+        }
     }
 }
 
 extension GamePlayViewController: UIViewControllerTransitioningDelegate {
     
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [.PresentedPercentHeight(0.55), .NoDimmingView])
+        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [.PresentedPercentHeight(0.55), .CustomPresentingScale(0.9)])
     }
 }

@@ -12,14 +12,25 @@ import Gloss
 struct ProposalResult: Decodable {
     
     let pass: Bool
-    let votes: [String: Bool]
+    let votes: [(player: Player, value: Bool)]
     let missionMembers: [Player]
     
     init?(json: JSON) {
         
-        guard let pass: Bool = "pass" <~~ json, votes: [String: Bool] = "votes" <~~ json
-        where votes.keys.count == Game.currentGame?.players.count
+        guard let
+            pass: Bool = "pass" <~~ json,
+            voteValues: [String: Bool] = "votes" <~~ json,
+            players = Game.currentGame?.players
         else {
+            return nil
+        }
+        
+        let votes = players.flatMap { player -> (player: Player, value: Bool)? in
+            guard let vote = voteValues[player.id] else { return nil }
+            return (player, vote)
+        }
+        
+        if votes.count != players.count {
             return nil
         }
         
@@ -28,6 +39,5 @@ struct ProposalResult: Decodable {
         self.missionMembers = [Player].fromJSONArray(playersJSON)
         self.pass = pass
         self.votes = votes
-        
     }
 }

@@ -79,7 +79,7 @@ class StartViewController: UIViewController, Themable, UITableViewDataSource, UI
         gameViewController.game = game        
         
         dismissViewControllerAnimated(true) {
-            presentingViewController?.presentViewControllerCustom(gameViewController, animated: true, completion: nil)
+            presentingViewController?.presentViewController(gameViewController, animated: true, completion: nil)
         }
     }
     

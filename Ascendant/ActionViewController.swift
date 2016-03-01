@@ -77,7 +77,7 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch action {
-        case .ProposalResult:   return proposalResult.missionMembers.count
+        case .ProposalResult:   return proposalResult.votes.count
         default:                return actionMembers.count
         }
     }
@@ -93,14 +93,21 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
     
     func configurePlayerCell(cell: PlayerCell, forIndexPath indexPath: NSIndexPath) -> PlayerCell {
         
-        let player = actionMembers[indexPath.row]
-
-        cell.nameLabel.text = player.name
-        
         if action == .ProposalResult {
-            cell.teamView.backgroundColor == proposalResult.votes[player.id] ? Theme.asc_greenColor() : Theme.asc_redColor()
+            
+            let vote = proposalResult.votes[indexPath.row]
+            
+            cell.nameLabel.text = vote.player.name
+            cell.teamView.backgroundColor = vote.value ? Theme.asc_greenColor() : Theme.asc_redColor()
+            
+            return cell
         }
-        else if game.player.team == .Good && game.player == player {
+            
+        let player = actionMembers[indexPath.row]
+    
+        cell.nameLabel.text = player.name
+
+        if game.player.team == .Good && game.player == player {
             cell.teamView.backgroundColor = Theme.asc_greenColor()
         }
         else {
@@ -147,9 +154,15 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
             passButton.stopActivity()
             failButton.stopActivity()
             
+            let presenting = presentingViewController as? GamePlayViewController
+            
             switch result {
-            case .Success:              dismissViewControllerAnimated(true, completion: nil)
-            case .Error(let message):   showAlert("Error", message: message)
+            case .Success:
+                dismissViewControllerAnimated(true) {
+                    presenting?.showingAction = false
+                }
+            case .Error(let message):
+                showAlert("Error", message: message)
             }
         }
         
