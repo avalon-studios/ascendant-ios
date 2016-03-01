@@ -20,33 +20,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="999" verticalCompressionResistancePriority="999" text="Missions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJD-tq-Q5y">
-                                <rect key="frame" x="20" y="53" width="560" height="21"/>
+                                <rect key="frame" x="20" y="41" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cu-9k-wSn">
-                                <rect key="frame" x="20" y="36" width="560" height="1"/>
+                                <rect key="frame" x="20" y="24" width="560" height="1"/>
                                 <color key="backgroundColor" red="0.29411765933036804" green="0.30588236451148987" blue="0.40392157435417175" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="8w5-vU-L4Z"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muS-En-Skc">
-                                <rect key="frame" x="20" y="230" width="560" height="1"/>
+                                <rect key="frame" x="20" y="218" width="560" height="1"/>
                                 <color key="backgroundColor" red="0.2941176593" green="0.3058823645" blue="0.40392157439999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="TJd-dD-3NZ"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="999" verticalCompressionResistancePriority="999" text="Failed Proposals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKw-J0-NIA">
-                                <rect key="frame" x="20" y="173" width="560" height="21"/>
+                                <rect key="frame" x="20" y="161" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="999" verticalCompressionResistancePriority="999" distribution="equalSpacing" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EmJ-7R-CcN">
-                                <rect key="frame" x="20" y="210" width="560" height="4"/>
+                                <rect key="frame" x="20" y="198" width="560" height="4"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7YW-F4-tcg" customClass="ProposalView" customModule="Ascendant" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="4"/>
@@ -83,7 +83,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="999" verticalCompressionResistancePriority="999" distribution="equalSpacing" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gcD-Rv-sad">
-                                <rect key="frame" x="20" y="90" width="560" height="50"/>
+                                <rect key="frame" x="20" y="78" width="560" height="50"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CcQ-qS-8TU" customClass="MissionView" customModule="Ascendant" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -129,23 +129,23 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yvP-CM-Pzx">
-                                <rect key="frame" x="20" y="156" width="560" height="1"/>
+                                <rect key="frame" x="20" y="144" width="560" height="1"/>
                                 <color key="backgroundColor" red="0.2941176593" green="0.3058823645" blue="0.40392157439999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="dOZ-PV-vDP"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="B6C-Ws-TYg">
-                                <rect key="frame" x="16" y="247" width="568" height="338"/>
+                                <rect key="frame" x="16" y="239" width="568" height="350"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" misplaced="YES" text="You're on the _ team" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m50-oI-5jx">
-                                        <rect key="frame" x="0.0" y="0.0" width="568" height="278"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="You're on the _ team" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m50-oI-5jx">
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="290"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8L9-mi-hkp" customClass="AscendantButton" customModule="Ascendant" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="294" width="568" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8L9-mi-hkp" customClass="AscendantButton" customModule="Ascendant" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="306" width="568" height="44"/>
                                         <color key="backgroundColor" red="0.24705882370000001" green="0.43921568989999998" blue="0.85882353779999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="qN4-3a-aRe"/>
@@ -168,7 +168,7 @@
                             <constraint firstAttribute="trailing" secondItem="yvP-CM-Pzx" secondAttribute="trailing" constant="20" id="51R-E6-QPz"/>
                             <constraint firstItem="muS-En-Skc" firstAttribute="top" secondItem="EmJ-7R-CcN" secondAttribute="bottom" constant="16" id="7Cb-F9-chN"/>
                             <constraint firstItem="EmJ-7R-CcN" firstAttribute="leading" secondItem="JwG-PX-6Jd" secondAttribute="leading" constant="20" id="FlC-rz-qbI"/>
-                            <constraint firstItem="9cu-9k-wSn" firstAttribute="top" secondItem="JwG-PX-6Jd" secondAttribute="topMargin" constant="36" id="Gtb-lY-WLE"/>
+                            <constraint firstItem="9cu-9k-wSn" firstAttribute="top" secondItem="JwG-PX-6Jd" secondAttribute="topMargin" constant="24" id="Gtb-lY-WLE"/>
                             <constraint firstAttribute="trailing" secondItem="EmJ-7R-CcN" secondAttribute="trailing" constant="20" id="HIJ-h7-gM4"/>
                             <constraint firstAttribute="trailing" secondItem="muS-En-Skc" secondAttribute="trailing" constant="20" id="McB-WW-dE5"/>
                             <constraint firstAttribute="trailing" secondItem="B6C-Ws-TYg" secondAttribute="trailing" constant="16" id="NPJ-zf-HLH"/>
@@ -192,6 +192,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="failedLabel" destination="rKw-J0-NIA" id="EkZ-ms-hmv"/>
+                        <outlet property="failedMissionsBottomSeparator" destination="muS-En-Skc" id="Eri-mg-UES"/>
                         <outlet property="messageLabel" destination="m50-oI-5jx" id="NwR-hP-h2p"/>
                         <outlet property="missionLabel" destination="PJD-tq-Q5y" id="Zd0-Fq-wIj"/>
                         <outlet property="missionStack" destination="gcD-Rv-sad" id="2OF-aW-r3r"/>
@@ -272,23 +273,11 @@
                                     <outlet property="delegate" destination="fWS-Mk-rwc" id="Rbk-4l-PDA"/>
                                 </connections>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mKQ-bj-AuH">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mKQ-bj-AuH">
                                 <rect key="frame" x="16" y="480" width="568" height="104"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fl-W6-2ax" customClass="AscendantButton" customModule="Ascendant" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
-                                        <color key="backgroundColor" red="0.25098040699958801" green="0.75686275959014893" blue="0.3803921639919281" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" priority="750" constant="44" id="20J-pj-EHM"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Pass"/>
-                                        <connections>
-                                            <action selector="votePressed:" destination="fWS-Mk-rwc" eventType="touchUpInside" id="YUc-cd-871"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHe-o7-Bwf" customClass="AscendantButton" customModule="Ascendant" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="60" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
                                         <color key="backgroundColor" red="0.74117648601531982" green="0.22745098173618317" blue="0.23137255012989044" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="750" constant="44" id="Zs5-Sq-rff"/>
@@ -299,7 +288,20 @@
                                             <action selector="votePressed:" destination="fWS-Mk-rwc" eventType="touchUpInside" id="Tg9-r1-2Dr"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fl-W6-2ax" customClass="AscendantButton" customModule="Ascendant" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="60" width="568" height="44"/>
+                                        <color key="backgroundColor" red="0.25098040699958801" green="0.75686275959014893" blue="0.3803921639919281" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="750" constant="44" id="20J-pj-EHM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Pass"/>
+                                        <connections>
+                                            <action selector="votePressed:" destination="fWS-Mk-rwc" eventType="touchUpInside" id="YUc-cd-871"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <variation key="widthClass=compact" axis="horizontal"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.17436142265796661" green="0.18061500787734985" blue="0.24500730633735657" alpha="1" colorSpace="calibratedRGB"/>

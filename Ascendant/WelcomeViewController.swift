@@ -46,7 +46,7 @@ class WelcomeViewController: UIViewController, Themable {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        animateRocket()
+        animateRocket(true)
     }
     
     
@@ -74,13 +74,16 @@ class WelcomeViewController: UIViewController, Themable {
         return Theme.asc_statusBarStyle()
     }
     
-    func animateRocket() {
+    func animateRocket(animated: Bool) {
         
         guard !rocketDidAnimate else { return }
         
         rocketDidAnimate = true
         
-        UIView.animateWithDuration(0.6, delay: 0.6, options: [.CurveEaseIn],
+        let duaration = animated ? 0.6 : 0
+        let delay = animated ? 0.6 : 0
+        
+        UIView.animateWithDuration(duaration, delay: delay, options: [.CurveEaseIn],
             animations: {
             
                 self.setNeedsStatusBarAppearanceUpdate()

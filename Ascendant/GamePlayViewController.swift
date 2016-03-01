@@ -17,7 +17,7 @@ class GamePlayViewController: UIViewController, Themable {
     @IBOutlet weak var missionStack: UIStackView!
     @IBOutlet weak var proposalStack: UIStackView!
     @IBOutlet weak var messageLabel: UILabel!
-    
+    @IBOutlet weak var failedMissionsBottomSeparator: UIView!
     @IBOutlet var separators: [UIView]!
     
     var game: Game!
@@ -41,6 +41,14 @@ class GamePlayViewController: UIViewController, Themable {
     var proposalViews: [ProposalView] {
         // If we can't cast all these as ProposalViews, then we should crash
         return proposalStack.arrangedSubviews as! [ProposalView]
+    }
+    
+    var heightForAction: CGFloat {
+        
+        let height = view.frame.height
+        let distanceFromTop = failedMissionsBottomSeparator.frame.origin.y + 16
+        
+        return height - distanceFromTop
     }
     
     override func viewDidLoad() {
@@ -215,6 +223,6 @@ extension GamePlayViewController: GameDelegate {
 extension GamePlayViewController: UIViewControllerTransitioningDelegate {
     
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [.PresentedPercentHeight(0.7), .CustomPresentingScale(0.92)])
+        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [.PresentedHeight(heightForAction), .PresentingViewKeepsSize])
     }
 }
