@@ -10,6 +10,8 @@ import UIKit
 import Async
 import ElegantPresentations
 
+typealias ActionStackBlock = Void -> Void
+
 class GamePlayViewController: UIViewController, Themable {
     
     @IBOutlet weak var missionLabel: UILabel!
@@ -24,14 +26,15 @@ class GamePlayViewController: UIViewController, Themable {
     
     var showingAction = false {
         didSet {
-            if !showingAction {
-                nextAction?()
-                nextAction = nil
+            // If we got set to false, it's time to run the next action (if it exists)
+            if !showingAction, let action = actionStack.popLast() {
+                showingAction = true
+                action()
             }
         }
     }
     
-    var nextAction: (Void -> Void)?
+    var actionStack = [ActionStackBlock]()
     
     var missionViews: [MissionView] {
         // If we can't cast all these as MissionViews, then we should crash
@@ -117,9 +120,9 @@ class GamePlayViewController: UIViewController, Themable {
         }
     }
     
-    func runOrSaveAction(action: (Void -> Void)) {
+    func runOrSaveAction(action: ActionStackBlock) {
         if showingAction {
-            self.nextAction = action
+            actionStack.insert(action, atIndex: 0)
         }
         else {
             showingAction = true
@@ -139,14 +142,15 @@ extension GamePlayViewController: GameDelegate {
             return
         }
         
-        let (actionNavigationController, actionViewController) = createActionViewController()
-        
-        actionViewController.actionMembers = game.players
-        actionViewController.action = .ProposeMission
-        actionViewController.numberOfPlayersForProposal = numberPlayers
+        runOrSaveAction { [unowned self] in
 
-        runOrSaveAction { [weak self] in
-            self?.presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
+            let (actionNavigationController, actionViewController) = self.createActionViewController()
+            
+            actionViewController.actionMembers = self.game.players
+            actionViewController.action = .ProposeMission
+            actionViewController.numberOfPlayersForProposal = numberPlayers
+
+            self.presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
         }
     }
     
@@ -167,13 +171,14 @@ extension GamePlayViewController: GameDelegate {
             return
         }
         
-        let (actionNavigationController, actionViewController) = createActionViewController()
+        runOrSaveAction { [unowned self] in
+
+            let (actionNavigationController, actionViewController) = self.createActionViewController()
+            
+            actionViewController.actionMembers = players
+            actionViewController.action = .MissionVote
         
-        actionViewController.actionMembers = players
-        actionViewController.action = .MissionVote
-        
-        runOrSaveAction { [weak self] in
-            self?.presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
+            self.presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
         }
     }
     
@@ -181,13 +186,14 @@ extension GamePlayViewController: GameDelegate {
 
         messageLabel.setTextWithCrossFade("Waiting for players to vote on proposal...")
 
-        let (actionNavigationController, actionViewController) = createActionViewController()
+        runOrSaveAction { [unowned self] in
 
-        actionViewController.actionMembers = players
-        actionViewController.action = .ProposalVote
+            let (actionNavigationController, actionViewController) = self.createActionViewController()
 
-        runOrSaveAction { [weak self] in
-            self?.presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
+            actionViewController.actionMembers = players
+            actionViewController.action = .ProposalVote
+
+            self.presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
         }
     }
     
@@ -209,19 +215,19 @@ extension GamePlayViewController: GameDelegate {
             messageLabel.setTextWithCrossFade("Waiting for a new leader...")
         }
 
-        let (actionNavigationController, actionViewController) = createActionViewController()
-        
-        actionViewController.proposalResult = result
-        actionViewController.action = .ProposalResult
+        runOrSaveAction { [unowned self] in
 
-        runOrSaveAction { [weak self] in
-            self?.presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
+            let (actionNavigationController, actionViewController) = self.createActionViewController()
+            
+            actionViewController.proposalResult = result
+            actionViewController.action = .ProposalResult
+
+            self.presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
         }
     }
 }
 
 extension GamePlayViewController: UIViewControllerTransitioningDelegate {
-    
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
         return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [.PresentedHeight(heightForAction), .PresentingViewKeepsSize])
     }

@@ -178,6 +178,9 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
         case .ProposeMission:
             
             guard let selectedRows = tableView.indexPathsForSelectedRows?.map({ $0.row }) else {
+                
+                showAlert("Error", message: "Please make sure you've selected players for the mission!")
+                
                 return
             }
             
