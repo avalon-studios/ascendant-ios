@@ -1,0 +1,13 @@
+  trigger_map:
+  - pattern: feature/*
+    is_pull_request_allowed: false
+    workflow: develop
+  - pattern: develop
+    is_pull_request_allowed: false
+    workflow: develop
+  - pattern: staging
+    is_pull_request_allowed: false
+    workflow: staging
+  - pattern: release
+    is_pull_request_allowed: false
+    workflow: release

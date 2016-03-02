@@ -15,32 +15,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Set a default theme
+        NSUserDefaults.standardUserDefaults().registerDefaults(["Theme": 0])
+        
+        // Set up appearance proxies
+        Theme.setAppearances()
+        
+        // Connect the socket
+        Socket.manager.connect()
+        
+        print(AppDelegate.configuration)
+        
         return true
     }
-
-    func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    
+    // Handle 3D Touch shortcuts
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        
+        // Check that we're not in a game, and safely get the root vc
+        if Game.currentGame == nil, let welcomeViewController = window?.rootViewController as? WelcomeViewController {
+            
+            // Dismiss any view controllers on welcome
+            welcomeViewController.dismissViewControllerAnimated(false, completion: nil)
+ 
+            // Check the shortcut and present the appropiate view controller
+            if shortcutItem.type == "space.ascendant.Ascendant.creategame" {
+                welcomeViewController.presentViewController(R.storyboard.welcome.startNavigationController()!, animated: false, completion: nil)
+            }
+            else if shortcutItem.type == "space.ascendant.Ascendant.joingame" {
+                welcomeViewController.presentViewController(R.storyboard.welcome.joinNavigationController()!, animated: false, completion: nil)
+            }
+        }
     }
-
-    func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-
 }
 
+extension AppDelegate {
+    static var configuration: Configuration {
+        return Configuration(rawValue: NSBundle.mainBundle().infoDictionary!["Configuration"] as! String)!
+    }
+}
+
+enum Configuration: String {
+    case Develop
+    case Staging
+    case Release
+}
