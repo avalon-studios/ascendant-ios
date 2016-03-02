@@ -10,4 +10,5 @@
     workflow: staging
   - pattern: master
     is_pull_request_allowed: false
-    workflow: release
+    workflow: master
+
