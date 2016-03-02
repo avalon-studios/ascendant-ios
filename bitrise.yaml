@@ -8,6 +8,6 @@
   - pattern: staging
     is_pull_request_allowed: false
     workflow: staging
-  - pattern: release
+  - pattern: master
     is_pull_request_allowed: false
     workflow: release
