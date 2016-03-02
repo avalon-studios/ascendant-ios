@@ -31,11 +31,19 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Config" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRu-8h-VCe">
+                                    <rect key="frame" x="280" y="56" width="40" height="16"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="b0d-c8-UIT" firstAttribute="centerX" secondItem="Yvy-X3-Bks" secondAttribute="centerX" id="7ps-fQ-0KW"/>
                                 <constraint firstItem="OfO-Rh-7zq" firstAttribute="top" secondItem="Yvy-X3-Bks" secondAttribute="top" constant="16" id="KrO-2Q-y4E"/>
                                 <constraint firstItem="b0d-c8-UIT" firstAttribute="top" secondItem="OfO-Rh-7zq" secondAttribute="bottom" constant="4" id="NJb-ok-URg"/>
+                                <constraint firstItem="rRu-8h-VCe" firstAttribute="centerX" secondItem="Yvy-X3-Bks" secondAttribute="centerX" id="QYZ-jF-77S"/>
+                                <constraint firstItem="rRu-8h-VCe" firstAttribute="top" secondItem="b0d-c8-UIT" secondAttribute="bottom" constant="4" id="UOI-LA-X7B"/>
                                 <constraint firstItem="OfO-Rh-7zq" firstAttribute="centerX" secondItem="Yvy-X3-Bks" secondAttribute="centerX" id="Z8o-Rt-B3F"/>
                             </constraints>
                         </view>
@@ -195,6 +203,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="betaFeedbackCell" destination="luV-FW-DQu" id="qCh-6v-xE8"/>
+                        <outlet property="configLabel" destination="rRu-8h-VCe" id="1ip-Ie-YQQ"/>
                         <outlet property="darkThemeCell" destination="BEg-g6-ROS" id="vqD-ah-Gp9"/>
                         <outlet property="lightThemeCell" destination="5LM-1V-hfx" id="IvK-yP-Wya"/>
                         <outlet property="mediumThemeCell" destination="cTa-U6-w5U" id="kl0-jn-72d"/>
@@ -207,6 +216,7 @@
                         <outletCollection property="labels" destination="b0d-c8-UIT" collectionClass="NSMutableArray" id="8ii-Ac-Nym"/>
                         <outletCollection property="labels" destination="OfO-Rh-7zq" collectionClass="NSMutableArray" id="P4m-e1-epG"/>
                         <outletCollection property="labels" destination="7ct-7z-bdt" collectionClass="NSMutableArray" id="lo9-Ua-nGa"/>
+                        <outletCollection property="labels" destination="rRu-8h-VCe" collectionClass="NSMutableArray" id="jjt-Dm-H1C"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXp-uZ-mYO" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -19,6 +19,7 @@ class SettingsViewController: UITableViewController, Themable, MFMailComposeView
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var privacyCell: UITableViewCell!
     @IBOutlet weak var betaFeedbackCell: SettingsCell!
+    @IBOutlet weak var configLabel: UILabel!
     @IBOutlet var labels: [UILabel]!
     
     lazy var cells: [UITableViewCell] = [self.darkThemeCell, self.mediumThemeCell, self.lightThemeCell]
@@ -54,7 +55,13 @@ class SettingsViewController: UITableViewController, Themable, MFMailComposeView
     }
     
     func setVersionNumber() {
+        
         versionLabel.text = "Version \(versionNumber)"
+        
+        switch AppDelegate.configuration {
+        case .Release:              configLabel.text = ""
+        case .Develop, .Staging:    configLabel.text = AppDelegate.configuration.rawValue
+        }
     }
     
     func updateTheme() {

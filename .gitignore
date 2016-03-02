@@ -25,3 +25,5 @@ Podfile.lock
 
 # Ignore R.swift generated files
 *.generated.swift
+
+.bitrise*
