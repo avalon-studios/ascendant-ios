@@ -9,6 +9,8 @@ target 'Ascendant' do
     pod 'PureLayout'
     pod 'ElegantPresentations'
     pod 'AsyncSwift'
+    pod 'Fabric'
+    pod 'Crashlytics'
 end
 
 target 'AscendantTests' do
