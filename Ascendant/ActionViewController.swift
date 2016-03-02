@@ -105,8 +105,13 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
             
         let player = actionMembers[indexPath.row]
     
-        cell.nameLabel.text = player.name
-
+        if player.id == game.player.id {
+            cell.nameLabel.text = player.name + " (You)"
+        }
+        else {
+            cell.nameLabel.text = player.name
+        }
+        
         if game.player.team == .Good && game.player == player {
             cell.teamView.backgroundColor = Theme.asc_greenColor()
         }
