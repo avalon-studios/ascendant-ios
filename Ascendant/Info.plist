@@ -19,13 +19,13 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>97</string>
+	<string>98</string>
 	<key>Configuration</key>
 	<string>${CONFIGURATION}</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
-		<string>2416b2b457462d15b9264d49110ab434805cd7a6</string>
+		<string>aac605968eb5a8d9d6bd338007d1df07f09f1190</string>
 		<key>Kits</key>
 		<array>
 			<dict>
