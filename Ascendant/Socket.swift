@@ -20,7 +20,14 @@ class Socket {
     static let rolesAssignedNotification = "AssignedRoles"
     static let updatedPlayers = "UpdatedPlayers"
     
-    let baseURL = NSURL(string: "https://ascendant-api.herokuapp.com/")!
+    let baseURL: NSURL = {
+        switch AppDelegate.configuration {
+        case .Develop: return NSURL(string: "https://ascendant-api-dev.herokuapp.com/")!
+        case .Staging: return NSURL(string: "https://ascendant-api-staging.herokuapp.com/")!
+        case .Release: return NSURL(string: "https://ascendant-api.herokuapp.com/")!
+        }
+    }()
+    
     let timeout: UInt64 = 3
     
     let options: Set<SocketIOClientOption> = {

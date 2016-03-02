@@ -24,7 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Connect the socket
         Socket.manager.connect()
-                
+        
+        print(AppDelegate.configuration)
+        
         return true
     }
     
@@ -46,4 +48,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+}
+
+extension AppDelegate {
+    static var configuration: Configuration {
+        return Configuration(rawValue: NSBundle.mainBundle().infoDictionary!["Configuration"] as! String)!
+    }
+}
+
+enum Configuration: String {
+    case Develop
+    case Staging
+    case Release
 }

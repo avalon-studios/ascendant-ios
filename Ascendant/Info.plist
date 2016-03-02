@@ -19,7 +19,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>89</string>
+	<string>90</string>
+	<key>Configuration</key>
+	<string>${CONFIGURATION}</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIApplicationShortcutItems</key>
