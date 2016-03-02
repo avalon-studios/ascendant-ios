@@ -39,7 +39,6 @@ final class Game: Decodable {
         
         self.id = id
         self.player = player
-        self.players = [player]
         
         if let players: [Player] = "players" <~~ json {
             self.players.appendContentsOf(players)

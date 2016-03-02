@@ -282,6 +282,7 @@
 		276118391C7BB0F500652444 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				273CA64B1C7CF07000990DBE /* Game.swift */,
 				273CA6491C7CEE4900990DBE /* Player.swift */,
 				27C540B01C811800000BD616 /* AckResult.swift */,
 				27C540B21C811BFE000BD616 /* ProposalResult.swift */,
@@ -294,7 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				2799AB9C1C7BC9D6003C532E /* Socket.swift */,
-				273CA64B1C7CF07000990DBE /* Game.swift */,
 				27C540B61C814737000BD616 /* Theme.swift */,
 			);
 			name = Managers;
@@ -818,7 +818,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconNoStars;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 93;
+				CURRENT_PROJECT_VERSION = 94;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -836,7 +836,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconNoStars;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 93;
+				CURRENT_PROJECT_VERSION = 94;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -954,7 +954,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconNoStars;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 93;
+				CURRENT_PROJECT_VERSION = 94;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
