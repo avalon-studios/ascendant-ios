@@ -19,4 +19,14 @@ extension NSUserDefaults {
             NSUserDefaults.standardUserDefaults().synchronize()
         }
     }
+    
+    static var lastUsedID: String {
+        get {
+            return NSUserDefaults.standardUserDefaults().stringForKey("LastUsedID") ?? ""
+        }
+        set {
+            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "LastUsedID")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
 }

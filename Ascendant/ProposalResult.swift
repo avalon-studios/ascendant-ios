@@ -14,6 +14,7 @@ struct ProposalResult: Decodable {
     let pass: Bool
     let votes: [(player: Player, value: Bool)]
     let missionMembers: [Player]
+    let numberFailedProposals: Int
     
     init?(json: JSON) {
         
@@ -21,6 +22,7 @@ struct ProposalResult: Decodable {
             pass: Bool = "pass" <~~ json,
             voteValues: [String: Bool] = "votes" <~~ json,
             missionMemberIDs: [String] = "players" <~~ json,
+            numberFailedProposals: Int = "failed_proposals" <~~ json,
             players = Game.currentGame?.players
         else {
             return nil
@@ -39,6 +41,7 @@ struct ProposalResult: Decodable {
             return nil
         }
         
+        self.numberFailedProposals = numberFailedProposals
         self.missionMembers = members
         self.pass = pass
         self.votes = votes

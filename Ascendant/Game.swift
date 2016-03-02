@@ -26,24 +26,37 @@ final class Game: Decodable {
     var player: Player
     var id: String
     
+    var roundPasses = [Bool]()
     var numberFailedProposals = 0
+    var rejoin = false
     
     init?(json: JSON) {
         
         guard let
             id: String = "game_id" <~~ json,
-            player: Player = "player" <~~ json
+            player: Player = "player" <~~ json,
+            rejoin: Bool = "rejoin" <~~ json
         else {
             return nil
         }
         
         self.id = id
         self.player = player
+        self.players = [player]
+        self.rejoin = rejoin
         
         if let players: [Player] = "players" <~~ json {
-            self.players.appendContentsOf(players)
+            self.players = players
         }
         
+        if let roundPasses: [Bool] = "round_passes" <~~ json {
+            self.roundPasses = roundPasses
+        }
+        if let numberFailedProposals: Int = "failed_proposals" <~~ json {
+            self.numberFailedProposals = numberFailedProposals
+        }
+        
+        NSUserDefaults.lastUsedID = player.id
         Game.currentGame = self
     }
     
@@ -58,9 +71,7 @@ final class Game: Decodable {
     
     func proposalVoteResult(result: ProposalResult) {
         
-        numberFailedProposals = result.pass ? 0 : numberFailedProposals + 1
-        
-        delegate?.game(setNumberOfFailedProposals: numberFailedProposals)
+        delegate?.game(setNumberOfFailedProposals: result.numberFailedProposals)
         delegate?.game(showProposalVotingResult: result)
     }
     

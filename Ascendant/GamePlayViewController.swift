@@ -68,6 +68,17 @@ class GamePlayViewController: UIViewController, Themable {
     }
     
     func setUpUI() {
+        
+        game(setNumberOfFailedProposals: game.numberFailedProposals)
+        
+        for (index, pass) in game.roundPasses.enumerate() {
+            
+            let status = pass ? MissionStatus.Success : MissionStatus.Fail
+    
+            game(setMissionStatus: status, forMission: index)
+        }
+        
+        game(setMissionStatus: .Current, forMission: game.roundPasses.count)
 
         for (index, view) in missionViews.enumerate() {
             view.titleLabel.text = "\(index + 1)"
@@ -229,6 +240,6 @@ extension GamePlayViewController: GameDelegate {
 
 extension GamePlayViewController: UIViewControllerTransitioningDelegate {
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [.PresentedHeight(heightForAction), .PresentingViewKeepsSize, .CustomDimmingViewAlpha(0.2)])
+        return ElegantPresentations.controller(presentedViewController: presented, presentingViewController: presenting, options: [.PresentedHeight(heightForAction), .PresentingViewKeepsSize, .CustomDimmingViewAlpha(0.3)])
     }
 }

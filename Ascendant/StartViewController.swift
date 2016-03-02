@@ -26,6 +26,10 @@ class StartViewController: UIViewController, Themable, UITableViewDataSource, UI
         
         updateTheme()
         setUpUI()
+        
+        if game.rejoin {
+            beginGame()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {

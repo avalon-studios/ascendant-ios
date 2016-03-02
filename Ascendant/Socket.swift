@@ -58,7 +58,7 @@ class Socket {
     
     func joinGame(gameID: String, playerName: String, completion: Game? -> Void) {
 
-        let items = ["name": playerName, "game_id": gameID]
+        let items = ["name": playerName, "game_id": gameID, "old_id": NSUserDefaults.lastUsedID]
         
         socket.emitWithAck(EmitEvent.join, items)(timeoutAfter: timeout) { [weak self] data in
             self?.createOrJoinGameFromData(data, completion: completion)
