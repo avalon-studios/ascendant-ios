@@ -157,7 +157,8 @@ extension JoinViewController: MCNearbyServiceBrowserDelegate {
  
     func browser(browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
         
-        guard let gameID = info?["game_id"] else {
+        // Get the game ID — if it's the same as one we've seen, ignore it
+        guard let gameID = info?["game_id"] where gameID != discoveredGameID else {
             return
         }
         
