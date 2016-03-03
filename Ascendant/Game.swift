@@ -29,13 +29,13 @@ final class Game: Decodable {
     var roundPasses = [Bool]()
     var numberFailedProposals = 0
     var rejoin = false
+    var ready = false
     
     init?(json: JSON) {
         
         guard let
             id: String = "game_id" <~~ json,
-            player: Player = "player" <~~ json,
-            rejoin: Bool = "rejoin" <~~ json
+            player: Player = "player" <~~ json
         else {
             return nil
         }
@@ -43,7 +43,14 @@ final class Game: Decodable {
         self.id = id
         self.player = player
         self.players = [player]
-        self.rejoin = rejoin
+
+        if let rejoin: Bool = "rejoin" <~~ json {
+            self.rejoin = rejoin
+        }
+
+        if let ready: Bool = "ready" <~~ json {
+            self.ready = ready
+        }
         
         if let players: [Player] = "players" <~~ json {
             self.players = players

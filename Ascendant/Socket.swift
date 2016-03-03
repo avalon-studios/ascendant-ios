@@ -47,6 +47,10 @@ class Socket {
         socket.connect()
     }
     
+    func reconnect() {
+        socket.reconnect()
+    }
+    
     func createGame(playerName: String, completion: Game? -> Void) {
         
         let items = ["name": playerName]
@@ -120,6 +124,13 @@ class Socket {
         socket.emitWithAck(EmitEvent.missionVote, items)(timeoutAfter: timeout) { [weak self] data in
             self?.parseAckResult(data, completion: completion)
         }
+    }
+    
+    func getCurrentAction(game: Game) {
+        
+        let items = ["game_id": game.id, "player_id": game.player.id]
+        
+        socket.emit(EmitEvent.getCurrentAction, items)
     }
     
     // NOT DONE:
@@ -248,4 +259,5 @@ struct EmitEvent {
     static let proposeMission = "propose_mission"
     static let proposalVote = "proposal_vote"
     static let missionVote = "mission_vote"
+    static let getCurrentAction = "get_current_action"
 }

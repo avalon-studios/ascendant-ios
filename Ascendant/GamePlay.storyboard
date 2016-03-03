@@ -173,7 +173,6 @@
                             <constraint firstItem="8L9-mi-hkp" firstAttribute="leading" secondItem="JwG-PX-6Jd" secondAttribute="leading" constant="16" id="UE2-XO-08t"/>
                             <constraint firstItem="9cu-9k-wSn" firstAttribute="leading" secondItem="JwG-PX-6Jd" secondAttribute="leading" constant="20" id="VEb-I9-k6n"/>
                             <constraint firstAttribute="trailing" secondItem="8L9-mi-hkp" secondAttribute="trailing" constant="16" id="VMY-wZ-wod"/>
-                            <constraint firstItem="XbJ-Al-ft4" firstAttribute="top" secondItem="m50-oI-5jx" secondAttribute="bottom" priority="999" constant="16" id="XyI-Qq-g2C"/>
                             <constraint firstItem="XbJ-Al-ft4" firstAttribute="top" secondItem="8L9-mi-hkp" secondAttribute="bottom" constant="16" id="ZpZ-8Y-xgJ"/>
                             <constraint firstItem="m50-oI-5jx" firstAttribute="leading" secondItem="JwG-PX-6Jd" secondAttribute="leading" constant="16" id="bAa-c4-i39"/>
                             <constraint firstAttribute="trailing" secondItem="m50-oI-5jx" secondAttribute="trailing" constant="16" id="fHl-yv-JuE"/>
@@ -196,6 +195,7 @@
                         <outlet property="missionLabel" destination="PJD-tq-Q5y" id="Zd0-Fq-wIj"/>
                         <outlet property="missionStack" destination="gcD-Rv-sad" id="2OF-aW-r3r"/>
                         <outlet property="proposalStack" destination="EmJ-7R-CcN" id="KUd-Xj-dbB"/>
+                        <outlet property="readyButton" destination="8L9-mi-hkp" id="bV1-cu-c9j"/>
                         <outletCollection property="separators" destination="9cu-9k-wSn" collectionClass="NSMutableArray" id="Y6M-I5-43d"/>
                         <outletCollection property="separators" destination="muS-En-Skc" collectionClass="NSMutableArray" id="PEn-Y7-9fH"/>
                         <outletCollection property="separators" destination="yvP-CM-Pzx" collectionClass="NSMutableArray" id="Vil-8S-ijU"/>
@@ -253,16 +253,16 @@
                                 <color key="separatorColor" red="0.29411764705882354" green="0.30588235294117649" blue="0.40392156862745099" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="hEh-xF-FEq">
-                                    <rect key="frame" x="0.0" y="139" width="600" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="75" width="600" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.16862745579999999" green="0.180392161" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PlayerCell" rowHeight="47" id="Mv7-N3-A4M" customClass="PlayerCell" customModule="Ascendant" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="47"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mv7-N3-A4M" id="zOI-dX-YMH">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="46"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="46.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gde-DI-KaZ">

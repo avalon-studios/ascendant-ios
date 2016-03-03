@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         Fabric.with([Crashlytics.self])
@@ -51,6 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 welcomeViewController.presentViewController(R.storyboard.welcome.joinNavigationController()!, animated: false, completion: nil)
             }
         }
+    }
+    
+    func applicationWillEnterForeground(application: UIApplication) {
+        Socket.manager.reconnect()
     }
 }
 

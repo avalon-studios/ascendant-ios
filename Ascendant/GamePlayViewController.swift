@@ -20,6 +20,7 @@ class GamePlayViewController: UIViewController, Themable {
     @IBOutlet weak var proposalStack: UIStackView!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var failedMissionsBottomSeparator: UIView!
+    @IBOutlet weak var readyButton: AscendantButton!
     @IBOutlet var separators: [UIView]!
     
     var game: Game!
@@ -65,6 +66,10 @@ class GamePlayViewController: UIViewController, Themable {
         updateTheme()
         
         setUpUI()
+        
+        if game.rejoin {
+            Socket.manager.getCurrentAction(game)
+        }
     }
     
     func setUpUI() {
@@ -82,6 +87,10 @@ class GamePlayViewController: UIViewController, Themable {
 
         for (index, view) in missionViews.enumerate() {
             view.titleLabel.text = "\(index + 1)"
+        }
+        
+        if game.ready {
+            readyButton.removeFromSuperview()
         }
     }
     
