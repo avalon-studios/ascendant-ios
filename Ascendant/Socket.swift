@@ -40,8 +40,12 @@ class Socket {
         return options
     }()
     
+    var status: SocketIOClientStatus {
+        return socket.status
+    }
+    
     private lazy var socket: SocketIOClient = SocketIOClient(socketURL: self.baseURL, options: self.options)
-
+    
     func connect() {
         socket.connect()
     }

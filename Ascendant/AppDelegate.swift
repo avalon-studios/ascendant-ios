@@ -54,7 +54,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(application: UIApplication) {
         
-        Socket.manager.reconnect()
+        NSLog("Became active with socket status: \(Socket.manager.status.description)")
+        
+        if Socket.manager.status != .Connected
+            && Socket.manager.status != .Connecting
+            && Socket.manager.status != .Reconnecting
+        {
+            Socket.manager.reconnect()
+        }
         
         // Let's make sure we got the latest action done
         if let gameViewController = window?.rootViewController?.presentedViewController as? GamePlayViewController {
