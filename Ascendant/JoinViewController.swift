@@ -7,14 +7,30 @@
 //
 
 import UIKit
+import MultipeerConnectivity
 
 class JoinViewController: UITableViewController, Themable, UITextFieldDelegate {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var roomCodeTextField: UITextField!
+    @IBOutlet weak var nearbyLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var nearbyIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var nearbyCell: UITableViewCell!
+    
+    lazy var browser: MCNearbyServiceBrowser = {
+        
+        let peerID = MCPeerID(displayName: NSUserDefaults.lastUsedName ?? "Unknown")
+        let browser = MCNearbyServiceBrowser(peer: peerID, serviceType: StartViewController.joinService)
+        
+        browser.delegate = self
+        
+        return browser
+    }()
     
     var game: Game!
+    
+    var discoveredGameID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +40,9 @@ class JoinViewController: UITableViewController, Themable, UITextFieldDelegate {
         updateTheme()
         
         setUpUI()
+        
+        browser.startBrowsingForPeers()
+        nearbyIndicator.startAnimating()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -58,7 +77,12 @@ class JoinViewController: UITableViewController, Themable, UITextFieldDelegate {
         roomCodeTextField.tintColor = Theme.asc_blueColor()
         roomCodeTextField.keyboardAppearance = Theme.asc_keyboardAppearance()
         
-        activityIndicator.color = Theme.asc_defaultTextColor()        
+        nearbyLabel.textColor = Theme.asc_transparentColor()
+        
+        nearbyCell.backgroundColor = Theme.cellBackgroundColor()
+        
+        activityIndicator.color = Theme.asc_defaultTextColor()
+        nearbyIndicator.color = Theme.asc_defaultTextColor()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -108,4 +132,44 @@ class JoinViewController: UITableViewController, Themable, UITextFieldDelegate {
         roomCodeTextField.enabled = !loading
         loading ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        guard let cell = tableView.cellForRowAtIndexPath(indexPath) where cell === nearbyCell else {
+            return
+        }
+        
+        guard let gameID = discoveredGameID else {
+            return
+        }
+        
+        guard let name = nameTextField.validName() else {
+            showAlert("Please Enter a Name", message: nil)
+            return
+        }
+        
+        roomCodeTextField.text = gameID
+        
+        joinGame(gameID, name: name)
+    }
+}
+
+extension JoinViewController: MCNearbyServiceBrowserDelegate {
+ 
+    func browser(browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
+        
+        guard let gameID = info?["game_id"] else {
+            return
+        }
+        
+        discoveredGameID = gameID
+        
+        nearbyLabel.textColor = Theme.asc_defaultTextColor().colorWithAlphaComponent(0.7)
+        nearbyLabel.text = peerID.displayName
+        nearbyCell.accessoryType = .DisclosureIndicator
+        nearbyIndicator.stopAnimating()
+    }
+    
+    func browser(browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) { }
+    
+    func browser(browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: NSError) { }
 }

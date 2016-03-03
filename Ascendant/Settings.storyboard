@@ -217,6 +217,8 @@
                         <outletCollection property="labels" destination="OfO-Rh-7zq" collectionClass="NSMutableArray" id="P4m-e1-epG"/>
                         <outletCollection property="labels" destination="7ct-7z-bdt" collectionClass="NSMutableArray" id="lo9-Ua-nGa"/>
                         <outletCollection property="labels" destination="rRu-8h-VCe" collectionClass="NSMutableArray" id="jjt-Dm-H1C"/>
+                        <outletCollection property="labels" destination="Aaq-tb-c3y" collectionClass="NSMutableArray" id="4yH-SM-lQl"/>
+                        <outletCollection property="labels" destination="Jea-2k-gbW" collectionClass="NSMutableArray" id="5LC-xb-7eP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXp-uZ-mYO" userLabel="First Responder" sceneMemberID="firstResponder"/>

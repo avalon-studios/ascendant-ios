@@ -70,6 +70,10 @@ class SettingsViewController: UITableViewController, Themable, MFMailComposeView
         tableView.tintColor = Theme.asc_defaultTextColor()
         tableView.backgroundColor = Theme.asc_baseColor()
         tableView.separatorColor = Theme.asc_separatorColor()
+        
+        labels.forEach {
+            $0.textColor = Theme.asc_defaultTextColor()
+        }
     }
     
     func setCheckedTheme() {

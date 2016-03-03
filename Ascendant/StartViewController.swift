@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import MultipeerConnectivity
 
 class StartViewController: UIViewController, Themable, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var startButton: AscendantButton!
     @IBOutlet weak var buttonContainerView: UIView!
+    
+    static let joinService = "ascendant-join"
+    
+    lazy var advertiser: MCNearbyServiceAdvertiser = {
+       
+        let peerID = MCPeerID(displayName: "\(self.game.player.name) (\(self.game.id))")
+        let advertiser = MCNearbyServiceAdvertiser(peer: peerID,
+                                                  discoveryInfo: ["game_id": self.game.id],
+                                                  serviceType: StartViewController.joinService)
+        advertiser.delegate = self
+        
+        return advertiser
+    }()
     
     var game: Game!
     var players = [Player]()
@@ -29,6 +43,10 @@ class StartViewController: UIViewController, Themable, UITableViewDataSource, UI
         
         if game.rejoin {
             beginGame()
+        }
+        
+        if game.creator {
+            advertiser.startAdvertisingPeer()
         }
     }
     
@@ -106,4 +124,16 @@ class StartViewController: UIViewController, Themable, UITableViewDataSource, UI
         return cell
     }
 }
- 
+
+extension StartViewController: MCNearbyServiceAdvertiserDelegate {
+    
+    func advertiser(advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: NSError) {
+        
+        
+    }
+    
+    func advertiser(advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: NSData?, invitationHandler: (Bool, MCSession) -> Void) {
+        
+        
+    }
+}
