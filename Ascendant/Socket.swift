@@ -31,7 +31,7 @@ class Socket {
     
     let options: Set<SocketIOClientOption> = {
         
-        var options: Set<SocketIOClientOption> = [.Secure(true), .ReconnectWait(1), .ForceWebsockets(true)]
+        var options: Set<SocketIOClientOption> = [.Secure(true), .ReconnectWait(1)]
 
         if AppDelegate.configuration == .Develop {
             options.insert(.Log(true))
