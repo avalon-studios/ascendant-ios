@@ -77,7 +77,7 @@ class JoinViewController: UITableViewController, Themable, UITextFieldDelegate {
         roomCodeTextField.tintColor = Theme.asc_blueColor()
         roomCodeTextField.keyboardAppearance = Theme.asc_keyboardAppearance()
         
-        nearbyLabel.textColor = Theme.asc_transparentColor()
+        nearbyLabel.textColor = Theme.asc_defaultTextColor().colorWithAlphaComponent(0.7)
         
         nearbyCell.backgroundColor = Theme.cellBackgroundColor()
         
@@ -164,7 +164,7 @@ extension JoinViewController: MCNearbyServiceBrowserDelegate {
         
         discoveredGameID = gameID
         
-        nearbyLabel.textColor = Theme.asc_defaultTextColor().colorWithAlphaComponent(0.7)
+        nearbyLabel.textColor = Theme.asc_defaultTextColor()
         nearbyLabel.text = peerID.displayName
         nearbyCell.accessoryType = .DisclosureIndicator
         nearbyIndicator.stopAnimating()
