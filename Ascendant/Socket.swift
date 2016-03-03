@@ -27,15 +27,15 @@ class Socket {
         }
     }()
     
-    let timeout: UInt64 = 3
+    let timeout: UInt64 = 2
     
     let options: Set<SocketIOClientOption> = {
         
         var options: Set<SocketIOClientOption> = [.Secure(true), .ReconnectWait(1), .ForceWebsockets(true)]
 
-        #if DEBUG
+        if AppDelegate.configuration == .Develop {
             options.insert(.Log(true))
-        #endif
+        }
         
         return options
     }()
