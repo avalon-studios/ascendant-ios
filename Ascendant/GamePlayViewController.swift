@@ -21,6 +21,8 @@ class GamePlayViewController: UIViewController, Themable {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var failedMissionsBottomSeparator: UIView!
     @IBOutlet weak var readyButton: AscendantButton!
+    @IBOutlet weak var roomCodeLabel: UILabel!
+    @IBOutlet weak var leaveButton: UIButton!
     @IBOutlet var separators: [UIView]!
     
     var game: Game!
@@ -60,9 +62,6 @@ class GamePlayViewController: UIViewController, Themable {
         
         game.delegate = self
         
-        messageLabel.text = ""
-        messageLabel.setTextWithCrossFade("You're on the " + (game.player.team == .Good ? "good" : "bad") + " team")
-        
         updateTheme()
         
         setUpUI()
@@ -73,6 +72,9 @@ class GamePlayViewController: UIViewController, Themable {
     }
     
     func setUpUI() {
+        
+        messageLabel.text = ""
+        messageLabel.setTextWithCrossFade("You're on the " + (game.player.team == .Good ? "good" : "bad") + " team")
         
         game(setNumberOfFailedProposals: game.numberFailedProposals)
         
@@ -92,15 +94,19 @@ class GamePlayViewController: UIViewController, Themable {
         if game.ready {
             readyButton.removeFromSuperview()
         }
+        
+        roomCodeLabel.text = game.id
     }
     
     func updateTheme() {
 
         view.backgroundColor = Theme.asc_baseColor()
         
-        missionLabel.textColor = Theme.asc_defaultTextColor()
-        failedLabel.textColor = Theme.asc_defaultTextColor()
-        messageLabel.textColor = Theme.asc_defaultTextColor()
+        [missionLabel, failedLabel, messageLabel, roomCodeLabel].forEach {
+            $0.textColor = Theme.asc_defaultTextColor()
+        }
+        
+        leaveButton.tintColor = Theme.asc_defaultTextColor()
         
         separators.forEach { $0.backgroundColor = Theme.asc_separatorColor() }
     }
@@ -148,6 +154,20 @@ class GamePlayViewController: UIViewController, Themable {
             showingAction = true
             action()
         }
+    }
+    @IBAction func leaveButtonPressed(sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Leave Game", message: "Are you sure you want to leave the game?\n\nThis has not been fully implemented yet", preferredStyle: .Alert)
+        
+        let leaveButton = UIAlertAction(title: "Leave", style: .Default) { _ in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        let cancelButton = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        alert.addAction(leaveButton)
+        alert.addAction(cancelButton)
+        
+        presentViewController(alert, animated: true, completion: nil)
     }
 }
 
