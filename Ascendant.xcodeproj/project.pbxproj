@@ -27,6 +27,7 @@
 		2761181E1C7BAEEC00652444 /* AscendantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2761181D1C7BAEEC00652444 /* AscendantTests.swift */; };
 		276118291C7BAEEC00652444 /* AscendantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276118281C7BAEEC00652444 /* AscendantUITests.swift */; };
 		276904281C84849C00973524 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276904271C84849C00973524 /* Settings.storyboard */; };
+		277C15EA1C8886F80022E5D9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 277C15E91C8886F80022E5D9 /* Settings.bundle */; };
 		2782AD591C7C1A7600D983AC /* ProposalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2782AD581C7C1A7600D983AC /* ProposalView.swift */; };
 		2799AB9D1C7BC9D6003C532E /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799AB9C1C7BC9D6003C532E /* Socket.swift */; };
 		2799AB9F1C7BCB27003C532E /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799AB9E1C7BCB27003C532E /* CreateViewController.swift */; };
@@ -102,6 +103,7 @@
 		276118281C7BAEEC00652444 /* AscendantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AscendantUITests.swift; sourceTree = "<group>"; };
 		2761182A1C7BAEEC00652444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		276904271C84849C00973524 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		277C15E91C8886F80022E5D9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		2782AD581C7C1A7600D983AC /* ProposalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProposalView.swift; sourceTree = "<group>"; };
 		2799AB9C1C7BC9D6003C532E /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
 		2799AB9E1C7BCB27003C532E /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				2799ABA51C7BCD25003C532E /* R.generated.swift */,
 				27AC5AE01C87E59A0066473E /* rules.html */,
 				276118141C7BAEEC00652444 /* Info.plist */,
+				277C15E91C8886F80022E5D9 /* Settings.bundle */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				277C15EA1C8886F80022E5D9 /* Settings.bundle in Resources */,
 				276118131C7BAEEC00652444 /* Launch.storyboard in Resources */,
 				276118101C7BAEEC00652444 /* Assets.xcassets in Resources */,
 				27AC5ADD1C87E15B0066473E /* Rules.storyboard in Resources */,
@@ -845,7 +849,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconNoStars;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
@@ -864,7 +868,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconNoStars;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -982,7 +986,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconNoStars;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = Ascendant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;

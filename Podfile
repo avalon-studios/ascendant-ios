@@ -21,8 +21,12 @@ target 'AscendantUITests' do
 
 end
 
-# Testflight bitrise codesigning fix
 post_install do |installer|
+    
+    require 'fileutils'
+    FileUtils.cp_r('Pods/Target Support Files/Pods-Ascendant/Pods-Ascendant-acknowledgements.plist', 'Ascendant/Settings.bundle/Acknowledgements.plist', :remove_destination => true)
+    
+    # bitrise codesigning fix
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
             config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = ""
