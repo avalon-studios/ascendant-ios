@@ -52,8 +52,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func applicationWillEnterForeground(application: UIApplication) {
-        Socket.manager.reconnect()
+    func applicationDidBecomeActive(application: UIApplication) {
+        
+        // Let's make sure we got the latest action done
+        if let gameViewController = window?.rootViewController?.presentedViewController as? GamePlayViewController {
+            if !gameViewController.showingAction {
+                Socket.manager.getCurrentAction(gameViewController.game)
+            }
+        }
     }
 }
 
