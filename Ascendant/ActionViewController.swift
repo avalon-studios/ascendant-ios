@@ -97,7 +97,13 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
             
             let vote = proposalResult.votes[indexPath.row]
             
-            cell.nameLabel.text = vote.player.name
+            if vote.player.id == game.player.id {
+                cell.nameLabel.text = vote.player.name + " (You)"
+            }
+            else {
+                cell.nameLabel.text = vote.player.name
+            }
+            
             cell.teamView.backgroundColor = vote.value ? Theme.asc_greenColor() : Theme.asc_redColor()
             
             return cell

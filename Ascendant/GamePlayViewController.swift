@@ -76,15 +76,27 @@ class GamePlayViewController: UIViewController, Themable {
         
         var teamText = "You're a " + (game.player.team == .Good ? "Space Explorer" : "Mutineer")
         
-        // Is this confusing? Maybe
-        // Is it fun? Yes :P
         // Just grab all the bad players (if we're bad) and add their names to our team text
         if game.player.team == .Bad {
-            teamText += " along with: " +
-            game.players.flatMap {
+            teamText += "\n along with "
+            
+            let badPlayers = game.players.filter {
+                $0 != self.game.player
+            }
+            .flatMap {
                 return $0.team == .Bad ? $0.name : nil
             }
-            .joinWithSeparator(", ")
+            
+            teamText += badPlayers[0..<badPlayers.count - 1].joinWithSeparator(", ")
+            
+            if let lastPlayer = badPlayers.last {
+                if badPlayers.count > 1 {
+                    teamText += " and \(lastPlayer)"
+                }
+                else {
+                    teamText += lastPlayer
+                }
+            }
         }
         
         messageLabel.setTextWithCrossFade(teamText)
