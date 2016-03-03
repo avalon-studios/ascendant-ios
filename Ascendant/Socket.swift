@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Async
 import Gloss
 import SocketIOClientSwift
 

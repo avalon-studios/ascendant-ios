@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Async
 
 class JoinViewController: UITableViewController, Themable, UITextFieldDelegate {
     

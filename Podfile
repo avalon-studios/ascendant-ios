@@ -1,4 +1,4 @@
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 inhibit_all_warnings!
 
@@ -8,7 +8,6 @@ target 'Ascendant' do
     pod 'Gloss'
     pod 'PureLayout'
     pod 'ElegantPresentations'
-    pod 'AsyncSwift'
     pod 'Fabric'
     pod 'Crashlytics'
 end

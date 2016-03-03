@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Async
 import ElegantPresentations
 
 typealias ActionStackBlock = Void -> Void
