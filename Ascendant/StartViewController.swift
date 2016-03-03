@@ -45,9 +45,7 @@ class StartViewController: UIViewController, Themable, UITableViewDataSource, UI
             beginGame()
         }
         
-        if game.creator {
-            advertiser.startAdvertisingPeer()
-        }
+        advertiser.startAdvertisingPeer()
     }
     
     override func viewWillAppear(animated: Bool) {
