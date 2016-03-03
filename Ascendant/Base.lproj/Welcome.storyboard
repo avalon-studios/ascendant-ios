@@ -80,6 +80,9 @@
                                                 <state key="normal" title="Rules">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="0Km-hg-u9Z" kind="presentation" id="JNi-qO-sqQ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -169,7 +172,7 @@
                 <viewControllerPlaceholder storyboardName="Settings" id="vFD-dH-VOh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJs-Pf-RAn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="59.5" y="507"/>
+            <point key="canvasLocation" x="65.5" y="503"/>
         </scene>
         <!--Join Game-->
         <scene sceneID="YiY-5G-4gu">
@@ -491,6 +494,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DyJ-qE-g4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1903" y="-369"/>
+        </scene>
+        <!--Rules-->
+        <scene sceneID="W3l-l7-QSS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Rules" id="0Km-hg-u9Z" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aJg-JT-oBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="369" y="503"/>
         </scene>
     </scenes>
     <resources>
