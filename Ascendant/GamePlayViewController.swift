@@ -74,7 +74,21 @@ class GamePlayViewController: UIViewController, Themable {
     func setUpUI() {
         
         messageLabel.text = ""
-        messageLabel.setTextWithCrossFade("You're on the " + (game.player.team == .Good ? "good" : "bad") + " team")
+        
+        var teamText = "You're a " + (game.player.team == .Good ? "Space Explorer" : "Mutineer")
+        
+        // Is this confusing? Maybe
+        // Is it fun? Yes :P
+        // Just grab all the bad players (if we're bad) and add their names to our team text
+        if game.player.team == .Bad {
+            teamText += " along with: " +
+            game.players.flatMap {
+                return $0.team == .Bad ? $0.name : nil
+            }
+            .joinWithSeparator(", ")
+        }
+        
+        messageLabel.setTextWithCrossFade(teamText)
         
         game(setNumberOfFailedProposals: game.numberFailedProposals)
         
@@ -139,7 +153,7 @@ class GamePlayViewController: UIViewController, Themable {
             switch result {
             case .Success:
                 sender.hidden = true
-                self.messageLabel.setTextWithCrossFade("Waiting for other players...")
+                self.messageLabel.setTextWithCrossFade("Waiting for other players to check their team")
             case .Error(let message):
                 self.showAlert("Error", message: message)
             }
@@ -157,7 +171,7 @@ class GamePlayViewController: UIViewController, Themable {
     }
     @IBAction func leaveButtonPressed(sender: UIButton) {
         
-        let alert = UIAlertController(title: "Leave Game", message: "Are you sure you want to leave the game?\n\nThis has not been fully implemented yet", preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Leave Game", message: "Are you sure you want to leave the game?\n\nThis has not been fully implemented yet, and merely closes the game for you, leaving the other players lost in space until you rejoin", preferredStyle: .Alert)
         
         let leaveButton = UIAlertAction(title: "Leave", style: .Default) { _ in
             self.dismissViewControllerAnimated(true, completion: nil)
@@ -177,7 +191,7 @@ extension GamePlayViewController: GameDelegate {
         
         guard player.id == game.player.id else {
             
-            messageLabel.setTextWithCrossFade("Waiting for \(player.name) to propose a team...")
+            messageLabel.setTextWithCrossFade("Waiting for \(player.name) to propose a mission team")
             
             return
         }
@@ -205,7 +219,7 @@ extension GamePlayViewController: GameDelegate {
     
     func game(voteOnMissionWithPlayers players: [Player]) {
         
-        messageLabel.setTextWithCrossFade("Waiting for mission results...")
+        messageLabel.setTextWithCrossFade("Waiting for mission votes")
         
         guard players.contains(game.player) else {
             return
@@ -224,7 +238,7 @@ extension GamePlayViewController: GameDelegate {
     
     func game(voteOnProposalWithPlayers players: [Player]) {
 
-        messageLabel.setTextWithCrossFade("Waiting for players to vote on proposal...")
+        messageLabel.setTextWithCrossFade("Waiting for players to vote on mission proposal")
 
         runOrSaveAction { [unowned self] in
 
@@ -249,10 +263,10 @@ extension GamePlayViewController: GameDelegate {
     func game(showProposalVotingResult result: ProposalResult) {
         
         if result.pass {
-            messageLabel.setTextWithCrossFade("Waiting for mission results...")
+            messageLabel.setTextWithCrossFade("Waiting for mission votes")
         }
         else {
-            messageLabel.setTextWithCrossFade("Waiting for a new leader...")
+            messageLabel.setTextWithCrossFade("Waiting for a new leader")
         }
 
         runOrSaveAction { [unowned self] in
