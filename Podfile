@@ -11,7 +11,6 @@ target 'Ascendant' do
     pod 'AsyncSwift'
     pod 'Fabric'
     pod 'Crashlytics'
-    pod 'DTCoreText'
 end
 
 target 'AscendantTests' do
