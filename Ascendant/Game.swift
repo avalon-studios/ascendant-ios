@@ -89,6 +89,8 @@ final class Game: Decodable {
         delegate?.game(setNumberOfFailedProposals: result.numberFailedProposals)
         delegate?.game(showProposalVotingResult: result)
         
+        numberFailedProposals = result.numberFailedProposals
+        
         if numberFailedProposals == 5 {
             delegate?.game(endWithMessage: "The Mutineers have taken the ship, and the explorers are lost for good!", winningTeam: .Bad)
         }
