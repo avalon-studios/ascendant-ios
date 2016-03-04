@@ -80,7 +80,6 @@ class CreateViewController: UITableViewController, Themable, UITextFieldDelegate
             // Try to grab the game, and continue if we made one
             if let game = game {
                 self?.game = game
-                game.creator = true
                 self?.performSegueWithIdentifier(R.segue.createViewController.startViewController, sender: self)
             }
             else {
