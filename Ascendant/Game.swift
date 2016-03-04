@@ -40,7 +40,7 @@ final class Game: Decodable {
         guard let
             id: String = "game_id" <~~ json,
             player: Player = "player" <~~ json,
-            creatorID: String = "player" <~~ json
+            creatorID: String = "creator_id" <~~ json
         else {
             return nil
         }
