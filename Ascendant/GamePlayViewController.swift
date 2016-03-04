@@ -74,7 +74,7 @@ class GamePlayViewController: UIViewController, Themable {
         
         messageLabel.text = ""
         
-        var teamText = "You're a " + (game.player.team == .Good ? "Space Explorer" : "Mutineer")
+        var teamText = "You're a " + (game.player.team == .Bad ? "Mutineer" : "Space Explorer")
         
         // Just grab all the bad players (if we're bad) and add their names to our team text
         if game.player.team == .Bad {
