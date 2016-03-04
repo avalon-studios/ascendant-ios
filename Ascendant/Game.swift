@@ -35,6 +35,9 @@ final class Game: Decodable {
     var rejoin = false
     var ready = false
     
+    var goodWins = 0
+    var badWins = 0
+    
     init?(json: JSON) {
         
         guard let
@@ -83,16 +86,33 @@ final class Game: Decodable {
     }
     
     func proposalVoteResult(result: ProposalResult) {
-        
         delegate?.game(setNumberOfFailedProposals: result.numberFailedProposals)
         delegate?.game(showProposalVotingResult: result)
+        
+        if numberFailedProposals == 5 {
+            delegate?.game(endWithMessage: "The Mutineers have taken the ship, and the explorers are lost for good!", winningTeam: .Bad)
+        }
     }
     
     func missionVoteResult(result: MissionResult) {
+        
+        result.passed ? (goodWins += 1) : (badWins += 1)
+        
         delegate?.game(setMissionStatus: result.passed ? .Success : .Fail, forMission: result.missionNumber)
+        
+        if goodWins == 3 {
+            delegate?.game(endWithMessage: "The Space Explorers have won the mission and returned home!", winningTeam: .Good)
+        }
+        else if badWins == 3 {
+            delegate?.game(endWithMessage: "The Mutineers have taken the ship, and the explorers are lost for good!", winningTeam: .Bad)
+        }
     }
     
     func voteOnMissionWithPlayers(players: [Player]) {
         delegate?.game(voteOnMissionWithPlayers: players)
+    }
+    
+    func endGameWithMessage(message: String, winningTeam: Team) {
+        delegate?.game(endWithMessage: message, winningTeam: winningTeam)
     }
 }

@@ -290,6 +290,31 @@ extension GamePlayViewController: GameDelegate {
             self.presentViewControllerCustom(actionNavigationController, animated: true, completion: nil)
         }
     }
+    
+    func game(endWithMessage message: String, winningTeam: Team) {
+        
+        runOrSaveAction {
+            
+            let alert = UIAlertController(title: "Game Over!", message: message, preferredStyle: .Alert)
+
+            var title = "Aww shucks"
+            
+            if self.game.player.team == .Bad && winningTeam == .Bad {
+                title = "Mwahaha!"
+            }
+            else if winningTeam == .Good {
+                title = "Huzzah!"
+            }
+            
+            let okButton = UIAlertAction(title: title, style: .Cancel) { _ in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+            
+            alert.addAction(okButton)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
 }
 
 extension GamePlayViewController: UIViewControllerTransitioningDelegate {
