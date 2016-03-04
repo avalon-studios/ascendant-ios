@@ -22,9 +22,13 @@ final class Game: Decodable {
         }
     }
     
-    var creator = false
+    var creator: Bool {
+        return player.id == creatorID
+    }
+    
     var player: Player
     var id: String
+    var creatorID: String
     
     var roundPasses = [Bool]()
     var numberFailedProposals = 0
@@ -35,13 +39,15 @@ final class Game: Decodable {
         
         guard let
             id: String = "game_id" <~~ json,
-            player: Player = "player" <~~ json
+            player: Player = "player" <~~ json,
+            creatorID: String = "player" <~~ json
         else {
             return nil
         }
         
         self.id = id
         self.player = player
+        self.creatorID = creatorID
         self.players = [player]
 
         if let rejoin: Bool = "rejoin" <~~ json {
