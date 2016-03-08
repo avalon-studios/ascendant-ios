@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10115" systemVersion="15E56a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wVv-Tn-GOr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10115" systemVersion="15E61b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wVv-Tn-GOr">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10084"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Rules-->
@@ -17,20 +18,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Rules" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OR0-7V-cQ0">
-                                <rect key="frame" x="16" y="0.0" width="568" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-16" maxY="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAh-A3-ov1">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBW-IU-jg3">
+                                        <rect key="frame" x="16" y="0.0" width="568" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="EBW-IU-jg3" secondAttribute="trailing" constant="16" id="2tx-7v-xLw"/>
+                                    <constraint firstItem="EBW-IU-jg3" firstAttribute="leading" secondItem="QAh-A3-ov1" secondAttribute="leading" constant="16" id="Fpj-9h-Zum"/>
+                                    <constraint firstAttribute="bottom" secondItem="EBW-IU-jg3" secondAttribute="bottom" constant="8" id="M6P-z9-B82"/>
+                                    <constraint firstItem="EBW-IU-jg3" firstAttribute="top" secondItem="QAh-A3-ov1" secondAttribute="top" id="NEO-qh-ahv"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OR0-7V-cQ0" firstAttribute="leading" secondItem="9P1-Kx-koL" secondAttribute="leading" constant="16" id="mcm-yj-nsB"/>
-                            <constraint firstItem="OR0-7V-cQ0" firstAttribute="top" secondItem="9P1-Kx-koL" secondAttribute="top" id="p6J-AX-6LZ"/>
-                            <constraint firstAttribute="trailing" secondItem="OR0-7V-cQ0" secondAttribute="trailing" constant="16" id="vs0-wP-hKP"/>
-                            <constraint firstItem="X8a-mj-ILW" firstAttribute="top" secondItem="OR0-7V-cQ0" secondAttribute="bottom" id="wYW-Ep-oTd"/>
+                            <constraint firstItem="QAh-A3-ov1" firstAttribute="leading" secondItem="9P1-Kx-koL" secondAttribute="leading" id="OZb-s3-NN2"/>
+                            <constraint firstAttribute="trailing" secondItem="QAh-A3-ov1" secondAttribute="trailing" id="Vbt-cT-1hE"/>
+                            <constraint firstItem="EBW-IU-jg3" firstAttribute="leading" secondItem="9P1-Kx-koL" secondAttribute="leading" constant="16" id="Vkk-ny-9Yb"/>
+                            <constraint firstItem="QAh-A3-ov1" firstAttribute="top" secondItem="9P1-Kx-koL" secondAttribute="topMargin" id="dIf-5V-RFD"/>
+                            <constraint firstAttribute="trailing" secondItem="EBW-IU-jg3" secondAttribute="trailing" constant="16" id="tXm-de-bIs"/>
+                            <constraint firstItem="X8a-mj-ILW" firstAttribute="top" secondItem="QAh-A3-ov1" secondAttribute="bottom" id="yEp-V9-xkG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rules" id="SNa-o9-4ah">
@@ -41,7 +54,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="rulesTextView" destination="OR0-7V-cQ0" id="1Hc-7M-Ncy"/>
+                        <outlet property="rulesLabel" destination="EBW-IU-jg3" id="NFm-BW-fmI"/>
+                        <outlet property="scrollView" destination="QAh-A3-ov1" id="1Fz-LA-csF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQa-wb-eRc" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -121,6 +121,13 @@ struct Theme {
         }
     }
     
+    static func scrollIndicatorStyle() -> UIScrollViewIndicatorStyle {
+        switch Theme.theme {
+        case .Dark, .Medium:    return .White
+        case .Light:            return .Black
+        }
+    }
+    
     static func setAppearances() {
         
         let navBar = UINavigationBar.appearance()
@@ -134,6 +141,8 @@ struct Theme {
         UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).textColor = Theme.asc_defaultTextColor()
 
         UITableViewCell.appearanceWhenContainedInInstancesOfClasses([SettingsViewController.self]).backgroundColor = Theme.cellBackgroundColor()
+        
+        UIScrollView.appearance().indicatorStyle = Theme.scrollIndicatorStyle()
     }
     
     static func setAppearanceForMail() {
