@@ -19,7 +19,7 @@ class StartViewController: UIViewController, Themable, UITableViewDataSource, UI
     
     lazy var advertiser: MCNearbyServiceAdvertiser = {
        
-        let peerID = MCPeerID(displayName: "\(self.game.player.name) (\(self.game.id))")
+        let peerID = MCPeerID(displayName: "\(self.game.creator?.name ?? "") (\(self.game.id))")
         let advertiser = MCNearbyServiceAdvertiser(peer: peerID,
                                                   discoveryInfo: ["game_id": self.game.id],
                                                   serviceType: StartViewController.joinService)
@@ -73,7 +73,7 @@ class StartViewController: UIViewController, Themable, UITableViewDataSource, UI
         tableView.estimatedRowHeight = 70
         tableView.dataSource = self
         
-        if !game.creator { buttonContainerView.removeFromSuperview() }
+        if !game.isCreator { buttonContainerView.removeFromSuperview() }
     }
 
     @IBAction func startGamePressed(sender: AscendantButton) {

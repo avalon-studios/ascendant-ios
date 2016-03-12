@@ -22,8 +22,12 @@ final class Game: Decodable {
         }
     }
     
-    var creator: Bool {
+    var isCreator: Bool {
         return player.id == creatorID
+    }
+
+    var creator: Player? {
+        return players.filter({ $0.id == creatorID }).first
     }
     
     var player: Player
