@@ -142,8 +142,12 @@ class Socket {
         
         socket.removeAllHandlers()
 
+        let ackData = ["player_id": game.player.id, "game_id": game.id]
+
         socket.on(Event.updatePlayers) { data, ack in
-            
+
+            ack.with(ackData)
+
             guard let json = data.first as? [JSON] else {
                 return
             }
@@ -152,7 +156,9 @@ class Socket {
         }
         
         socket.on(Event.assignRoles) { data, ack in
-            
+
+            ack.with(ackData)
+
             guard let
                 json = data.first as? JSON,
                 playerJSON = json["player"] as? JSON,
@@ -169,7 +175,9 @@ class Socket {
         }
         
         socket.on(Event.proposeMission) { data, ack in
-            
+
+            ack.with(ackData)
+
             guard let
                 json = data.first as? JSON,
                 leaderJSON = json["leader"] as? JSON,
@@ -184,7 +192,9 @@ class Socket {
         }
         
         socket.on(Event.proposalVote) { data, ack in
-            
+
+            ack.with(ackData)
+
             guard let json = data.first as? JSON, playerIDs = json["players"] as? [String] else {
                 return
             }
@@ -195,7 +205,9 @@ class Socket {
         }
         
         socket.on(Event.proposalVoteResult) { data, ack in
-            
+
+            ack.with(ackData)
+
             guard let
                 json = data.first as? JSON,
                 result = ProposalResult(json: json)
@@ -207,7 +219,9 @@ class Socket {
         }
         
         socket.on(Event.missionVoteResult) { data, ack in
-            
+
+            ack.with(ackData)
+
             guard let
                 json = data.first as? JSON,
                 result = MissionResult(json: json)
