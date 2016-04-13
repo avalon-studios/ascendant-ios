@@ -142,9 +142,11 @@ class Socket {
         
         socket.removeAllHandlers()
 
-        let ackData = ["player_id": game.player.id, "game_id": game.id]
+        var ackData = ["player_id": game.player.id, "game_id": game.id]
 
         socket.on(Event.updatePlayers) { data, ack in
+
+            ackData["ack_type"] = Event.updatePlayers
 
             ack.with(ackData)
 
@@ -156,6 +158,8 @@ class Socket {
         }
         
         socket.on(Event.assignRoles) { data, ack in
+
+            ackData["ack_type"] = Event.assignRoles
 
             ack.with(ackData)
 
@@ -176,6 +180,8 @@ class Socket {
         
         socket.on(Event.proposeMission) { data, ack in
 
+            ackData["ack_type"] = Event.proposeMission
+
             ack.with(ackData)
 
             guard let
@@ -193,6 +199,8 @@ class Socket {
         
         socket.on(Event.proposalVote) { data, ack in
 
+            ackData["ack_type"] = Event.proposalVote
+
             ack.with(ackData)
 
             guard let json = data.first as? JSON, playerIDs = json["players"] as? [String] else {
@@ -205,6 +213,8 @@ class Socket {
         }
         
         socket.on(Event.proposalVoteResult) { data, ack in
+
+            ackData["ack_type"] = Event.proposalVoteResult
 
             ack.with(ackData)
 
@@ -219,6 +229,8 @@ class Socket {
         }
         
         socket.on(Event.missionVoteResult) { data, ack in
+
+            ackData["ack_type"] = Event.missionVoteResult
 
             ack.with(ackData)
 
