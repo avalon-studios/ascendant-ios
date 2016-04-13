@@ -16,8 +16,9 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
     @IBOutlet weak var buttonStack: UIStackView!
     @IBOutlet weak var tableView: UITableView!
     
-    
+
     var game: Game!
+    var inTutorial = false
     var action = Action.MissionVote
     var actionMembers: [Player]!
     var proposalResult: ProposalResult!
@@ -31,6 +32,7 @@ class ActionViewController: UIViewController, Themable, UITableViewDelegate, UIT
         case .ProposalResult:   return proposalResult.pass ? "Proposal Passed" : "Proposal Did Not Pass"
         }
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

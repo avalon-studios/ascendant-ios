@@ -8,6 +8,7 @@
 
 import UIKit
 import ElegantPresentations
+import AMPopTip
 
 typealias ActionStackBlock = Void -> Void
 
@@ -23,7 +24,9 @@ class GamePlayViewController: UIViewController, Themable {
     @IBOutlet weak var roomCodeLabel: UILabel!
     @IBOutlet weak var leaveButton: UIButton!
     @IBOutlet var separators: [UIView]!
-    
+
+
+    var inTutorial = false
     var game: Game!
     
     var showingAction = false {
@@ -67,6 +70,14 @@ class GamePlayViewController: UIViewController, Themable {
         
         if game.rejoin {
             Socket.manager.getCurrentAction(game)
+        }
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if TipManager.prompted == false {
+            presentTutorialPrompt()
         }
     }
     
@@ -139,7 +150,44 @@ class GamePlayViewController: UIViewController, Themable {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return Theme.asc_statusBarStyle()
     }
-    
+
+    func presentTutorialPrompt() {
+
+        let alert = UIAlertController(title: "Welcome to Ascendant", message: "Since you're new to the game, would you like helpful tips to guide you through this game?", preferredStyle: .Alert)
+
+        let yesButton = UIAlertAction(title: "Yes Please!", style: .Default) { [weak self] _ in
+            self?.inTutorial = true
+            self?.showUITips()
+        }
+        
+        let noButton = UIAlertAction(title: "No Thanks", style: .Cancel, handler: nil)
+
+        alert.addAction(yesButton)
+        alert.addAction(noButton)
+
+        presentViewController(alert, animated: true, completion: nil)
+    }
+
+    func showUITips() {
+
+        let tip = TipManager.tipFactory()
+
+        tip.tapHandler = {
+
+            print("Tap Handled!!")
+
+            tip.hide()
+
+//            TipManager.tip.showText("These circles will turn green for a successful mission, or red for a failed mission", direction: .Down, maxWidth: 240, inView: self.view, fromFrame: self.missionStack.frame)
+
+//            TipManager.tip.tapHandler = {
+//                TipManager.tip.showText("These lines light up red when a proposal fails — after five, the mutineers win the game", direction: .Down, maxWidth: 240, inView: self.view, fromFrame: self.proposalStack.frame)
+//            }
+        }
+
+        tip.showText("This is where you see your team when the game starts.\n\nTap this tip to dismiss it!", direction: .Up, maxWidth: 240, inView: view, fromFrame: messageLabel.frame)
+    }
+
     func createActionViewController() -> (UINavigationController, ActionViewController) {
         
         guard let actionNavigationController = R.storyboard.gamePlay.actionViewController(),
@@ -149,6 +197,7 @@ class GamePlayViewController: UIViewController, Themable {
         }
         
         actionViewController.game = game
+        actionViewController.inTutorial = inTutorial
         
         return (actionNavigationController, actionViewController)
     }

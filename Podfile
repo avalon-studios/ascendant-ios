@@ -10,7 +10,7 @@ target 'Ascendant' do
     pod 'ElegantPresentations'
     pod 'Fabric'
     pod 'Crashlytics'
-    pod 'Result'
+    pod 'AMPopTip'
 end
 
 target 'AscendantTests' do
