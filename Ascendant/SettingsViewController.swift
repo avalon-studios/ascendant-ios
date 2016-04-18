@@ -154,7 +154,7 @@ class SettingsViewController: UITableViewController, Themable, MFMailComposeView
         
         mailComposeViewController.mailComposeDelegate = self
         mailComposeViewController.setToRecipients(["kylebshr@me.com"])
-        mailComposeViewController.setSubject("Ascendant Beta Feedback")
+        mailComposeViewController.setSubject("Ascendant Feedback")
         mailComposeViewController.setMessageBody("Feedback: \n\n\n\nDevice: \(UIDevice.currentDevice().modelName)\nVersion: \(versionNumber) \(AppDelegate.configuration.rawValue)", isHTML: false)
         
         if MFMailComposeViewController.canSendMail() {
