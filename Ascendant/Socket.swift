@@ -45,9 +45,11 @@ class Socket {
     }
     
     private lazy var socket: SocketIOClient = SocketIOClient(socketURL: self.baseURL, options: self.options)
-    
+
     func connect() {
-        socket.connect()
+        if status != .Connected {
+            socket.connect()
+        }
     }
     
     func reconnect() {

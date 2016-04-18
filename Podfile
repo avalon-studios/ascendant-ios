@@ -14,7 +14,7 @@ target 'Ascendant' do
 end
 
 target 'AscendantTests' do
-
+    pod 'Socket.IO-Client-Swift'
 end
 
 target 'AscendantUITests' do
