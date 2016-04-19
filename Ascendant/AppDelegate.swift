@@ -29,7 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Socket.manager.connect()
         
         print(AppDelegate.configuration)
-        
+
+        application.idleTimerDisabled = true
+
         return true
     }
     
